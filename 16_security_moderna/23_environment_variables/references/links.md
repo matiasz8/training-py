@@ -14,7 +14,19 @@
 - [Grype](https://github.com/anchore/grype)
 
 ## Documentación
-- *[Añadir docs específicas del tema]*
+- [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
+- [GitLab CI/CD Variables](https://docs.gitlab.com/ee/ci/variables/)
+- [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
+- [Azure Key Vault](https://azure.microsoft.com/en-us/products/key-vault/)
 
 ## Artículos y Blogs
-- *[Añadir artículos relevantes]*
+- [Secrets Management Best Practices](https://blog.gitguardian.com/secrets-management-best-practices/)
+- [Don't Commit Your Secrets](https://blog.gitguardian.com/secrets-credentials-api-git/)
+- [Environment Variables Security](https://www.doppler.com/blog/environment-variables-security-best-practices)
+- [CI/CD Security Best Practices](https://snyk.io/learn/secure-cicd-pipeline/)
+
+## Comunidad y Recursos
+- [r/netsec](https://www.reddit.com/r/netsec/)
+- [OWASP Slack](https://owasp.org/slack/invite)
+- [Cloud Native Security Day](https://events.linuxfoundation.org/cloud-native-securitycon/)
+- [Security.txt](https://securitytxt.org/)

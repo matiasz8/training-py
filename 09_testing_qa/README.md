@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Domina el testing en Python con pytest. Testing unitario, integración, mocks, fixtures, property-based testing con hypothesis, mutation testing y CI/CD.
+
+**Conceptos clave**: pytest, fixtures, mocking, parametrize, coverage, hypothesis, mutation testing, TDD, integration testing.
 
 ## 🎯 Objetivos de Aprendizaje
 

@@ -14,7 +14,20 @@
 - [Grype](https://github.com/anchore/grype)
 
 ## Documentación
-- *[Añadir docs específicas del tema]*
+- [Sigstore Documentation](https://docs.sigstore.dev/)
+- [Cosign Documentation](https://docs.sigstore.dev/cosign/overview/)
+- [Rekor Transparency Log](https://docs.sigstore.dev/rekor/overview/)
+- [Fulcio Certificate Authority](https://docs.sigstore.dev/fulcio/overview/)
+- [Cosign GitHub](https://github.com/sigstore/cosign)
 
 ## Artículos y Blogs
-- *[Añadir artículos relevantes]*
+- [Introducing Sigstore](https://www.linuxfoundation.org/press/press-release/linux-foundation-announces-free-sigstore-signing-service)
+- [Sigstore: A Solution for Software Supply Chain Security](https://www.chainguard.dev/unchained/sigstore-a-solution-to-software-supply-chain-security)
+- [How Sigstore Works](https://blog.sigstore.dev/sigstore-build-verification/)
+- [Keyless Signing with Sigstore](https://blog.sigstore.dev/cosign-2-0-released/)
+
+## Comunidad y Recursos
+- [r/netsec](https://www.reddit.com/r/netsec/)
+- [OWASP Slack](https://owasp.org/slack/invite)
+- [Cloud Native Security Day](https://events.linuxfoundation.org/cloud-native-securitycon/)
+- [Security.txt](https://securitytxt.org/)

@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Este módulo cubre los fundamentos esenciales de Python, desde variables y tipos de datos hasta estructuras de control y manejo de archivos. Es el punto de partida perfecto para construir una base sólida en el lenguaje.
+
+**Conceptos clave**: Variables, tipos de datos, estructuras de control, funciones, listas, diccionarios, manejo de archivos, importaciones y módulos.
 
 ## 🎯 Objetivos de Aprendizaje
 

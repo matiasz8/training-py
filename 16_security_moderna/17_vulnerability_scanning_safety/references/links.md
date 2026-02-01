@@ -14,7 +14,20 @@
 - [Grype](https://github.com/anchore/grype)
 
 ## Documentación
-- *[Añadir docs específicas del tema]*
+- [Trivy Documentation](https://aquasecurity.github.io/trivy/)
+- [Grype Documentation](https://github.com/anchore/grype#readme)
+- [Safety Documentation](https://pyup.io/safety/)
+- [Snyk for Python](https://docs.snyk.io/getting-started/supported-languages-and-frameworks/python)
+- [CVE Database](https://www.cve.org/)
 
 ## Artículos y Blogs
-- *[Añadir artículos relevantes]*
+- [Container Security Scanning Best Practices](https://sysdig.com/blog/dockerfile-best-practices/)
+- [Vulnerability Management Best Practices](https://snyk.io/learn/vulnerability-management/)
+- [CVE Database Overview](https://www.cve.org/About/Overview)
+- [Scanning Python Dependencies](https://realpython.com/python-security-scanner/)
+
+## Comunidad y Recursos
+- [r/netsec](https://www.reddit.com/r/netsec/)
+- [OWASP Slack](https://owasp.org/slack/invite)
+- [Cloud Native Security Day](https://events.linuxfoundation.org/cloud-native-securitycon/)
+- [Security.txt](https://securitytxt.org/)

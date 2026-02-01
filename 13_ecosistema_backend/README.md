@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Explora el ecosistema completo de backend en Python. Bases de datos (PostgreSQL, Redis), message brokers (RabbitMQ, Kafka), APIs (REST, GraphQL, gRPC), observabilidad y configuración.
+
+**Conceptos clave**: SQLAlchemy 2.0, Redis, RabbitMQ, Kafka, gRPC, OpenTelemetry, Prometheus, structured logging, Celery.
 
 ## 🎯 Objetivos de Aprendizaje
 

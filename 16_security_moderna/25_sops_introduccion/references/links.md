@@ -14,7 +14,19 @@
 - [Grype](https://github.com/anchore/grype)
 
 ## Documentación
-- *[Añadir docs específicas del tema]*
+- [SOPS Documentation](https://github.com/mozilla/sops#readme)
+- [SOPS with Age](https://github.com/mozilla/sops#22encrypting-using-age)
+- [SOPS with KMS](https://github.com/mozilla/sops#23encrypting-using-aws-kms)
+- [Age Encryption Tool](https://github.com/FiloSottile/age)
 
 ## Artículos y Blogs
-- *[Añadir artículos relevantes]*
+- [Managing Secrets with SOPS](https://www.civo.com/learn/manage-secrets-in-your-kubernetes-cluster-using-sealed-secrets)
+- [SOPS Best Practices](https://blog.gitguardian.com/secrets-management-tools/)
+- [SOPS vs Sealed Secrets vs Vault](https://blog.container-solutions.com/kubernetes-secrets-management)
+- [SOPS Tutorial](https://dev.to/stack-labs/manage-your-secrets-in-git-with-sops-common-operations-118g)
+
+## Comunidad y Recursos
+- [r/netsec](https://www.reddit.com/r/netsec/)
+- [OWASP Slack](https://owasp.org/slack/invite)
+- [Cloud Native Security Day](https://events.linuxfoundation.org/cloud-native-securitycon/)
+- [Security.txt](https://securitytxt.org/)

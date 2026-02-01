@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Diseña aplicaciones escalables y mantenibles. Aprende principios SOLID, patrones arquitectónicos, DDD, CQRS, Event-Driven Architecture y prácticas profesionales de ingeniería de software.
+
+**Conceptos clave**: SOLID, DDD, arquitectura hexagonal, repositories, CQRS, Event-Driven, dependency injection, observabilidad.
 
 ## 🎯 Objetivos de Aprendizaje
 

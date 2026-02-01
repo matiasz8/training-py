@@ -11,6 +11,7 @@ def generate_references(topic_name: str, module_name: str) -> str:
     
     clean_name = re.sub(r'^\d+_', '', topic_name).replace('_', ' ').title()
     topic_slug = topic_name.lower().replace('_', '-')
+    module_slug = module_name.lower().replace('_', '-')
     
     # Detectar categoría del módulo
     if "fundamentos" in module_name or "intermedio" in module_name:
@@ -251,11 +252,74 @@ def generate_references(topic_name: str, module_name: str) -> str:
 """
 
     elif "security" in module_name:
+        # Referencias específicas por tema de security
+        if "supply_chain" in topic_name or "dependency" in topic_name:
+            docs = """- [SLSA Framework](https://slsa.dev/)
+- [Supply-chain Levels for Software Artifacts](https://slsa.dev/spec/v1.0/)
+- [NIST SP 800-161](https://csrc.nist.gov/publications/detail/sp/800-161/rev-1/final)"""
+            articles = """- [The State of Software Supply Chain Security](https://www.sonatype.com/state-of-the-software-supply-chain)
+- [Securing the Software Supply Chain (CNCF)](https://www.cncf.io/blog/2021/12/08/securing-the-software-supply-chain/)
+- [Google: Know, Prevent, Fix Framework](https://security.googleblog.com/2023/08/toward-more-secure-software-supply-chain.html)"""
+        elif "sbom" in topic_name:
+            docs = """- [SBOM Overview (CISA)](https://www.cisa.gov/sbom)
+- [NTIA SBOM Documentation](https://www.ntia.gov/page/software-bill-materials)
+- [CycloneDX Specification](https://cyclonedx.org/specification/overview/)
+- [SPDX Specification](https://spdx.dev/specifications/)"""
+            articles = """- [A Practical Guide to SBOMs](https://www.linuxfoundation.org/blog/blog/a-summary-of-census-ii-open-source-software-application-libraries-the-world-depends-on)
+- [SBOM at Scale](https://chainguard.dev/unchained/sbom-at-scale)
+- [Why SBOMs Are Critical](https://security.googleblog.com/2023/05/open-sourcing-our-progress-on-vsa.html)"""
+        elif "sigstore" in topic_name or "signing" in topic_name or "firmar" in topic_name:
+            docs = """- [Sigstore Documentation](https://docs.sigstore.dev/)
+- [Cosign Documentation](https://docs.sigstore.dev/cosign/overview/)
+- [Rekor Transparency Log](https://docs.sigstore.dev/rekor/overview/)
+- [Fulcio Certificate Authority](https://docs.sigstore.dev/fulcio/overview/)"""
+            articles = """- [Introducing Sigstore](https://www.linuxfoundation.org/press/press-release/linux-foundation-announces-free-sigstore-signing-service)
+- [Sigstore: A Solution for Software Supply Chain Security](https://www.chainguard.dev/unchained/sigstore-a-solution-to-software-supply-chain-security)
+- [How Sigstore Works](https://blog.sigstore.dev/sigstore-build-verification/)"""
+        elif "sops" in topic_name:
+            docs = """- [SOPS Documentation](https://github.com/mozilla/sops#readme)
+- [SOPS with Age](https://github.com/mozilla/sops#22encrypting-using-age)
+- [SOPS with KMS](https://github.com/mozilla/sops#23encrypting-using-aws-kms)"""
+            articles = """- [Managing Secrets with SOPS](https://www.civo.com/learn/manage-secrets-in-your-kubernetes-cluster-using-sealed-secrets)
+- [SOPS Best Practices](https://blog.gitguardian.com/secrets-management-tools/)
+- [SOPS vs Sealed Secrets vs Vault](https://blog.container-solutions.com/kubernetes-secrets-management)"""
+        elif "vault" in topic_name:
+            docs = """- [Vault Documentation](https://developer.hashicorp.com/vault/docs)
+- [Vault Tutorials](https://developer.hashicorp.com/vault/tutorials)
+- [Vault API](https://developer.hashicorp.com/vault/api-docs)
+- [HVAC Python Client](https://hvac.readthedocs.io/)"""
+            articles = """- [Vault Getting Started](https://www.vaultproject.io/docs/what-is-vault)
+- [Vault Best Practices](https://developer.hashicorp.com/vault/tutorials/recommended-patterns)
+- [Dynamic Secrets in Vault](https://www.hashicorp.com/blog/why-we-need-dynamic-secrets)"""
+        elif "vulnerability" in topic_name or "scanning" in topic_name:
+            docs = """- [Trivy Documentation](https://aquasecurity.github.io/trivy/)
+- [Grype Documentation](https://github.com/anchore/grype#readme)
+- [Safety Documentation](https://pyup.io/safety/)
+- [Snyk for Python](https://docs.snyk.io/getting-started/supported-languages-and-frameworks/python)"""
+            articles = """- [Container Security Scanning](https://sysdig.com/blog/dockerfile-best-practices/)
+- [Vulnerability Management Best Practices](https://snyk.io/learn/vulnerability-management/)
+- [CVE Database Overview](https://www.cve.org/About/Overview)"""
+        elif "kubernetes" in topic_name or "k8s" in topic_name:
+            docs = """- [Kubernetes Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+- [External Secrets Operator](https://external-secrets.io/)
+- [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)
+- [Vault on Kubernetes](https://developer.hashicorp.com/vault/tutorials/kubernetes)"""
+            articles = """- [Kubernetes Secrets Management](https://kubernetes.io/docs/concepts/security/)
+- [Secret Management in Kubernetes](https://www.weave.works/blog/managing-secrets-in-kubernetes)
+- [K8s Security Best Practices](https://kubernetes.io/docs/concepts/security/pod-security-standards/)"""
+        else:
+            docs = """- [Python Security Documentation](https://docs.python.org/3/library/security_warnings.html)
+- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)
+- [CWE Top 25](https://cwe.mitre.org/top25/archive/2023/2023_top25_list.html)"""
+            articles = """- [Secure Python Development](https://realpython.com/tutorials/security/)
+- [Python Security Best Practices](https://snyk.io/blog/python-security-best-practices-cheat-sheet/)
+- [Writing Secure Python Code](https://www.oreilly.com/library/view/secure-coding-in/9781449316686/)"""
+        
         return f"""# Referencias: {clean_name}
 
-## Estándares
+## Estándares y Frameworks
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [CWE Top 25](https://cwe.mitre.org/top25/)
+- [CWE/SANS Top 25](https://cwe.mitre.org/top25/)
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 
 ## Herramientas
@@ -263,19 +327,19 @@ def generate_references(topic_name: str, module_name: str) -> str:
 - [SOPS](https://github.com/mozilla/sops)
 - [HashiCorp Vault](https://www.vaultproject.io/)
 - [Trivy](https://github.com/aquasecurity/trivy)
-- [Bandit](https://bandit.readthedocs.io/)
+- [Syft](https://github.com/anchore/syft)
+- [Grype](https://github.com/anchore/grype)
 
 ## Documentación
-- [Python Security](https://python.readthedocs.io/en/stable/library/security_warnings.html)
-- [OWASP Python Security Project](https://owasp.org/www-project-python-security/)
+{docs}
 
-## Artículos
-- [Real Python: Security](https://realpython.com/tutorials/security/)
-- [Snyk Learn Python Security](https://learn.snyk.io/catalog/?type=security-rules&languages=python)
+## Artículos y Blogs
+{articles}
 
-## Comunidad
+## Comunidad y Recursos
 - [r/netsec](https://www.reddit.com/r/netsec/)
 - [OWASP Slack](https://owasp.org/slack/invite)
+- [Cloud Native Security Day](https://events.linuxfoundation.org/cloud-native-securitycon/)
 """
 
     elif "avanzado" in module_name or "pyo3" in topic_name:

@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Introducción a data science con Python. NumPy, Pandas, visualización con Matplotlib/Seaborn, análisis exploratorio, limpieza de datos y Polars como alternativa moderna.
+
+**Conceptos clave**: NumPy arrays, Pandas DataFrames, Matplotlib, Seaborn, análisis exploratorio, limpieza de datos, Polars.
 
 ## 🎯 Objetivos de Aprendizaje
 

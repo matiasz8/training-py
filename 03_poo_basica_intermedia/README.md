@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Domina la Programación Orientada a Objetos en Python. Desde clases básicas hasta herencia múltiple, properties, descriptores y dataclasses. Aprende a escribir código orientado a objetos pythónico y mantenible.
+
+**Conceptos clave**: Clases y objetos, herencia, polimorfismo, encapsulación, métodos especiales, properties, descriptores, composición.
 
 ## 🎯 Objetivos de Aprendizaje
 

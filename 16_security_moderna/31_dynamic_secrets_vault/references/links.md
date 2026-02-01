@@ -14,7 +14,20 @@
 - [Grype](https://github.com/anchore/grype)
 
 ## Documentación
-- *[Añadir docs específicas del tema]*
+- [Vault Documentation](https://developer.hashicorp.com/vault/docs)
+- [Vault Tutorials](https://developer.hashicorp.com/vault/tutorials)
+- [Vault API](https://developer.hashicorp.com/vault/api-docs)
+- [HVAC Python Client](https://hvac.readthedocs.io/)
+- [Vault Architecture](https://developer.hashicorp.com/vault/docs/internals/architecture)
 
 ## Artículos y Blogs
-- *[Añadir artículos relevantes]*
+- [Vault Getting Started](https://www.vaultproject.io/docs/what-is-vault)
+- [Vault Best Practices](https://developer.hashicorp.com/vault/tutorials/recommended-patterns)
+- [Dynamic Secrets in Vault](https://www.hashicorp.com/blog/why-we-need-dynamic-secrets)
+- [Vault on Kubernetes](https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar)
+
+## Comunidad y Recursos
+- [r/netsec](https://www.reddit.com/r/netsec/)
+- [OWASP Slack](https://owasp.org/slack/invite)
+- [Cloud Native Security Day](https://events.linuxfoundation.org/cloud-native-securitycon/)
+- [Security.txt](https://securitytxt.org/)

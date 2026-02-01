@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Este módulo profundiza en conceptos intermedios de Python, incluyendo programación funcional, manejo avanzado de excepciones, decoradores y generadores. Aprenderás técnicas que usan los desarrolladores profesionales.
+
+**Conceptos clave**: Decoradores, generadores, context managers, closures, itertools, collections, manejo de excepciones, expresiones regulares.
 
 ## 🎯 Objetivos de Aprendizaje
 

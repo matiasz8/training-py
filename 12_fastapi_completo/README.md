@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Construye APIs modernas de alto rendimiento con FastAPI. Desde lo básico hasta deployment en producción, incluyendo autenticación, bases de datos, WebSockets, testing y best practices.
+
+**Conceptos clave**: FastAPI, Pydantic, async endpoints, dependency injection, authentication (JWT, OAuth2), SQLAlchemy, testing, deployment.
 
 ## 🎯 Objetivos de Aprendizaje
 

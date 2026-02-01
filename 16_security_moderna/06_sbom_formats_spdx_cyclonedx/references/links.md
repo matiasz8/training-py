@@ -14,7 +14,20 @@
 - [Grype](https://github.com/anchore/grype)
 
 ## Documentación
-- *[Añadir docs específicas del tema]*
+- [SBOM Overview (CISA)](https://www.cisa.gov/sbom)
+- [NTIA SBOM Documentation](https://www.ntia.gov/page/software-bill-materials)
+- [CycloneDX Specification](https://cyclonedx.org/specification/overview/)
+- [SPDX Specification](https://spdx.dev/specifications/)
+- [Syft Documentation](https://github.com/anchore/syft#readme)
 
 ## Artículos y Blogs
-- *[Añadir artículos relevantes]*
+- [A Practical Guide to SBOMs](https://www.linuxfoundation.org/blog/blog/a-summary-of-census-ii-open-source-software-application-libraries-the-world-depends-on)
+- [SBOM at Scale (Chainguard)](https://chainguard.dev/unchained/sbom-at-scale)
+- [Why SBOMs Are Critical](https://security.googleblog.com/2023/05/open-sourcing-our-progress-on-vsa.html)
+- [SBOM Formats Comparison](https://www.aquasec.com/cloud-native-academy/supply-chain-security/sbom/)
+
+## Comunidad y Recursos
+- [r/netsec](https://www.reddit.com/r/netsec/)
+- [OWASP Slack](https://owasp.org/slack/invite)
+- [Cloud Native Security Day](https://events.linuxfoundation.org/cloud-native-securitycon/)
+- [Security.txt](https://securitytxt.org/)

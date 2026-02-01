@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Optimiza el rendimiento de tus aplicaciones Python. Profiling, benchmarking, técnicas de optimización, Cython, NumPy vectorization, caching y análisis de complejidad algorítmica.
+
+**Conceptos clave**: Profiling (cProfile, py-spy), benchmarking, optimización de memoria, Cython, Numba JIT, vectorización, caching.
 
 ## 🎯 Objetivos de Aprendizaje
 

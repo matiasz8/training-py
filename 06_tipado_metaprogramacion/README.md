@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Explora el sistema de tipado estático de Python y metaprogramación avanzada. Type hints, Protocols, metaclases, descriptores y manipulación de AST. Escribe código más robusto y expresivo.
+
+**Conceptos clave**: Type hints, generics, Protocols, TypedDict, metaclases, descriptores, AST, mypy, Pyright.
 
 ## 🎯 Objetivos de Aprendizaje
 

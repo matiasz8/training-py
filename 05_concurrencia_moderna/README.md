@@ -2,7 +2,9 @@
 
 ## 📋 Descripción
 
-*[Por completar: Descripción general del módulo]*
+Aprende a escribir código concurrente y paralelo en Python. Cubre asyncio, threading, multiprocessing, y las nuevas características de Python 3.13+ como free-threading y subinterpreters.
+
+**Conceptos clave**: asyncio, coroutines, threading, multiprocessing, GIL, free-threading (PEP 703), subinterpreters, TaskGroups.
 
 ## 🎯 Objetivos de Aprendizaje
 
