@@ -63,17 +63,19 @@ Introducido como parte de la evolución continua de Python hacia un lenguaje má
 Ver archivo [references/links.md](references/links.md) para documentación completa, tutoriales y recursos.
 
 **Documentación Oficial**:
-- [Python Docs: Comprehensions](https://docs.python.org/3/)
 
+- [Python Docs: Comprehensions](https://docs.python.org/3/)
 
 ## 5. ✏️ Tarea de Práctica
 
 ### Nivel Básico ⭐
+
 **Objetivo**: Implementar uso básico de Comprehensions
 
 Ver `exercises/basic_exercise.py` para enunciado completo.
 
 **Criterios de éxito**:
+
 - Código ejecuta sin errores
 - Implementación correcta de conceptos básicos
 - Tests básicos pasan
@@ -108,6 +110,7 @@ Ver `exercises/advanced_exercise.py` para enunciado completo.
 - Best practice recomendada por la comunidad
 
 ### Puntos Clave
+
 1. Simplifica código y mejora legibilidad
 2. Estandarizado y bien documentado
 3. Compatible con tooling moderno (mypy, pylint, etc.)
