@@ -2,6 +2,123 @@
 
 > Sistema modular de aprendizaje avanzado de Python actualizado a las tecnologías más modernas de 2026
 
+---
+
+## 🎯 Guía de navegación rápida
+
+Este README ahora cumple dos funciones: 
+1) **Hub de entrada** (para entender rápidamente cómo está armado el training), y 
+2) **Documento de detalle** (todo el contenido técnico original, más abajo).
+
+Si es tu primera vez aquí, sigue este orden:
+- 🗺️ Roadmap de Aprendizaje (Hub)
+- 📚 Estructura del Programa (Hub)
+- 🧩 Resumen de cada módulo (Hub)
+- 🚀 Inicio Rápido (Hub)
+- 📖 Documentación Completa (Hub)
+
+---
+
+## 🗺️ Roadmap de Aprendizaje (Hub)
+
+```text
+FASE 1: Base (4-6 semanas)
+01_fundamentos_python → 02_python_intermedio → 03_poo_basica_intermedia
+
+FASE 2: Núcleo técnico (6-8 semanas)
+04_cpython_internals_avanzado → 05_concurrencia_moderna → 06_tipado_metaprogramacion
+
+FASE 3: Ingeniería de software (8-10 semanas)
+07_patrones_diseno → 08_arquitectura_aplicaciones → 09_testing_qa → 10_performance_optimizacion
+
+FASE 4: Stack moderno 2026 (8-12 semanas)
+11_tooling_moderno_2026 → 12_fastapi_completo → 13_ecosistema_backend → 14_python_avanzado_2026 → 15_data_science_basico → 16_security_moderna
+```
+
+**Tiempo total estimado:** 7-10 meses, adaptable a tu ritmo.
+
+---
+
+## 📚 Estructura del Programa (Hub)
+
+```text
+training-python/
+├── 01...16_*/         → módulos del plan de estudio
+├── scripts/           → automatizaciones (incluye tracking de progreso)
+├── GETTING_STARTED.md → setup paso a paso
+├── STATUS.md          → estado global del programa
+├── pyproject.toml     → tooling/dependencias
+└── README.md          → mapa general + detalle completo
+```
+
+Flujo sugerido por tema:
+
+```text
+README del tema → examples → exercises → my_solution → tests → reflexión
+```
+
+---
+
+## 🧩 Resumen de cada módulo (Hub)
+
+| Módulo | Qué aprendes |
+|---|---|
+| [01_fundamentos_python](01_fundamentos_python/) | Base sólida del lenguaje |
+| [02_python_intermedio](02_python_intermedio/) | Flujo, archivos, excepciones, generadores |
+| [03_poo_basica_intermedia](03_poo_basica_intermedia/) | Diseño orientado a objetos aplicable |
+| [04_cpython_internals_avanzado](04_cpython_internals_avanzado/) | Internals, GIL/free-threading, subinterpreters |
+| [05_concurrencia_moderna](05_concurrencia_moderna/) | Threading, multiprocessing, asyncio moderno |
+| [06_tipado_metaprogramacion](06_tipado_metaprogramacion/) | Tipado avanzado y metaprogramación |
+| [07_patrones_diseno](07_patrones_diseno/) | Patrones para diseño robusto |
+| [08_arquitectura_aplicaciones](08_arquitectura_aplicaciones/) | Arquitectura modular y escalable |
+| [09_testing_qa](09_testing_qa/) | Testing y calidad profesional |
+| [10_performance_optimizacion](10_performance_optimizacion/) | Profiling y optimización práctica |
+| [11_tooling_moderno_2026](11_tooling_moderno_2026/) | uv, Ruff, type checking moderno |
+| [12_fastapi_completo](12_fastapi_completo/) | APIs modernas listas para producción |
+| [13_ecosistema_backend](13_ecosistema_backend/) | Integración backend e infraestructura |
+| [14_python_avanzado_2026](14_python_avanzado_2026/) | PyO3 y desarrollo asistido por IA |
+| [15_data_science_basico](15_data_science_basico/) | Fundamentos de data science con Python |
+| [16_security_moderna](16_security_moderna/) | Seguridad moderna de software y supply chain |
+
+---
+
+## 🚀 Inicio Rápido (Hub)
+
+### 1) Documentación esencial
+- [GETTING_STARTED.md](GETTING_STARTED.md)
+- [STATUS.md](STATUS.md)
+- [README.md](README.md)
+
+### 2) Setup rápido
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv venv
+source .venv/bin/activate  # Linux/Mac
+# .venv\Scripts\activate  # Windows
+uv pip install -e ".[dev,profiling,ai,pyo3,security]"
+pre-commit install
+uv run scripts/progress.py
+```
+
+### 3) Primer módulo
+```bash
+cd 01_fundamentos_python
+cat README.md
+```
+
+---
+
+## 📖 Documentación Completa (Hub)
+
+- [GETTING_STARTED.md](GETTING_STARTED.md): instalación y arranque
+- [STATUS.md](STATUS.md): seguimiento de avance
+- [scripts/progress.py](scripts/progress.py): reporte automático de progreso
+- [pyproject.toml](pyproject.toml): configuración del entorno y herramientas
+
+---
+
+## 📘 Detalle completo del programa (contenido original)
+
 ## 📖 Descripción
 
 **Python Erudito** es un proyecto de autoaprendizaje estructurado que cubre desde fundamentos hasta temas avanzados de Python, incluyendo las últimas innovaciones de 2026: free-threading sin GIL (PEP 703), tooling basado en Rust (uv, Ruff), extensiones con PyO3, desarrollo asistido por IA, y arquitectura de seguridad moderna.
