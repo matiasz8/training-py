@@ -1,15 +1,21 @@
-"""
-Ejemplo básico de 07 Gc Thread Safe.
-"""
+import threading
+from queue import SimpleQueue
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def worker(queue: SimpleQueue[int], number: int) -> None:
+    queue.put(number * number)
+
+
+def main() -> None:
+    queue: SimpleQueue[int] = SimpleQueue()
+    threads = [threading.Thread(target=worker, args=(queue, i)) for i in range(5)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    values = [queue.get() for _ in range(5)]
+    print(sorted(values))
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

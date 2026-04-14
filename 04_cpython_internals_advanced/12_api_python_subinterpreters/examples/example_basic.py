@@ -1,15 +1,10 @@
-"""
-Ejemplo básico de 12 Api Python Subinterpreters.
-"""
+def run_in_subinterpreter(script: str) -> str:
+    return f"Executing in isolated runtime: {script[:30]}..."
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    print(run_in_subinterpreter("print('hello from subinterpreter')"))
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

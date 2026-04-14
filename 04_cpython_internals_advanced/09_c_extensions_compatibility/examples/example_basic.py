@@ -1,15 +1,24 @@
-"""
-Ejemplo básico de 09 C Extensions Compatibility.
-"""
+from dataclasses import dataclass
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@dataclass
+class ExtensionCheck:
+    name: str
+    gil_safe: bool
+
+
+def classify_extension(name: str, gil_safe: bool) -> ExtensionCheck:
+    return ExtensionCheck(name=name, gil_safe=gil_safe)
+
+
+def main() -> None:
+    checks = [
+        classify_extension("numpy", True),
+        classify_extension("legacy_ext", False),
+    ]
+    for check in checks:
+        print(f"{check.name}: gil_safe={check.gil_safe}")
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

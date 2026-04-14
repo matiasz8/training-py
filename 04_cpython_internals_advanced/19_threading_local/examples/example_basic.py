@@ -1,15 +1,17 @@
-"""
-Ejemplo básico de 19 Threading Local.
-"""
+import threading
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+storage = threading.local()
+
+
+def set_value(value: str) -> str:
+    storage.tag = value
+    return storage.tag
+
+
+def main() -> None:
+    print(set_value("main-thread"))
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

@@ -1,15 +1,26 @@
-"""
-Ejemplo básico de 16 Atomic Operations.
-"""
+import threading
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Counter:
+    def __init__(self) -> None:
+        self._value = 0
+        self._lock = threading.Lock()
+
+    def increment(self) -> None:
+        with self._lock:
+            self._value += 1
+
+    @property
+    def value(self) -> int:
+        return self._value
+
+
+def main() -> None:
+    counter = Counter()
+    for _ in range(1000):
+        counter.increment()
+    print(counter.value)
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

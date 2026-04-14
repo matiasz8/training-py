@@ -1,15 +1,10 @@
-"""
-Ejemplo básico de 11 Api C Subinterpreters.
-"""
+def build_c_api_call(interpreter_id: int) -> str:
+    return f"Py_NewInterpreterFromConfig -> id={interpreter_id}"
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    print(build_c_api_call(2))
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

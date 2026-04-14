@@ -1,15 +1,17 @@
-"""
-Ejemplo básico de 22 Reference Counting.
-"""
+import sys
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def refcount_of(value: object) -> int:
+    return sys.getrefcount(value)
+
+
+def main() -> None:
+    sample: list[int] = [1, 2, 3]
+    before = refcount_of(sample)
+    alias = sample
+    after = refcount_of(sample)
+    print(f"before={before}, after_alias={after}, same={alias is sample}")
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

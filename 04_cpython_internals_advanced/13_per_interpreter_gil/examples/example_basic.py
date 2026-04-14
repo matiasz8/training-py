@@ -1,15 +1,23 @@
-"""
-Ejemplo básico de 13 Per Interpreter Gil.
-"""
+from dataclasses import dataclass
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@dataclass
+class RuntimeMode:
+    name: str
+    parallel_bytecode: bool
+
+
+def compare_modes() -> list[RuntimeMode]:
+    return [
+        RuntimeMode("legacy-global-gil", False),
+        RuntimeMode("per-interpreter-gil", True),
+    ]
+
+
+def main() -> None:
+    for mode in compare_modes():
+        print(f"{mode.name}: parallel_bytecode={mode.parallel_bytecode}")
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

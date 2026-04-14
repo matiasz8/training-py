@@ -1,15 +1,19 @@
-"""
-Ejemplo básico de 15 Communication Channels.
-"""
+from queue import Queue
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def send_message(channel: Queue[str], payload: str) -> None:
+    channel.put(payload)
+
+
+def receive_message(channel: Queue[str]) -> str:
+    return channel.get()
+
+
+def main() -> None:
+    channel: Queue[str] = Queue()
+    send_message(channel, "ready")
+    print(receive_message(channel))
 
 
 if __name__ == "__main__":
-    example_function()
+    main()

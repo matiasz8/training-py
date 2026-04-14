@@ -1,15 +1,24 @@
-"""
-Ejemplo básico de 26 Migration Strategies.
-"""
+from dataclasses import dataclass
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@dataclass
+class MigrationStep:
+    name: str
+    done: bool
+
+
+def build_plan() -> list[MigrationStep]:
+    return [
+        MigrationStep("Audit shared mutable state", True),
+        MigrationStep("Add synchronization primitives", True),
+        MigrationStep("Run stress tests", False),
+    ]
+
+
+def main() -> None:
+    for step in build_plan():
+        print(f"[{ 'x' if step.done else ' ' }] {step.name}")
 
 
 if __name__ == "__main__":
-    example_function()
+    main()
