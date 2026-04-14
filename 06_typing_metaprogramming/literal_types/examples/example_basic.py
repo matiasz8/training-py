@@ -1,15 +1,16 @@
-"""
-Ejemplo básico de Literal Types.
-"""
+from typing import Literal
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+Mode = Literal['read', 'write']
 
 
-if __name__ == "__main__":
-    example_function()
+def open_mode(mode: Mode) -> str:
+    return f'mode={mode}'
+
+
+def main() -> None:
+    print(open_mode('read'))
+
+
+if __name__ == '__main__':
+    main()

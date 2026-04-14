@@ -1,15 +1,14 @@
-"""
-Ejemplo básico de Ast Basics.
-"""
+import ast
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def count_nodes(source: str) -> int:
+    tree = ast.parse(source)
+    return sum(1 for _ in ast.walk(tree))
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    print(count_nodes('x = 1\nprint(x)'))
+
+
+if __name__ == '__main__':
+    main()

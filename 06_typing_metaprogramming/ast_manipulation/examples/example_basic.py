@@ -1,15 +1,19 @@
-"""
-Ejemplo básico de Ast Manipulation.
-"""
+import ast
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class ReplaceName(ast.NodeTransformer):
+    def visit_Name(self, node: ast.Name) -> ast.AST:
+        if node.id == 'old_value':
+            return ast.copy_location(ast.Name(id='new_value', ctx=node.ctx), node)
+        return node
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    tree = ast.parse('old_value = 10\nprint(old_value)')
+    updated = ReplaceName().visit(tree)
+    ast.fix_missing_locations(updated)
+    print(ast.unparse(updated))
+
+
+if __name__ == '__main__':
+    main()

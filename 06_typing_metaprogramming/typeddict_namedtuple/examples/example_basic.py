@@ -1,15 +1,21 @@
-"""
-Ejemplo básico de Typeddict Namedtuple.
-"""
+from typing import TypedDict, NamedTuple
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class User(TypedDict):
+    name: str
+    age: int
 
 
-if __name__ == "__main__":
-    example_function()
+class Point(NamedTuple):
+    x: int
+    y: int
+
+
+def main() -> None:
+    user: User = {'name': 'Ada', 'age': 32}
+    point = Point(3, 5)
+    print(user['name'], point.x + point.y)
+
+
+if __name__ == '__main__':
+    main()

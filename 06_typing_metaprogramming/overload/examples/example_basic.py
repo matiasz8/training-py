@@ -1,15 +1,24 @@
-"""
-Ejemplo básico de Overload.
-"""
+from typing import overload
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@overload
+def stringify(value: int) -> str: ...
 
 
-if __name__ == "__main__":
-    example_function()
+@overload
+def stringify(value: list[int]) -> str: ...
+
+
+def stringify(value):
+    if isinstance(value, list):
+        return ','.join(str(x) for x in value)
+    return str(value)
+
+
+def main() -> None:
+    print(stringify(10))
+    print(stringify([1, 2, 3]))
+
+
+if __name__ == '__main__':
+    main()

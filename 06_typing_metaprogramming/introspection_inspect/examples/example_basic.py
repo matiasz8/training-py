@@ -1,15 +1,15 @@
-"""
-Ejemplo básico de Introspection Inspect.
-"""
+import inspect
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def compute(a: int, b: int) -> int:
+    return a + b
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    signature = inspect.signature(compute)
+    print(signature)
+    print(inspect.getdoc(compute))
+
+
+if __name__ == '__main__':
+    main()

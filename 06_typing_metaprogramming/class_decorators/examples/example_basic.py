@@ -1,15 +1,21 @@
-"""
-Ejemplo básico de Class Decorators.
-"""
+def add_repr(cls):
+    def __repr__(self):
+        attrs = ', '.join(f"{k}={v!r}" for k, v in self.__dict__.items())
+        return f"{cls.__name__}({attrs})"
+
+    cls.__repr__ = __repr__
+    return cls
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@add_repr
+class Config:
+    def __init__(self, env: str) -> None:
+        self.env = env
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    print(Config('dev'))
+
+
+if __name__ == '__main__':
+    main()

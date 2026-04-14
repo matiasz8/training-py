@@ -1,15 +1,10 @@
-"""
-Ejemplo básico de Basic Type Hints.
-"""
+def add(a: int, b: int) -> int:
+    return a + b
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    print(add(2, 3))
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

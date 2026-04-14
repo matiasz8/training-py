@@ -1,15 +1,20 @@
-"""
-Ejemplo básico de Advanced Metaclasses.
-"""
+class ValidateAttrsMeta(type):
+    def __new__(mcls, name, bases, namespace):
+        required = namespace.get('required_attrs', [])
+        for attr in required:
+            if attr not in namespace:
+                raise TypeError(f'missing required attr: {attr}')
+        return super().__new__(mcls, name, bases, namespace)
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Plugin(metaclass=ValidateAttrsMeta):
+    required_attrs = ['name']
+    name = 'demo'
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    print(Plugin.name)
+
+
+if __name__ == '__main__':
+    main()

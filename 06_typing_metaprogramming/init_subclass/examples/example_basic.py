@@ -1,15 +1,22 @@
-"""
-Ejemplo básico de Init Subclass.
-"""
+class Base:
+    registry: list[type] = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        Base.registry.append(cls)
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class ChildA(Base):
+    pass
 
 
-if __name__ == "__main__":
-    example_function()
+class ChildB(Base):
+    pass
+
+
+def main() -> None:
+    print([cls.__name__ for cls in Base.registry])
+
+
+if __name__ == '__main__':
+    main()

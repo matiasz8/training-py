@@ -1,15 +1,12 @@
-"""
-Ejemplo básico de Dynamic Classes.
-"""
+def build_model(name: str, fields: dict[str, object]) -> type:
+    return type(name, (), fields)
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    User = build_model('User', {'role': 'admin'})
+    user = User()
+    print(user.role)
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

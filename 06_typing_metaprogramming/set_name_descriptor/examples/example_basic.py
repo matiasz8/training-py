@@ -1,15 +1,25 @@
-"""
-Ejemplo básico de Set Name Descriptor.
-"""
+class Descriptor:
+    def __set_name__(self, owner: type, name: str) -> None:
+        self.private_name = f'_{name}'
+
+    def __get__(self, instance, owner=None):
+        if instance is None:
+            return self
+        return getattr(instance, self.private_name)
+
+    def __set__(self, instance, value):
+        setattr(instance, self.private_name, value)
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Model:
+    field = Descriptor()
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    item = Model()
+    item.field = 'value'
+    print(item.field)
+
+
+if __name__ == '__main__':
+    main()

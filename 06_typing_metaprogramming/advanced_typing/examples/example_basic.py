@@ -1,15 +1,13 @@
-"""
-Ejemplo básico de Advanced Typing.
-"""
+from typing import Callable, Iterable
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def apply_all(values: Iterable[int], fn: Callable[[int], int]) -> list[int]:
+    return [fn(value) for value in values]
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    print(apply_all([1, 2, 3], lambda x: x * 10))
+
+
+if __name__ == '__main__':
+    main()

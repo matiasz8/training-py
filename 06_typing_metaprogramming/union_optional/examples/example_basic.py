@@ -1,15 +1,14 @@
-"""
-Ejemplo básico de Union Optional.
-"""
+from typing import Optional
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def normalize_name(value: Optional[str]) -> str:
+    return value.strip().title() if value else 'Unknown'
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    print(normalize_name('  lin  '))
+    print(normalize_name(None))
+
+
+if __name__ == '__main__':
+    main()

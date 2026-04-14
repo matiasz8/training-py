@@ -1,15 +1,14 @@
-"""
-Ejemplo básico de Runtime Type Checking.
-"""
+def validate_port(value: object) -> int:
+    if not isinstance(value, int):
+        raise TypeError('port must be int')
+    if value <= 0 or value > 65535:
+        raise ValueError('invalid port range')
+    return value
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    print(validate_port(8080))
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

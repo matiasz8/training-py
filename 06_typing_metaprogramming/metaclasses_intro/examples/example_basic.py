@@ -1,15 +1,24 @@
-"""
-Ejemplo básico de Metaclasses Intro.
-"""
+class RegistryMeta(type):
+    registry: dict[str, type] = {}
+
+    def __new__(mcls, name, bases, namespace):
+        cls = super().__new__(mcls, name, bases, namespace)
+        if name != 'Base':
+            mcls.registry[name] = cls
+        return cls
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Base(metaclass=RegistryMeta):
+    pass
 
 
-if __name__ == "__main__":
-    example_function()
+class Service(Base):
+    pass
+
+
+def main() -> None:
+    print(sorted(RegistryMeta.registry.keys()))
+
+
+if __name__ == '__main__':
+    main()

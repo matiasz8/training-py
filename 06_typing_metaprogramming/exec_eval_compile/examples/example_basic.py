@@ -1,15 +1,11 @@
-"""
-Ejemplo básico de Exec Eval Compile.
-"""
+def safe_eval(expression: str) -> int:
+    code = compile(expression, '<expr>', 'eval')
+    return eval(code, {}, {})
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    print(safe_eval('2 + 3 * 4'))
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()
