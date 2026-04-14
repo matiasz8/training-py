@@ -1,39 +1,35 @@
-"""
-Tests para mutation testing
-"""
+"""Tests for the Mutation Testing exercise."""
+
+from __future__ import annotations
+
+import importlib.util
+from pathlib import Path
 
 import pytest
-from pathlib import Path
-import sys
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
+MODULE_PATH = Path(__file__).resolve().parents[1] / "my_solution" / "pricing.py"
 
 
-class TestMutationTesting:
-    """Suite de tests para mutation testing."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+def load_solution_module():
+    if not MODULE_PATH.exists():
+        pytest.skip("Create my_solution/pricing.py before running the exercise tests.")
+    spec = importlib.util.spec_from_file_location("pricing", MODULE_PATH)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
+def test_apply_tax() -> None:
+    module = load_solution_module()
+    assert module.apply_tax(100, 0.21) == 121.0
 
 
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_apply_discount() -> None:
+    module = load_solution_module()
+    assert module.apply_discount(100, 0.10) == 90.0
+
+
+def test_final_price_discount_then_tax() -> None:
+    module = load_solution_module()
+    assert module.final_price(100, tax_rate=0.21, discount_rate=0.10) == 108.9

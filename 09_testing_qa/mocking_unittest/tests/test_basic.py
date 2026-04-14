@@ -1,39 +1,40 @@
-"""
-Tests para mocking unittest
-"""
+"""Tests for the Mocking with unittest.mock exercise."""
+
+from __future__ import annotations
+
+import importlib.util
+from pathlib import Path
+from unittest.mock import Mock
 
 import pytest
-from pathlib import Path
-import sys
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
+MODULE_PATH = Path(__file__).resolve().parents[1] / "my_solution" / "notifier.py"
 
 
-class TestMockingUnittest:
-    """Suite de tests para mocking unittest."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+def load_solution_module():
+    if not MODULE_PATH.exists():
+        pytest.skip("Create my_solution/notifier.py before running the exercise tests.")
+    spec = importlib.util.spec_from_file_location("notifier", MODULE_PATH)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
+def test_send_welcome_email_calls_gateway() -> None:
+    module = load_solution_module()
+    gateway = Mock()
+    gateway.deliver.return_value = True
+    notifier = module.Notifier(gateway)
+
+    assert notifier.send_welcome_email("alice@example.com") is True
+    gateway.deliver.assert_called_once()
 
 
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_send_welcome_email_handles_gateway_failures() -> None:
+    module = load_solution_module()
+    gateway = Mock()
+    gateway.deliver.side_effect = RuntimeError("mail server unavailable")
+    notifier = module.Notifier(gateway)
+
+    assert notifier.send_welcome_email("alice@example.com") is False

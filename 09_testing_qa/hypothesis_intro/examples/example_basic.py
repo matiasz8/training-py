@@ -1,15 +1,18 @@
-"""
-Ejemplo básico de Hypothesis Intro.
-"""
+"""Small pure functions are a great fit for Hypothesis."""
+
+from __future__ import annotations
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def collapse_whitespace(value: str) -> str:
+    return " ".join(value.split())
+
+
+def normalize_title(value: str) -> str:
+    return collapse_whitespace(value).title()
 
 
 if __name__ == "__main__":
-    example_function()
+    samples = ["  hello   world  ", "multiple\nlines\tinside", " already clean "]
+    print("hypothesis intro example")
+    for sample in samples:
+        print(repr(sample), "->", repr(normalize_title(sample)))

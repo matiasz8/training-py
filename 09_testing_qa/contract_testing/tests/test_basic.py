@@ -1,39 +1,38 @@
-"""
-Tests para contract testing
-"""
+"""Tests for the Contract Testing exercise."""
+
+from __future__ import annotations
+
+import importlib.util
+from pathlib import Path
 
 import pytest
-from pathlib import Path
-import sys
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
+MODULE_PATH = Path(__file__).resolve().parents[1] / "my_solution" / "payment_contract.py"
 
 
-class TestContractTesting:
-    """Suite de tests para contract testing."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+def load_solution_module():
+    if not MODULE_PATH.exists():
+        pytest.skip("Create my_solution/payment_contract.py before running the exercise tests.")
+    spec = importlib.util.spec_from_file_location("payment_contract", MODULE_PATH)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
+def test_validate_payment_response_normalizes_status() -> None:
+    module = load_solution_module()
+    payload = {
+        "payment_id": "pay_123",
+        "status": "APPROVED",
+        "amount": 150.0,
+        "currency": "USD",
+    }
+    validated = module.validate_payment_response(payload)
+    assert validated["status"] == "approved"
 
 
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_validate_payment_response_requires_all_keys() -> None:
+    module = load_solution_module()
+    with pytest.raises(ValueError):
+        module.validate_payment_response({"payment_id": "pay_123"})

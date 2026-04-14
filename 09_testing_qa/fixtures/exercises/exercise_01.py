@@ -1,29 +1,14 @@
+"""Exercise: Fixtures.
+
+Goal:
+Create `my_solution/inventory_service.py` with a tiny inventory model.
+
+Requirements:
+- Create an `InventoryItem` dataclass with `sku`, `name`, and `stock`.
+- Create `InventoryService` with `add_stock`, `reserve_stock`, and `low_stock_items`.
+- `reserve_stock` must raise `LookupError` when the SKU is unknown.
+- `reserve_stock` must raise `ValueError` when requested quantity exceeds stock.
+
+Why this exercise matters:
+The test suite is intentionally written around shared setup so you can practice recognizing when a fixture improves readability.
 """
-Ejercicio: Fixtures
-
-Objetivo: Implementar y practicar fixtures
-
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
-
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
-"""
-
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
-
-
-def main():
-    """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
-    """
-    # TODO: Añade código de prueba aquí
-    pass
-
-
-if __name__ == "__main__":
-    main()

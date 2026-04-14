@@ -1,29 +1,12 @@
+"""Exercise: Hypothesis Introduction.
+
+Goal:
+Create `my_solution/text_normalizer.py`.
+
+Requirements:
+- `collapse_whitespace(value)` must replace any run of whitespace with a single space.
+- `normalize_title(value)` must call `collapse_whitespace` and return title-cased text.
+- Both functions must be idempotent.
+
+This topic is most useful when you write one or two example-based tests first and then add property-oriented checks.
 """
-Ejercicio: Hypothesis Intro
-
-Objetivo: Implementar y practicar hypothesis_intro
-
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
-
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
-"""
-
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
-
-
-def main():
-    """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
-    """
-    # TODO: Añade código de prueba aquí
-    pass
-
-
-if __name__ == "__main__":
-    main()

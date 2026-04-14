@@ -1,39 +1,35 @@
-"""
-Tests para test organization
-"""
+"""Tests for the Test Organization exercise."""
+
+from __future__ import annotations
+
+import importlib.util
+from pathlib import Path
 
 import pytest
-from pathlib import Path
-import sys
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
+MODULE_PATH = Path(__file__).resolve().parents[1] / "my_solution" / "user_service.py"
 
 
-class TestTestOrganization:
-    """Suite de tests para test organization."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+def load_solution_module():
+    if not MODULE_PATH.exists():
+        pytest.skip("Create my_solution/user_service.py before running the exercise tests.")
+    spec = importlib.util.spec_from_file_location("user_service", MODULE_PATH)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
+def test_create_and_list_active_users() -> None:
+    module = load_solution_module()
+    service = module.UserService()
+    service.create_user("bob@example.com")
+    service.create_user("alice@example.com")
+    assert service.active_emails() == ["alice@example.com", "bob@example.com"]
 
 
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_deactivate_missing_user_fails() -> None:
+    module = load_solution_module()
+    service = module.UserService()
+    with pytest.raises(LookupError):
+        service.deactivate_user("missing@example.com")

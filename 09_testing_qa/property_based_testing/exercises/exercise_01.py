@@ -1,29 +1,12 @@
+"""Exercise: Property-Based Testing.
+
+Goal:
+Create `my_solution/list_tools.py`.
+
+Requirements:
+- `rotate_list(values, steps)` rotates to the right.
+- `deduplicate_preserve_order(values)` removes duplicates while keeping first occurrence order.
+- Preserve invariants such as element counts, length expectations, and idempotence where appropriate.
+
+The baseline tests cover a few examples. Add property-oriented checks if you want a stronger safety net.
 """
-Ejercicio: Property Based Testing
-
-Objetivo: Implementar y practicar property_based_testing
-
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
-
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
-"""
-
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
-
-
-def main():
-    """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
-    """
-    # TODO: Añade código de prueba aquí
-    pass
-
-
-if __name__ == "__main__":
-    main()

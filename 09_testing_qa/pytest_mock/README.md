@@ -1,132 +1,46 @@
-# Pytest Mock
+# pytest-mock
 
-⏱️ **Tiempo estimado: 2-3 horas**
+Estimated time: 2 hours
 
-## 1. 📚 Definición
+## Definition
 
-**Pytest Mock** es un concepto fundamental en Python que permite a los desarrolladores escribir código más expresivo, mantenible y eficiente.
+Use the `mocker` fixture to patch collaborators in a concise pytest-native style.
 
-En Python, `pytest` proporciona una interfaz clara y pythónica para trabajar con este patrón. La implementación se basa en los principios de simplicidad y legibilidad que caracterizan al lenguaje.
+## What You Practice
 
-### Características Principales
+- Mocker fixture
+- Spy
+- Stub
+- Patch.object
 
-- **Sintaxis clara**: Diseñado para ser fácil de leer y escribir
-- **Integración nativa**: Forma parte del core de Python o biblioteca estándar
-- **Type-safe**: Compatible con type hints para mejor validación estática
-- **Eficiente**: Optimizado para rendimiento sin sacrificar legibilidad
+## Practical Applications
 
-La filosofía detrás de Pytest Mock se alinea con el Zen de Python: "Simple es mejor que complejo", "Explícito es mejor que implícito".
+- Service orchestration
+- time-dependent code
+- repository adapters
 
-## 2. 💡 Aplicación Práctica
+## Example Focus
 
-### Casos de Uso
+The runnable example in `examples/example_basic.py` shows one concrete way to apply pytest-mock in a small, self-contained scenario.
 
-1. **Desarrollo de aplicaciones**: Utilizado ampliamente en frameworks modernos como FastAPI, Django
-2. **Bibliotecas**: Componente esencial en librerías populares del ecosistema Python
-3. **Scripts y automatización**: Simplifica tareas comunes de programación
+## Why It Matters
 
-### Código Ejemplo
+This topic helps you decide what kind of feedback you need from a test and how to keep that feedback trustworthy as the codebase grows.
 
-```python
-# Ejemplo básico de Pytest Mock
-# Ver examples/ para código ejecutable completo
+## Practice Task
 
-# TODO: Ver archivo examples/basic_example.py
-# para implementación detallada con comentarios
-```
+Goal: Build a service that collaborates with a repository and a clock dependency.
 
-**Nota**: Revisa la carpeta `examples/` para código funcional y ejecutable.
+Success criteria:
+- Implement `ReportService.generate_daily_summary`.
+- Compose repository data with the current date.
+- Raise `LookupError` when the repository has no data for a day.
 
-## 3. 🤔 ¿Por Qué Es Importante?
+## References
 
-### Problema que Resuelve
+See `references/links.md` for official documentation, guides, and deeper reading.
 
-Antes de Pytest Mock, los desarrolladores enfrentaban desafíos relacionados con:
-- Complejidad innecesaria en el código
-- Falta de estandarización
-- Dificultad para mantener y escalar aplicaciones
+## Reflection Prompt
 
-### Solución y Beneficios
+After finishing the exercise, write down which parts of the workflow gave you the strongest confidence and which parts still feel too implicit.
 
-Pytest Mock proporciona:
-- ✅ **Código más limpio**: Sintaxis expresiva y legible
-- ✅ **Mejor mantenibilidad**: Patrones estandarizados que el equipo entiende
-- ✅ **Mayor productividad**: Menos código boilerplate, más funcionalidad
-- ✅ **Type safety**: Integración con sistema de tipos de Python
-
-### Inspiración e Historia
-
-Introducido como parte de la evolución continua de Python hacia un lenguaje más moderno y expresivo. La comunidad Python ha adoptado ampliamente este patrón, convirtiéndolo en una best practice estándar.
-
-## 4. 🔗 Referencias
-
-Ver archivo [references/links.md](references/links.md) para documentación completa, tutoriales y recursos.
-
-**Documentación Oficial**:
-- [Python Docs: Pytest Mock](https://docs.pytest.org/)
-
-
-## 5. ✏️ Tarea de Práctica
-
-### Nivel Básico ⭐
-**Objetivo**: Implementar uso básico de Pytest Mock
-
-Ver `exercises/basic_exercise.py` para enunciado completo.
-
-**Criterios de éxito**:
-- Código ejecuta sin errores
-- Implementación correcta de conceptos básicos
-- Tests básicos pasan
-
-### Nivel Intermedio ⭐⭐
-**Objetivo**: Aplicar Pytest Mock en escenario real
-
-Ver `exercises/intermediate_exercise.py` para enunciado completo.
-
-**Criterios de éxito**:
-- Manejo de casos edge
-- Validación de inputs
-- Tests intermedios pasan
-
-### Nivel Avanzado ⭐⭐⭐
-**Objetivo**: Implementación avanzada con type hints y optimización
-
-Ver `exercises/advanced_exercise.py` para enunciado completo.
-
-**Criterios de éxito**:
-- Type hints completos
-- Optimización de rendimiento
-- Todos los tests pasan (incluyendo avanzados)
-- Código production-ready
-
-## 6. 📝 Summary
-
-- Pytest Mock es fundamental en Python moderno
-- Proporciona sintaxis clara y expresiva
-- Ampliamente usado en el ecosistema Python
-- Integrado con type system y herramientas modernas
-- Best practice recomendada por la comunidad
-
-### Puntos Clave
-1. Simplifica código y mejora legibilidad
-2. Estandarizado y bien documentado
-3. Compatible con tooling moderno (mypy, pylint, etc.)
-4. Usado en frameworks populares
-5. Parte del path hacia código pythónico profesional
-
-## 7. 🧠 Mi Análisis Personal
-
-> ✍️ **Espacio para tu reflexión**
->
-> Después de completar este tema, reflexiona sobre:
-> - ¿Cómo aplicarías Pytest Mock en tus proyectos actuales?
-> - ¿Qué ventajas específicas ves para tu caso de uso?
-> - ¿Hay alternativas que considerarías? ¿Por qué?
-> - ¿Qué fue lo más desafiante al aprender este concepto?
-> - ¿Cómo lo explicarías a un colega?
->
-> Escribe tus observaciones, dudas y conclusiones aquí...
-
----
-
-**Próximo tema recomendado**: [Ver README del módulo](../README.md) para sugerencias de orden de estudio.

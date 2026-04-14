@@ -1,24 +1,13 @@
-# Referencias: Bdd Behave Optional
+# BDD with behave (optional) References
 
-## Documentación Oficial de Python
-- [Python Documentation](https://docs.python.org/3/)
-- [Python HOWTOs](https://docs.python.org/3/howto/index.html)
-- [Python FAQs](https://docs.python.org/3/faq/index.html)
+## Official Documentation
+- [behave docs](https://behave.readthedocs.io/en/stable/)
+- [Cucumber Gherkin reference](https://cucumber.io/docs/gherkin/reference/)
+- [Acceptance test patterns](https://martinfowler.com/bliki/AcceptanceTest.html)
 
-## Tutoriales
-- [Real Python](https://realpython.com/)
-- [Python.org Tutorial](https://docs.python.org/3/tutorial/)
+## Suggested Study Path
 
-## Libros Recomendados
-- "Fluent Python" by Luciano Ramalho
-- "Effective Python" by Brett Slatkin
-- "Python Cookbook" by David Beazley
+1. Read the official documentation entry that defines the core API or workflow.
+2. Run `examples/example_basic.py` and explain the outcome in your own words.
+3. Solve `exercises/exercise_01.py` and then adapt the test cases to cover one more edge case.
 
-## Videos
-- [PyCon Talks](https://www.youtube.com/results?search_query=pycon+bdd-behave-optional)
-- [Talk Python Podcast](https://talkpython.fm/)
-
-## Comunidad
-- [r/Python](https://www.reddit.com/r/Python/)
-- [Python Discord](https://discord.gg/python)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/python)

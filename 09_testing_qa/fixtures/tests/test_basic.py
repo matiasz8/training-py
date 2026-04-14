@@ -1,39 +1,47 @@
-"""
-Tests para fixtures
-"""
+"""Tests for the Fixtures exercise."""
+
+from __future__ import annotations
+
+import importlib.util
+from pathlib import Path
 
 import pytest
-from pathlib import Path
-import sys
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
+MODULE_PATH = Path(__file__).resolve().parents[1] / "my_solution" / "inventory_service.py"
 
 
-class TestFixtures:
-    """Suite de tests para fixtures."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+def load_solution_module():
+    if not MODULE_PATH.exists():
+        pytest.skip("Create my_solution/inventory_service.py before running the exercise tests.")
+    spec = importlib.util.spec_from_file_location("inventory_service", MODULE_PATH)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
+@pytest.fixture()
+def service():
+    module = load_solution_module()
+    item = module.InventoryItem(sku="kb", name="Keyboard", stock=5)
+    service = module.InventoryService(items={item.sku: item})
+    return module, service
 
 
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_add_stock(service) -> None:
+    _module, inventory_service = service
+    inventory_service.add_stock("kb", 3)
+    assert inventory_service.items["kb"].stock == 8
+
+
+def test_reserve_unknown_sku(service) -> None:
+    _module, inventory_service = service
+    with pytest.raises(LookupError):
+        inventory_service.reserve_stock("missing", 1)
+
+
+def test_low_stock_items(service) -> None:
+    _module, inventory_service = service
+    inventory_service.reserve_stock("kb", 3)
+    low_stock = inventory_service.low_stock_items(threshold=2)
+    assert [item.sku for item in low_stock] == ["kb"]

@@ -1,40 +1,41 @@
-# Módulo: Testing y Quality Assurance
+# Module: Testing and QA
 
-## 📋 Descripción
+## Description
 
-Domina el testing en Python con pytest. Testing unitario, integración, mocks, fixtures, property-based testing con hypothesis, mutation testing y CI/CD.
+Master Python testing with pytest and the surrounding quality ecosystem. This module covers unit testing, fixtures, mocking, coverage analysis, property-based testing, async testing, and CI-oriented quality gates.
 
-**Conceptos clave**: pytest, fixtures, mocking, parametrize, coverage, hypothesis, mutation testing, TDD, integration testing.
+**Key concepts**: pytest, fixtures, parametrization, mocking, coverage, Hypothesis, mutation testing, TDD, integration testing, contract testing.
 
-## 🎯 Objetivos de Aprendizaje
+## Learning Objectives
 
-- Objetivo 1
-- Objetivo 2
-- Objetivo 3
+- Build clear and reliable automated tests with pytest.
+- Choose the right testing technique for a given feedback loop.
+- Design exercises and examples that emphasize quality, confidence, and maintainability.
 
-## 📚 Contenido (16 Temas)
+## Content (16 Topics)
 
-1. [Pytest Fundamentos](pytest_fundamentos/)
+1. [Pytest Basics](pytest_basics/)
 2. [Fixtures](fixtures/)
 3. [Parametrize](parametrize/)
-4. [Mocking Unittest](mocking_unittest/)
-5. [Pytest Mock](pytest_mock/)
+4. [Mocking with unittest.mock](mocking_unittest/)
+5. [pytest-mock](pytest_mock/)
 6. [Coverage Analysis](coverage_analysis/)
-7. [Hypothesis Intro](hypothesis_intro/)
-8. [Property Based Testing](property_based_testing/)
+7. [Hypothesis Introduction](hypothesis_intro/)
+8. [Property-Based Testing](property_based_testing/)
 9. [Mutation Testing](mutation_testing/)
-10. [Pytest Asyncio](pytest_asyncio/)
+10. [pytest-asyncio](pytest_asyncio/)
 11. [Integration Testing](integration_testing/)
 12. [Contract Testing](contract_testing/)
-13. [Tdd Basics](tdd_basics/)
-14. [Bdd Behave Optional](bdd_behave_optional/)
+13. [TDD Basics](tdd_basics/)
+14. [BDD with behave (optional)](bdd_behave_optional/)
 15. [Test Organization](test_organization/)
-16. [Ci Testing](ci_testing/)
+16. [CI Testing](ci_testing/)
 
-## ⏱️ Tiempo Estimado Total
+## Estimated Total Time
 
-**32-48 horas**
+**32-48 hours**
 
-## 🚀 Orden Recomendado
+## Recommended Order
 
-Seguir el orden numérico para una progresión lógica.
+Follow the numbered list to move from the testing basics to more specialized validation strategies.
+

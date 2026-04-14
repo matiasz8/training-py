@@ -1,29 +1,13 @@
+"""Exercise: Contract Testing.
+
+Goal:
+Create `my_solution/payment_contract.py`.
+
+Requirements:
+- `validate_payment_response(payload)` ensures required fields exist.
+- Required keys: `payment_id`, `status`, `amount`, `currency`.
+- Return a normalized copy of the payload with lowercase status.
+- Raise `ValueError` when keys are missing.
+
+The baseline tests model a consumer-side contract.
 """
-Ejercicio: Contract Testing
-
-Objetivo: Implementar y practicar contract_testing
-
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
-
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
-"""
-
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
-
-
-def main():
-    """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
-    """
-    # TODO: Añade código de prueba aquí
-    pass
-
-
-if __name__ == "__main__":
-    main()

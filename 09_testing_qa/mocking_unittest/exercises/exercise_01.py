@@ -1,29 +1,13 @@
+"""Exercise: Mocking with unittest.mock.
+
+Goal:
+Create `my_solution/notifier.py`.
+
+Requirements:
+- Add a `Notification` dataclass with `recipient`, `subject`, and `body`.
+- Implement `Notifier(gateway)`.
+- Implement `send_welcome_email(recipient)` that builds a notification and calls `gateway.deliver`.
+- If the gateway raises `RuntimeError`, return `False`.
+
+The provided tests use `Mock` and `patch` to verify collaboration behavior.
 """
-Ejercicio: Mocking Unittest
-
-Objetivo: Implementar y practicar mocking_unittest
-
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
-
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
-"""
-
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
-
-
-def main():
-    """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
-    """
-    # TODO: Añade código de prueba aquí
-    pass
-
-
-if __name__ == "__main__":
-    main()
