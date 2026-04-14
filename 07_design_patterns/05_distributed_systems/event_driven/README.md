@@ -1,95 +1,94 @@
 # Event Driven
 
-Estimated time: 2-3 horas**
+Tiempo estimado: 2-3 horas
+## 1. Definición
 
-## 1. Definition
+**Event Driven** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
 
-**Event Driven** is an important Python topic for building maintainable, testable, and production-ready systems.
+En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
 
-In practice, this topic gives you a clear way to model behavior, reason about trade-offs, and implement reliable code.
+### Características Clave
 
-### Key Characteristics
+- **Claridad**: promueve código legible y una intención explícita.
+- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
+- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
+- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
 
-- **Clarity**: promotes readable code and explicit intent.
-- **Composability**: works well with other Python patterns and tools.
-- **Testability**: encourages behavior that can be validated with automated tests.
-- **Practical focus**: designed for real project scenarios, not only toy examples.
+## 2. Aplicación Práctica
 
-## 2. Practical Application
+### Casos de Uso
 
-### Use Cases
+1. **Desarrollo de aplicaciones**: aplicar patrones de event driven en servicios backend y herramientas internas.
+2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
+3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
 
-1. **Application development**: apply event driven patterns in backend services and internal tools.
-2. **Library design**: implement reusable building blocks with predictable behavior.
-3. **Automation workflows**: make scripts and jobs easier to evolve and verify over time.
-
-### Code Example
+### Ejemplo de Código
 
 ```python
-# See examples/example_basic.py for executable code
-# related to event driven
+# Ver examples/example_basic.py para código ejecutable
+# relacionado con event driven
 ```
 
-Run `examples/example_basic.py` to inspect the baseline behavior before solving the exercise.
+Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
 
-## 3. Why Is It Important?
+## 3. ¿Por Qué Es Importante?
 
-### Problem It Solves
+### Problema que Resuelve
 
-Without a clear approach to event driven, teams often face:
+Sin un enfoque claro de event driven, los equipos suelen enfrentar:
 
-- hidden assumptions and fragile behavior,
-- difficult refactors,
-- low confidence in changes.
+- supuestos ocultos y comportamiento frágil,
+- refactors riesgosos,
+- baja confianza al introducir cambios.
 
-### Solution and Benefits
+### Solución y Beneficios
 
-Working with **Event Driven** helps teams achieve:
+Trabajar con **Event Driven** ayuda a lograr:
 
-- cleaner code organization,
-- faster debugging and onboarding,
-- better test coverage and safer releases,
-- stronger long-term maintainability.
+- mejor organización del código,
+- debugging y onboarding más rápidos,
+- mayor cobertura de pruebas y releases más seguros,
+- mantenibilidad sostenible en el tiempo.
 
-## 4. References
+## 4. Referencias
 
-See [references/links.md](references/links.md) for official documentation and deeper reading.
+Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
 
-## 5. Practice Task
+## 5. Tarea Práctica
 
-Use `exercises/exercise_01.py` as the main task entry point.
+Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
 
-### Basic Level
+### Nivel Básico
 
-- Implement the core functionality requested by the exercise.
-- Make the baseline tests pass.
+- Implementar la funcionalidad principal solicitada.
+- Hacer pasar las pruebas base.
 
-### Intermediate Level
+### Nivel Intermedio
 
-- Cover edge cases and invalid inputs.
-- Improve naming and structure for readability.
+- Cubrir casos borde e inputs inválidos.
+- Mejorar nombres y estructura para legibilidad.
 
-### Advanced Level
+### Nivel Avanzado
 
-- Add robust error handling and type hints where appropriate.
-- Extend tests with additional scenario coverage.
+- Agregar manejo de errores robusto y type hints cuando corresponda.
+- Extender la cobertura con escenarios adicionales.
 
-### Success Criteria
+### Criterios de Éxito
 
-- The solution works correctly for nominal and edge cases.
-- Test suite in `tests/test_basic.py` passes.
-- The implementation is clear enough for another learner to review.
+- La solución funciona para casos nominales y casos borde.
+- La suite de `tests/test_basic.py` pasa correctamente.
+- La implementación es lo suficientemente clara para revisión por pares.
 
-## 6. Summary
+## 6. Resumen
 
-- Event Driven strengthens your Python engineering fundamentals.
-- It improves code quality, testability, and maintainability.
-- It is directly applicable to real-world backend and automation work.
+- Event Driven fortalece fundamentos de ingeniería en Python.
+- Mejora calidad de código, testeabilidad y mantenibilidad.
+- Es directamente aplicable a proyectos backend y de automatización.
 
-## 7. Reflection Prompt
+## 7. Prompt de Reflexión
 
-After completing this topic, reflect on:
+Después de completar este tema, reflexiona sobre:
 
-- Which design decisions made your solution easier to test?
-- Which edge case was most important to model?
-- How would you apply this topic in your current projects?
+- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
+- ¿Qué caso borde fue más importante modelar?
+- ¿Cómo aplicarías este tema en tus proyectos actuales?
