@@ -1,15 +1,20 @@
-"""
-Ejemplo básico de Composition Vs Inheritance.
-"""
+class Engine:
+    def start(self) -> str:
+        return 'Engine started'
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Car:
+    def __init__(self, engine: Engine) -> None:
+        self.engine = engine
+
+    def drive(self) -> str:
+        return f"{self.engine.start()} and car is moving"
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    car = Car(Engine())
+    print(car.drive())
+
+
+if __name__ == '__main__':
+    main()

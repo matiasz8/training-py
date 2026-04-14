@@ -1,15 +1,20 @@
-"""
-Ejemplo básico de Basic Inheritance.
-"""
+class Employee:
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+    def role(self) -> str:
+        return 'Employee'
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Manager(Employee):
+    def role(self) -> str:
+        return 'Manager'
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    person = Manager('Grace')
+    print(person.name, person.role())
+
+
+if __name__ == '__main__':
+    main()

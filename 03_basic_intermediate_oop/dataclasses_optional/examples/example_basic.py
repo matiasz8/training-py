@@ -1,15 +1,17 @@
-"""
-Ejemplo básico de Dataclasses Optional.
-"""
+from dataclasses import dataclass
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@dataclass
+class Ticket:
+    id: int
+    title: str
+    resolved: bool = False
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    ticket = Ticket(101, 'Fix login bug')
+    print(ticket)
+
+
+if __name__ == '__main__':
+    main()

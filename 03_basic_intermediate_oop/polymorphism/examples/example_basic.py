@@ -1,15 +1,27 @@
-"""
-Ejemplo básico de Polymorphism.
-"""
+class Notification:
+    def send(self, message: str) -> str:
+        raise NotImplementedError
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class EmailNotification(Notification):
+    def send(self, message: str) -> str:
+        return f"Email sent: {message}"
 
 
-if __name__ == "__main__":
-    example_function()
+class SmsNotification(Notification):
+    def send(self, message: str) -> str:
+        return f"SMS sent: {message}"
+
+
+def dispatch(notification: Notification, message: str) -> str:
+    return notification.send(message)
+
+
+def main() -> None:
+    channels: list[Notification] = [EmailNotification(), SmsNotification()]
+    for channel in channels:
+        print(dispatch(channel, 'Build completed'))
+
+
+if __name__ == '__main__':
+    main()
