@@ -1,132 +1,95 @@
 # Graphql Schemas Optional
 
-⏱️ **Tiempo estimado: 2-3 horas**
+Estimated time: 2-3 horas**
 
-## 1. 📚 Definición
+## 1. Definition
 
-**Graphql Schemas Optional** es un concepto fundamental en Python que permite a los desarrolladores escribir código más expresivo, mantenible y eficiente.
+**Graphql Schemas Optional** is an important Python topic for building maintainable, testable, and production-ready systems.
 
-En Python, este concepto proporciona una interfaz clara y pythónica para trabajar con este patrón. La implementación se basa en los principios de simplicidad y legibilidad que caracterizan al lenguaje.
+In practice, this topic gives you a clear way to model behavior, reason about trade-offs, and implement reliable code.
 
-### Características Principales
+### Key Characteristics
 
-- **Sintaxis clara**: Diseñado para ser fácil de leer y escribir
-- **Integración nativa**: Forma parte del core de Python o biblioteca estándar
-- **Type-safe**: Compatible con type hints para mejor validación estática
-- **Eficiente**: Optimizado para rendimiento sin sacrificar legibilidad
+- **Clarity**: promotes readable code and explicit intent.
+- **Composability**: works well with other Python patterns and tools.
+- **Testability**: encourages behavior that can be validated with automated tests.
+- **Practical focus**: designed for real project scenarios, not only toy examples.
 
-La filosofía detrás de Graphql Schemas Optional se alinea con el Zen de Python: "Simple es mejor que complejo", "Explícito es mejor que implícito".
+## 2. Practical Application
 
-## 2. 💡 Aplicación Práctica
+### Use Cases
 
-### Casos de Uso
+1. **Application development**: apply graphql schemas optional patterns in backend services and internal tools.
+2. **Library design**: implement reusable building blocks with predictable behavior.
+3. **Automation workflows**: make scripts and jobs easier to evolve and verify over time.
 
-1. **Desarrollo de aplicaciones**: Utilizado ampliamente en frameworks modernos como FastAPI, Django
-2. **Bibliotecas**: Componente esencial en librerías populares del ecosistema Python
-3. **Scripts y automatización**: Simplifica tareas comunes de programación
-
-### Código Ejemplo
+### Code Example
 
 ```python
-# Ejemplo básico de Graphql Schemas Optional
-# Ver examples/ para código ejecutable completo
-
-# TODO: Ver archivo examples/basic_example.py
-# para implementación detallada con comentarios
+# See examples/example_basic.py for executable code
+# related to graphql schemas optional
 ```
 
-**Nota**: Revisa la carpeta `examples/` para código funcional y ejecutable.
+Run `examples/example_basic.py` to inspect the baseline behavior before solving the exercise.
 
-## 3. 🤔 ¿Por Qué Es Importante?
+## 3. Why Is It Important?
 
-### Problema que Resuelve
+### Problem It Solves
 
-Antes de Graphql Schemas Optional, los desarrolladores enfrentaban desafíos relacionados con:
-- Complejidad innecesaria en el código
-- Falta de estandarización
-- Dificultad para mantener y escalar aplicaciones
+Without a clear approach to graphql schemas optional, teams often face:
 
-### Solución y Beneficios
+- hidden assumptions and fragile behavior,
+- difficult refactors,
+- low confidence in changes.
 
-Graphql Schemas Optional proporciona:
-- ✅ **Código más limpio**: Sintaxis expresiva y legible
-- ✅ **Mejor mantenibilidad**: Patrones estandarizados que el equipo entiende
-- ✅ **Mayor productividad**: Menos código boilerplate, más funcionalidad
-- ✅ **Type safety**: Integración con sistema de tipos de Python
+### Solution and Benefits
 
-### Inspiración e Historia
+Working with **Graphql Schemas Optional** helps teams achieve:
 
-Introducido como parte de la evolución continua de Python hacia un lenguaje más moderno y expresivo. La comunidad Python ha adoptado ampliamente este patrón, convirtiéndolo en una best practice estándar.
+- cleaner code organization,
+- faster debugging and onboarding,
+- better test coverage and safer releases,
+- stronger long-term maintainability.
 
-## 4. 🔗 Referencias
+## 4. References
 
-Ver archivo [references/links.md](references/links.md) para documentación completa, tutoriales y recursos.
+See [references/links.md](references/links.md) for official documentation and deeper reading.
 
-**Documentación Oficial**:
-- [Python Docs: Graphql Schemas Optional](https://docs.python.org/3/)
+## 5. Practice Task
 
+Use `exercises/exercise_01.py` as the main task entry point.
 
-## 5. ✏️ Tarea de Práctica
+### Basic Level
 
-### Nivel Básico ⭐
-**Objetivo**: Implementar uso básico de Graphql Schemas Optional
+- Implement the core functionality requested by the exercise.
+- Make the baseline tests pass.
 
-Ver `exercises/basic_exercise.py` para enunciado completo.
+### Intermediate Level
 
-**Criterios de éxito**:
-- Código ejecuta sin errores
-- Implementación correcta de conceptos básicos
-- Tests básicos pasan
+- Cover edge cases and invalid inputs.
+- Improve naming and structure for readability.
 
-### Nivel Intermedio ⭐⭐
-**Objetivo**: Aplicar Graphql Schemas Optional en escenario real
+### Advanced Level
 
-Ver `exercises/intermediate_exercise.py` para enunciado completo.
+- Add robust error handling and type hints where appropriate.
+- Extend tests with additional scenario coverage.
 
-**Criterios de éxito**:
-- Manejo de casos edge
-- Validación de inputs
-- Tests intermedios pasan
+### Success Criteria
 
-### Nivel Avanzado ⭐⭐⭐
-**Objetivo**: Implementación avanzada con type hints y optimización
+- The solution works correctly for nominal and edge cases.
+- Test suite in `tests/test_basic.py` passes.
+- The implementation is clear enough for another learner to review.
 
-Ver `exercises/advanced_exercise.py` para enunciado completo.
+## 6. Summary
 
-**Criterios de éxito**:
-- Type hints completos
-- Optimización de rendimiento
-- Todos los tests pasan (incluyendo avanzados)
-- Código production-ready
+- Graphql Schemas Optional strengthens your Python engineering fundamentals.
+- It improves code quality, testability, and maintainability.
+- It is directly applicable to real-world backend and automation work.
 
-## 6. 📝 Summary
+## 7. Reflection Prompt
 
-- Graphql Schemas Optional es fundamental en Python moderno
-- Proporciona sintaxis clara y expresiva
-- Ampliamente usado en el ecosistema Python
-- Integrado con type system y herramientas modernas
-- Best practice recomendada por la comunidad
+After completing this topic, reflect on:
 
-### Puntos Clave
-1. Simplifica código y mejora legibilidad
-2. Estandarizado y bien documentado
-3. Compatible con tooling moderno (mypy, pylint, etc.)
-4. Usado en frameworks populares
-5. Parte del path hacia código pythónico profesional
-
-## 7. 🧠 Mi Análisis Personal
-
-> ✍️ **Espacio para tu reflexión**
->
-> Después de completar este tema, reflexiona sobre:
-> - ¿Cómo aplicarías Graphql Schemas Optional en tus proyectos actuales?
-> - ¿Qué ventajas específicas ves para tu caso de uso?
-> - ¿Hay alternativas que considerarías? ¿Por qué?
-> - ¿Qué fue lo más desafiante al aprender este concepto?
-> - ¿Cómo lo explicarías a un colega?
->
-> Escribe tus observaciones, dudas y conclusiones aquí...
-
----
-
-**Próximo tema recomendado**: [Ver README del módulo](../README.md) para sugerencias de orden de estudio.
+- Which design decisions made your solution easier to test?
+- Which edge case was most important to model?
+- How would you apply this topic in your current projects?

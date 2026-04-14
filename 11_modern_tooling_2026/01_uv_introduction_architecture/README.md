@@ -1,58 +1,95 @@
 # uv: Introducción y Arquitectura
 
-## ¿Qué es uv?
+Estimated time: 2-3 hours
 
-**uv** es un gestor de paquetes y entornos Python extremadamente rápido, escrito en Rust por Astral (los creadores de Ruff). Lanzado en 2024, uv se ha posicionado rápidamente como el reemplazo moderno de pip, pip-tools, virtualenv y poetry, ofreciendo velocidades de 10 a 100 veces superiores gracias a su implementación en Rust y su arquitectura innovadora.
+## 1. Definition
 
-## Arquitectura y Diseño
+**uv: Introducción y Arquitectura** is an important Python topic for building maintainable, testable, and production-ready systems.
 
-uv implementa una arquitectura de resolución de dependencias basada en **PubGrub**, el mismo algoritmo usado por Dart y Rust. A diferencia de pip que usa backtracking, PubGrub construye un grafo de dependencias de manera incremental, detectando conflictos tempranamente y proporcionando mensajes de error más claros.
+In practice, this topic gives you a clear way to model behavior, reason about trade-offs, and implement reliable code.
 
-### Componentes Principales
+### Key Characteristics
 
-1. **Resolver**: Motor de resolución de dependencias ultrarrápido
-2. **Installer**: Sistema de instalación paralelo con caché global
-3. **Lock File Generator**: Genera archivos `uv.lock` para reproducibilidad
-4. **Virtual Environment Manager**: Crea y gestiona entornos virtuales
-5. **Tool Manager**: Instala y ejecuta herramientas Python globalmente
+- **Clarity**: promotes readable code and explicit intent.
+- **Composability**: works well with other Python patterns and tools.
+- **Testability**: encourages behavior that can be validated with automated tests.
+- **Practical focus**: designed for real project scenarios, not only toy examples.
 
-## Ventajas Clave
+## 2. Practical Application
 
-- **Velocidad**: 10-100x más rápido que pip en operaciones comunes
-- **Compatibilidad**: Drop-in replacement para pip con interfaz familiar
-- **Caché Inteligente**: Caché global compartida entre proyectos
-- **Resolución Moderna**: Mensajes de error claros y resolución determinista
-- **Sin Dependencias**: Binario único sin necesitar Python pre-instalado
-- **Cross-platform**: Windows, macOS, Linux con mismo comportamiento
+### Use Cases
 
-## ¿Por Qué Rust?
+1. **Application development**: apply 01 uv introduction architecture patterns in backend services and internal tools.
+2. **Library design**: implement reusable building blocks with predictable behavior.
+3. **Automation workflows**: make scripts and jobs easier to evolve and verify over time.
 
-La implementación en Rust proporciona:
-- **Concurrencia**: Descarga e instalación paralela de paquetes
-- **Memoria**: Gestión eficiente sin garbage collector
-- **Velocidad**: Compilación nativa para máximo rendimiento
-- **Confiabilidad**: Sistema de tipos de Rust previene errores comunes
+### Code Example
 
-## Comparación con Otras Herramientas
+```python
+# See examples/example_basic.py for executable code
+# related to uv: introducción y arquitectura
+```
 
-| Herramienta | Velocidad | Lock Files | Workspaces | Dependencias |
-|-------------|-----------|------------|------------|--------------|
-| pip         | 1x        | ❌         | ❌         | Python       |
-| pip-tools   | 1-2x      | ✅         | ❌         | Python       |
-| poetry      | 2-5x      | ✅         | ✅         | Python       |
-| uv          | 10-100x   | ✅         | ✅         | Ninguna      |
+Run `examples/example_basic.py` to inspect the baseline behavior before solving the exercise.
 
-## Casos de Uso Principales
+## 3. Why Is It Important?
 
-- **Desarrollo Local**: Entornos virtuales instantáneos
-- **CI/CD**: Builds más rápidas con caché eficiente
-- **Monorepos**: Gestión de múltiples paquetes interdependientes
-- **Docker**: Layers optimizadas con resolución rápida
-- **Scripting**: Ejecutar scripts con dependencias específicas
+### Problem It Solves
 
-## Referencias
+Without a clear approach to 01 uv introduction architecture, teams often face:
 
-- [Documentación Oficial de uv](https://docs.astral.sh/uv/)
-- [Repositorio GitHub](https://github.com/astral-sh/uv)
-- [Anuncio Original](https://astral.sh/blog/uv)
-- [PubGrub Algorithm](https://github.com/dart-lang/pub/blob/master/doc/solver.md)
+- hidden assumptions and fragile behavior,
+- difficult refactors,
+- low confidence in changes.
+
+### Solution and Benefits
+
+Working with **uv: Introducción y Arquitectura** helps teams achieve:
+
+- cleaner code organization,
+- faster debugging and onboarding,
+- better test coverage and safer releases,
+- stronger long-term maintainability.
+
+## 4. References
+
+See [references/links.md](references/links.md) for official documentation and deeper reading.
+
+## 5. Practice Task
+
+Use `exercises/exercise_01.py` as the main task entry point.
+
+### Basic Level
+
+- Implement the core functionality requested by the exercise.
+- Make the baseline tests pass.
+
+### Intermediate Level
+
+- Cover edge cases and invalid inputs.
+- Improve naming and structure for readability.
+
+### Advanced Level
+
+- Add robust error handling and type hints where appropriate.
+- Extend tests with additional scenario coverage.
+
+### Success Criteria
+
+- The solution works correctly for nominal and edge cases.
+- Test suite in `tests/test_basic.py` passes.
+- The implementation is clear enough for another learner to review.
+
+## 6. Summary
+
+- uv: Introducción y Arquitectura strengthens your Python engineering fundamentals.
+- It improves code quality, testability, and maintainability.
+- It is directly applicable to real-world backend and automation work.
+
+## 7. Reflection Prompt
+
+After completing this topic, reflect on:
+
+- Which design decisions made your solution easier to test?
+- Which edge case was most important to model?
+- How would you apply this topic in your current projects?
