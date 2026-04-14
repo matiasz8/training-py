@@ -1,15 +1,18 @@
-"""
-Ejemplo básico de Solid Principles.
-"""
+"""SOLID Principles foundation."""
+from abc import ABC, abstractmethod
 
+class Logger:
+    def log(self, msg: str):
+        print(f"[LOG] {msg}")
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class PaymentProcessor(ABC):
+    @abstractmethod
+    def process(self, amount: float) -> bool: pass
 
+class CreditCard(PaymentProcessor):
+    def process(self, amount: float) -> bool:
+        print(f"Processing ${amount}")
+        return True
 
 if __name__ == "__main__":
-    example_function()
+    print("✓ SOLID Principles demonstrated")

@@ -1,15 +1,16 @@
-"""
-Ejemplo básico de Entities Value Objects.
-"""
+"""Entities vs Value Objects - DDD concepts."""
+class UserId:
+    def __init__(self, v): self.value = v
+    def __eq__(self, o): return self.value == o.value
 
+class Email:
+    def __init__(self, a): self.addr = a
+    def valid(self): return "@" in self.addr
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+class User:
+    def __init__(self, id, email):
+        self.id, self.email = id, email
 
 if __name__ == "__main__":
-    example_function()
+    u = User(UserId(1), Email("test@x.com"))
+    print(f"✓ Entities/ValueObjects: {u.email.addr}")

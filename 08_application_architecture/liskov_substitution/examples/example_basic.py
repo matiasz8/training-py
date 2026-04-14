@@ -1,15 +1,19 @@
-"""
-Ejemplo básico de Liskov Substitution.
-"""
+"""Liskov Substitution - subtypes substitutable."""
+from abc import ABC, abstractmethod
 
+class Bird(ABC):
+    @abstractmethod
+    def move(self): pass
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Sparrow(Bird):
+    def move(self): return "Flying 20mph"
 
+class Penguin(Bird):
+    def move(self): return "Swimming 10mph"
+
+def describe_bird(bird: Bird): print(bird.move())
 
 if __name__ == "__main__":
-    example_function()
+    describe_bird(Sparrow())
+    describe_bird(Penguin())
+    print("✓ Liskov Substitution")

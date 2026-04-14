@@ -1,15 +1,14 @@
-"""
-Ejemplo básico de Dependency Injection.
-"""
+"""Dependency Injection - inject dependencies."""
+class Logger:
+    def log(self, msg): print(f"[LOG] {msg}")
 
-
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+class Service:
+    def __init__(self, logger: Logger):
+        self.logger = logger
+    def do_work(self):
+        self.logger.log("Working...")
 
 if __name__ == "__main__":
-    example_function()
+    svc = Service(Logger())
+    svc.do_work()
+    print("✓ Dependency Injection")

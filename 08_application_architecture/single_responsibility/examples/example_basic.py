@@ -1,15 +1,18 @@
-"""
-Ejemplo básico de Single Responsibility.
-"""
+"""Single Responsibility - one reason to change."""
+class Validator:
+    def validate(self, data): return len(str(data)) > 0
 
+class Repository:
+    def save(self, data): print(f"Saved: {data}")
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+class Service:
+    def __init__(self, validator, repo):
+        self.v, self.r = validator, repo
+    def process(self, data):
+        if self.v.validate(data):
+            self.r.save(data)
 
 if __name__ == "__main__":
-    example_function()
+    s = Service(Validator(), Repository())
+    s.process("test")
+    print("✓ Single Responsibility")

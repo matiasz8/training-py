@@ -1,15 +1,20 @@
-"""
-Ejemplo básico de Ddd Intro.
-"""
+"""Domain-Driven Design - business model explicit."""
+class Money:
+    def __init__(self, amount, currency="USD"):
+        self.amount, self.currency = amount, currency
 
+class Order:
+    def __init__(self, id, total):
+        self.id, self.total = id, total
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+class Repository:
+    def __init__(self):
+        self.orders = {}
+    def save(self, order):
+        self.orders[order.id] = order
 
 if __name__ == "__main__":
-    example_function()
+    order = Order("1", Money(100))
+    repo = Repository()
+    repo.save(order)
+    print("✓ DDD")

@@ -1,15 +1,22 @@
-"""
-Ejemplo básico de Interface Segregation.
-"""
+"""Interface Segregation - specific interfaces."""
+from abc import ABC, abstractmethod
 
+class Worker(ABC):
+    @abstractmethod
+    def work(self): pass
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Eater(ABC):
+    @abstractmethod
+    def eat(self): pass
 
+class Robot(Worker):
+    def work(self): print("Robot working")
+
+class Human(Worker, Eater):
+    def work(self): print("Human working")
+    def eat(self): print("Human eating")
 
 if __name__ == "__main__":
-    example_function()
+    Robot().work()
+    Human().work()
+    print("✓ Interface Segregation")

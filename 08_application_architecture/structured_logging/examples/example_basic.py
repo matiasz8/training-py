@@ -1,15 +1,24 @@
-"""
-Ejemplo básico de Structured Logging.
-"""
+"""Structured Logging - JSON format."""
+import json
+from datetime import datetime
 
+class StructLog:
+    def log(self, level, msg, **ctx):
+        entry = {
+            "ts": datetime.now().isoformat(),
+            "level": level,
+            "msg": msg,
+            "ctx": ctx
+        }
+        print(json.dumps(entry))
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+class UserService:
+    def __init__(self, log):
+        self.log = log
+    def register(self, id, email):
+        self.log.log("INFO", "Reg start", user_id=id, email=email)
+        self.log.log("INFO", "Reg done", status="ok")
 
 if __name__ == "__main__":
-    example_function()
+    UserService(StructLog()).register(1, "a@x.com")
+    print("✓ StructLog")
