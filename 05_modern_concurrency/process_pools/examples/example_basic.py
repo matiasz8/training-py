@@ -1,15 +1,15 @@
-"""
-Ejemplo básico de Process Pools.
-"""
+from concurrent.futures import ProcessPoolExecutor
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def double(value: int) -> int:
+    return value * 2
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    with ProcessPoolExecutor(max_workers=2) as executor:
+        results = list(executor.map(double, [1, 2, 3]))
+    print(results)
+
+
+if __name__ == '__main__':
+    main()

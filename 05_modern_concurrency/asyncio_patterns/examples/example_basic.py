@@ -1,15 +1,19 @@
-"""
-Ejemplo básico de Asyncio Patterns.
-"""
+import asyncio
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+async def worker(name: str) -> str:
+    await asyncio.sleep(0.01)
+    return f'done:{name}'
 
 
-if __name__ == "__main__":
-    example_function()
+async def async_main() -> None:
+    results = await asyncio.gather(worker('a'), worker('b'))
+    print(results)
+
+
+def main() -> None:
+    asyncio.run(async_main())
+
+
+if __name__ == '__main__':
+    main()

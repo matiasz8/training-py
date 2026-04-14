@@ -1,15 +1,15 @@
-"""
-Ejemplo básico de Thread Pools.
-"""
+from concurrent.futures import ThreadPoolExecutor
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def square(value: int) -> int:
+    return value * value
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        results = list(executor.map(square, [1, 2, 3, 4]))
+    print(results)
+
+
+if __name__ == '__main__':
+    main()

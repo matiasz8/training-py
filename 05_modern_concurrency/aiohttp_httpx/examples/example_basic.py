@@ -1,15 +1,23 @@
-"""
-Ejemplo básico de Aiohttp Httpx.
-"""
+from dataclasses import dataclass
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@dataclass
+class HttpClientChoice:
+    name: str
+    style: str
 
 
-if __name__ == "__main__":
-    example_function()
+def compare_clients() -> list[HttpClientChoice]:
+    return [
+        HttpClientChoice('aiohttp', 'async server and client ecosystem'),
+        HttpClientChoice('httpx', 'modern sync/async client API'),
+    ]
+
+
+def main() -> None:
+    for client in compare_clients():
+        print(f"{client.name}: {client.style}")
+
+
+if __name__ == '__main__':
+    main()

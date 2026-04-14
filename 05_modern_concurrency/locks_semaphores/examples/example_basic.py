@@ -1,15 +1,23 @@
-"""
-Ejemplo básico de Locks Semaphores.
-"""
+import threading
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    counter = 0
+    lock = threading.Lock()
+
+    def worker() -> None:
+        nonlocal counter
+        for _ in range(100):
+            with lock:
+                counter += 1
+
+    threads = [threading.Thread(target=worker) for _ in range(4)]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    print(counter)
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

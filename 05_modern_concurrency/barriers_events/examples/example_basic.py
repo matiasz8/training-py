@@ -1,15 +1,25 @@
-"""
-Ejemplo básico de Barriers Events.
-"""
+import threading
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    barrier = threading.Barrier(3)
+    event = threading.Event()
+    results: list[str] = []
+
+    def worker(name: str) -> None:
+        results.append(f'ready:{name}')
+        barrier.wait()
+        event.wait()
+        results.append(f'go:{name}')
+
+    threads = [threading.Thread(target=worker, args=(f'w{i}',)) for i in range(3)]
+    for thread in threads:
+        thread.start()
+    event.set()
+    for thread in threads:
+        thread.join()
+    print(sorted(results))
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

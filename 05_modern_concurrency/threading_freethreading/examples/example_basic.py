@@ -1,15 +1,15 @@
-"""
-Ejemplo básico de Threading Freethreading.
-"""
+import sys
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def describe_runtime() -> str:
+    enabled = getattr(sys, '_is_gil_enabled', lambda: True)()
+    return f'GIL enabled: {enabled}'
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    print('Free-threading changes shared-state assumptions.')
+    print(describe_runtime())
+
+
+if __name__ == '__main__':
+    main()

@@ -1,15 +1,14 @@
-"""
-Ejemplo básico de Asyncio Debugging.
-"""
+import asyncio
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    loop = asyncio.new_event_loop()
+    try:
+        loop.set_debug(True)
+        print(loop.get_debug())
+    finally:
+        loop.close()
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

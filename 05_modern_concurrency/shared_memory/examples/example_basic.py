@@ -1,15 +1,11 @@
-"""
-Ejemplo básico de Shared Memory.
-"""
+from multiprocessing import Array
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    shared = Array('i', [1, 2, 3])
+    shared[0] = 10
+    print(list(shared))
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

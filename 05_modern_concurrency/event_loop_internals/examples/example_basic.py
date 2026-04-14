@@ -1,15 +1,14 @@
-"""
-Ejemplo básico de Event Loop Internals.
-"""
+import asyncio
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    loop = asyncio.new_event_loop()
+    try:
+        print(type(loop).__name__)
+        print(loop.is_running())
+    finally:
+        loop.close()
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

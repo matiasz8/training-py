@@ -1,15 +1,16 @@
-"""
-Ejemplo básico de Race Detection.
-"""
+import threading
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def detect_risk(shared_mutable: bool, synchronized: bool) -> str:
+    if shared_mutable and not synchronized:
+        return 'risk detected'
+    return 'no obvious race'
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    print(detect_risk(True, False))
+    print(threading.current_thread().name)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,15 +1,15 @@
-"""
-Ejemplo básico de Subinterpreters Usage.
-"""
+def describe_subinterpreters() -> list[str]:
+    return [
+        'Isolated runtime state',
+        'Separate module imports',
+        'Useful for runtime isolation',
+    ]
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    for line in describe_subinterpreters():
+        print(line)
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

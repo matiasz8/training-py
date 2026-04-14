@@ -1,15 +1,11 @@
-"""
-Ejemplo básico de Subinterpreters Communication.
-"""
+from queue import Queue
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    channel: Queue[str] = Queue()
+    channel.put('payload')
+    print(channel.get())
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

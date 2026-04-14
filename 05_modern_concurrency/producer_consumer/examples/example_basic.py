@@ -1,15 +1,15 @@
-"""
-Ejemplo básico de Producer Consumer.
-"""
+from queue import Queue
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    queue: Queue[int] = Queue()
+    for number in [1, 2, 3]:
+        queue.put(number)
+    values = []
+    while not queue.empty():
+        values.append(queue.get())
+    print(values)
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()
