@@ -174,7 +174,7 @@ def fix_placeholder_file(filepath: Path) -> bool:
     )
     
     # Añadir sección de comunidad si no existe
-    if "## Comunidad" not in content and "16_security_moderna" in str(filepath):
+    if "## Comunidad" not in content and "16_modern_security" in str(filepath):
         content += """\n## Comunidad y Recursos
 - [r/netsec](https://www.reddit.com/r/netsec/)
 - [OWASP Slack](https://owasp.org/slack/invite)

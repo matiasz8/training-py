@@ -103,15 +103,15 @@ def detect_topic_category(topic_path: Path) -> str:
     """Detecta la categoría del tema basado en su path."""
     path_str = str(topic_path)
     
-    if "fundamentos" in path_str or "python_intermedio" in path_str:
+    if "python_fundamentals" in path_str or "intermediate_python" in path_str:
         return "basic"
-    elif "poo" in path_str:
+    elif "oop" in path_str:
         return "oop"
     elif "cpython" in path_str:
         return "internals"
-    elif "concurrencia" in path_str:
+    elif "concurrency" in path_str:
         return "concurrency"
-    elif "tipado" in path_str or "metaprogramacion" in path_str:
+    elif "typing_metaprogramming" in path_str:
         return "typing"
     elif "patrones" in path_str:
         return "patterns"
@@ -316,7 +316,7 @@ def main():
         print(f"\n📁 Módulo: {module_dir.name}")
         
         # Buscar temas en el módulo
-        if "patrones_diseno" in module_dir.name:
+        if "design_patterns" in module_dir.name:
             # Patrones tiene subcategorías
             subcats = [d for d in module_dir.iterdir() if d.is_dir()]
             for subcat in subcats:

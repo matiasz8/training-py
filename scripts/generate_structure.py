@@ -11,36 +11,36 @@ from typing import List, Dict
 
 # Definición de todos los módulos y sus temas
 MODULES = {
-    "01_fundamentos_python": {
+    "01_python_fundamentals": {
         "description": "Fundamentos de Python",
         "topics": [
-            "variables_tipos_datos_optional",
-            "operadores_expresiones_optional",
-            "estructuras_control",
-            "listas_tuplas",
-            "diccionarios_sets",
-            "funciones_basicas",
+            "variables_data_types_optional",
+            "operators_expressions_optional",
+            "control_structures",
+            "lists_tuples",
+            "dictionaries_sets",
+            "basic_functions",
             "comprehensions",
-            "strings_avanzado",
+            "advanced_strings",
             "input_output_optional",
-            "importaciones_modulos",
-            "manejo_errores_basico",
-            "debugging_basico_optional",
+            "module_imports",
+            "basic_error_handling",
+            "basic_debugging_optional",
         ]
     },
-    "02_python_intermedio": {
+    "02_intermediate_python": {
         "description": "Python Intermedio",
         "topics": [
-            "funciones_avanzadas",
-            "decoradores_basicos",
+            "advanced_functions",
+            "basic_decorators",
             "closures",
-            "manejo_archivos_texto",
+            "text_file_handling",
             "csv_json",
-            "manejo_excepciones",
-            "context_managers_basicos",
-            "iteradores_basicos",
-            "generadores",
-            "modulos_paquetes",
+            "exception_handling",
+            "basic_context_managers",
+            "basic_iterators",
+            "generators",
+            "modules_packages",
             "pathlib",
             "datetime_time",
             "collections_module",
@@ -48,38 +48,38 @@ MODULES = {
             "regex_optional",
         ]
     },
-    "03_poo_basica_intermedia": {
+    "03_basic_intermediate_oop": {
         "description": "POO Básica e Intermedia",
         "topics": [
-            "clases_objetos",
-            "atributos_metodos",
+            "classes_objects",
+            "attributes_methods",
             "init_self",
-            "herencia_basica",
-            "herencia_multiple",
-            "polimorfismo",
-            "encapsulacion",
-            "metodos_especiales",
+            "basic_inheritance",
+            "multiple_inheritance",
+            "polymorphism",
+            "encapsulation",
+            "special_methods",
             "properties",
-            "descriptores_basicos",
-            "composicion_vs_herencia",
+            "basic_descriptors",
+            "composition_vs_inheritance",
             "dataclasses_optional",
         ]
     },
-    "05_concurrencia_moderna": {
+    "05_modern_concurrency": {
         "description": "Concurrencia y Paralelismo Moderno",
         "topics": [
-            "modelos_concurrencia",
-            "threading_basico",
+            "concurrency_models",
+            "basic_threading",
             "threading_freethreading",
             "thread_pools",
             "locks_semaphores",
             "barriers_events",
-            "subinterpreters_uso",
-            "comunicacion_subinterpreters",
-            "multiprocessing_basico",
+            "subinterpreters_usage",
+            "subinterpreters_communication",
+            "basic_multiprocessing",
             "shared_memory",
             "process_pools",
-            "asyncio_fundamentos",
+            "asyncio_fundamentals",
             "event_loop_internals",
             "coroutines_async_await",
             "asyncio_patterns",
@@ -88,31 +88,31 @@ MODULES = {
             "aiohttp_httpx",
             "asyncio_debugging",
             "producer_consumer",
-            "pipeline_paralelo",
+            "parallel_pipeline",
             "map_reduce",
             "actor_model",
             "race_detection",
             "profiling_concurrent",
         ]
     },
-    "06_tipado_metaprogramacion": {
+    "06_typing_metaprogramming": {
         "description": "Tipado Estático y Metaprogramación",
         "topics": [
-            "type_hints_basicos",
-            "typing_avanzado",
+            "basic_type_hints",
+            "advanced_typing",
             "generics_typevar",
             "protocol_structural_typing",
             "typeddict_namedtuple",
             "union_optional",
             "literal_types",
             "overload",
-            "mypy_basico",
+            "basic_mypy",
             "runtime_type_checking",
-            "metaclases_intro",
-            "metaclases_avanzadas",
+            "metaclasses_intro",
+            "advanced_metaclasses",
             "init_subclass",
             "set_name_descriptor",
-            "descriptores_avanzados",
+            "advanced_descriptors",
             "abstract_base_classes",
             "class_decorators",
             "dynamic_classes",
@@ -122,7 +122,7 @@ MODULES = {
             "exec_eval_compile",
         ]
     },
-    "08_arquitectura_aplicaciones": {
+    "08_application_architecture": {
         "description": "Arquitectura de Aplicaciones",
         "topics": [
             "solid_principles",
@@ -141,8 +141,8 @@ MODULES = {
             "ports_adapters",
             "event_driven_arch",
             "cqrs_pattern",
-            "logging_estructurado",
-            "observabilidad",
+            "structured_logging",
+            "observability",
         ]
     },
     "09_testing_qa": {
@@ -166,7 +166,7 @@ MODULES = {
             "ci_testing",
         ]
     },
-    "10_performance_optimizacion": {
+    "10_performance_optimization": {
         "description": "Performance y Optimización",
         "topics": [
             "profiling_cprofile",
@@ -185,7 +185,7 @@ MODULES = {
             "algorithmic_complexity",
         ]
     },
-    "12_fastapi_completo": {
+    "12_fastapi_complete": {
         "description": "FastAPI Completo",
         "topics": [
             "fastapi_intro",
@@ -218,7 +218,7 @@ MODULES = {
             "deployment",
         ]
     },
-    "13_ecosistema_backend": {
+    "13_backend_ecosystem": {
         "description": "Ecosistema Backend Moderno",
         "topics": [
             "sqlalchemy_2_intro",
@@ -243,7 +243,7 @@ MODULES = {
             "graphql_schemas_optional",
         ]
     },
-    "15_data_science_basico": {
+    "15_basic_data_science": {
         "description": "Data Science Básico",
         "topics": [
             "numpy_basics",

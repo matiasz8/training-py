@@ -61,7 +61,7 @@ class Bird(Animal):
 
 
 def demonstrate_polymorphism(animals: List[Animal]) -> None:
-    """Demuestra polimorfismo con ABC."""
+    """Demuestra polymorphism con ABC."""
     for animal in animals:
         print(f"{animal.introduce()}")
         print(f"  Sonido: {animal.make_sound()}")
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     dog = Dog("Rex")
     bird = Bird("Tweety")
     
-    # Demostrar polimorfismo
+    # Demostrar polymorphism
     demonstrate_polymorphism([dog, bird])
     
     # No se puede instanciar ABC directamente

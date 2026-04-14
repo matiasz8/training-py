@@ -8,34 +8,34 @@ from pathlib import Path
 # 45 temas organizados
 TEMAS_MODULO_14 = {
     "pyo3": [
-        "01_pyo3_introduccion",
+        "01_pyo3_introduction",
         "02_rust_toolchain_maturin",
-        "03_primer_modulo_rust_python",
-        "04_tipos_python_en_rust",
+        "03_first_rust_python_module",
+        "04_python_types_in_rust",
         "05_error_handling_pyresult",
-        "06_conversiones_automaticas",
-        "07_clases_python_en_rust",
-        "08_metodos_pymethods",
+        "06_automatic_conversions",
+        "07_python_classes_in_rust",
+        "08_pymethods",
         "09_properties_rust",
-        "10_metodos_estaticos_clase",
+        "10_static_class_methods",
         "11_operator_overloading",
         "12_python_modules",
         "13_gil_management",
         "14_shared_mutable_state",
         "15_async_rust_pyo3",
         "16_numpy_arrays_zerocopy",
-        "17_callbacks_python_desde_rust",
+        "17_python_callbacks_from_rust",
         "18_performance_optimization",
-        "19_parser_alto_rendimiento",
-        "20_procesamiento_imagenes",
-        "21_criptografia_hashing",
-        "22_data_processing_paralelo",
+        "19_high_performance_parser",
+        "20_image_processing",
+        "21_cryptography_hashing",
+        "22_parallel_data_processing",
     ],
     "ai_development": [
         "23_embeddings_vector_stores",
         "24_streaming_llm_responses",
         "25_structured_output_pydantic",
-        "26_prompt_engineering_codigo",
+        "26_code_prompt_engineering",
         "27_function_calling_tools",
         "28_langchain_basics",
         "29_langchain_chains",
@@ -144,7 +144,7 @@ def create_topic(base_path: Path, topic_name: str) -> None:
 
 def main():
     """Genera módulo 14."""
-    base_path = Path(__file__).parent.parent / "14_python_avanzado_2026"
+    base_path = Path(__file__).parent.parent / "14_advanced_python_2026"
     base_path.mkdir(parents=True, exist_ok=True)
     
     print("🚀 Generando Módulo 14: Python Avanzado 2026...")

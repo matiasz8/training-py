@@ -54,7 +54,7 @@ def scan_modules(base_path: Path) -> dict[str, dict[str, int]]:
         topics = []
 
         # Para módulo de patrones, buscar en subcategorías
-        if "patrones_diseno" in module_name:
+        if "design_patterns" in module_name:
             for subcat_dir in module_dir.iterdir():
                 if subcat_dir.is_dir():
                     topics.extend(

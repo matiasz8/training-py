@@ -10,32 +10,32 @@ TEMAS_MODULO_16 = [
     "02_dependency_attacks",
     "03_typosquatting_pypi",
     "04_malicious_packages",
-    "05_sbom_introduccion",
+    "05_sbom_introduction",
     "06_sbom_formats_spdx_cyclonedx",
-    "07_generacion_sboms_syft",
-    "08_analisis_vulnerabilidades_sbom",
+    "07_sbom_generation_syft",
+    "08_sbom_vulnerability_analysis",
     "09_sbom_ci_cd",
     "10_sbom_signing",
-    "11_sigstore_arquitectura",
+    "11_sigstore_architecture",
     "12_keyless_signing_oidc",
-    "13_firmar_wheels_cosign",
-    "14_firmar_containers",
-    "15_verificacion_firmas",
+    "13_signing_wheels_cosign",
+    "14_signing_containers",
+    "15_signature_verification",
     "16_transparency_logs_rekor",
     "17_vulnerability_scanning_safety",
     "18_trivy_containers",
     "19_grype_scanning",
     "20_dependabot_github",
-    "21_automatizacion_patching",
+    "21_automated_patching",
     "22_secrets_management_intro",
     "23_environment_variables",
-    "24_secretos_ci_cd",
-    "25_sops_introduccion",
+    "24_secrets_ci_cd",
+    "25_sops_introduction",
     "26_sops_backends_age_kms",
     "27_sops_yaml_json",
     "28_sops_git_integration",
     "29_key_rotation_sops",
-    "30_vault_arquitectura",
+    "30_vault_architecture",
     "31_dynamic_secrets_vault",
     "32_vault_agents",
     "33_vault_python_hvac",
@@ -149,7 +149,7 @@ Crea sistema completo con auditoría de seguridad.
 
 def main():
     """Genera módulo 16."""
-    base_path = Path(__file__).parent.parent / "16_security_moderna"
+    base_path = Path(__file__).parent.parent / "16_modern_security"
     base_path.mkdir(parents=True, exist_ok=True)
     
     print("🔒 Generando Módulo 16: Seguridad Moderna...")

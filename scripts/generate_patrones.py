@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Definición de los 88 patrones organizados en 8 subcategorías
 PATRONES = {
-    "01_gof_basicos": {
+    "01_basic_gof": {
         "description": "Patrones GoF Básicos",
         "patterns": [
             "singleton",
@@ -23,7 +23,7 @@ PATRONES = {
             "command",
         ]
     },
-    "02_pythonicos": {
+    "02_pythonic_patterns": {
         "description": "Patrones Pythónicos",
         "patterns": [
             "context_manager",
@@ -42,7 +42,7 @@ PATRONES = {
             "plugin_system",
         ]
     },
-    "03_gof_avanzados": {
+    "03_advanced_gof": {
         "description": "Patrones GoF Avanzados",
         "patterns": [
             "abstract_factory",
@@ -59,7 +59,7 @@ PATRONES = {
             "visitor",
         ]
     },
-    "04_arquitectonicos": {
+    "04_architectural": {
         "description": "Patrones Arquitectónicos",
         "patterns": [
             "repository",
@@ -77,7 +77,7 @@ PATRONES = {
             "api_gateway",
         ]
     },
-    "05_sistemas_distribuidos": {
+    "05_distributed_systems": {
         "description": "Patrones de Sistemas Distribuidos",
         "patterns": [
             "cqrs",
@@ -94,7 +94,7 @@ PATRONES = {
             "event_driven",
         ]
     },
-    "06_concurrencia": {
+    "06_concurrency": {
         "description": "Patrones de Concurrencia",
         "patterns": [
             "thread_pool",
@@ -113,7 +113,7 @@ PATRONES = {
             "scheduler",
         ]
     },
-    "07_mensajeria": {
+    "07_messaging": {
         "description": "Patrones de Mensajería",
         "patterns": [
             "message_queue",
@@ -122,7 +122,7 @@ PATRONES = {
             "event_bus",
         ]
     },
-    "08_gestion_objetos": {
+    "08_object_management": {
         "description": "Patrones de Gestión de Objetos",
         "patterns": [
             "object_pool",
@@ -291,7 +291,7 @@ Esta subcategoría contiene {len(subcat_info['patterns'])} patrones de diseño.
 
 def main():
     """Genera estructura del módulo de patrones."""
-    base_path = Path(__file__).parent.parent / "07_patrones_diseno"
+    base_path = Path(__file__).parent.parent / "07_design_patterns"
     base_path.mkdir(parents=True, exist_ok=True)
     
     print("🎨 Generando Módulo 07: Patrones de Diseño...")
@@ -316,28 +316,28 @@ Este módulo cubre todos los patrones de diseño relevantes para Python, desde l
 
 ## 📚 Contenido (88 Patrones en 8 Subcategorías)
 
-### 1. [Patrones GoF Básicos](01_gof_basicos/) (11 patrones)
+### 1. [Patrones GoF Básicos](01_basic_gof/) (11 patrones)
 Los patrones más fundamentales y ampliamente usados del Gang of Four.
 
-### 2. [Patrones Pythónicos](02_pythonicos/) (14 patrones)
+### 2. [Patrones Pythónicos](02_pythonic_patterns/) (14 patrones)
 Patrones específicos de Python que aprovechan las características únicas del lenguaje.
 
-### 3. [Patrones GoF Avanzados](03_gof_avanzados/) (12 patrones)
+### 3. [Patrones GoF Avanzados](03_advanced_gof/) (12 patrones)
 Patrones GoF más complejos para casos de uso especializados.
 
-### 4. [Patrones Arquitectónicos](04_arquitectonicos/) (13 patrones)
+### 4. [Patrones Arquitectónicos](04_architectural/) (13 patrones)
 Patrones para estructurar aplicaciones completas y sistemas grandes.
 
-### 5. [Patrones de Sistemas Distribuidos](05_sistemas_distribuidos/) (12 patrones)
+### 5. [Patrones de Sistemas Distribuidos](05_distributed_systems/) (12 patrones)
 Patrones para microservicios, sistemas distribuidos y cloud-native.
 
-### 6. [Patrones de Concurrencia](06_concurrencia/) (14 patrones)
+### 6. [Patrones de Concurrencia](06_concurrency/) (14 patrones)
 Patrones para threading, multiprocessing y programación asíncrona.
 
-### 7. [Patrones de Mensajería](07_mensajeria/) (4 patrones)
+### 7. [Patrones de Mensajería](07_messaging/) (4 patrones)
 Patrones para comunicación asíncrona y event-driven systems.
 
-### 8. [Patrones de Gestión de Objetos](08_gestion_objetos/) (8 patrones)
+### 8. [Patrones de Gestión de Objetos](08_object_management/) (8 patrones)
 Patrones para lifecycle de objetos y optimización de recursos.
 
 ## ⏱️ Tiempo Estimado Total
@@ -348,12 +348,12 @@ Patrones para lifecycle de objetos y optimización de recursos.
 
 ### Ruta Rápida (Must-Learn)
 ```
-01_gof_basicos → 02_pythonicos (primeros 5) → 04_arquitectonicos (primeros 5)
+01_basic_gof → 02_pythonic_patterns (primeros 5) → 04_architectural (primeros 5)
 ```
 
 ### Ruta Backend
 ```
-02_pythonicos → 04_arquitectonicos → 05_sistemas_distribuidos → 06_concurrencia
+02_pythonic_patterns → 04_architectural → 05_distributed_systems → 06_concurrency
 ```
 
 ### Ruta Completa

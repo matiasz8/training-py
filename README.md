@@ -23,16 +23,16 @@ Si es tu primera vez aquí, sigue este orden:
 
 ```text
 FASE 1: Base (4-6 semanas)
-01_fundamentos_python → 02_python_intermedio → 03_poo_basica_intermedia
+01_python_fundamentals → 02_intermediate_python → 03_basic_intermediate_oop
 
 FASE 2: Núcleo técnico (6-8 semanas)
-04_cpython_internals_avanzado → 05_concurrencia_moderna → 06_tipado_metaprogramacion
+04_cpython_internals_advanced → 05_modern_concurrency → 06_typing_metaprogramming
 
 FASE 3: Ingeniería de software (8-10 semanas)
-07_patrones_diseno → 08_arquitectura_aplicaciones → 09_testing_qa → 10_performance_optimizacion
+07_design_patterns → 08_application_architecture → 09_testing_qa → 10_performance_optimization
 
 FASE 4: Stack moderno 2026 (8-12 semanas)
-11_tooling_moderno_2026 → 12_fastapi_completo → 13_ecosistema_backend → 14_python_avanzado_2026 → 15_data_science_basico → 16_security_moderna
+11_modern_tooling_2026 → 12_fastapi_complete → 13_backend_ecosystem → 14_advanced_python_2026 → 15_basic_data_science → 16_modern_security
 ```
 
 **Tiempo total estimado:** 7-10 meses, adaptable a tu ritmo.
@@ -63,22 +63,22 @@ README del tema → examples → exercises → my_solution → tests → reflexi
 
 | Módulo | Qué aprendes |
 |---|---|
-| [01_fundamentos_python](01_fundamentos_python/) | Base sólida del lenguaje |
-| [02_python_intermedio](02_python_intermedio/) | Flujo, archivos, excepciones, generadores |
-| [03_poo_basica_intermedia](03_poo_basica_intermedia/) | Diseño orientado a objetos aplicable |
-| [04_cpython_internals_avanzado](04_cpython_internals_avanzado/) | Internals, GIL/free-threading, subinterpreters |
-| [05_concurrencia_moderna](05_concurrencia_moderna/) | Threading, multiprocessing, asyncio moderno |
-| [06_tipado_metaprogramacion](06_tipado_metaprogramacion/) | Tipado avanzado y metaprogramación |
-| [07_patrones_diseno](07_patrones_diseno/) | Patrones para diseño robusto |
-| [08_arquitectura_aplicaciones](08_arquitectura_aplicaciones/) | Arquitectura modular y escalable |
+| [01_python_fundamentals](01_python_fundamentals/) | Base sólida del lenguaje |
+| [02_intermediate_python](02_intermediate_python/) | Flujo, archivos, excepciones, generators |
+| [03_basic_intermediate_oop](03_basic_intermediate_oop/) | Diseño orientado a objetos aplicable |
+| [04_cpython_internals_advanced](04_cpython_internals_advanced/) | Internals, GIL/free-threading, subinterpreters |
+| [05_modern_concurrency](05_modern_concurrency/) | Threading, multiprocessing, asyncio moderno |
+| [06_typing_metaprogramming](06_typing_metaprogramming/) | Tipado avanzado y metaprogramación |
+| [07_design_patterns](07_design_patterns/) | Patrones para diseño robusto |
+| [08_application_architecture](08_application_architecture/) | Arquitectura modular y escalable |
 | [09_testing_qa](09_testing_qa/) | Testing y calidad profesional |
-| [10_performance_optimizacion](10_performance_optimizacion/) | Profiling y optimización práctica |
-| [11_tooling_moderno_2026](11_tooling_moderno_2026/) | uv, Ruff, type checking moderno |
-| [12_fastapi_completo](12_fastapi_completo/) | APIs modernas listas para producción |
-| [13_ecosistema_backend](13_ecosistema_backend/) | Integración backend e infraestructura |
-| [14_python_avanzado_2026](14_python_avanzado_2026/) | PyO3 y desarrollo asistido por IA |
-| [15_data_science_basico](15_data_science_basico/) | Fundamentos de data science con Python |
-| [16_security_moderna](16_security_moderna/) | Seguridad moderna de software y supply chain |
+| [10_performance_optimization](10_performance_optimization/) | Profiling y optimización práctica |
+| [11_modern_tooling_2026](11_modern_tooling_2026/) | uv, Ruff, type checking moderno |
+| [12_fastapi_complete](12_fastapi_complete/) | APIs modernas listas para producción |
+| [13_backend_ecosystem](13_backend_ecosystem/) | Integración backend e infraestructura |
+| [14_advanced_python_2026](14_advanced_python_2026/) | PyO3 y desarrollo asistido por IA |
+| [15_basic_data_science](15_basic_data_science/) | Fundamentos de data science con Python |
+| [16_modern_security](16_modern_security/) | Seguridad moderna de software y supply chain |
 
 ---
 
@@ -102,7 +102,7 @@ uv run scripts/progress.py
 
 ### 3) Primer módulo
 ```bash
-cd 01_fundamentos_python
+cd 01_python_fundamentals
 cat README.md
 ```
 
@@ -164,18 +164,18 @@ cat README.md
 
 ### 🟢 Nivel Básico (Opcional para quienes ya conocen Python)
 
-#### [01 - Fundamentos de Python](01_fundamentos_python/)
+#### [01 - Fundamentos de Python](01_python_fundamentals/)
 Variables, tipos de datos, estructuras de control, estructuras de datos built-in, funciones básicas, comprehensions. Temas marcados como `(optional)` para programadores experimentados.
 
 **Temas**: 12 | **Tiempo estimado**: 15-20 horas
 
-#### [02 - Python Intermedio](02_python_intermedio/)
-Decoradores básicos, manejo de archivos, excepciones, iteradores, generadores, módulos estándar importantes.
+#### [02 - Python Intermedio](02_intermediate_python/)
+Decoradores básicos, manejo de archivos, excepciones, iteradores, generators, módulos estándar importantes.
 
 **Temas**: 15 | **Tiempo estimado**: 20-25 horas
 
-#### [03 - POO Básica e Intermedia](03_poo_basica_intermedia/)
-Clases, herencia, polimorfismo, métodos especiales, properties, descriptores, composición vs herencia.
+#### [03 - POO Básica e Intermedia](03_basic_intermediate_oop/)
+Clases, herencia, polymorphism, métodos especiales, properties, descriptores, composición vs herencia.
 
 **Temas**: 12 | **Tiempo estimado**: 18-22 horas
 
@@ -183,7 +183,7 @@ Clases, herencia, polimorfismo, métodos especiales, properties, descriptores, c
 
 ### 🔵 Nivel Intermedio-Avanzado
 
-#### [04 - CPython Internals Avanzado](04_cpython_internals_avanzado/)
+#### [04 - CPython Internals Avanzado](04_cpython_internals_advanced/)
 Historia del GIL, **PEP 703 free-threading**, **PEP 684 subinterpreters**, thread-safety sin GIL, object model, reference counting, estrategias de migración.
 
 **Temas**: 27 | **Tiempo estimado**: 40-50 horas
@@ -195,7 +195,7 @@ Historia del GIL, **PEP 703 free-threading**, **PEP 684 subinterpreters**, threa
 - Biased reference counting
 - Immortal objects (PEP 683)
 
-#### [05 - Concurrencia y Paralelismo Moderno](05_concurrencia_moderna/)
+#### [05 - Concurrencia y Paralelismo Moderno](05_modern_concurrency/)
 Threading con/sin GIL, subinterpreters para aislamiento, multiprocessing con shared memory, asyncio avanzado, patrones de concurrencia, testing concurrent.
 
 **Temas**: 25 | **Tiempo estimado**: 35-45 horas
@@ -206,7 +206,7 @@ Threading con/sin GIL, subinterpreters para aislamiento, multiprocessing con sha
 - TaskGroups y structured concurrency
 - Race condition detection
 
-#### [06 - Tipado Estático y Metaprogramación](06_tipado_metaprogramacion/)
+#### [06 - Tipado Estático y Metaprogramación](06_typing_metaprogramming/)
 Type hints avanzados, Generics, Protocol, TypeGuard, metaclases, descriptores, AST manipulation, introspección.
 
 **Temas**: 22 | **Tiempo estimado**: 30-40 horas
@@ -215,23 +215,23 @@ Type hints avanzados, Generics, Protocol, TypeGuard, metaclases, descriptores, A
 
 ### 🟣 Nivel Avanzado - Patrones y Arquitectura
 
-#### [07 - Patrones de Diseño Completos](07_patrones_diseno/)
+#### [07 - Patrones de Diseño Completos](07_design_patterns/)
 88 patrones organizados en 8 subcategorías: GoF básicos/avanzados, pythónicos, arquitectónicos, sistemas distribuidos, concurrencia, mensajería, gestión de objetos.
 
 **Temas**: 88 patrones | **Tiempo estimado**: 100-120 horas
 
 **Subcategorías**:
-- [01 - Patrones GoF Básicos](07_patrones_diseno/01_gof_basicos/) (11 patrones)
-- [02 - Patrones Pythónicos](07_patrones_diseno/02_pythonicos/) (14 patrones)
-- [03 - Patrones GoF Avanzados](07_patrones_diseno/03_gof_avanzados/) (12 patrones)
-- [04 - Patrones Arquitectónicos](07_patrones_diseno/04_arquitectonicos/) (13 patrones)
-- [05 - Patrones de Sistemas Distribuidos](07_patrones_diseno/05_sistemas_distribuidos/) (12 patrones)
-- [06 - Patrones de Concurrencia](07_patrones_diseno/06_concurrencia/) (14 patrones)
-- [07 - Patrones de Mensajería](07_patrones_diseno/07_mensajeria/) (4 patrones)
-- [08 - Patrones de Gestión de Objetos](07_patrones_diseno/08_gestion_objetos/) (8 patrones)
+- [01 - Patrones GoF Básicos](07_design_patterns/01_basic_gof/) (11 patrones)
+- [02 - Patrones Pythónicos](07_design_patterns/02_pythonic_patterns/) (14 patrones)
+- [03 - Patrones GoF Avanzados](07_design_patterns/03_advanced_gof/) (12 patrones)
+- [04 - Patrones Arquitectónicos](07_design_patterns/04_architectural/) (13 patrones)
+- [05 - Patrones de Sistemas Distribuidos](07_design_patterns/05_distributed_systems/) (12 patrones)
+- [06 - Patrones de Concurrencia](07_design_patterns/06_concurrency/) (14 patrones)
+- [07 - Patrones de Mensajería](07_design_patterns/07_messaging/) (4 patrones)
+- [08 - Patrones de Gestión de Objetos](07_design_patterns/08_object_management/) (8 patrones)
 
-#### [08 - Arquitectura de Aplicaciones](08_arquitectura_aplicaciones/)
-SOLID, Dependency Injection, DDD, Hexagonal Architecture, CQRS, Event Sourcing, logging estructurado, observabilidad.
+#### [08 - Arquitectura de Aplicaciones](08_application_architecture/)
+SOLID, Dependency Injection, DDD, Hexagonal Architecture, CQRS, Event Sourcing, logging estructurado, observability.
 
 **Temas**: 18 | **Tiempo estimado**: 25-35 horas
 
@@ -240,7 +240,7 @@ pytest avanzado, fixtures, mocking, coverage, property-based testing (hypothesis
 
 **Temas**: 16 | **Tiempo estimado**: 22-28 horas
 
-#### [10 - Performance y Optimización](10_performance_optimizacion/)
+#### [10 - Performance y Optimización](10_performance_optimization/)
 Profiling (cProfile, py-spy), benchmarking, Cython, NumPy vectorización, Numba, PyPy, caching, lazy evaluation.
 
 **Temas**: 14 | **Tiempo estimado**: 20-26 horas
@@ -249,7 +249,7 @@ Profiling (cProfile, py-spy), benchmarking, Cython, NumPy vectorización, Numba,
 
 ### 🔴 Nivel Experto - Tecnologías 2026
 
-#### [11 - Tooling Moderno 2026](11_tooling_moderno_2026/)
+#### [11 - Tooling Moderno 2026](11_modern_tooling_2026/)
 **uv** (package manager en Rust), **Ruff** (linter/formatter all-in-one), **BasedPyright/Pylyzer** (type checkers modernos), pre-commit hooks, pytest avanzado, py-spy, memray.
 
 **Temas**: 35 | **Tiempo estimado**: 45-55 horas
@@ -260,17 +260,17 @@ Profiling (cProfile, py-spy), benchmarking, Cython, NumPy vectorización, Numba,
 - BasedPyright: type checking estricto mejorado
 - memray: memory profiling de nueva generación
 
-#### [12 - FastAPI Completo](12_fastapi_completo/)
+#### [12 - FastAPI Completo](12_fastapi_complete/)
 Todos los aspectos de FastAPI: routing, dependency injection, Pydantic V2, WebSockets, authentication (JWT, OAuth2), testing, SQLAlchemy 2.0, async databases, deployment, monitoring.
 
 **Temas**: 28 | **Tiempo estimado**: 40-50 horas
 
-#### [13 - Ecosistema Backend Moderno](13_ecosistema_backend/)
-SQLAlchemy 2.0, PostgreSQL avanzado, Redis patterns, message queues (RabbitMQ, Kafka), Celery/ARQ, gRPC, observabilidad (OpenTelemetry), Prometheus.
+#### [13 - Ecosistema Backend Moderno](13_backend_ecosystem/)
+SQLAlchemy 2.0, PostgreSQL avanzado, Redis patterns, message queues (RabbitMQ, Kafka), Celery/ARQ, gRPC, observability (OpenTelemetry), Prometheus.
 
 **Temas**: 20 | **Tiempo estimado**: 28-36 horas
 
-#### [14 - Python Avanzado 2026](14_python_avanzado_2026/)
+#### [14 - Python Avanzado 2026](14_advanced_python_2026/)
 **PyO3** (extensiones Rust), **AI-Assisted Development** (LangChain, LangGraph, agentes autónomos), **DevContainers**, pattern matching, dataclass improvements, free-threaded Python patterns.
 
 **Temas**: 45 | **Tiempo estimado**: 60-75 horas
@@ -282,12 +282,12 @@ SQLAlchemy 2.0, PostgreSQL avanzado, Redis patterns, message queues (RabbitMQ, K
 - Agentes autónomos con ReAct
 - DevContainers para desarrollo aislado
 
-#### [15 - Data Science Básico](15_data_science_basico/)
+#### [15 - Data Science Básico](15_basic_data_science/)
 NumPy, Pandas fundamentals, Matplotlib/Seaborn, data cleaning patterns, Jupyter notebooks.
 
 **Temas**: 10 | **Tiempo estimado**: 15-20 horas
 
-#### [16 - Seguridad Moderna](16_security_moderna/)
+#### [16 - Seguridad Moderna](16_modern_security/)
 Supply chain security, **SBOM** (Software Bill of Materials), **Sigstore** (keyless signing), vulnerability scanning, **SOPS** (secrets encryption), **HashiCorp Vault**, secrets en Kubernetes, container security, secure coding.
 
 **Temas**: 40 | **Tiempo estimado**: 50-60 horas

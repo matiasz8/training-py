@@ -32,15 +32,15 @@
 - ✅ 11 READMEs de módulos con descripciones completas
 
 ### Ejemplos de Alta Calidad Completados (8 temas)
-- ✅ 05_concurrencia_moderna/asyncio_fundamentos (232 líneas)
-- ✅ 05_concurrencia_moderna/threading_basico (180 líneas)
-- ✅ 05_concurrencia_moderna/multiprocessing_basico (200 líneas)
-- ✅ 05_concurrencia_moderna/coroutines_async_await (200 líneas)
-- ✅ 06_tipado_metaprogramacion/type_hints_basicos (completo)
-- ✅ 06_tipado_metaprogramacion/generics_typevar (completo)
-- ✅ 06_tipado_metaprogramacion/protocol_structural_typing (completo)
-- ✅ 07_patrones_diseno/01_gof_basicos/singleton (220 líneas)
-- ✅ 12_fastapi_completo/fastapi_intro (300 líneas)
+- ✅ 05_modern_concurrency/asyncio_fundamentals (232 líneas)
+- ✅ 05_modern_concurrency/basic_threading (180 líneas)
+- ✅ 05_modern_concurrency/basic_multiprocessing (200 líneas)
+- ✅ 05_modern_concurrency/coroutines_async_await (200 líneas)
+- ✅ 06_typing_metaprogramming/basic_type_hints (completo)
+- ✅ 06_typing_metaprogramming/generics_typevar (completo)
+- ✅ 06_typing_metaprogramming/protocol_structural_typing (completo)
+- ✅ 07_design_patterns/01_basic_gof/singleton (220 líneas)
+- ✅ 12_fastapi_complete/fastapi_intro (300 líneas)
 
 **Total líneas de código profesional**: ~1,800+
 

@@ -30,46 +30,46 @@ py-erudito/
 ### 📚 Módulos Creados (16 módulos, 379 temas)
 
 #### Nivel Básico/Intermedio
-1. **01_fundamentos_python** (12 temas) - Variables, control, estructuras, funciones
-2. **02_python_intermedio** (15 temas) - Decoradores, archivos, iteradores, módulos
-3. **03_poo_basica_intermedia** (12 temas) - Clases, herencia, properties, descriptores
+1. **01_python_fundamentals** (12 temas) - Variables, control, estructuras, funciones
+2. **02_intermediate_python** (15 temas) - Decoradores, archivos, iteradores, módulos
+3. **03_basic_intermediate_oop** (12 temas) - Clases, herencia, properties, descriptores
 
 #### Nivel Avanzado - Core Python
-4. **04_cpython_internals_avanzado** (27 temas) - GIL, PEP 703 free-threading, subinterpreters
-5. **05_concurrencia_moderna** (25 temas) - Threading sin GIL, asyncio, multiprocessing
-6. **06_tipado_metaprogramacion** (22 temas) - Type hints, metaclases, AST
+4. **04_cpython_internals_advanced** (27 temas) - GIL, PEP 703 free-threading, subinterpreters
+5. **05_modern_concurrency** (25 temas) - Threading sin GIL, asyncio, multiprocessing
+6. **06_typing_metaprogramming** (22 temas) - Type hints, metaclases, AST
 
 #### Patrones y Arquitectura
-7. **07_patrones_diseno** (88 patrones en 8 subcategorías)
-   - 01_gof_basicos (11 patrones)
-   - 02_pythonicos (14 patrones)
-   - 03_gof_avanzados (12 patrones)
-   - 04_arquitectonicos (13 patrones)
-   - 05_sistemas_distribuidos (12 patrones)
-   - 06_concurrencia (14 patrones)
-   - 07_mensajeria (4 patrones)
-   - 08_gestion_objetos (8 patrones)
+7. **07_design_patterns** (88 patrones en 8 subcategorías)
+   - 01_basic_gof (11 patrones)
+   - 02_pythonic_patterns (14 patrones)
+   - 03_advanced_gof (12 patrones)
+   - 04_architectural (13 patrones)
+   - 05_distributed_systems (12 patrones)
+   - 06_concurrency (14 patrones)
+   - 07_messaging (4 patrones)
+   - 08_object_management (8 patrones)
 
-8. **08_arquitectura_aplicaciones** (18 temas) - SOLID, DDD, Hexagonal, CQRS
+8. **08_application_architecture** (18 temas) - SOLID, DDD, Hexagonal, CQRS
 9. **09_testing_qa** (16 temas) - pytest, hypothesis, mutation testing
-10. **10_performance_optimizacion** (14 temas) - Profiling, Cython, NumPy
+10. **10_performance_optimization** (14 temas) - Profiling, Cython, NumPy
 
 #### Tecnologías Modernas 2026
-11. **11_tooling_moderno_2026** (35 temas)
+11. **11_modern_tooling_2026** (35 temas)
     - uv (package manager Rust)
     - Ruff (linter/formatter)
     - BasedPyright/Pylyzer
     - Pre-commit, pytest, profiling
 
-12. **12_fastapi_completo** (28 temas) - Framework completo, auth, WebSockets, deployment
-13. **13_ecosistema_backend** (20 temas) - SQLAlchemy, Redis, Kafka, gRPC, observabilidad
-14. **14_python_avanzado_2026** (45 temas)
+12. **12_fastapi_complete** (28 temas) - Framework completo, auth, WebSockets, deployment
+13. **13_backend_ecosystem** (20 temas) - SQLAlchemy, Redis, Kafka, gRPC, observability
+14. **14_advanced_python_2026** (45 temas)
     - PyO3 (extensiones Rust) - 22 temas
     - AI-Assisted Development - 23 temas
     - LangChain, LangGraph, agentes autónomos
 
-15. **15_data_science_basico** (10 temas) - NumPy, Pandas, visualization
-16. **16_security_moderna** (40 temas)
+15. **15_basic_data_science** (10 temas) - NumPy, Pandas, visualization
+16. **16_modern_security** (40 temas)
     - Supply chain security
     - SBOM (Software Bill of Materials)
     - Sigstore (keyless signing)
@@ -89,14 +89,14 @@ py-erudito/
 Los siguientes temas tienen contenido COMPLETO con README detallado, ejemplos, ejercicios, tests:
 
 **Módulo 04 (CPython Internals)**:
-- ✅ 01_historia_del_gil
-- ✅ 02_limitaciones_del_gil
+- ✅ 01_gil_history
+- ✅ 02_gil_limitations
 - ✅ 03_pep_703_free_threading
-- ✅ 04_activacion_free_threading
-- ✅ 05_arquitectura_sin_gil
+- ✅ 04_free_threading_activation
+- ✅ 05_gil_free_architecture
 
 **Módulo 11 (Tooling 2026)**:
-- ✅ 01_uv_introduccion (COMPLETO con ejemplos, ejercicios, tests)
+- ✅ 01_uv_introduction (COMPLETO con ejemplos, ejercicios, tests)
 
 **Resto de temas**: Tienen estructura completa (carpetas + README con plantilla) lista para que completes el contenido.
 
@@ -156,7 +156,7 @@ Para cada tema:
 python scripts/progress.py
 
 # Ejecutar tests de un tema
-pytest 11_tooling_moderno_2026/01_uv_introduccion/tests/
+pytest 11_modern_tooling_2026/01_uv_introduction/tests/
 
 # Hacer commit (actualiza progreso automático)
 git add .
@@ -242,7 +242,7 @@ pytest --cov=my_solution
 pytest -n auto
 
 # Tema específico
-pytest 11_tooling_moderno_2026/01_uv_introduccion/tests/
+pytest 11_modern_tooling_2026/01_uv_introduction/tests/
 ```
 
 ---
