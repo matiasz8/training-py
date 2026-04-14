@@ -1,15 +1,26 @@
-"""
-Ejemplo básico de Mediator.
-"""
+from dataclasses import dataclass
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@dataclass
+class PatternCard:
+    name: str
+    category: str
+    purpose: str
 
 
-if __name__ == "__main__":
-    example_function()
+def build_pattern_card() -> PatternCard:
+    return PatternCard(
+        name='Mediator',
+        category='03 Advanced GoF',
+        purpose='Demonstrate the core structure of the pattern in Python.'
+    )
+
+
+def main() -> None:
+    card = build_pattern_card()
+    print(f"{card.name} | {card.category}")
+    print(card.purpose)
+
+
+if __name__ == '__main__':
+    main()
