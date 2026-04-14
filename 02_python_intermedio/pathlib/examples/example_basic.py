@@ -1,15 +1,22 @@
-"""
-Ejemplo básico de Pathlib.
-"""
+"""Working example of pathlib."""
+
+from pathlib import Path
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def describe_path(path: Path) -> dict[str, str]:
+    """Return a few useful path properties."""
+    return {
+        'name': path.name,
+        'suffix': path.suffix,
+        'parent': path.parent.name,
+    }
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    path = Path('02_intermediate_python/pathlib/examples/example_basic.py')
+    print(describe_path(path))
+    print(path.with_name('notes.txt'))
+
+
+if __name__ == '__main__':
+    main()

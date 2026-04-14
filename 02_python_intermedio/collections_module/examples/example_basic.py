@@ -1,15 +1,19 @@
-"""
-Ejemplo básico de Collections Module.
-"""
+"""Working example of the collections module."""
+
+from collections import Counter, defaultdict, deque
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def main() -> None:
+    tickets = Counter(['todo', 'done', 'todo', 'review'])
+    grouped = defaultdict(list)
+    grouped['backend'].append('FastAPI')
+    grouped['data'].append('Polars')
+    queue = deque(['first', 'second'])
+    queue.appendleft('zero')
+    print(tickets)
+    print(dict(grouped))
+    print(list(queue))
 
 
-if __name__ == "__main__":
-    example_function()
+if __name__ == '__main__':
+    main()

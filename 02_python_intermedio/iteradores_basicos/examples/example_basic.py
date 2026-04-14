@@ -1,15 +1,26 @@
-"""
-Ejemplo básico de Iteradores Basicos.
-"""
+"""Working example of basic iterators."""
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class Countdown:
+    """Simple iterator that counts down to zero."""
+
+    def __init__(self, start: int) -> None:
+        self.current = start
+
+    def __iter__(self):
+        return self
+
+    def __next__(self) -> int:
+        if self.current < 0:
+            raise StopIteration
+        value = self.current
+        self.current -= 1
+        return value
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    print(list(Countdown(5)))
+
+
+if __name__ == '__main__':
+    main()

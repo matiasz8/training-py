@@ -1,15 +1,19 @@
-"""
-Ejemplo básico de Datetime Time.
-"""
+"""Working example of datetime and time."""
+
+from datetime import datetime, timedelta
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def schedule_next_review(start: datetime, days: int) -> datetime:
+    """Return the next review date."""
+    return start + timedelta(days=days)
 
 
-if __name__ == "__main__":
-    example_function()
+def main() -> None:
+    start = datetime(2026, 4, 13, 10, 30)
+    next_review = schedule_next_review(start, 7)
+    print(start.isoformat())
+    print(next_review.isoformat())
+
+
+if __name__ == '__main__':
+    main()

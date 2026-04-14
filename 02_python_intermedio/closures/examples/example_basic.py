@@ -1,15 +1,27 @@
-"""
-Ejemplo básico de Closures.
-"""
+"""Working example of closures."""
 
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def make_multiplier(factor: int):
+    """Return a function that remembers the multiplication factor."""
+    def multiply(value: int) -> int:
+        return value * factor
+    return multiply
 
 
-if __name__ == "__main__":
-    example_function()
+def make_threshold_checker(limit: int):
+    """Return a function that compares values against a saved limit."""
+    def is_above(value: int) -> bool:
+        return value > limit
+    return is_above
+
+
+def main() -> None:
+    double = make_multiplier(2)
+    is_priority = make_threshold_checker(10)
+    print(double(8))
+    print(is_priority(7))
+    print(is_priority(14))
+
+
+if __name__ == '__main__':
+    main()
