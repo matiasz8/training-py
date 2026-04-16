@@ -1,15 +1,19 @@
-"""
-Ejemplo básico de Arq Async Tasks.
-"""
+"""Basic example: async worker retries."""
+import asyncio
 
+async def process(job, tries):
+    await asyncio.sleep(0.01)
+    return not (job == 'job-2' and tries < 2)
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+async def main():
+    queue = [('job-1', 0), ('job-2', 0), ('job-3', 0)]
+    while queue:
+        job, tries = queue.pop(0)
+        tries += 1
+        if await process(job, tries):
+            print('done', job, 'tries', tries)
+        else:
+            print('retry', job, 'tries', tries)
+            queue.append((job, tries))
 
-
-if __name__ == "__main__":
-    example_function()
+asyncio.run(main())

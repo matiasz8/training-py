@@ -1,15 +1,10 @@
-"""
-Ejemplo básico de Structured Logging.
-"""
+"""Basic example: JSON logs with correlation id."""
+import json
+from datetime import datetime, timezone
 
+def log(level, message, cid):
+    print(json.dumps({'ts': datetime.now(timezone.utc).isoformat(), 'level': level, 'message': message, 'cid': cid}))
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
-
-if __name__ == "__main__":
-    example_function()
+log('INFO', 'request started', 'req-100')
+log('INFO', 'cache miss', 'req-100')
+log('INFO', 'request completed', 'req-100')

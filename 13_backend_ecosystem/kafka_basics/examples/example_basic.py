@@ -1,15 +1,23 @@
-"""
-Ejemplo básico de Kafka Basics.
-"""
+"""Basic example: partitions and consumer offsets."""
+from collections import defaultdict
 
+partitions = defaultdict(list)
+offsets = defaultdict(int)
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def produce(key, value, n=3):
+    p = hash(key) % n
+    partitions[p].append(value)
+    return p, len(partitions[p]) - 1
 
+def poll(n=3):
+    out = []
+    for p in range(n):
+        for i in range(offsets[p], len(partitions[p])):
+            out.append((p, i, partitions[p][i]))
+        offsets[p] = len(partitions[p])
+    return out
 
-if __name__ == "__main__":
-    example_function()
+print(produce('u1', 'event-login'))
+print(produce('u2', 'event-cart'))
+print(poll())
+print(poll())

@@ -1,15 +1,15 @@
-"""
-Ejemplo básico de Configuration Management.
-"""
+"""Basic example: env-driven settings with validation."""
+import os
 
+def load_settings():
+    app = os.getenv('APP_NAME', 'backend-service')
+    debug = os.getenv('DEBUG', 'false').lower() == 'true'
+    port = int(os.getenv('PORT', '8000'))
+    if not 1 <= port <= 65535:
+        raise ValueError('invalid port')
+    return {'app_name': app, 'debug': debug, 'port': port}
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
-
-if __name__ == "__main__":
-    example_function()
+os.environ.setdefault('APP_NAME', 'module13-demo')
+os.environ.setdefault('DEBUG', 'true')
+os.environ.setdefault('PORT', '9000')
+print(load_settings())

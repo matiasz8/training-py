@@ -1,15 +1,16 @@
-"""
-Ejemplo básico de Api Versioning.
-"""
+"""Basic example: behavior switch by API version."""
+def profile_v1(uid):
+    return {'id': uid, 'name': 'Alice'}
 
+def profile_v2(uid):
+    return {'id': uid, 'full_name': 'Alice Doe', 'plan': 'pro'}
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def dispatch(version, uid):
+    if version == '1':
+        return profile_v1(uid)
+    if version == '2':
+        return profile_v2(uid)
+    raise ValueError('unsupported version')
 
-
-if __name__ == "__main__":
-    example_function()
+print(dispatch('1', 7))
+print(dispatch('2', 7))

@@ -1,15 +1,11 @@
-"""
-Ejemplo básico de Rabbitmq Basics.
-"""
+"""Basic example: queue with ack and retry."""
+from collections import deque
 
-
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
-
-if __name__ == "__main__":
-    example_function()
+q = deque(['job-a', 'job-b', 'job-c'])
+while q:
+    job = q.popleft()
+    if job == 'job-b':
+        print('retry', job)
+        q.append('job-b-retry')
+        continue
+    print('ack', job)

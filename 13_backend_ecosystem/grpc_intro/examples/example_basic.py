@@ -1,15 +1,18 @@
-"""
-Ejemplo básico de Grpc Intro.
-"""
+"""Basic example: typed request/response RPC contract."""
+from dataclasses import dataclass
 
+@dataclass
+class Request:
+    user_id: int
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+@dataclass
+class Response:
+    user_id: int
+    name: str
 
+def get_user(req: Request) -> Response:
+    names = {1: 'Alice', 2: 'Bob'}
+    return Response(user_id=req.user_id, name=names.get(req.user_id, 'Unknown'))
 
-if __name__ == "__main__":
-    example_function()
+print(get_user(Request(1)))
+print(get_user(Request(7)))
