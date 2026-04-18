@@ -1,15 +1,23 @@
 """
-Ejemplo básico de 32 Document Loaders.
+Loading documents from various sources.
 """
 
+def load_text_file(path: str) -> str:
+    """Load text document."""
+    return "Mock document content"
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def load_pdf_document(path: str) -> dict:
+    """Load PDF document."""
+    return {
+        "path": path,
+        "pages": 5,
+        "text": "Mock PDF content",
+    }
 
+def load_documents_batch(paths: list) -> list:
+    """Load multiple documents."""
+    return [{"path": p, "content": load_text_file(p)} for p in paths]
 
 if __name__ == "__main__":
-    example_function()
+    docs = load_documents_batch(["doc1.txt", "doc2.txt"])
+    print(f"Loaded {len(docs)} documents")

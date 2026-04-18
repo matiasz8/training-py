@@ -1,15 +1,24 @@
 """
-Ejemplo básico de 18 Performance Optimization.
+Performance optimization techniques in PyO3.
+Benchmarking Rust vs Python implementations.
 """
 
+def python_implementation(n: int) -> int:
+    """Pure Python sum (for comparison)."""
+    return sum(range(n))
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def optimized_implementation(n: int) -> int:
+    """Optimized version (simulates Rust efficiency)."""
+    # This would be Rust in real scenario
+    return n * (n - 1) // 2
 
+def benchmark_comparison(n: int) -> dict:
+    """Compare performance."""
+    return {
+        "python_result": python_implementation(n),
+        "optimized_result": optimized_implementation(n),
+        "input_size": n,
+    }
 
 if __name__ == "__main__":
-    example_function()
+    print(benchmark_comparison(1000000))

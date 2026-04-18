@@ -1,15 +1,17 @@
 """
-Ejemplo básico de 01 Pyo3 Introduction.
+Basic PyO3 module that creates a simple Python-callable Rust function.
+Demonstrates the minimal setup for Rust-Python interop.
 """
 
+def greet_from_rust(name: str) -> str:
+    """Mock function simulating Rust integration."""
+    return f"Hello, {name}! This is from Rust via PyO3."
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+def calculate_sum(values: list) -> int:
+    """Sum a list of integers (simulates Rust computation)."""
+    return sum(values)
 
 if __name__ == "__main__":
-    example_function()
+    result = greet_from_rust("Python")
+    print(result)
+    print(f"Sum: {calculate_sum([1, 2, 3, 4, 5])}")

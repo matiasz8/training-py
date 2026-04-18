@@ -1,9 +1,10 @@
-# Shared Mutable State
+# 14 Shared Mutable State
 
 Tiempo estimado: 2-3 horas
+
 ## 1. Definición
 
-**Shared Mutable State** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
+**14 Shared Mutable State** es un aspecto crítico de la integración Rust-Python que te permite construir extensiones eficientes.
 
 En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
 
@@ -18,7 +19,7 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de 14 shared mutable state en servicios backend y herramientas internas.
+1. **Desarrollo de aplicaciones**: aplicar patrones de 14 14_shared_mutable_state en servicios backend y herramientas internas.
 2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
 3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
 
@@ -26,7 +27,7 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 
 ```python
 # Ver examples/example_basic.py para código ejecutable
-# relacionado con shared mutable state
+# relacionado con 14 14_shared_mutable_state
 ```
 
 Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
@@ -35,7 +36,7 @@ Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base ant
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de 14 shared mutable state, los equipos suelen enfrentar:
+Sin un enfoque claro de 14 14_shared_mutable_state, los equipos suelen enfrentar:
 
 - supuestos ocultos y comportamiento frágil,
 - refactors riesgosos,
@@ -43,7 +44,7 @@ Sin un enfoque claro de 14 shared mutable state, los equipos suelen enfrentar:
 
 ### Solución y Beneficios
 
-Trabajar con **Shared Mutable State** ayuda a lograr:
+Trabajar con **14 Shared Mutable State** ayuda a lograr:
 
 - mejor organización del código,
 - debugging y onboarding más rápidos,
@@ -81,7 +82,7 @@ Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
 
 ## 6. Resumen
 
-- Shared Mutable State fortalece fundamentos de ingeniería en Python.
+- **14 Shared Mutable State** fortalece fundamentos de ingeniería en Python.
 - Mejora calidad de código, testeabilidad y mantenibilidad.
 - Es directamente aplicable a proyectos backend y de automatización.
 

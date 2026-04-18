@@ -1,15 +1,24 @@
 """
-Ejemplo básico de 16 Numpy Arrays Zerocopy.
+NumPy arrays with zero-copy semantics.
+Direct access to NumPy buffer from Rust.
 """
 
+import numpy as np
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+def process_numpy_array(arr: np.ndarray) -> np.ndarray:
+    """Process NumPy array with zero-copy (simulated)."""
+    return arr * 2
 
+def array_statistics(arr: np.ndarray) -> dict:
+    """Compute statistics on NumPy array."""
+    return {
+        "mean": float(np.mean(arr)),
+        "std": float(np.std(arr)),
+        "sum": float(np.sum(arr)),
+    }
 
 if __name__ == "__main__":
-    example_function()
+    arr = np.array([1, 2, 3, 4, 5])
+    print("Original:", arr)
+    print("Processed:", process_numpy_array(arr))
+    print("Stats:", array_statistics(arr))

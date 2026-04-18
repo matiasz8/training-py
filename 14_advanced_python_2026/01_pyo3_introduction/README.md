@@ -1,9 +1,10 @@
-# Pyo3 Introduccion
+# 01 Pyo3 Introduction
 
 Tiempo estimado: 2-3 horas
+
 ## 1. Definición
 
-**Pyo3 Introduccion** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
+**01 Pyo3 Introduction** es un aspecto crítico de la integración Rust-Python que te permite construir extensiones eficientes.
 
 En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
 
@@ -18,7 +19,7 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de 01 pyo3 introduction en servicios backend y herramientas internas.
+1. **Desarrollo de aplicaciones**: aplicar patrones de 1 01_pyo3_introduction en servicios backend y herramientas internas.
 2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
 3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
 
@@ -26,7 +27,7 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 
 ```python
 # Ver examples/example_basic.py para código ejecutable
-# relacionado con pyo3 introduccion
+# relacionado con 1 01_pyo3_introduction
 ```
 
 Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
@@ -35,7 +36,7 @@ Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base ant
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de 01 pyo3 introduction, los equipos suelen enfrentar:
+Sin un enfoque claro de 1 01_pyo3_introduction, los equipos suelen enfrentar:
 
 - supuestos ocultos y comportamiento frágil,
 - refactors riesgosos,
@@ -43,7 +44,7 @@ Sin un enfoque claro de 01 pyo3 introduction, los equipos suelen enfrentar:
 
 ### Solución y Beneficios
 
-Trabajar con **Pyo3 Introduccion** ayuda a lograr:
+Trabajar con **01 Pyo3 Introduction** ayuda a lograr:
 
 - mejor organización del código,
 - debugging y onboarding más rápidos,
@@ -81,7 +82,7 @@ Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
 
 ## 6. Resumen
 
-- Pyo3 Introduccion fortalece fundamentos de ingeniería en Python.
+- **01 Pyo3 Introduction** fortalece fundamentos de ingeniería en Python.
 - Mejora calidad de código, testeabilidad y mantenibilidad.
 - Es directamente aplicable a proyectos backend y de automatización.
 

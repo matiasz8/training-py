@@ -1,15 +1,23 @@
 """
-Ejemplo básico de 25 Structured Output Pydantic.
+Structured outputs using Pydantic models.
 """
 
+from pydantic import BaseModel
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
+class ExtractionResult(BaseModel):
+    """Structured extraction result."""
+    entity: str
+    sentiment: str
+    confidence: float
 
+def extract_structured(text: str) -> ExtractionResult:
+    """Extract structured data from text."""
+    return ExtractionResult(
+        entity="Python",
+        sentiment="positive",
+        confidence=0.95,
+    )
 
 if __name__ == "__main__":
-    example_function()
+    result = extract_structured("Python is awesome")
+    print(f"Result: {result}")

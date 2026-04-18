@@ -1,9 +1,10 @@
-# Document Loaders
+# 32 Document Loaders
 
 Tiempo estimado: 2-3 horas
+
 ## 1. Definición
 
-**Document Loaders** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
+**32 Document Loaders** es un tema fundamental en sistemas de IA generativa para construir agentes y workflows inteligentes.
 
 En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
 
@@ -18,7 +19,7 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de 32 document loaders en servicios backend y herramientas internas.
+1. **Desarrollo de aplicaciones**: aplicar patrones de 32 32_document_loaders en servicios backend y herramientas internas.
 2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
 3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
 
@@ -26,7 +27,7 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 
 ```python
 # Ver examples/example_basic.py para código ejecutable
-# relacionado con document loaders
+# relacionado con 32 32_document_loaders
 ```
 
 Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
@@ -35,7 +36,7 @@ Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base ant
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de 32 document loaders, los equipos suelen enfrentar:
+Sin un enfoque claro de 32 32_document_loaders, los equipos suelen enfrentar:
 
 - supuestos ocultos y comportamiento frágil,
 - refactors riesgosos,
@@ -43,7 +44,7 @@ Sin un enfoque claro de 32 document loaders, los equipos suelen enfrentar:
 
 ### Solución y Beneficios
 
-Trabajar con **Document Loaders** ayuda a lograr:
+Trabajar con **32 Document Loaders** ayuda a lograr:
 
 - mejor organización del código,
 - debugging y onboarding más rápidos,
@@ -81,7 +82,7 @@ Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
 
 ## 6. Resumen
 
-- Document Loaders fortalece fundamentos de ingeniería en Python.
+- **32 Document Loaders** fortalece fundamentos de ingeniería en Python.
 - Mejora calidad de código, testeabilidad y mantenibilidad.
 - Es directamente aplicable a proyectos backend y de automatización.
 

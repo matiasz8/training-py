@@ -1,15 +1,27 @@
 """
-Ejemplo básico de 36 Graphs Vs Chains.
+Comparing LangChain chains vs LangGraph graphs.
 """
 
+def explain_chains() -> dict:
+    """Chains: Sequential, linear flow."""
+    return {
+        "type": "Chain",
+        "flow": "Linear",
+        "branching": False,
+        "use_case": "Simple sequential processing",
+    }
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+def explain_graphs() -> dict:
+    """Graphs: Complex, non-linear flow."""
+    return {
+        "type": "Graph",
+        "flow": "Non-linear",
+        "branching": True,
+        "use_case": "Complex workflows with decisions",
+    }
 
 if __name__ == "__main__":
-    example_function()
+    chain_info = explain_chains()
+    graph_info = explain_graphs()
+    print(f"Chains: {chain_info}")
+    print(f"Graphs: {graph_info}")

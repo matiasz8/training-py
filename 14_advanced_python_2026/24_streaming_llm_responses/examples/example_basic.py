@@ -1,15 +1,22 @@
 """
-Ejemplo básico de 24 Streaming Llm Responses.
+Streaming responses from LLMs.
 """
 
+def stream_response(prompt: str):
+    """Simulate streaming LLM response."""
+    tokens = ["The", " answer", " is", " streaming"]
+    for token in tokens:
+        print(token, end="", flush=True)
+        yield token
+    print()
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+def accumulate_stream(prompt: str) -> str:
+    """Accumulate streamed response."""
+    response = ""
+    for token in stream_response(prompt):
+        response += token
+    return response
 
 if __name__ == "__main__":
-    example_function()
+    full_response = accumulate_stream("What is Python?")
+    print(f"\nFull response: {full_response}")

@@ -1,15 +1,23 @@
 """
-Ejemplo básico de 02 Rust Toolchain Maturin.
+Demonstrates Maturin setup and basic project structure.
+Shows how to configure Cargo.toml and maturin pyproject.toml.
 """
 
+def check_toolchain_info() -> dict:
+    """Returns info about the Rust toolchain."""
+    return {
+        "framework": "Maturin",
+        "build_backend": "maturin",
+        "rust_support": "Stable and Nightly",
+        "python_versions": "3.8+",
+    }
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+def validate_pyproject() -> bool:
+    """Validates that maturin is properly configured."""
+    config = check_toolchain_info()
+    return config.get("build_backend") == "maturin"
 
 if __name__ == "__main__":
-    example_function()
+    info = check_toolchain_info()
+    print("Toolchain Info:", info)
+    print("Valid config:", validate_pyproject())

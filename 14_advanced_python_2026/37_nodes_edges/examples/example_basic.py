@@ -1,15 +1,26 @@
 """
-Ejemplo básico de 37 Nodes Edges.
+Nodes and edges in LangGraph.
 """
 
+class Node:
+    """Graph node."""
+    def __init__(self, name: str, processor):
+        self.name = name
+        self.processor = processor
+    
+    def execute(self, input_data):
+        return self.processor(input_data)
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+class Edge:
+    """Graph edge."""
+    def __init__(self, from_node: str, to_node: str, condition=None):
+        self.from_node = from_node
+        self.to_node = to_node
+        self.condition = condition
 
 if __name__ == "__main__":
-    example_function()
+    node = Node("process", lambda x: x * 2)
+    edge = Edge("start", "process")
+    
+    print(f"Node: {node.name}")
+    print(f"Edge: {edge.from_node} -> {edge.to_node}")

@@ -1,9 +1,10 @@
-# Primer Modulo Rust Python
+# 03 First Rust Python Module
 
 Tiempo estimado: 2-3 horas
+
 ## 1. Definición
 
-**Primer Modulo Rust Python** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
+**03 First Rust Python Module** es un aspecto crítico de la integración Rust-Python que te permite construir extensiones eficientes.
 
 En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
 
@@ -18,7 +19,7 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de 03 first rust python module en servicios backend y herramientas internas.
+1. **Desarrollo de aplicaciones**: aplicar patrones de 3 03_first_rust_python_module en servicios backend y herramientas internas.
 2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
 3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
 
@@ -26,7 +27,7 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 
 ```python
 # Ver examples/example_basic.py para código ejecutable
-# relacionado con primer modulo rust python
+# relacionado con 3 03_first_rust_python_module
 ```
 
 Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
@@ -35,7 +36,7 @@ Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base ant
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de 03 first rust python module, los equipos suelen enfrentar:
+Sin un enfoque claro de 3 03_first_rust_python_module, los equipos suelen enfrentar:
 
 - supuestos ocultos y comportamiento frágil,
 - refactors riesgosos,
@@ -43,7 +44,7 @@ Sin un enfoque claro de 03 first rust python module, los equipos suelen enfrenta
 
 ### Solución y Beneficios
 
-Trabajar con **Primer Modulo Rust Python** ayuda a lograr:
+Trabajar con **03 First Rust Python Module** ayuda a lograr:
 
 - mejor organización del código,
 - debugging y onboarding más rápidos,
@@ -81,7 +82,7 @@ Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
 
 ## 6. Resumen
 
-- Primer Modulo Rust Python fortalece fundamentos de ingeniería en Python.
+- **03 First Rust Python Module** fortalece fundamentos de ingeniería en Python.
 - Mejora calidad de código, testeabilidad y mantenibilidad.
 - Es directamente aplicable a proyectos backend y de automatización.
 

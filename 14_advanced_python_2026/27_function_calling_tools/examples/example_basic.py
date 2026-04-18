@@ -1,15 +1,24 @@
 """
-Ejemplo básico de 27 Function Calling Tools.
+Function calling and tool use in LLMs.
 """
 
+def define_tool(name: str, description: str, params: dict) -> dict:
+    """Define a tool for LLM."""
+    return {
+        "name": name,
+        "description": description,
+        "parameters": params,
+    }
 
-def example_function():
-    """
-    Ejemplo funcional del concepto.
-    """
-    print("Ver referencias/ para documentación oficial")
-    # TODO: Añadir ejemplo específico
-
+def create_tools_list() -> list:
+    """Create list of available tools."""
+    return [
+        define_tool("calculate", "Calculate math expression", {"expr": "string"}),
+        define_tool("search", "Search online", {"query": "string"}),
+    ]
 
 if __name__ == "__main__":
-    example_function()
+    tools = create_tools_list()
+    print(f"Available tools: {len(tools)}")
+    for tool in tools:
+        print(f"  - {tool['name']}: {tool['description']}")
