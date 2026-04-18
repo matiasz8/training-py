@@ -1,18 +1,18 @@
-"""Ejemplo funcional de comprehensions."""
+"""Working example of comprehensions."""
 
 
 def even_squares(numbers: list[int]) -> list[int]:
-    """Crea una lista de cuadrados para numeros pares."""
+    """Build a list of squares for even numbers."""
     return [number * number for number in numbers if number % 2 == 0]
 
 
 def word_lengths(words: list[str]) -> dict[str, int]:
-    """Construye un diccionario palabra -> longitud."""
+    """Build a word -> length dictionary."""
     return {word: len(word) for word in words}
 
 
 def normalized_initials(words: list[str]) -> set[str]:
-    """Construye un set con iniciales en mayuscula."""
+    """Build a set with uppercase initials."""
     return {word[0].upper() for word in words if word}
 
 

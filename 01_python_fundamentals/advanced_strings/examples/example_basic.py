@@ -1,18 +1,18 @@
-"""Ejemplo funcional de strings avanzados."""
+"""Working example of advanced strings."""
 
 
 def build_slug(title: str) -> str:
-    """Normaliza un titulo para usarlo como slug."""
+    """Normalize a title so it can be used as a slug."""
     return "-".join(title.strip().lower().split())
 
 
 def highlight_keyword(text: str, keyword: str) -> str:
-    """Reemplaza una palabra clave usando metodos de string."""
+    """Replace a keyword using string methods."""
     return text.replace(keyword, keyword.upper())
 
 
 def format_progress(module: str, completed: int, total: int) -> str:
-    """Usa f-strings para armar un reporte legible."""
+    """Use f-strings to build a readable progress report."""
     percentage = 0.0 if total == 0 else completed / total * 100
     return f"{module}: {completed}/{total} ({percentage:.1f}%)"
 

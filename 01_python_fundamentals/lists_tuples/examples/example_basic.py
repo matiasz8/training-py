@@ -1,19 +1,19 @@
-"""Ejemplo funcional de listas y tuplas."""
+"""Working example of lists and tuples."""
 
 
 def rotate_tasks(tasks: list[str]) -> list[str]:
-    """Mueve la primera tarea al final usando slicing."""
+    """Move the first task to the end using slicing."""
     return tasks[1:] + tasks[:1]
 
 
 def format_point(point: tuple[int, int]) -> str:
-    """Desempaqueta una tupla y la convierte en texto."""
+    """Unpack a tuple and convert it into readable text."""
     x, y = point
-    return f"Punto(x={x}, y={y})"
+    return f"Point(x={x}, y={y})"
 
 
 def main() -> None:
-    tasks = ["leer", "practicar", "repasar"]
+    tasks = ["read", "practice", "review"]
     print(rotate_tasks(tasks))
     print(format_point((3, 7)))
 

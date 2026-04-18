@@ -1,20 +1,20 @@
-"""Ejemplo funcional de manejo basico de errores."""
+"""Working example of basic error handling."""
 
 
 def safe_divide(dividend: float, divisor: float) -> float | None:
-    """Devuelve el resultado o None si el divisor es invalido."""
+    """Return the result or None when the divisor is invalid."""
     try:
         return dividend / divisor
     except ZeroDivisionError:
-        print("No se puede dividir por cero.")
+        print("Cannot divide by zero.")
         return None
 
 
 def parse_port(raw_value: str) -> int:
-    """Valida una configuracion numerica y propaga errores utiles."""
+    """Validate a numeric configuration value and raise useful errors."""
     port = int(raw_value)
     if not 1 <= port <= 65535:
-        raise ValueError("El puerto debe estar entre 1 y 65535.")
+        raise ValueError("Port must be between 1 and 65535.")
     return port
 
 
@@ -25,7 +25,7 @@ def main() -> None:
         print(parse_port("8080"))
         print(parse_port("70000"))
     except ValueError as error:
-        print(f"Error controlado: {error}")
+        print(f"Handled error: {error}")
 
 
 if __name__ == "__main__":

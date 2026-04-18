@@ -1,16 +1,16 @@
-"""Ejemplo funcional de debugging basico."""
+"""Working example of basic debugging."""
 
 
 def average_positive(values: list[int]) -> float:
-    """Muestra un flujo simple de debugging con impresiones y aserciones."""
-    print(f"[debug] valores recibidos={values}")
+    """Show a simple debugging flow with prints and assertions."""
+    print(f"[debug] received values={values}")
     positives = [value for value in values if value >= 0]
-    print(f"[debug] valores positivos={positives}")
+    print(f"[debug] positive values={positives}")
     if not positives:
-        raise ValueError("Se necesita al menos un valor positivo.")
+        raise ValueError("At least one positive value is required.")
 
     result = sum(positives) / len(positives)
-    print(f"[debug] promedio calculado={result}")
+    print(f"[debug] computed average={result}")
     assert result >= 0
     return result
 

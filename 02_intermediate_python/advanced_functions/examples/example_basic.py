@@ -19,6 +19,9 @@ def combine_scores(*scores: int, bonus: int = 0) -> int:
 
 
 def main() -> None:
+    """
+    Show how to use the advanced function features in practice.
+    """
     print(apply_operation([1, 2, 3], lambda value: value * 10))
     warning = build_formatter('warning')
     print(warning('disk usage is above 80%'))

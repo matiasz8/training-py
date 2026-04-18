@@ -1,13 +1,13 @@
-"""Ejemplo funcional de funciones basicas."""
+"""Working example of basic functions."""
 
 
 def greet(name: str, role: str = "Developer") -> str:
-    """Devuelve un saludo usando parametros posicionales y opcionales."""
-    return f"Hola, {name}. Tu rol actual es {role}."
+    """Return a greeting with positional and optional parameters."""
+    return f"Hello, {name}. Your current role is {role}."
 
 
 def calculate_price(base: float, discount: float = 0.0, tax: float = 0.21) -> float:
-    """Calcula un precio final reutilizando logica en una funcion."""
+    """Calculate a final price by encapsulating reusable logic."""
     return round(base * (1 - discount) * (1 + tax), 2)
 
 

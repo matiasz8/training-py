@@ -1,10 +1,10 @@
-"""Ejemplo funcional de variables y tipos de datos."""
+"""Working example of variables and data types."""
 
 from typing import TypedDict
 
 
 class Profile(TypedDict):
-    """Estructura tipada para un perfil simple."""
+    """Typed structure for a simple profile."""
 
     name: str
     age: int
@@ -14,7 +14,7 @@ class Profile(TypedDict):
 
 
 def build_profile(name: str, age: int, active: bool) -> Profile:
-    """Construye un perfil simple usando tipos basicos de Python."""
+    """Build a simple profile using Python's basic data types."""
     return {
         "name": name,
         "age": age,
@@ -25,11 +25,11 @@ def build_profile(name: str, age: int, active: bool) -> Profile:
 
 
 def describe_profile(profile: Profile) -> str:
-    """Resume el contenido del perfil y los tipos involucrados."""
+    """Summarize the profile contents and the values it stores."""
     skills = ", ".join(profile["skills"])
     return (
-        f"{profile['name']} ({profile['age']} anios) | "
-        f"activo={profile['active']} | score={profile['score']} | skills={skills}"
+        f"{profile['name']} ({profile['age']} years old) | "
+        f"active={profile['active']} | score={profile['score']} | skills={skills}"
     )
 
 

@@ -1,15 +1,15 @@
-"""Ejemplo funcional de entrada y salida sin depender de input real."""
+"""Working example of input and output without real user input."""
 
 
 def parse_csv_line(raw_line: str) -> tuple[str, int, str]:
-    """Transforma una linea simple separada por comas en valores tipados."""
+    """Transform a simple comma-separated line into typed values."""
     name, age, city = [part.strip() for part in raw_line.split(",")]
     return name, int(age), city
 
 
 def format_receipt(name: str, total: float) -> str:
-    """Genera una salida multilinea lista para mostrar o guardar."""
-    return f"Cliente: {name}\nTotal: ${total:.2f}\nEstado: confirmado"
+    """Generate multiline output ready to print or save."""
+    return f"Customer: {name}\nTotal: ${total:.2f}\nStatus: confirmed"
 
 
 def main() -> None:
