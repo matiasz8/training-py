@@ -8,14 +8,16 @@ import os
 import pathlib
 import subprocess
 import re
+import sys
 
 BASE_DIR = pathlib.Path(__file__).parent
+PYTHON = sys.executable  # use the same venv python running this script
 
 def validate_example_execution(example_file: pathlib.Path) -> tuple[bool, str]:
     """Try to execute example file."""
     try:
         result = subprocess.run(
-            ["python", str(example_file)],
+            [PYTHON, str(example_file)],
             capture_output=True,
             timeout=5,
             text=True
