@@ -1,19 +1,15 @@
-# Referencias: Primer Modulo Rust Python
+# Referencias: 03 First Rust Python Module
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [PyO3 Getting Started Guide](https://pyo3.rs/latest/getting-started.html)
+- [Maturin — maturin develop and maturin build](https://maturin.rs/develop.html)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [Writing Python Extensions in Rust — Better Programming](https://betterprogramming.pub/writing-python-extensions-in-rust-7b568b47b9e7)
+- [How to Use Rust with Python — InfoWorld](https://www.infoworld.com/article/3664412/how-to-use-rust-with-python.html)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [First Rust Python Module (YouTube)](https://www.youtube.com/watch?v=lyG6AKzu4ew)

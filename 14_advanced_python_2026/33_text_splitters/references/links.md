@@ -1,19 +1,15 @@
-# Referencias: Text Splitters
+# Referencias: 33 Text Splitters
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [LangChain — Text Splitters Concepts](https://python.langchain.com/docs/concepts/text_splitters/)
+- [LangChain — RecursiveCharacterTextSplitter](https://python.langchain.com/docs/how_to/recursive_text_splitter/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [Pinecone — Chunking Strategies for LLMs](https://www.pinecone.io/learn/chunking-strategies/)
+- [LangChain — Semantic Chunking](https://python.langchain.com/docs/how_to/semantic_chunker/)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [LangChain Text Splitting and Chunking (YouTube)](https://www.youtube.com/watch?v=8OJC21T2SL4)

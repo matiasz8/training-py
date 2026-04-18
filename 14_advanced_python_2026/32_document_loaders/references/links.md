@@ -1,19 +1,15 @@
-# Referencias: Document Loaders
+# Referencias: 32 Document Loaders
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [LangChain — Document Loaders Concepts](https://python.langchain.com/docs/concepts/document_loaders/)
+- [LangChain — Document Loader Integrations](https://python.langchain.com/docs/integrations/document_loaders/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [LangChain — PDF Loader How-To](https://python.langchain.com/docs/how_to/document_loader_pdf/)
+- [LangChain — Directory Loader](https://python.langchain.com/docs/how_to/document_loader_directory/)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [LangChain Document Loaders (YouTube Search)](https://www.youtube.com/results?search_query=langchain+document+loaders+tutorial)

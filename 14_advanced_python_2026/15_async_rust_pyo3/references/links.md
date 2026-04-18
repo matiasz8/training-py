@@ -1,19 +1,15 @@
-# Referencias: Async Rust Pyo3
+# Referencias: 15 Async Rust Pyo3
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [PyO3 — Async and Await](https://pyo3.rs/latest/async-await.html)
+- [pyo3-asyncio — Async Bridge Library](https://docs.rs/pyo3-asyncio/latest/pyo3_asyncio/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [Tokio — Async Runtime for Rust](https://tokio.rs/)
+- [Python asyncio — Official Docs](https://docs.python.org/3/library/asyncio.html)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [Async PyO3 (YouTube Search)](https://www.youtube.com/results?search_query=pyo3+async+await+rust+python)

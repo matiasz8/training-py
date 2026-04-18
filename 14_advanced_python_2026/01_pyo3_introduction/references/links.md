@@ -1,19 +1,15 @@
-# Referencias: Pyo3 Introduccion
+# Referencias: 01 Pyo3 Introduction
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [PyO3 User Guide — Official Documentation](https://pyo3.rs/)
+- [PyO3 API Reference (docs.rs)](https://docs.rs/pyo3/latest/pyo3/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [Rust and Python Interoperability with PyO3 — LogRocket](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
+- [Building Python Extensions in Pure Rust with PyO3](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [PyO3 — Write Python Modules in Rust (YouTube)](https://www.youtube.com/watch?v=UNFxmHu4K0A)

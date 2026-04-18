@@ -1,19 +1,15 @@
-# Referencias: Callbacks Python Desde Rust
+# Referencias: 17 Python Callbacks From Rust
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [PyO3 — Calling Python from Rust](https://pyo3.rs/latest/python-from-rust.html)
+- [PyO3 — PyFunction Type](https://docs.rs/pyo3/latest/pyo3/types/struct.PyFunction.html)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [PyO3 — Calling Existing Python Code](https://pyo3.rs/latest/python-from-rust/calling-existing-code.html)
+- [The Rust Book — Closures](https://doc.rust-lang.org/book/ch13-01-closures.html)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [PyO3 Callbacks (YouTube Search)](https://www.youtube.com/results?search_query=pyo3+python+callback+from+rust)

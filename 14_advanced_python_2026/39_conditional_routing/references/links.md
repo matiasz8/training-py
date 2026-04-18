@@ -1,19 +1,15 @@
-# Referencias: Conditional Routing
+# Referencias: 39 Conditional Routing
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [LangGraph — Branching and Conditional Edges](https://langchain-ai.github.io/langgraph/how-tos/branching/)
+- [LangGraph — Conditional Edges Reference](https://langchain-ai.github.io/langgraph/concepts/low_level/#conditional-edges)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [LangGraph Tutorial — Conditional Edges](https://langchain-ai.github.io/langgraph/tutorials/introduction/#add-conditional-edges)
+- [LangChain — Routing by Semantic Similarity](https://python.langchain.com/docs/how_to/routing/)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [LangGraph Conditional Routing (YouTube)](https://www.youtube.com/watch?v=0VLAoFEsnXQ)

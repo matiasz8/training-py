@@ -1,19 +1,15 @@
-# Referencias: Testing Llm Systems
+# Referencias: 44 Testing Llm Systems
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [LangSmith — LLM Evaluation and Testing](https://docs.smith.langchain.com/)
+- [LangChain — Evaluating LLMs](https://python.langchain.com/docs/how_to/evaluate_llm/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [Hamel Husain — Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/)
+- [DeepEval — LLM Evaluation Framework](https://www.deepeval.com/)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [Testing LLM Applications (YouTube)](https://www.youtube.com/watch?v=oMBvWWHvqPc)

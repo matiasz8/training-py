@@ -1,19 +1,15 @@
-# Referencias: Metodos Pymethods
+# Referencias: 08 Pymethods
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [PyO3 — Instance Methods (#[pymethods])](https://pyo3.rs/latest/class.html#instance-methods)
+- [PyO3 — #[pymethods] Attribute Reference](https://docs.rs/pyo3/latest/pyo3/attr.pymethods.html)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [PyO3 — Basic Object Customization](https://pyo3.rs/latest/class/object.html)
+- [PyO3 — Numeric Operations](https://pyo3.rs/latest/class/numeric.html)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [PyO3 PyMethods (YouTube Search)](https://www.youtube.com/results?search_query=pyo3+pymethods+instance+methods)

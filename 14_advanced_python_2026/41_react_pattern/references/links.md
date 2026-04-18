@@ -1,19 +1,15 @@
-# Referencias: React Pattern
+# Referencias: 41 React Pattern
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [LangGraph — ReAct Agent Tutorial](https://langchain-ai.github.io/langgraph/tutorials/introduction/)
+- [LangChain — Migrating to ReAct Agents](https://python.langchain.com/docs/how_to/migrate_agent/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [Arxiv — ReAct: Synergizing Reasoning and Acting (Paper)](https://arxiv.org/abs/2210.03629)
+- [Prompting Guide — ReAct Technique](https://www.promptingguide.ai/techniques/react)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [ReAct Pattern Explained (YouTube)](https://www.youtube.com/watch?v=Eug2clsLtFs)

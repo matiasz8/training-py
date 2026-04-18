@@ -1,19 +1,15 @@
-# Referencias: Vector Stores Chromadb
+# Referencias: 34 Vector Stores Chromadb
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [ChromaDB — Official Documentation](https://docs.trychroma.com/)
+- [LangChain — ChromaDB Integration](https://python.langchain.com/docs/integrations/vectorstores/chroma/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [ChromaDB Core Architecture](https://www.trychroma.com/blog/chroma-core-architecture)
+- [LangChain — Vector Stores How-To](https://python.langchain.com/docs/how_to/vectorstores/)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [ChromaDB + LangChain Tutorial (YouTube)](https://www.youtube.com/watch?v=3yPBVii7Ct0)

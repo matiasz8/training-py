@@ -1,19 +1,15 @@
-# Referencias: Rust Toolchain Maturin
+# Referencias: 02 Rust Toolchain Maturin
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [Maturin — Official Documentation](https://maturin.rs/)
+- [Rustup — Install the Rust Toolchain](https://www.rust-lang.org/tools/install)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [Maturin Tutorial — First Python Extension](https://maturin.rs/tutorial.html)
+- [Rust Release Notes Reference](https://blog.rust-lang.org/2023/01/26/Rust-1.67.0.html)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [Maturin + PyO3 Quickstart (YouTube)](https://www.youtube.com/watch?v=r06oxL1KGFE)

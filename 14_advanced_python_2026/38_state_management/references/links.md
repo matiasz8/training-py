@@ -1,19 +1,15 @@
-# Referencias: State Management
+# Referencias: 38 State Management
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [LangGraph — State Management](https://langchain-ai.github.io/langgraph/concepts/low_level/#state)
+- [LangGraph — Custom State Reducers](https://langchain-ai.github.io/langgraph/how-tos/state-reducers/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [LangGraph — Persistence and Checkpoints](https://langchain-ai.github.io/langgraph/concepts/persistence/)
+- [LangChain — Managing Message History](https://python.langchain.com/docs/how_to/message_history/)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [LangGraph State Management (YouTube)](https://www.youtube.com/watch?v=dntd80YPt7U)

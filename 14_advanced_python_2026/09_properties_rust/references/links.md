@@ -1,19 +1,15 @@
-# Referencias: Properties Rust
+# Referencias: 09 Properties Rust
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [PyO3 — Class Attributes and Properties](https://pyo3.rs/latest/class.html#class-attributes)
+- [PyO3 — Getter and Setter (#[getter] / #[setter])](https://pyo3.rs/latest/class.html#getter-and-setter)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [PyO3 — pymethods Macro Deep Dive](https://docs.rs/pyo3/latest/pyo3/macro.pymethods.html)
+- [Rust Reference — Attributes](https://doc.rust-lang.org/reference/attributes.html)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [PyO3 Properties (YouTube Search)](https://www.youtube.com/results?search_query=pyo3+getter+setter+property)

@@ -1,19 +1,15 @@
-# Referencias: Graphs Vs Chains
+# Referencias: 36 Graphs Vs Chains
 
-## PyO3 y Rust
-- [PyO3 Guide](https://pyo3.rs/)
-- [Maturin](https://maturin.rs/)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## Documentación Oficial
 
-## AI/LLM Development
-- [LangChain](https://python.langchain.com/)
-- [LangGraph](https://langchain-ai.github.io/langgraph/)
-- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [LangGraph — High-Level Concepts vs LangChain](https://langchain-ai.github.io/langgraph/concepts/high_level/)
+- [LangChain — LCEL Reference](https://python.langchain.com/docs/concepts/lcel/)
 
-## Artículos
-- [Rust + Python](https://blog.logrocket.com/rust-and-python-interoperability-pyo3/)
-- [Building Python Extensions in Rust](https://depth-first.com/articles/2020/08/10/python-extensions-in-pure-rust-with-pyo3/)
+## Artículos y Guías
+
+- [LangChain Blog — LangGraph vs Chains for Agents](https://blog.langchain.dev/langgraph-multi-agent-workflows/)
+- [LangGraph — Agentic Concepts](https://langchain-ai.github.io/langgraph/concepts/agentic_concepts/)
 
 ## Videos
-- [PyO3 tutorials](https://www.youtube.com/results?search_query=pyo3+rust+python)
-- [LangChain tutorials](https://www.youtube.com/c/LangChain)
+
+- [LangGraph vs LangChain Chains (YouTube)](https://www.youtube.com/watch?v=TFidFPxjkqQ)
