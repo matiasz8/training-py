@@ -1,37 +1,37 @@
 """
-Tests para 29 pytest xdist paralelizacion
+Tests for 29 pytest xdist paralelizacion
 """
 
 import pytest
 from pathlib import Path
 import sys
 
-# Añadir directorio padre al path para imports
+# Add parent directory to import path
 parent_dir = Path(__file__).parent.parent / "my_solution"
 sys.path.insert(0, str(parent_dir))
 
 
 class Test29PytestXdistParalelizacion:
-    """Suite de tests para 29 pytest xdist paralelizacion."""
+    """Test suite for 29 pytest xdist paralelizacion."""
     
     def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
+        """Test basic functionality."""
+        # Implement basic functionality test
         pass
     
     def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
+        """Test edge cases."""
+        # Implement edge case tests
         pass
     
     def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
+        """Test error handling."""
+        # Implement error handling tests
         pass
 
 
 def test_imports():
-    """Verifica que los imports funcionan."""
+    """Verify imports work correctly."""
     assert True  # Placeholder
 
 

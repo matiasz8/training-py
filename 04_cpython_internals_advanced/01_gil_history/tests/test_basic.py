@@ -1,5 +1,5 @@
 """
-Tests para el ejercicio básico: Comparación Threading vs Multiprocessing
+Tests for el ejercicio básico: Comparación Threading vs Multiprocessing
 
 Ejecutar con: pytest test_basic.py -v
 """
@@ -21,7 +21,7 @@ from exercises.basic_exercise import (
 
 
 class TestIsPrime:
-    """Tests para la función is_prime."""
+    """Tests for la función is_prime."""
     
     def test_small_primes(self):
         """Verificar primos pequeños."""
@@ -59,7 +59,7 @@ class TestIsPrime:
 
 
 class TestFindPrimesInRange:
-    """Tests para find_primes_in_range."""
+    """Tests for find_primes_in_range."""
     
     def test_small_range(self):
         """Verificar rango pequeño."""
@@ -90,7 +90,7 @@ class TestFindPrimesInRange:
 
 
 class TestSequentialExecution:
-    """Tests para ejecución secuencial."""
+    """Tests for ejecución secuencial."""
     
     def test_single_range(self):
         """Test con un solo rango."""
@@ -119,7 +119,7 @@ class TestSequentialExecution:
 
 
 class TestThreadingExecution:
-    """Tests para ejecución con threading."""
+    """Tests for ejecución con threading."""
     
     def test_correctness(self):
         """Verificar que encuentra los mismos primos que secuencial."""
@@ -142,7 +142,7 @@ class TestThreadingExecution:
 
 
 class TestMultiprocessingExecution:
-    """Tests para ejecución con multiprocessing."""
+    """Tests for ejecución con multiprocessing."""
     
     def test_correctness(self):
         """Verificar que encuentra los mismos primos que secuencial."""

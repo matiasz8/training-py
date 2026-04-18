@@ -1,5 +1,5 @@
 """
-Ejercicio: Análisis de Limitaciones del GIL
+Exercise: Análisis de Limitaciones del GIL
 
 OBJETIVO:
 ---------
@@ -40,7 +40,7 @@ ESPECIFICACIONES:
 - Implementa type hints completos
 - Maneja excepciones apropiadamente
 
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
+DO NOT MODIFY THIS FILE DIRECTLY. Copy it into my_solution/ and work there.
 """
 
 import threading
@@ -104,7 +104,7 @@ class GILBenchmark:
             num_tasks: Número de tareas a ejecutar
             num_workers: Número de workers para estrategias paralelas
         """
-        # TODO: Implementar inicialización
+        # TASK: Implementar inicialización
         pass
     
     @staticmethod
@@ -118,7 +118,7 @@ class GILBenchmark:
         Returns:
             Resultado del cálculo
             
-        TODO: Implementar una operación CPU-intensiva
+        TASK: Implementar una operación CPU-intensiva
         Ejemplo: suma de números, cálculo de fibonacci, etc.
         """
         pass
@@ -134,7 +134,7 @@ class GILBenchmark:
         Returns:
             Mensaje de confirmación
             
-        TODO: Simular operación I/O con time.sleep()
+        TASK: Simular operación I/O con time.sleep()
         Esto libera el GIL, permitiendo que otros threads ejecuten.
         """
         pass
@@ -150,7 +150,7 @@ class GILBenchmark:
         Returns:
             Tupla (resultado_cpu, resultado_io)
             
-        TODO: Implementar tarea que combine operaciones CPU e I/O
+        TASK: Implementar tarea que combine operaciones CPU e I/O
         """
         pass
     
@@ -164,7 +164,7 @@ class GILBenchmark:
         Returns:
             Resultado del benchmark
             
-        TODO: Implementar ejecución secuencial
+        TASK: Implementar ejecución secuencial
         - Ejecutar self.num_tasks tareas una tras otra
         - Medir tiempo total
         - Retornar resultado con speedup=1.0, efficiency=1.0
@@ -181,7 +181,7 @@ class GILBenchmark:
         Returns:
             Resultado del benchmark
             
-        TODO: Implementar ejecución multi-threaded
+        TASK: Implementar ejecución multi-threaded
         - Crear self.num_workers threads
         - Distribuir self.num_tasks entre los threads
         - Medir tiempo total incluyendo join()
@@ -199,7 +199,7 @@ class GILBenchmark:
         Returns:
             Resultado del benchmark
             
-        TODO: Implementar ejecución multi-process
+        TASK: Implementar ejecución multi-process
         - Crear self.num_workers procesos
         - Distribuir tareas entre procesos
         - Medir tiempo total
@@ -223,7 +223,7 @@ class GILBenchmark:
         Returns:
             Resultado con métricas actualizadas
             
-        TODO: Implementar cálculo de métricas
+        TASK: Implementar cálculo de métricas
         - speedup = baseline.total_time / result.total_time
         - efficiency = speedup / result.num_workers
         - overhead = result.total_time - (baseline.total_time / result.num_workers)
@@ -237,7 +237,7 @@ class GILBenchmark:
         Returns:
             Diccionario con resultados por tipo de workload
             
-        TODO: Implementar benchmark completo
+        TASK: Implementar benchmark completo
         - Para cada WorkloadType:
           - Ejecutar sequential (baseline)
           - Ejecutar threaded
@@ -257,7 +257,7 @@ class GILBenchmark:
         Returns:
             Reporte formateado como string
             
-        TODO: Implementar generación de reporte
+        TASK: Implementar generación de reporte
         - Formatear resultados en tabla
         - Incluir observaciones sobre el GIL
         - Dar recomendaciones según workload type
@@ -279,7 +279,7 @@ def demonstrate_gil_limitation():
     """
     Función helper para demostrar claramente la limitación del GIL.
     
-    TODO: Implementar demostración clara
+    TASK: Implementar demostración clara
     - Crear dos tareas CPU-intensivas
     - Ejecutar con threads → tiempo ~2x (no hay paralelismo)
     - Ejecutar con processes → tiempo ~1x (paralelismo real)
@@ -290,9 +290,9 @@ def demonstrate_gil_limitation():
 
 def main():
     """
-    Función principal para probar tu implementación.
+    Entry point to try your implementation.
     
-    TODO: Implementar casos de prueba
+    TASK: Implementar casos de prueba
     - Crear instancia de GILBenchmark
     - Ejecutar benchmark completo
     - Imprimir reporte
@@ -302,7 +302,7 @@ def main():
     print("EJERCICIO: Análisis de Limitaciones del GIL")
     print("="*60)
     
-    # TODO: Tu código aquí
+    # TASK: Tu código aquí
     
     print("\n" + "="*60)
     print("Completa la implementación en my_solution/")

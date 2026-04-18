@@ -1,5 +1,5 @@
 """
-Tests para ejercicio básico de uv
+Tests for ejercicio básico de uv
 """
 import pytest
 from pathlib import Path

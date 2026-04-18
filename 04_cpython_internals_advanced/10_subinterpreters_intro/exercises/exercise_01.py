@@ -1,27 +1,27 @@
 """
-Ejercicio: 10 Subinterpreters Intro
+Exercise: 10 Subinterpreters Intro
 
-Objetivo: Implementar y practicar 10_subinterpreters_intro
+Goal: Implementar y practicar 10_subinterpreters_intro
 
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
+Instructions:
+1. Read the requirements carefully
+2. Implement the requested functions/classes in your copy
+3. Run tests with: pytest tests/
+4. Your solution should live under my_solution/
 
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
+DO NOT MODIFY THIS FILE DIRECTLY. Copy it into my_solution/ and work there.
 """
 
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
+# Implement your solution in your my_solution copy.
+# Follow the docstring specifications.
 
 
 def main():
     """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
+    Entry point to try your implementation.
+    Add your own trial cases.
     """
-    # TODO: Añade código de prueba aquí
+    # Add exploratory checks here.
     pass
 
 

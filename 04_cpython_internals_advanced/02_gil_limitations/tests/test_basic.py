@@ -1,5 +1,5 @@
 """
-Tests para limitaciones del GIL.
+Tests for limitaciones del GIL.
 
 Valida la implementación del ejercicio de análisis de GIL.
 """
@@ -11,13 +11,13 @@ import time
 import threading
 import multiprocessing as mp
 
-# Añadir directorio padre al path para imports
+# Add parent directory to import path
 parent_dir = Path(__file__).parent.parent / "my_solution"
 sys.path.insert(0, str(parent_dir))
 
 
 class TestGILBenchmark:
-    """Suite de tests para GILBenchmark."""
+    """Test suite for GILBenchmark."""
     
     def test_can_import_classes(self):
         """Test que las clases se pueden importar."""

@@ -1,5 +1,5 @@
 """
-Tests para el ejercicio básico de type hints.
+Tests for el ejercicio básico de type hints.
 """
 
 import pytest
@@ -19,7 +19,7 @@ except (ImportError, AttributeError):
 
 @pytest.mark.skipif(not SOLUTION_EXISTS, reason="Solución no implementada aún")
 class TestCalculateDiscount:
-    """Tests para la función calculate_discount."""
+    """Tests for la función calculate_discount."""
     
     def test_valid_discount_20_percent(self):
         """Test con descuento válido del 20%."""
