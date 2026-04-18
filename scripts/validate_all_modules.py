@@ -9,13 +9,13 @@ Checks per module:
   E1  Exercises          — exercises/exercise_01.py has no TODO / no Spanish in code comments
   M1  README             — topic README has ≥18 headings
 
-Only modules 01-14 are in scope (modules 15-16 are not yet synced to NaN and are excluded).
+Only modules 01-15 are in scope (module 16 is not yet synced to NaN and is excluded).
 
 Exit code 0 if all checks pass, 1 if any fail.
 
 Usage:
   python scripts/validate_all_modules.py
-  python scripts/validate_all_modules.py --module 14_advanced_python_2026
+    python scripts/validate_all_modules.py --module 15_basic_data_science
   python scripts/validate_all_modules.py --json
 """
 
@@ -33,8 +33,8 @@ from pathlib import Path
 
 PYTHON = sys.executable
 
-# Only validate modules 01-14 (15-16 not synced to NaN yet)
-MAX_MODULE_NUM = 14
+# Only validate modules 01-15 (16 not synced to NaN yet)
+MAX_MODULE_NUM = 15
 
 CANONICAL_FILES = [
     "README.md",
@@ -308,7 +308,7 @@ def print_results(results: list[ModuleResult], verbose: bool) -> int:
 
     print()
     print(f"SUMMARY: {total_modules - failed_modules}/{total_modules} modules passed [SP1 S1 R1 X1 E1 M1]")
-    print(f"  Note: modules 15–16 excluded from scope (not yet synced to NaN).")
+    print(f"  Note: module 16 excluded from scope (not yet synced to NaN).")
 
     return 0 if failed_modules == 0 else 1
 
@@ -317,7 +317,7 @@ def print_results(results: list[ModuleResult], verbose: bool) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate training-py lab modules (01-14).")
+    parser = argparse.ArgumentParser(description="Validate training-py lab modules (01-15).")
     parser.add_argument("--module", help="Validate a single module by name.")
     parser.add_argument("--json", action="store_true", help="Output JSON.")
     parser.add_argument("--verbose", action="store_true", help="Show all topics, not just failures.")

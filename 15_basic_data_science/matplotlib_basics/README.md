@@ -1,94 +1,85 @@
 # Matplotlib Basics
 
-Tiempo estimado: 1-2 horas
+Tiempo estimado: 1.5-2.5 hours
+
 ## 1. Definición
 
-**Matplotlib Basics** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
-
-En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
+Matplotlib Basics cubre la construcción de gráficos base con control explícito de figura, ejes, etiquetas y formato.
 
 ### Características Clave
 
-- **Claridad**: promueve código legible y una intención explícita.
-- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
-- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
-- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
+- Usa una API orientada a objetos para construir gráficos.
+- Funciona bien como capa base para librerías más expresivas.
+- Permite exportar figuras sin depender de una interfaz gráfica.
+- Es ideal para entender qué está pasando en cada eje.
 
 ## 2. Aplicación Práctica
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de matplotlib basics en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. Graficar evolución mensual de ventas o tráfico.
+2. Anotar outliers o hitos en una serie temporal.
+3. Exportar gráficos para reportes automatizados.
 
 ### Ejemplo de Código
 
-```python
-# Ver examples/example_basic.py para código ejecutable
-# relacionado con matplotlib basics
-```
-
-Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
+Revisa `examples/example_basic.py` para ver una implementación ejecutable enfocada en matplotlib basics.
 
 ## 3. ¿Por Qué Es Importante?
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de matplotlib basics, los equipos suelen enfrentar:
-
-- supuestos ocultos y comportamiento frágil,
-- refactors riesgosos,
-- baja confianza al introducir cambios.
+Si no controlas figura y ejes explícitamente, los gráficos se vuelven difíciles de reutilizar, testear o exportar de forma consistente.
 
 ### Solución y Beneficios
 
-Trabajar con **Matplotlib Basics** ayuda a lograr:
+- Hace reproducible la visualización en scripts y pipelines.
+- Permite componer varias series con etiquetas claras.
+- Facilita guardar salidas para QA o documentación.
 
-- mejor organización del código,
-- debugging y onboarding más rápidos,
-- mayor cobertura de pruebas y releases más seguros,
-- mantenibilidad sostenible en el tiempo.
+### Errores Comunes
+
+- Depender del estado global de pyplot sin cerrar figuras.
+- Omitir títulos o labels y perder contexto del gráfico.
+- Usar demasiados elementos decorativos antes de validar la historia del dato.
 
 ## 4. Referencias
 
-Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
+Consulta `references/links.md` para documentación oficial y material de profundización.
 
 ## 5. Tarea Práctica
 
-Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
+Usa `exercises/exercise_01.py` como punto de partida. El foco del ejercicio es: Construye una figura reutilizable con línea de ventas mensuales y etiquetas claras.
 
 ### Nivel Básico
 
-- Implementar la funcionalidad principal solicitada.
-- Hacer pasar las pruebas base.
+- Implementa la funcionalidad principal solicitada.
+- Haz que el caso nominal quede cubierto por tests.
 
 ### Nivel Intermedio
 
-- Cubrir casos borde e inputs inválidos.
-- Mejorar nombres y estructura para legibilidad.
+- Valida inputs inválidos o casos borde relevantes.
+- Refactoriza para que los nombres y pasos queden explícitos.
 
 ### Nivel Avanzado
 
-- Agregar manejo de errores robusto y type hints cuando corresponda.
-- Extender la cobertura con escenarios adicionales.
+- Agrega una variante reusable o una validación extra útil para producción.
+- Documenta la decisión técnica clave de tu solución.
 
 ### Criterios de Éxito
 
-- La solución funciona para casos nominales y casos borde.
-- La suite de `tests/test_basic.py` pasa correctamente.
-- La implementación es lo suficientemente clara para revisión por pares.
+- La solución produce el resultado esperado con datos representativos.
+- `tests/test_basic.py` te orienta sobre el contrato mínimo a respetar.
+- El código final es claro para otra persona del equipo.
 
 ## 6. Resumen
 
-- Matplotlib Basics fortalece fundamentos de ingeniería en Python.
-- Mejora calidad de código, testeabilidad y mantenibilidad.
-- Es directamente aplicable a proyectos backend y de automatización.
+- Matplotlib ayuda a controlar cada capa del gráfico.
+- La API orientada a objetos mejora testabilidad y reuso.
+- Guardar figuras sin UI es clave para automatización.
 
 ## 7. Prompt de Reflexión
 
-Después de completar este tema, reflexiona sobre:
-
-- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
-- ¿Qué caso borde fue más importante modelar?
-- ¿Cómo aplicarías este tema en tus proyectos actuales?
+- ¿Qué parte del gráfico debería quedar como función reusable?
+- ¿Qué label aporta más contexto al lector final?
+- ¿Cómo validarías que la figura sigue correcta tras un refactor?

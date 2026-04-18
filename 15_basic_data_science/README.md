@@ -1,34 +1,39 @@
-# Módulo: Data Science Básico
+# Módulo 15: Data Science Básico
+
+> NumPy, Pandas, visualización, limpieza, EDA y Polars para empezar a trabajar con datos en Python.
 
 ## 📋 Descripción
 
-Introducción a data science con Python. NumPy, Pandas, visualización con Matplotlib/Seaborn, análisis exploratorio, limpieza de datos y Polars como alternativa moderna.
+Este módulo introduce un flujo de data science liviano y práctico: manipulación tabular, visualización, limpieza de datos, exploración inicial y herramientas modernas del ecosistema.
 
-**Conceptos clave**: NumPy arrays, Pandas DataFrames, Matplotlib, Seaborn, análisis exploratorio, limpieza de datos, Polars.
+## 🎯 Objetivos
 
-## 🎯 Objetivos de Aprendizaje
+- Entender cómo estructurar datasets en arrays y tablas.
+- Construir reportes exploratorios y visualizaciones simples.
+- Aplicar limpieza de datos antes de analizar o comunicar resultados.
+- Comparar herramientas clásicas (Pandas, Matplotlib) con opciones modernas (Polars).
 
-- Objetivo 1
-- Objetivo 2
-- Objetivo 3
+## 📚 Contenido (10 temas)
 
-## 📚 Contenido (10 Temas)
-
-1. [Numpy Basics](numpy_basics/)
+1. [NumPy Basics](numpy_basics/)
 2. [Pandas Intro](pandas_intro/)
 3. [Pandas Operations](pandas_operations/)
 4. [Matplotlib Basics](matplotlib_basics/)
-5. [Seaborn Viz](seaborn_viz/)
+5. [Seaborn Visualization](seaborn_viz/)
 6. [Data Cleaning](data_cleaning/)
 7. [Exploratory Analysis](exploratory_analysis/)
-8. [Jupyter Notebooks Optional](jupyter_notebooks_optional/)
+8. [Jupyter Notebooks (Optional)](jupyter_notebooks_optional/)
 9. [Pandas Performance](pandas_performance/)
 10. [Polars Intro](polars_intro/)
 
-## ⏱️ Tiempo Estimado Total
+## ⚙️ Setup recomendado
+
+Instala el extra de data science desde la raíz del repo:
+
+```bash
+uv pip install -e ".[dev,profiling,ai,pyo3,security,data]"
+```
+
+## ⏱️ Tiempo total
 
 **20-30 horas**
-
-## 🚀 Orden Recomendado
-
-Seguir el orden numérico para una progresión lógica.

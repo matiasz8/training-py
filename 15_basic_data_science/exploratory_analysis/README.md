@@ -1,94 +1,85 @@
 # Exploratory Analysis
 
-Tiempo estimado: 2-3 horas
+Tiempo estimado: 2-3 hours
+
 ## 1. Definición
 
-**Exploratory Analysis** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
-
-En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
+Exploratory Analysis organiza un primer recorrido por el dataset para detectar patrones, extremos y preguntas nuevas.
 
 ### Características Clave
 
-- **Claridad**: promueve código legible y una intención explícita.
-- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
-- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
-- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
+- Resume variables numéricas y categóricas rápidamente.
+- Busca anomalías antes de profundizar en modelado.
+- Conecta métricas descriptivas con hipótesis de negocio.
+- Produce insumos claros para gráficos y decisiones posteriores.
 
 ## 2. Aplicación Práctica
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de exploratory analysis en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. Revisar comportamiento de ventas por región y canal.
+2. Detectar rangos atípicos antes de entrenar un modelo.
+3. Priorizar preguntas para una visualización posterior.
 
 ### Ejemplo de Código
 
-```python
-# Ver examples/example_basic.py para código ejecutable
-# relacionado con exploratory analysis
-```
-
-Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
+Revisa `examples/example_basic.py` para ver una implementación ejecutable enfocada en exploratory analysis.
 
 ## 3. ¿Por Qué Es Importante?
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de exploratory analysis, los equipos suelen enfrentar:
-
-- supuestos ocultos y comportamiento frágil,
-- refactors riesgosos,
-- baja confianza al introducir cambios.
+Sin exploración inicial, es fácil construir dashboards o modelos sobre supuestos erróneos y sesgos ocultos.
 
 ### Solución y Beneficios
 
-Trabajar con **Exploratory Analysis** ayuda a lograr:
+- Ayuda a formular preguntas mejores antes de automatizar.
+- Hace visibles outliers, skew y gaps de información.
+- Reduce el costo de corregir decisiones tardías.
 
-- mejor organización del código,
-- debugging y onboarding más rápidos,
-- mayor cobertura de pruebas y releases más seguros,
-- mantenibilidad sostenible en el tiempo.
+### Errores Comunes
+
+- Confundir descripción con causalidad.
+- Enamorarse de una sola métrica resumen.
+- No separar hallazgos observados de conclusiones definitivas.
 
 ## 4. Referencias
 
-Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
+Consulta `references/links.md` para documentación oficial y material de profundización.
 
 ## 5. Tarea Práctica
 
-Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
+Usa `exercises/exercise_01.py` como punto de partida. El foco del ejercicio es: Construye un reporte breve de EDA con estadísticos numéricos y una categoría dominante.
 
 ### Nivel Básico
 
-- Implementar la funcionalidad principal solicitada.
-- Hacer pasar las pruebas base.
+- Implementa la funcionalidad principal solicitada.
+- Haz que el caso nominal quede cubierto por tests.
 
 ### Nivel Intermedio
 
-- Cubrir casos borde e inputs inválidos.
-- Mejorar nombres y estructura para legibilidad.
+- Valida inputs inválidos o casos borde relevantes.
+- Refactoriza para que los nombres y pasos queden explícitos.
 
 ### Nivel Avanzado
 
-- Agregar manejo de errores robusto y type hints cuando corresponda.
-- Extender la cobertura con escenarios adicionales.
+- Agrega una variante reusable o una validación extra útil para producción.
+- Documenta la decisión técnica clave de tu solución.
 
 ### Criterios de Éxito
 
-- La solución funciona para casos nominales y casos borde.
-- La suite de `tests/test_basic.py` pasa correctamente.
-- La implementación es lo suficientemente clara para revisión por pares.
+- La solución produce el resultado esperado con datos representativos.
+- `tests/test_basic.py` te orienta sobre el contrato mínimo a respetar.
+- El código final es claro para otra persona del equipo.
 
 ## 6. Resumen
 
-- Exploratory Analysis fortalece fundamentos de ingeniería en Python.
-- Mejora calidad de código, testeabilidad y mantenibilidad.
-- Es directamente aplicable a proyectos backend y de automatización.
+- EDA guía qué mirar antes de profundizar.
+- El valor está en combinar números, contexto y preguntas.
+- Un reporte pequeño bien armado puede destrabar muchos siguientes pasos.
 
 ## 7. Prompt de Reflexión
 
-Después de completar este tema, reflexiona sobre:
-
-- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
-- ¿Qué caso borde fue más importante modelar?
-- ¿Cómo aplicarías este tema en tus proyectos actuales?
+- ¿Qué hallazgo cambiaría una decisión de negocio?
+- ¿Qué métrica te pareció menos informativa de lo esperado?
+- ¿Qué gráfico construirías después de este reporte?

@@ -1,39 +1,21 @@
-"""
-Tests para matplotlib basics
-"""
+"""Basic tests for the Matplotlib Basics exercise."""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
 
 import pytest
-from pathlib import Path
-import sys
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
-
-
-class TestMatplotlibBasics:
-    """Suite de tests para matplotlib basics."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+MY_SOLUTION_DIR = Path(__file__).parent.parent / 'my_solution'
+sys.path.insert(0, str(MY_SOLUTION_DIR))
+exercise = pytest.importorskip(
+    'exercise_01',
+    reason='Copy exercises/exercise_01.py into my_solution/ before running tests.',
+)
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
-
-
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_build_sales_figure_returns_single_axes() -> None:
+    fig = exercise.build_sales_figure(['Jan', 'Feb', 'Mar'], [10.0, 12.0, 14.0])
+    assert len(fig.axes) == 1
+    assert len(fig.axes[0].lines) == 1

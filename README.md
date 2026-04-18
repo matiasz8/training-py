@@ -95,7 +95,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
 source .venv/bin/activate  # Linux/Mac
 # .venv\Scripts\activate  # Windows
-uv pip install -e ".[dev,profiling,ai,pyo3,security]"
+uv pip install -e ".[dev,profiling,ai,pyo3,security,data]"
 pre-commit install
 uv run scripts/progress.py
 ```
@@ -374,7 +374,7 @@ source .venv/bin/activate  # Linux/Mac
 # .venv\Scripts\activate   # Windows
 
 # Instalar dependencias
-uv pip install -e ".[dev,profiling,ai,pyo3,security]"
+uv pip install -e ".[dev,profiling,ai,pyo3,security,data]"
 
 # Instalar pre-commit hooks
 pre-commit install

@@ -1,29 +1,28 @@
-"""
-Ejercicio: Data Cleaning
+"""Exercise: Data Cleaning.
 
-Objetivo: Implementar y practicar data_cleaning
+Goal: Clean a customer dataset by standardizing columns, filling gaps, and removing duplicates.
 
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
-
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
+Instructions:
+1. Copy this file into my_solution/ before editing it.
+2. Keep the original business meaning of each row.
+3. Run tests with: pytest tests/
+4. Return a cleaned DataFrame with deterministic ordering.
 """
 
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
+from __future__ import annotations
+
+import pandas as pd
 
 
-def main():
-    """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
-    """
-    # TODO: Añade código de prueba aquí
-    pass
+def clean_customer_data(df: pd.DataFrame) -> pd.DataFrame:
+    """Return a cleaned customer dataset ready for downstream analysis."""
+    raise NotImplementedError('Implement clean_customer_data in my_solution/exercise_01.py')
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Use this entry point to try your cleaning rules on sample data."""
+    print('Copy this file into my_solution/ and clean a messy customer dataset.')
+
+
+if __name__ == '__main__':
     main()

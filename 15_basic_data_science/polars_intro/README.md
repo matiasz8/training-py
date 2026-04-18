@@ -1,94 +1,85 @@
 # Polars Intro
 
-Tiempo estimado: 2-3 horas
+Tiempo estimado: 1.5-2.5 hours
+
 ## 1. Definición
 
-**Polars Intro** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
-
-En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
+Polars Intro introduce un motor columnar moderno para análisis rápidos con expresiones explícitas y lazy evaluation.
 
 ### Características Clave
 
-- **Claridad**: promueve código legible y una intención explícita.
-- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
-- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
-- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
+- Usa expresiones declarativas en vez de operaciones implícitas.
+- Aprovecha ejecución columnar y paralelismo interno.
+- Incluye modo eager y lazy según el caso de uso.
+- Es una alternativa moderna a ciertos pipelines de Pandas.
 
 ## 2. Aplicación Práctica
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de polars intro en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. Agrupar grandes volúmenes de datos con expresiones legibles.
+2. Migrar partes lentas de un pipeline exploratorio.
+3. Comparar ergonomía y performance frente a Pandas.
 
 ### Ejemplo de Código
 
-```python
-# Ver examples/example_basic.py para código ejecutable
-# relacionado con polars intro
-```
-
-Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
+Revisa `examples/example_basic.py` para ver una implementación ejecutable enfocada en polars intro.
 
 ## 3. ¿Por Qué Es Importante?
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de polars intro, los equipos suelen enfrentar:
-
-- supuestos ocultos y comportamiento frágil,
-- refactors riesgosos,
-- baja confianza al introducir cambios.
+Cuando un pipeline crece, algunas transformaciones tabulares necesitan una API más explícita y una ejecución mejor optimizada.
 
 ### Solución y Beneficios
 
-Trabajar con **Polars Intro** ayuda a lograr:
+- Hace más visibles las expresiones por columna.
+- Suele rendir muy bien en agregaciones y filtros grandes.
+- Invita a pensar el pipeline como una secuencia declarativa.
 
-- mejor organización del código,
-- debugging y onboarding más rápidos,
-- mayor cobertura de pruebas y releases más seguros,
-- mantenibilidad sostenible en el tiempo.
+### Errores Comunes
+
+- Traducir mentalmente Pandas 1:1 y perder ventajas de expresiones.
+- Ignorar diferencias entre eager y lazy.
+- No validar el schema esperado después de transformar.
 
 ## 4. Referencias
 
-Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
+Consulta `references/links.md` para documentación oficial y material de profundización.
 
 ## 5. Tarea Práctica
 
-Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
+Usa `exercises/exercise_01.py` como punto de partida. El foco del ejercicio es: Resume envíos por warehouse con agregaciones declarativas en Polars.
 
 ### Nivel Básico
 
-- Implementar la funcionalidad principal solicitada.
-- Hacer pasar las pruebas base.
+- Implementa la funcionalidad principal solicitada.
+- Haz que el caso nominal quede cubierto por tests.
 
 ### Nivel Intermedio
 
-- Cubrir casos borde e inputs inválidos.
-- Mejorar nombres y estructura para legibilidad.
+- Valida inputs inválidos o casos borde relevantes.
+- Refactoriza para que los nombres y pasos queden explícitos.
 
 ### Nivel Avanzado
 
-- Agregar manejo de errores robusto y type hints cuando corresponda.
-- Extender la cobertura con escenarios adicionales.
+- Agrega una variante reusable o una validación extra útil para producción.
+- Documenta la decisión técnica clave de tu solución.
 
 ### Criterios de Éxito
 
-- La solución funciona para casos nominales y casos borde.
-- La suite de `tests/test_basic.py` pasa correctamente.
-- La implementación es lo suficientemente clara para revisión por pares.
+- La solución produce el resultado esperado con datos representativos.
+- `tests/test_basic.py` te orienta sobre el contrato mínimo a respetar.
+- El código final es claro para otra persona del equipo.
 
 ## 6. Resumen
 
-- Polars Intro fortalece fundamentos de ingeniería en Python.
-- Mejora calidad de código, testeabilidad y mantenibilidad.
-- Es directamente aplicable a proyectos backend y de automatización.
+- Polars cambia la forma de pensar transformaciones tabulares.
+- Las expresiones explícitas ayudan a razonar sobre el pipeline.
+- Es útil cuando Pandas empieza a quedarse corto en ciertos flujos.
 
 ## 7. Prompt de Reflexión
 
-Después de completar este tema, reflexiona sobre:
-
-- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
-- ¿Qué caso borde fue más importante modelar?
-- ¿Cómo aplicarías este tema en tus proyectos actuales?
+- ¿Qué parte del pipeline se ve más clara con expresiones?
+- ¿Qué criterio usarías para decidir entre Pandas y Polars?
+- ¿Qué schema deberías validar al final?

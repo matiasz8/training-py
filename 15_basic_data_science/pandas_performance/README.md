@@ -1,94 +1,85 @@
 # Pandas Performance
 
-Tiempo estimado: 2-3 horas
+Tiempo estimado: 2-3 hours
+
 ## 1. Definición
 
-**Pandas Performance** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
-
-En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
+Pandas Performance muestra cuándo conviene vectorizar transformaciones, medir tiempos y evitar apply innecesario.
 
 ### Características Clave
 
-- **Claridad**: promueve código legible y una intención explícita.
-- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
-- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
-- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
+- Compara estrategias con métricas simples y repetibles.
+- Favorece operaciones columnares en lugar de loops fila a fila.
+- Ayuda a detectar cuellos de botella tempranos.
+- Se complementa con profiling más profundo cuando hace falta.
 
 ## 2. Aplicación Práctica
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de pandas performance en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. Acelerar pipelines de cálculo de descuentos o revenue.
+2. Reducir tiempos de preprocesamiento antes de entrenar modelos.
+3. Tomar decisiones informadas sobre cuándo migrar a Polars.
 
 ### Ejemplo de Código
 
-```python
-# Ver examples/example_basic.py para código ejecutable
-# relacionado con pandas performance
-```
-
-Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
+Revisa `examples/example_basic.py` para ver una implementación ejecutable enfocada en pandas performance.
 
 ## 3. ¿Por Qué Es Importante?
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de pandas performance, los equipos suelen enfrentar:
-
-- supuestos ocultos y comportamiento frágil,
-- refactors riesgosos,
-- baja confianza al introducir cambios.
+Sin medir ni vectorizar, un pipeline aparentemente correcto puede degradarse mucho al crecer el volumen de datos.
 
 ### Solución y Beneficios
 
-Trabajar con **Pandas Performance** ayuda a lograr:
+- Permite justificar cambios con evidencia y no intuición.
+- Reduce CPU desperdiciada en operaciones repetitivas.
+- Mejora la escalabilidad de transformaciones frecuentes.
 
-- mejor organización del código,
-- debugging y onboarding más rápidos,
-- mayor cobertura de pruebas y releases más seguros,
-- mantenibilidad sostenible en el tiempo.
+### Errores Comunes
+
+- Medir una sola vez y sacar conclusiones definitivas.
+- Optimizar antes de validar corrección de resultados.
+- Ignorar el costo de conversiones entre tipos o estructuras.
 
 ## 4. Referencias
 
-Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
+Consulta `references/links.md` para documentación oficial y material de profundización.
 
 ## 5. Tarea Práctica
 
-Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
+Usa `exercises/exercise_01.py` como punto de partida. El foco del ejercicio es: Implementa una estrategia vectorizada de descuentos y compárala con una variante más lenta.
 
 ### Nivel Básico
 
-- Implementar la funcionalidad principal solicitada.
-- Hacer pasar las pruebas base.
+- Implementa la funcionalidad principal solicitada.
+- Haz que el caso nominal quede cubierto por tests.
 
 ### Nivel Intermedio
 
-- Cubrir casos borde e inputs inválidos.
-- Mejorar nombres y estructura para legibilidad.
+- Valida inputs inválidos o casos borde relevantes.
+- Refactoriza para que los nombres y pasos queden explícitos.
 
 ### Nivel Avanzado
 
-- Agregar manejo de errores robusto y type hints cuando corresponda.
-- Extender la cobertura con escenarios adicionales.
+- Agrega una variante reusable o una validación extra útil para producción.
+- Documenta la decisión técnica clave de tu solución.
 
 ### Criterios de Éxito
 
-- La solución funciona para casos nominales y casos borde.
-- La suite de `tests/test_basic.py` pasa correctamente.
-- La implementación es lo suficientemente clara para revisión por pares.
+- La solución produce el resultado esperado con datos representativos.
+- `tests/test_basic.py` te orienta sobre el contrato mínimo a respetar.
+- El código final es claro para otra persona del equipo.
 
 ## 6. Resumen
 
-- Pandas Performance fortalece fundamentos de ingeniería en Python.
-- Mejora calidad de código, testeabilidad y mantenibilidad.
-- Es directamente aplicable a proyectos backend y de automatización.
+- La performance mejora cuando la transformación se expresa por columnas.
+- Medir pequeños cambios evita optimizaciones imaginarias.
+- Vectorizar no siempre es todo, pero suele ser el primer paso correcto.
 
 ## 7. Prompt de Reflexión
 
-Después de completar este tema, reflexiona sobre:
-
-- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
-- ¿Qué caso borde fue más importante modelar?
-- ¿Cómo aplicarías este tema en tus proyectos actuales?
+- ¿Qué parte del pipeline vale la pena medir más profundamente?
+- ¿Qué optimización mantiene mejor legibilidad?
+- ¿Cuándo convendría cambiar de herramienta en lugar de micro-optimizar?

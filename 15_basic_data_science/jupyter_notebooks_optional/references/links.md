@@ -1,24 +1,11 @@
-# Referencias: Jupyter Notebooks Optional
+# Referencias: Jupyter Notebooks (Optional)
 
-## Documentación Oficial de Python
-- [Python Documentation](https://docs.python.org/3/)
-- [Python HOWTOs](https://docs.python.org/3/howto/index.html)
-- [Python FAQs](https://docs.python.org/3/faq/index.html)
+## Documentación Oficial
 
-## Tutoriales
-- [Real Python](https://realpython.com/)
-- [Python.org Tutorial](https://docs.python.org/3/tutorial/)
+- [Jupyter documentation](https://docs.jupyter.org/en/latest/)
+- [Notebook format documentation](https://nbformat.readthedocs.io/en/latest/format_description.html)
+- [JupyterLab user guide](https://jupyterlab.readthedocs.io/en/stable/user/interface.html)
 
-## Libros Recomendados
-- "Fluent Python" by Luciano Ramalho
-- "Effective Python" by Brett Slatkin
-- "Python Cookbook" by David Beazley
+## Artículos y Guías
 
-## Videos
-- [PyCon Talks](https://www.youtube.com/results?search_query=pycon+jupyter-notebooks-optional)
-- [Talk Python Podcast](https://talkpython.fm/)
-
-## Comunidad
-- [r/Python](https://www.reddit.com/r/Python/)
-- [Python Discord](https://discord.gg/python)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/python)
+- [Real Python - Jupyter Notebook Introduction](https://realpython.com/jupyter-notebook-introduction/)

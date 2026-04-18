@@ -1,24 +1,11 @@
 # Referencias: Pandas Performance
 
-## Documentación Oficial de Python
-- [Python Documentation](https://docs.python.org/3/)
-- [Python HOWTOs](https://docs.python.org/3/howto/index.html)
-- [Python FAQs](https://docs.python.org/3/faq/index.html)
+## Documentación Oficial
 
-## Tutoriales
-- [Real Python](https://realpython.com/)
-- [Python.org Tutorial](https://docs.python.org/3/tutorial/)
+- [Pandas performance guide](https://pandas.pydata.org/docs/user_guide/enhancingperf.html)
+- [Pandas eval documentation](https://pandas.pydata.org/docs/reference/api/pandas.eval.html)
+- [Pandas iterrows documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iterrows.html)
 
-## Libros Recomendados
-- "Fluent Python" by Luciano Ramalho
-- "Effective Python" by Brett Slatkin
-- "Python Cookbook" by David Beazley
+## Artículos y Guías
 
-## Videos
-- [PyCon Talks](https://www.youtube.com/results?search_query=pycon+pandas-performance)
-- [Talk Python Podcast](https://talkpython.fm/)
-
-## Comunidad
-- [r/Python](https://www.reddit.com/r/Python/)
-- [Python Discord](https://discord.gg/python)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/python)
+- [Modern Pandas performance article](https://tomaugspurger.github.io/modern-1-intro.html)

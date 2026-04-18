@@ -1,39 +1,23 @@
-"""
-Tests para pandas performance
-"""
+"""Basic tests for the Pandas Performance exercise."""
 
-import pytest
-from pathlib import Path
+from __future__ import annotations
+
 import sys
+from pathlib import Path
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
+import pandas as pd
+import pytest
 
-
-class TestPandasPerformance:
-    """Suite de tests para pandas performance."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+MY_SOLUTION_DIR = Path(__file__).parent.parent / 'my_solution'
+sys.path.insert(0, str(MY_SOLUTION_DIR))
+exercise = pytest.importorskip(
+    'exercise_01',
+    reason='Copy exercises/exercise_01.py into my_solution/ before running tests.',
+)
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
-
-
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_apply_discount_vectorized_preserves_index() -> None:
+    df = pd.DataFrame({'revenue': [100.0, 200.0, 80.0]}, index=['a', 'b', 'c'])
+    result = exercise.apply_discount_vectorized(df, threshold=120.0, rate=0.1)
+    assert list(result.index) == ['a', 'b', 'c']
+    assert result.tolist() == [100.0, 180.0, 80.0]

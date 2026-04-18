@@ -1,24 +1,11 @@
 # Referencias: Data Cleaning
 
-## Documentación Oficial de Python
-- [Python Documentation](https://docs.python.org/3/)
-- [Python HOWTOs](https://docs.python.org/3/howto/index.html)
-- [Python FAQs](https://docs.python.org/3/faq/index.html)
+## Documentación Oficial
 
-## Tutoriales
-- [Real Python](https://realpython.com/)
-- [Python.org Tutorial](https://docs.python.org/3/tutorial/)
+- [Pandas missing data guide](https://pandas.pydata.org/docs/user_guide/missing_data.html)
+- [Pandas duplicates guide](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
+- [Pandas string methods](https://pandas.pydata.org/docs/user_guide/text.html)
 
-## Libros Recomendados
-- "Fluent Python" by Luciano Ramalho
-- "Effective Python" by Brett Slatkin
-- "Python Cookbook" by David Beazley
+## Artículos y Guías
 
-## Videos
-- [PyCon Talks](https://www.youtube.com/results?search_query=pycon+data-cleaning)
-- [Talk Python Podcast](https://talkpython.fm/)
-
-## Comunidad
-- [r/Python](https://www.reddit.com/r/Python/)
-- [Python Discord](https://discord.gg/python)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/python)
+- [Kaggle data cleaning course](https://www.kaggle.com/learn/data-cleaning)

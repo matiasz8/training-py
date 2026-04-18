@@ -1,24 +1,11 @@
 # Referencias: Exploratory Analysis
 
-## Documentación Oficial de Python
-- [Python Documentation](https://docs.python.org/3/)
-- [Python HOWTOs](https://docs.python.org/3/howto/index.html)
-- [Python FAQs](https://docs.python.org/3/faq/index.html)
+## Documentación Oficial
 
-## Tutoriales
-- [Real Python](https://realpython.com/)
-- [Python.org Tutorial](https://docs.python.org/3/tutorial/)
+- [Pandas describe documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html)
+- [Pandas value_counts documentation](https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html)
+- [Towards Data Science - EDA overview](https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15)
 
-## Libros Recomendados
-- "Fluent Python" by Luciano Ramalho
-- "Effective Python" by Brett Slatkin
-- "Python Cookbook" by David Beazley
+## Artículos y Guías
 
-## Videos
-- [PyCon Talks](https://www.youtube.com/results?search_query=pycon+exploratory-analysis)
-- [Talk Python Podcast](https://talkpython.fm/)
-
-## Comunidad
-- [r/Python](https://www.reddit.com/r/Python/)
-- [Python Discord](https://discord.gg/python)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/python)
+- [Python Data Science Handbook - Data exploration](https://jakevdp.github.io/PythonDataScienceHandbook/03.08-aggregation-and-grouping.html)

@@ -1,94 +1,85 @@
-# Seaborn Viz
+# Seaborn Visualization
 
-Tiempo estimado: 2-3 horas
+Tiempo estimado: 1.5-2.5 hours
+
 ## 1. Definición
 
-**Seaborn Viz** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
-
-En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
+Seaborn Visualization agrega una capa declarativa sobre Matplotlib para construir gráficos estadísticos con menos código ceremonial.
 
 ### Características Clave
 
-- **Claridad**: promueve código legible y una intención explícita.
-- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
-- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
-- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
+- Integra bien con DataFrames de Pandas.
+- Aplica estilos consistentes con pocas líneas.
+- Facilita comparaciones categóricas y distribuciones.
+- Sigue permitiendo acceder al objeto Matplotlib subyacente.
 
 ## 2. Aplicación Práctica
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de seaborn viz en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. Comparar revenue por segmento de cliente.
+2. Visualizar distribuciones de métricas de producto.
+3. Generar gráficos exploratorios con una estética uniforme.
 
 ### Ejemplo de Código
 
-```python
-# Ver examples/example_basic.py para código ejecutable
-# relacionado con seaborn viz
-```
-
-Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
+Revisa `examples/example_basic.py` para ver una implementación ejecutable enfocada en seaborn visualization.
 
 ## 3. ¿Por Qué Es Importante?
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de seaborn viz, los equipos suelen enfrentar:
-
-- supuestos ocultos y comportamiento frágil,
-- refactors riesgosos,
-- baja confianza al introducir cambios.
+Construir gráficos estadísticos repetitivos sólo con Matplotlib puede añadir ruido visual y demasiado código de formato.
 
 ### Solución y Beneficios
 
-Trabajar con **Seaborn Viz** ayuda a lograr:
+- Reduce la cantidad de código para comparaciones comunes.
+- Ofrece defaults visuales útiles para exploración rápida.
+- Ayuda a mantener consistencia entre charts relacionados.
 
-- mejor organización del código,
-- debugging y onboarding más rápidos,
-- mayor cobertura de pruebas y releases más seguros,
-- mantenibilidad sostenible en el tiempo.
+### Errores Comunes
+
+- Depender del default sin validar si comunica bien la historia.
+- No controlar orden de categorías importantes.
+- Combinar demasiadas variables en un solo gráfico.
 
 ## 4. Referencias
 
-Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
+Consulta `references/links.md` para documentación oficial y material de profundización.
 
 ## 5. Tarea Práctica
 
-Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
+Usa `exercises/exercise_01.py` como punto de partida. El foco del ejercicio es: Crea un chart por segmento con Seaborn que resuma revenue promedio por categoría.
 
 ### Nivel Básico
 
-- Implementar la funcionalidad principal solicitada.
-- Hacer pasar las pruebas base.
+- Implementa la funcionalidad principal solicitada.
+- Haz que el caso nominal quede cubierto por tests.
 
 ### Nivel Intermedio
 
-- Cubrir casos borde e inputs inválidos.
-- Mejorar nombres y estructura para legibilidad.
+- Valida inputs inválidos o casos borde relevantes.
+- Refactoriza para que los nombres y pasos queden explícitos.
 
 ### Nivel Avanzado
 
-- Agregar manejo de errores robusto y type hints cuando corresponda.
-- Extender la cobertura con escenarios adicionales.
+- Agrega una variante reusable o una validación extra útil para producción.
+- Documenta la decisión técnica clave de tu solución.
 
 ### Criterios de Éxito
 
-- La solución funciona para casos nominales y casos borde.
-- La suite de `tests/test_basic.py` pasa correctamente.
-- La implementación es lo suficientemente clara para revisión por pares.
+- La solución produce el resultado esperado con datos representativos.
+- `tests/test_basic.py` te orienta sobre el contrato mínimo a respetar.
+- El código final es claro para otra persona del equipo.
 
 ## 6. Resumen
 
-- Seaborn Viz fortalece fundamentos de ingeniería en Python.
-- Mejora calidad de código, testeabilidad y mantenibilidad.
-- Es directamente aplicable a proyectos backend y de automatización.
+- Seaborn acelera la visualización estadística sobre DataFrames.
+- Los defaults correctos ayudan a explorar sin perder claridad.
+- Sigue siendo importante controlar títulos, orden y contexto.
 
 ## 7. Prompt de Reflexión
 
-Después de completar este tema, reflexiona sobre:
-
-- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
-- ¿Qué caso borde fue más importante modelar?
-- ¿Cómo aplicarías este tema en tus proyectos actuales?
+- ¿Qué variable categórica comunica mejor la comparación?
+- ¿Qué parte del styling dejarías configurable?
+- ¿Qué contexto textual necesita este chart para evitar malas lecturas?

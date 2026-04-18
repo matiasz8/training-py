@@ -1,29 +1,28 @@
-"""
-Ejercicio: Pandas Performance
+"""Exercise: Pandas Performance.
 
-Objetivo: Implementar y practicar pandas_performance
+Goal: Implement a vectorized discount strategy for a revenue column.
 
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
-
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
+Instructions:
+1. Copy this file into my_solution/ before editing it.
+2. Keep the vectorized solution column-oriented.
+3. Run tests with: pytest tests/
+4. Return a Pandas Series aligned with the original DataFrame index.
 """
 
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
+from __future__ import annotations
+
+import pandas as pd
 
 
-def main():
-    """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
-    """
-    # TODO: Añade código de prueba aquí
-    pass
+def apply_discount_vectorized(df: pd.DataFrame, threshold: float, rate: float) -> pd.Series:
+    """Return discounted revenue values using a vectorized strategy."""
+    raise NotImplementedError('Implement apply_discount_vectorized in my_solution/exercise_01.py')
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Use this entry point to compare approaches in your own copy."""
+    print('Copy this file into my_solution/ and compare vectorized vs. row-wise strategies.')
+
+
+if __name__ == '__main__':
     main()

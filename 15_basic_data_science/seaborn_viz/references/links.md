@@ -1,24 +1,11 @@
-# Referencias: Seaborn Viz
+# Referencias: Seaborn Visualization
 
-## Documentación Oficial de Python
-- [Python Documentation](https://docs.python.org/3/)
-- [Python HOWTOs](https://docs.python.org/3/howto/index.html)
-- [Python FAQs](https://docs.python.org/3/faq/index.html)
+## Documentación Oficial
 
-## Tutoriales
-- [Real Python](https://realpython.com/)
-- [Python.org Tutorial](https://docs.python.org/3/tutorial/)
+- [Seaborn tutorial](https://seaborn.pydata.org/tutorial.html)
+- [Seaborn API reference](https://seaborn.pydata.org/api.html)
+- [Seaborn categorical plots](https://seaborn.pydata.org/tutorial/categorical.html)
 
-## Libros Recomendados
-- "Fluent Python" by Luciano Ramalho
-- "Effective Python" by Brett Slatkin
-- "Python Cookbook" by David Beazley
+## Artículos y Guías
 
-## Videos
-- [PyCon Talks](https://www.youtube.com/results?search_query=pycon+seaborn-viz)
-- [Talk Python Podcast](https://talkpython.fm/)
-
-## Comunidad
-- [r/Python](https://www.reddit.com/r/Python/)
-- [Python Discord](https://discord.gg/python)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/python)
+- [Python Graph Gallery - Seaborn examples](https://python-graph-gallery.com/seaborn/)

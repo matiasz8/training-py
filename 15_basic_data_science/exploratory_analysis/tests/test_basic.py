@@ -1,39 +1,30 @@
-"""
-Tests para exploratory analysis
-"""
+"""Basic tests for the Exploratory Analysis exercise."""
 
-import pytest
-from pathlib import Path
+from __future__ import annotations
+
 import sys
+from pathlib import Path
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
+import pandas as pd
+import pytest
 
-
-class TestExploratoryAnalysis:
-    """Suite de tests para exploratory analysis."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+MY_SOLUTION_DIR = Path(__file__).parent.parent / 'my_solution'
+sys.path.insert(0, str(MY_SOLUTION_DIR))
+exercise = pytest.importorskip(
+    'exercise_01',
+    reason='Copy exercises/exercise_01.py into my_solution/ before running tests.',
+)
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
-
-
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_compute_eda_report_includes_core_keys() -> None:
+    df = pd.DataFrame(
+        [
+            {'region': 'north', 'revenue': 1200.0, 'units': 12},
+            {'region': 'south', 'revenue': 950.0, 'units': 10},
+            {'region': 'north', 'revenue': 1400.0, 'units': 14},
+        ]
+    )
+    report = exercise.compute_eda_report(df)
+    assert report['rows'] == 3
+    assert report['top_region'] == 'north'
+    assert 'numeric_summary' in report

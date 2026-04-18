@@ -1,94 +1,85 @@
 # Pandas Operations
 
-Tiempo estimado: 2-3 horas
+Tiempo estimado: 2-3 hours
+
 ## 1. Definición
 
-**Pandas Operations** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
-
-En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
+Pandas Operations profundiza en merges, groupby, transformaciones por columna y resúmenes orientados a preguntas de negocio.
 
 ### Características Clave
 
-- **Claridad**: promueve código legible y una intención explícita.
-- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
-- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
-- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
+- Combina datasets con joins explícitos.
+- Agrupa métricas por segmento, categoría o período.
+- Permite derivar nuevas columnas en pipelines pequeños.
+- Hace visibles agregaciones intermedias para debugging.
 
 ## 2. Aplicación Práctica
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de pandas operations en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. Cruzar órdenes con clientes para segmentar revenue.
+2. Agregar métricas por categoría de producto.
+3. Construir tablas resumen antes de visualizar resultados.
 
 ### Ejemplo de Código
 
-```python
-# Ver examples/example_basic.py para código ejecutable
-# relacionado con pandas operations
-```
-
-Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
+Revisa `examples/example_basic.py` para ver una implementación ejecutable enfocada en pandas operations.
 
 ## 3. ¿Por Qué Es Importante?
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de pandas operations, los equipos suelen enfrentar:
-
-- supuestos ocultos y comportamiento frágil,
-- refactors riesgosos,
-- baja confianza al introducir cambios.
+Cuando las transformaciones tabulares crecen sin estructura, aparecen merges opacos y agregaciones repetidas difíciles de verificar.
 
 ### Solución y Beneficios
 
-Trabajar con **Pandas Operations** ayuda a lograr:
+- Permite separar cada paso de transformación en piezas auditables.
+- Hace más simple comparar revenue, ticket promedio y volumen.
+- Prepara mejor los datos para visualización o modelado.
 
-- mejor organización del código,
-- debugging y onboarding más rápidos,
-- mayor cobertura de pruebas y releases más seguros,
-- mantenibilidad sostenible en el tiempo.
+### Errores Comunes
+
+- Hacer merges sin validar cardinalidad.
+- Perder columnas clave después de un rename o reset_index.
+- Ocultar demasiada lógica en una sola cadena larga.
 
 ## 4. Referencias
 
-Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
+Consulta `references/links.md` para documentación oficial y material de profundización.
 
 ## 5. Tarea Práctica
 
-Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
+Usa `exercises/exercise_01.py` como punto de partida. El foco del ejercicio es: Resume revenue y ticket promedio por segmento combinando órdenes y clientes.
 
 ### Nivel Básico
 
-- Implementar la funcionalidad principal solicitada.
-- Hacer pasar las pruebas base.
+- Implementa la funcionalidad principal solicitada.
+- Haz que el caso nominal quede cubierto por tests.
 
 ### Nivel Intermedio
 
-- Cubrir casos borde e inputs inválidos.
-- Mejorar nombres y estructura para legibilidad.
+- Valida inputs inválidos o casos borde relevantes.
+- Refactoriza para que los nombres y pasos queden explícitos.
 
 ### Nivel Avanzado
 
-- Agregar manejo de errores robusto y type hints cuando corresponda.
-- Extender la cobertura con escenarios adicionales.
+- Agrega una variante reusable o una validación extra útil para producción.
+- Documenta la decisión técnica clave de tu solución.
 
 ### Criterios de Éxito
 
-- La solución funciona para casos nominales y casos borde.
-- La suite de `tests/test_basic.py` pasa correctamente.
-- La implementación es lo suficientemente clara para revisión por pares.
+- La solución produce el resultado esperado con datos representativos.
+- `tests/test_basic.py` te orienta sobre el contrato mínimo a respetar.
+- El código final es claro para otra persona del equipo.
 
 ## 6. Resumen
 
-- Pandas Operations fortalece fundamentos de ingeniería en Python.
-- Mejora calidad de código, testeabilidad y mantenibilidad.
-- Es directamente aplicable a proyectos backend y de automatización.
+- Las operaciones tabulares ganan claridad cuando cada paso tiene intención.
+- Joins y groupby son la base de muchos reportes de negocio.
+- Las métricas derivadas deben quedar explícitas y verificables.
 
 ## 7. Prompt de Reflexión
 
-Después de completar este tema, reflexiona sobre:
-
-- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
-- ¿Qué caso borde fue más importante modelar?
-- ¿Cómo aplicarías este tema en tus proyectos actuales?
+- ¿Qué supuestos de cardinalidad tuviste que validar?
+- ¿Qué métrica derivada aporta más contexto que el total bruto?
+- ¿Qué harías para volver este pipeline reusable?

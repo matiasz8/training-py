@@ -1,94 +1,85 @@
-# Numpy Basics
+# NumPy Basics
 
-Tiempo estimado: 1-2 horas
+Tiempo estimado: 1.5-2.5 hours
+
 ## 1. Definición
 
-**Numpy Basics** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
-
-En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
+NumPy Basics introduce arrays multidimensionales, broadcasting y operaciones vectorizadas para procesar datos numéricos sin depender de bucles explícitos.
 
 ### Características Clave
 
-- **Claridad**: promueve código legible y una intención explícita.
-- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
-- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
-- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
+- Trabaja con arrays homogéneos y memoria contigua.
+- Aprovecha operaciones vectorizadas para mejorar legibilidad y velocidad.
+- Permite usar broadcasting para combinar series de distinto tamaño.
+- Es la base de gran parte del ecosistema científico de Python.
 
 ## 2. Aplicación Práctica
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de numpy basics en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. Normalizar métricas antes de entrenar un modelo simple.
+2. Calcular KPIs diarios a partir de series de ventas o tráfico.
+3. Preparar features numéricas para análisis exploratorio.
 
 ### Ejemplo de Código
 
-```python
-# Ver examples/example_basic.py para código ejecutable
-# relacionado con numpy basics
-```
-
-Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
+Revisa `examples/example_basic.py` para ver una implementación ejecutable enfocada en numpy basics.
 
 ## 3. ¿Por Qué Es Importante?
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de numpy basics, los equipos suelen enfrentar:
-
-- supuestos ocultos y comportamiento frágil,
-- refactors riesgosos,
-- baja confianza al introducir cambios.
+Sin arrays vectorizados, el código numérico escala peor, es más verboso y mezcla la lógica del negocio con detalles iterativos.
 
 ### Solución y Beneficios
 
-Trabajar con **Numpy Basics** ayuda a lograr:
+- Reduce el costo de procesar listas numéricas grandes.
+- Hace más explícitas las transformaciones matemáticas.
+- Sirve como puente hacia Pandas, SciPy y machine learning.
 
-- mejor organización del código,
-- debugging y onboarding más rápidos,
-- mayor cobertura de pruebas y releases más seguros,
-- mantenibilidad sostenible en el tiempo.
+### Errores Comunes
+
+- Confundir operaciones elemento a elemento con multiplicación matricial.
+- Ignorar el tipo de dato y perder precisión sin darte cuenta.
+- Abusar de conversions innecesarias entre listas y arrays.
 
 ## 4. Referencias
 
-Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
+Consulta `references/links.md` para documentación oficial y material de profundización.
 
 ## 5. Tarea Práctica
 
-Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
+Usa `exercises/exercise_01.py` como punto de partida. El foco del ejercicio es: Implementa una normalización z-score y un moving average reutilizable para una serie numérica.
 
 ### Nivel Básico
 
-- Implementar la funcionalidad principal solicitada.
-- Hacer pasar las pruebas base.
+- Implementa la funcionalidad principal solicitada.
+- Haz que el caso nominal quede cubierto por tests.
 
 ### Nivel Intermedio
 
-- Cubrir casos borde e inputs inválidos.
-- Mejorar nombres y estructura para legibilidad.
+- Valida inputs inválidos o casos borde relevantes.
+- Refactoriza para que los nombres y pasos queden explícitos.
 
 ### Nivel Avanzado
 
-- Agregar manejo de errores robusto y type hints cuando corresponda.
-- Extender la cobertura con escenarios adicionales.
+- Agrega una variante reusable o una validación extra útil para producción.
+- Documenta la decisión técnica clave de tu solución.
 
 ### Criterios de Éxito
 
-- La solución funciona para casos nominales y casos borde.
-- La suite de `tests/test_basic.py` pasa correctamente.
-- La implementación es lo suficientemente clara para revisión por pares.
+- La solución produce el resultado esperado con datos representativos.
+- `tests/test_basic.py` te orienta sobre el contrato mínimo a respetar.
+- El código final es claro para otra persona del equipo.
 
 ## 6. Resumen
 
-- Numpy Basics fortalece fundamentos de ingeniería en Python.
-- Mejora calidad de código, testeabilidad y mantenibilidad.
-- Es directamente aplicable a proyectos backend y de automatización.
+- NumPy permite trabajar con datos numéricos a nivel columna o vector.
+- Las operaciones vectorizadas simplifican cálculos repetitivos.
+- Es el punto de partida natural para data science en Python.
 
 ## 7. Prompt de Reflexión
 
-Después de completar este tema, reflexiona sobre:
-
-- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
-- ¿Qué caso borde fue más importante modelar?
-- ¿Cómo aplicarías este tema en tus proyectos actuales?
+- ¿Qué parte del cálculo fue más clara al expresarla con arrays?
+- ¿Dónde ganaste legibilidad frente a una solución con listas?
+- ¿Qué validaciones agregarías antes de reutilizar esta lógica?

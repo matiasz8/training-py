@@ -1,39 +1,29 @@
-"""
-Tests para numpy basics
-"""
+"""Basic tests for the NumPy Basics exercise."""
 
-import pytest
-from pathlib import Path
+from __future__ import annotations
+
 import sys
+from pathlib import Path
 
-# Añadir directorio padre al path para imports
-parent_dir = Path(__file__).parent.parent / "my_solution"
-sys.path.insert(0, str(parent_dir))
+import numpy as np
+import pytest
 
-
-class TestNumpyBasics:
-    """Suite de tests para numpy basics."""
-    
-    def test_basic_functionality(self):
-        """Test básico de funcionalidad."""
-        # TODO: Implementa test básico
-        pass
-    
-    def test_edge_cases(self):
-        """Test de casos límite."""
-        # TODO: Implementa tests de edge cases
-        pass
-    
-    def test_error_handling(self):
-        """Test de manejo de errores."""
-        # TODO: Implementa tests de errores
-        pass
+MY_SOLUTION_DIR = Path(__file__).parent.parent / 'my_solution'
+sys.path.insert(0, str(MY_SOLUTION_DIR))
+exercise = pytest.importorskip(
+    'exercise_01',
+    reason='Copy exercises/exercise_01.py into my_solution/ before running tests.',
+)
 
 
-def test_imports():
-    """Verifica que los imports funcionan."""
-    assert True  # Placeholder
+def test_normalize_scores_returns_zero_mean() -> None:
+    values = np.array([10.0, 12.0, 14.0, 16.0])
+    normalized = exercise.normalize_scores(values)
+    assert np.isclose(normalized.mean(), 0.0)
+    assert np.isclose(normalized.std(), 1.0)
 
 
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
+def test_moving_average_uses_window_size() -> None:
+    values = np.array([2.0, 4.0, 6.0, 8.0])
+    result = exercise.moving_average(values, window=2)
+    assert np.allclose(result, np.array([3.0, 5.0, 7.0]))

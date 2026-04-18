@@ -1,24 +1,11 @@
 # Referencias: Pandas Intro
 
-## Documentación Oficial de Python
-- [Python Documentation](https://docs.python.org/3/)
-- [Python HOWTOs](https://docs.python.org/3/howto/index.html)
-- [Python FAQs](https://docs.python.org/3/faq/index.html)
+## Documentación Oficial
 
-## Tutoriales
-- [Real Python](https://realpython.com/)
-- [Python.org Tutorial](https://docs.python.org/3/tutorial/)
+- [Pandas Getting Started](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)
+- [Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
+- [Pandas API Reference](https://pandas.pydata.org/docs/reference/index.html)
 
-## Libros Recomendados
-- "Fluent Python" by Luciano Ramalho
-- "Effective Python" by Brett Slatkin
-- "Python Cookbook" by David Beazley
+## Artículos y Guías
 
-## Videos
-- [PyCon Talks](https://www.youtube.com/results?search_query=pycon+pandas-intro)
-- [Talk Python Podcast](https://talkpython.fm/)
-
-## Comunidad
-- [r/Python](https://www.reddit.com/r/Python/)
-- [Python Discord](https://discord.gg/python)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/python)
+- [Real Python - Intro to Pandas](https://realpython.com/pandas-python-explore-dataset/)

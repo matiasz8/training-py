@@ -1,94 +1,85 @@
-# Jupyter Notebooks Optional
+# Jupyter Notebooks (Optional)
 
-Tiempo estimado: 2-3 horas
+Tiempo estimado: 1-2 hours
+
 ## 1. Definición
 
-**Jupyter Notebooks Optional** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
-
-En la práctica, este tema te da un marco claro para modelar comportamiento, evaluar trade-offs y construir implementaciones confiables.
+Jupyter Notebooks Optional presenta la estructura de un notebook y cómo documentar análisis iterativos sin perder orden.
 
 ### Características Clave
 
-- **Claridad**: promueve código legible y una intención explícita.
-- **Componibilidad**: funciona bien junto con otros patrones y herramientas de Python.
-- **Testeabilidad**: facilita validar comportamiento con pruebas automatizadas.
-- **Enfoque práctico**: orientado a escenarios reales, no solo ejemplos de juguete.
+- Combina narrativa, código y resultados en un solo documento.
+- Es útil para exploración rápida y comunicación técnica.
+- Permite organizar un análisis en celdas con intención clara.
+- Necesita disciplina adicional para mantenerse reproducible.
 
 ## 2. Aplicación Práctica
 
 ### Casos de Uso
 
-1. **Desarrollo de aplicaciones**: aplicar patrones de jupyter notebooks optional en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. Documentar hallazgos exploratorios para un equipo mixto.
+2. Prototipar análisis antes de llevarlos a scripts o pipelines.
+3. Compartir una secuencia didáctica paso a paso.
 
 ### Ejemplo de Código
 
-```python
-# Ver examples/example_basic.py para código ejecutable
-# relacionado con jupyter notebooks optional
-```
-
-Ejecuta `examples/example_basic.py` para inspeccionar el comportamiento base antes de resolver el ejercicio.
+Revisa `examples/example_basic.py` para ver una implementación ejecutable enfocada en jupyter notebooks (optional).
 
 ## 3. ¿Por Qué Es Importante?
 
 ### Problema que Resuelve
 
-Sin un enfoque claro de jupyter notebooks optional, los equipos suelen enfrentar:
-
-- supuestos ocultos y comportamiento frágil,
-- refactors riesgosos,
-- baja confianza al introducir cambios.
+Si un notebook no tiene estructura mínima, se vuelve difícil de revisar, reproducir y convertir en trabajo reusable.
 
 ### Solución y Beneficios
 
-Trabajar con **Jupyter Notebooks Optional** ayuda a lograr:
+- Ayuda a intercalar explicación y evidencia en un solo lugar.
+- Hace visible el razonamiento detrás del análisis.
+- Permite convertir una prueba rápida en un recurso de aprendizaje.
 
-- mejor organización del código,
-- debugging y onboarding más rápidos,
-- mayor cobertura de pruebas y releases más seguros,
-- mantenibilidad sostenible en el tiempo.
+### Errores Comunes
+
+- Ejecutar celdas fuera de orden y depender de estado oculto.
+- Pegar outputs enormes que distraen del análisis.
+- No definir una narrativa mínima entre secciones.
 
 ## 4. Referencias
 
-Consulta [references/links.md](references/links.md) para documentación oficial y material de profundización.
+Consulta `references/links.md` para documentación oficial y material de profundización.
 
 ## 5. Tarea Práctica
 
-Usa `exercises/exercise_01.py` como punto de entrada principal del ejercicio.
+Usa `exercises/exercise_01.py` como punto de partida. El foco del ejercicio es: Arma la estructura JSON básica de un notebook con celdas markdown y code bien separadas.
 
 ### Nivel Básico
 
-- Implementar la funcionalidad principal solicitada.
-- Hacer pasar las pruebas base.
+- Implementa la funcionalidad principal solicitada.
+- Haz que el caso nominal quede cubierto por tests.
 
 ### Nivel Intermedio
 
-- Cubrir casos borde e inputs inválidos.
-- Mejorar nombres y estructura para legibilidad.
+- Valida inputs inválidos o casos borde relevantes.
+- Refactoriza para que los nombres y pasos queden explícitos.
 
 ### Nivel Avanzado
 
-- Agregar manejo de errores robusto y type hints cuando corresponda.
-- Extender la cobertura con escenarios adicionales.
+- Agrega una variante reusable o una validación extra útil para producción.
+- Documenta la decisión técnica clave de tu solución.
 
 ### Criterios de Éxito
 
-- La solución funciona para casos nominales y casos borde.
-- La suite de `tests/test_basic.py` pasa correctamente.
-- La implementación es lo suficientemente clara para revisión por pares.
+- La solución produce el resultado esperado con datos representativos.
+- `tests/test_basic.py` te orienta sobre el contrato mínimo a respetar.
+- El código final es claro para otra persona del equipo.
 
 ## 6. Resumen
 
-- Jupyter Notebooks Optional fortalece fundamentos de ingeniería en Python.
-- Mejora calidad de código, testeabilidad y mantenibilidad.
-- Es directamente aplicable a proyectos backend y de automatización.
+- Un notebook útil necesita estructura, no sólo celdas sueltas.
+- La narrativa ayuda a que el análisis sea compartible.
+- Pensar el outline primero reduce desorden después.
 
 ## 7. Prompt de Reflexión
 
-Después de completar este tema, reflexiona sobre:
-
-- ¿Qué decisiones de diseño hicieron tu solución más fácil de testear?
-- ¿Qué caso borde fue más importante modelar?
-- ¿Cómo aplicarías este tema en tus proyectos actuales?
+- ¿Qué parte del análisis merece una celda markdown propia?
+- ¿Cuándo conviene migrar un notebook a script?
+- ¿Qué metadata mínima ayuda a otro lector?

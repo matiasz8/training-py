@@ -1,29 +1,33 @@
-"""
-Ejercicio: Pandas Intro
+"""Exercise: Pandas Intro.
 
-Objetivo: Implementar y practicar pandas_intro
+Goal: Build a tidy sales DataFrame and aggregate monthly revenue.
 
-Instrucciones:
-1. Lee atentamente los requisitos
-2. Implementa las funciones/clases marcadas con TODO
-3. Ejecuta los tests: pytest tests/
-4. Tu solución debe ir en my_solution/
-
-NO MODIFIQUES ESTE ARCHIVO. Copia a my_solution/ y trabaja allí.
+Instructions:
+1. Copy this file into my_solution/ before editing it.
+2. Keep the implementation readable and column-oriented.
+3. Run tests with: pytest tests/
+4. Return Pandas objects instead of raw dicts where requested.
 """
 
-# TODO: Implementa tu solución aquí
-# Sigue las especificaciones de los docstrings
+from __future__ import annotations
+
+import pandas as pd
 
 
-def main():
-    """
-    Función principal para probar tu implementación.
-    Añade tus propios casos de prueba.
-    """
-    # TODO: Añade código de prueba aquí
-    pass
+def build_sales_dataframe(records: list[dict[str, object]]) -> pd.DataFrame:
+    """Create a DataFrame with a derived revenue column."""
+    raise NotImplementedError('Implement build_sales_dataframe in my_solution/exercise_01.py')
 
 
-if __name__ == "__main__":
+def monthly_revenue(df: pd.DataFrame) -> pd.Series:
+    """Return total revenue indexed by month."""
+    raise NotImplementedError('Implement monthly_revenue in my_solution/exercise_01.py')
+
+
+def main() -> None:
+    """Use this entry point to explore the expected inputs."""
+    print('Copy this file into my_solution/ and experiment with a few sales records.')
+
+
+if __name__ == '__main__':
     main()
