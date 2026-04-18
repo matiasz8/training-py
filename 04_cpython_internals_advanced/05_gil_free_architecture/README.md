@@ -64,3 +64,25 @@ Contribuir patch a CPython que mejore performance de algún aspecto del per-obje
 
 **Tema anterior**: [04 - Activación de free-threading](../04_free_threading_activation/)  
 **Próximo tema**: [06 - Biased reference counting](../06_biased_reference_counting/)
+
+### Criterios de Éxito
+
+- Explicas cómo per-object locking reemplaza el lock global en escenarios concurrentes.
+- Identificas al menos dos puntos donde pueden aparecer race conditions reales.
+- Relacionas decisiones de diseño con impacto en performance y seguridad de memoria.
+
+## 6. Resumen
+
+- La arquitectura sin GIL requiere sincronización más granular y explícita.
+- Locks por objeto, barreras de memoria y operaciones atómicas son piezas centrales.
+- Comprender estos mecanismos facilita escribir extensiones C robustas para Python moderno.
+
+## 7. Prompt de Reflexión
+
+- ¿Qué trade-off entre rendimiento y complejidad te parece más crítico en este diseño?
+- ¿Qué patrón usarías para minimizar contención al compartir objetos entre threads?
+- ¿Cómo validarías que una extensión C se comporta bien en modo no-GIL?
+
+### Siguiente Paso
+
+Construye un mapa rápido de riesgos de concurrencia antes de implementar cambios en extensiones.

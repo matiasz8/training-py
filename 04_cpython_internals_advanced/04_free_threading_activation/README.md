@@ -64,3 +64,25 @@ Configurar CI/CD pipeline que teste código en ambos modos (GIL/no-GIL) automát
 
 **Tema anterior**: [03 - PEP 703: Free-Threading](../03_pep_703_free_threading/)  
 **Próximo tema**: [05 - Arquitectura interna sin GIL](../05_gil_free_architecture/)
+
+### Criterios de Éxito
+
+- Compilas una versión de Python con `--disable-gil` y verificas su estado de ejecución.
+- Documentas pasos reproducibles para que otra persona replique la instalación.
+- Ejecutas un benchmark corto para confirmar que el entorno funciona correctamente.
+
+## 6. Resumen
+
+- Activar free-threading requiere compilación explícita desde source.
+- La verificación con `sys._is_gil_enabled()` es obligatoria antes de benchmarkear.
+- Un proceso de instalación claro evita errores al comparar GIL vs no-GIL.
+
+## 7. Prompt de Reflexión
+
+- ¿Qué parte del proceso de compilación fue más frágil en tu entorno?
+- ¿Qué automatizarías primero para repetir esta activación en otros equipos?
+- ¿Qué criterio usarías para decidir cuándo migrar un servicio productivo a free-threading?
+
+### Siguiente Paso
+
+Antes de avanzar, guarda los comandos de build y validation en una checklist reutilizable.
