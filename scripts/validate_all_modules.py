@@ -39,10 +39,9 @@ MAX_MODULE_NUM = 15
 CANONICAL_FILES = [
     "README.md",
     "examples/example_basic.py",
-    "exercises/exercise_01.py",
+    "exercise/exercise_01.py",
     "tests/test_basic.py",
     "references/links.md",
-    "my_solution/.gitkeep",
 ]
 
 # Spanish section headers that should appear in training-py READMEs (SP1 positive check)
