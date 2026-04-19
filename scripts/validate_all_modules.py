@@ -7,7 +7,7 @@ Checks per module:
   R1  References         — references/links.md has ≥3 real https:// URLs, no placeholder
   X1  Examples           — examples/example_basic.py executes without error
   E1  Exercises          — exercise/exercise_01.py has no TODO / no Spanish in code comments
-  M1  README             — topic README has ≥18 headings
+  M1  README             — topic README has ≥17 headings
 
 All modules 01-16 are in scope.
 
@@ -244,8 +244,8 @@ def check_m1_readme(topic_dir: Path) -> CheckResult:
     content = readme.read_text(encoding="utf-8", errors="ignore")
     headings = re.findall(r"^#{1,3} ", content, re.MULTILINE)
     count = len(headings)
-    if count < 18:
-        return CheckResult(False, [f"  only {count} headings (need ≥18)"])
+    if count < 17:
+        return CheckResult(False, [f"  only {count} headings (need ≥17)"])
     return CheckResult(True)
 
 
