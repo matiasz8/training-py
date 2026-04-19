@@ -75,6 +75,96 @@ py-erudito/
     - Sigstore (keyless signing)
     - SOPS, Vault (secrets management)
 
+---
+
+## Cómo usar este proyecto
+
+### Opción 1: Con DevContainer (Recomendado)
+
+1. Abre VS Code
+2. Instala la extensión "Dev Containers"
+3. `Cmd/Ctrl + Shift + P` → "Dev Containers: Reopen in Container"
+4. Espera 3-5 minutos para la configuración automática
+5. ¡Listo! Tendrás:
+   - Python 3.13
+   - uv instalado
+   - Ruff, BasedPyright
+   - Todas las extensiones de VS Code
+   - Hooks pre-commit configurados
+
+### Opción 2: Instalación Local
+
+```bash
+# 1. Instala uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 2. Clone repo y navega
+cd /path/to/training-py
+
+# 3. Crea entorno virtual
+uv venv
+
+# 4. Activa el entorno
+source .venv/bin/activate  # macOS/Linux
+.venv\\Scripts\\activate   # Windows
+
+# 5. Instala dependencias
+uv pip install -e .
+
+# 6. Configura pre-commit
+pre-commit install
+```
+
+---
+
+## Ejecución de Tests
+
+Para validar que tus ejercicios funcionan correctamente:
+
+```bash
+# Ver progreso actual
+python scripts/progress.py
+
+# Ejecutar tests para un topic específico (recomendado)
+python scripts/run_topic_tests.py 01_python_fundamentals/advanced_strings
+
+# Ejecutar tests para todo un módulo
+python scripts/run_topic_tests.py 16_modern_security
+
+# Ejecutar todos los tests secuencialmente
+python scripts/run_topic_tests.py
+
+# Pytest directo para un topic (sin coverage)
+python -m pytest -o addopts='' 01_python_fundamentals/advanced_strings/tests/test_basic.py
+```
+
+### Notas sobre Ejecución Manual de Tests
+
+- Usa `python scripts/run_topic_tests.py ...` para un ejecutor estable.
+- El helper ejecuta un `tests/test_basic.py` a la vez para evitar colisiones.
+- Si usas pytest directamente, ejecuta un archivo a la vez y anula addopts con `-o addopts=''`.
+- Los tests validarán `exercise/exercise_01.py`, así que las fallas usualmente significan que el ejercicio aún tiene TODOs, errores de importación, o no define una API de usuario.
+
+---
+
+## Flujo de Trabajo Recomendado
+
+1. **Lee el README.md** → Entiende definición, aplicación, motivación
+2. **Estudia examples/** → Ejecuta código de demostración
+3. **Intenta exercise/** → Implementa la solución del topic en `exercise/exercise_01.py`
+4. **Valida con tests** → Ejecuta el test del topic contra tu ejercicio
+5. **Reflexiona** → Completa la sección "My Personal Analysis"
+6. **Commit** → El hook pre-commit actualiza el progreso automáticamente
+
+```bash
+# Commit (actualiza progreso automáticamente)
+git add .
+git commit -m "Completed: advanced_strings"
+# → Pre-commit ejecuta Ruff, BasedPyright, progress.py
+```
+
+---
+
 ### 📊 Estadísticas del Proyecto
 
 - **Total de módulos**: 16
