@@ -1,7 +1,7 @@
 """
 Exercise: Basic Context Managers
 
-Goal: Implementar y practicar basic_context_managers
+Goal: Implement and practice basic_context_managers
 
 Instructions:
 1. Read the requirements carefully
@@ -12,17 +12,15 @@ Instructions:
 DO NOT MODIFY THIS FILE DIRECTLY. Copy it into my_solution/ and work there.
 """
 
-# Implement your solution in your my_solution copy.
-# Follow the docstring specifications.
+
+def example_function() -> str:
+    """Example function for basic_context_managers."""
+    return "basic_context_managers implementation"
 
 
-def main():
-    """
-    Entry point to try your implementation.
-    Add your own trial cases.
-    """
-    # Add exploratory checks here.
-    pass
+def main() -> None:
+    """Entry point to try your implementation."""
+    print(example_function())
 
 
 if __name__ == "__main__":

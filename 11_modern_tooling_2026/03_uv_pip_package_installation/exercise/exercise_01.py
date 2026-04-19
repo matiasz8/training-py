@@ -1,7 +1,7 @@
 """
 Exercise: 03 Uv Pip Package Installation
 
-Goal: Implementar y practicar 03_uv_pip_package_installation
+Goal: Implement and practice 03_uv_pip_package_installation
 
 Instructions:
 1. Read the requirements carefully
@@ -12,17 +12,15 @@ Instructions:
 DO NOT MODIFY THIS FILE DIRECTLY. Copy it into my_solution/ and work there.
 """
 
-# Implement your solution in your my_solution copy.
-# Follow the docstring specifications.
+
+def example_function() -> str:
+    """Example function for 03_uv_pip_package_installation."""
+    return "03_uv_pip_package_installation implementation"
 
 
-def main():
-    """
-    Entry point to try your implementation.
-    Add your own trial cases.
-    """
-    # Add exploratory checks here.
-    pass
+def main() -> None:
+    """Entry point to try your implementation."""
+    print(example_function())
 
 
 if __name__ == "__main__":

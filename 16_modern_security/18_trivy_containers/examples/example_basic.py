@@ -1,6 +1,7 @@
 """Basic runnable example for Trivy Containers.
 
-This script demonstrates a compact, topic-aware security check using only the Python standard library.
+This script demonstrates a compact,
+topic-aware security check using only the Python standard library.
 """
 
 from __future__ import annotations

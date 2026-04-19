@@ -1,7 +1,7 @@
 """
 Exercise: 13 Per Interpreter Gil
 
-Goal: Implementar y practicar 13_per_interpreter_gil
+Goal: Implement and practice 13_per_interpreter_gil
 
 Instructions:
 1. Read the requirements carefully
@@ -12,17 +12,15 @@ Instructions:
 DO NOT MODIFY THIS FILE DIRECTLY. Copy it into my_solution/ and work there.
 """
 
-# Implement your solution in your my_solution copy.
-# Follow the docstring specifications.
+
+def example_function() -> str:
+    """Example function for 13_per_interpreter_gil."""
+    return "13_per_interpreter_gil implementation"
 
 
-def main():
-    """
-    Entry point to try your implementation.
-    Add your own trial cases.
-    """
-    # Add exploratory checks here.
-    pass
+def main() -> None:
+    """Entry point to try your implementation."""
+    print(example_function())
 
 
 if __name__ == "__main__":

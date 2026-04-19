@@ -1,7 +1,7 @@
 """
 Exercise: 40 Xss Csrf Prevention
 
-Goal: Implementar y practicar 40_xss_csrf_prevention
+Goal: Implement and practice 40_xss_csrf_prevention
 
 Instructions:
 1. Read the requirements carefully
@@ -12,17 +12,15 @@ Instructions:
 DO NOT MODIFY THIS FILE DIRECTLY. Copy it into my_solution/ and work there.
 """
 
-# Implement your solution in your my_solution copy.
-# Follow the docstring specifications.
+
+def example_function() -> str:
+    """Example function for 40_xss_csrf_prevention."""
+    return "40_xss_csrf_prevention implementation"
 
 
-def main():
-    """
-    Entry point to try your implementation.
-    Add your own trial cases.
-    """
-    # Add exploratory checks here.
-    pass
+def main() -> None:
+    """Entry point to try your implementation."""
+    print(example_function())
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 """
 Exercise: 13 Ruff Import Sorter Isort
 
-Goal: Implementar y practicar 13_ruff_import_sorter_isort
+Goal: Implement and practice 13_ruff_import_sorter_isort
 
 Instructions:
 1. Read the requirements carefully
@@ -12,17 +12,15 @@ Instructions:
 DO NOT MODIFY THIS FILE DIRECTLY. Copy it into my_solution/ and work there.
 """
 
-# Implement your solution in your my_solution copy.
-# Follow the docstring specifications.
+
+def example_function() -> str:
+    """Example function for 13_ruff_import_sorter_isort."""
+    return "13_ruff_import_sorter_isort implementation"
 
 
-def main():
-    """
-    Entry point to try your implementation.
-    Add your own trial cases.
-    """
-    # Add exploratory checks here.
-    pass
+def main() -> None:
+    """Entry point to try your implementation."""
+    print(example_function())
 
 
 if __name__ == "__main__":
