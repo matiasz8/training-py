@@ -3,13 +3,13 @@
 
 Checks per module:
   SP1 Spanish-in-README — topic READMEs DO contain Spanish section headers (sanity check)
-  S1  Structure          — 6 canonical files exist in every topic
+  S1  Structure          — 5 canonical files exist in every topic
   R1  References         — references/links.md has ≥3 real https:// URLs, no placeholder
   X1  Examples           — examples/example_basic.py executes without error
-  E1  Exercises          — exercises/exercise_01.py has no TODO / no Spanish in code comments
+  E1  Exercises          — exercise/exercise_01.py has no TODO / no Spanish in code comments
   M1  README             — topic README has ≥18 headings
 
-Only modules 01-15 are in scope (module 16 is not yet synced to NaN and is excluded).
+All modules 01-16 are in scope.
 
 Exit code 0 if all checks pass, 1 if any fail.
 
@@ -33,8 +33,7 @@ from pathlib import Path
 
 PYTHON = sys.executable
 
-# Only validate modules 01-15 (16 not synced to NaN yet)
-MAX_MODULE_NUM = 15
+MAX_MODULE_NUM = 16
 
 CANONICAL_FILES = [
     "README.md",
@@ -117,13 +116,13 @@ def detect_topic_dirs(module_dir: Path) -> list[Path]:
         if not path.is_dir():
             continue
         if (path / "README.md").exists() and (
-            (path / "examples").exists() or (path / "exercises").exists()
+            (path / "examples").exists() or (path / "exercise").exists()
         ):
             topics.append(path)
         else:
             for sub in sorted(path.iterdir()):
                 if sub.is_dir() and (sub / "README.md").exists() and (
-                    (sub / "examples").exists() or (sub / "exercises").exists()
+                    (sub / "examples").exists() or (sub / "exercise").exists()
                 ):
                     topics.append(sub)
     return topics
@@ -215,9 +214,9 @@ EXERCISE_SPANISH_CODE_RE = re.compile(
 
 
 def check_e1_exercise(topic_dir: Path) -> CheckResult:
-    exercise = topic_dir / "exercises" / "exercise_01.py"
+    exercise = topic_dir / "exercise" / "exercise_01.py"
     if not exercise.exists():
-        return CheckResult(False, ["  exercises/exercise_01.py not found"])
+        return CheckResult(False, ["  exercise/exercise_01.py not found"])
 
     content = exercise.read_text(encoding="utf-8", errors="ignore")
     issues: list[str] = []

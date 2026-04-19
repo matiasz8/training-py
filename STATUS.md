@@ -3,6 +3,7 @@
 ## ✅ COMPLETADO
 
 ### Infraestructura (100%)
+
 - ✅ pyproject.toml con uv, Ruff, BasedPyright, pytest
 - ✅ .devcontainer/ con Python 3.13 + Rust + extensiones VS Code
 - ✅ .pre-commit-config.yaml con hooks automáticos
