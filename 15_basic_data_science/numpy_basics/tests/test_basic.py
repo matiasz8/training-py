@@ -8,11 +8,11 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-MY_SOLUTION_DIR = Path(__file__).parent.parent / 'my_solution'
+MY_SOLUTION_DIR = Path(__file__).parent.parent / "my_solution"
 sys.path.insert(0, str(MY_SOLUTION_DIR))
 exercise = pytest.importorskip(
-    'exercise_01',
-    reason='Copy exercises/exercise_01.py into my_solution/ before running tests.',
+    "exercise_01",
+    reason="Copy exercises/exercise_01.py into my_solution/ before running tests.",
 )
 
 

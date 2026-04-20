@@ -7,7 +7,6 @@ para todos los módulos del proyecto Python Erudito.
 """
 
 from pathlib import Path
-from typing import List, Dict
 
 # Definición de todos los módulos y sus temas
 MODULES = {
@@ -26,7 +25,7 @@ MODULES = {
             "module_imports",
             "basic_error_handling",
             "basic_debugging_optional",
-        ]
+        ],
     },
     "02_intermediate_python": {
         "description": "Python Intermedio",
@@ -46,7 +45,7 @@ MODULES = {
             "collections_module",
             "itertools",
             "regex_optional",
-        ]
+        ],
     },
     "03_basic_intermediate_oop": {
         "description": "POO Básica e Intermedia",
@@ -63,7 +62,7 @@ MODULES = {
             "basic_descriptors",
             "composition_vs_inheritance",
             "dataclasses_optional",
-        ]
+        ],
     },
     "05_modern_concurrency": {
         "description": "Concurrencia y Paralelismo Moderno",
@@ -93,7 +92,7 @@ MODULES = {
             "actor_model",
             "race_detection",
             "profiling_concurrent",
-        ]
+        ],
     },
     "06_typing_metaprogramming": {
         "description": "Tipado Estático y Metaprogramación",
@@ -120,7 +119,7 @@ MODULES = {
             "ast_basics",
             "ast_manipulation",
             "exec_eval_compile",
-        ]
+        ],
     },
     "08_application_architecture": {
         "description": "Arquitectura de Aplicaciones",
@@ -143,7 +142,7 @@ MODULES = {
             "cqrs_pattern",
             "structured_logging",
             "observability",
-        ]
+        ],
     },
     "09_testing_qa": {
         "description": "Testing y Quality Assurance",
@@ -164,7 +163,7 @@ MODULES = {
             "bdd_behave_optional",
             "test_organization",
             "ci_testing",
-        ]
+        ],
     },
     "10_performance_optimization": {
         "description": "Performance y Optimización",
@@ -183,7 +182,7 @@ MODULES = {
             "caching_lru",
             "memory_optimization",
             "algorithmic_complexity",
-        ]
+        ],
     },
     "12_fastapi_complete": {
         "description": "FastAPI Completo",
@@ -216,7 +215,7 @@ MODULES = {
             "error_handling",
             "graphql_optional",
             "deployment",
-        ]
+        ],
     },
     "13_backend_ecosystem": {
         "description": "Ecosistema Backend Moderno",
@@ -241,7 +240,7 @@ MODULES = {
             "prometheus_metrics",
             "elasticsearch_optional",
             "graphql_schemas_optional",
-        ]
+        ],
     },
     "15_basic_data_science": {
         "description": "Data Science Básico",
@@ -256,7 +255,7 @@ MODULES = {
             "jupyter_notebooks_optional",
             "pandas_performance",
             "polars_intro",
-        ]
+        ],
     },
 }
 
@@ -265,13 +264,13 @@ def create_topic_structure(base_path: Path, topic_name: str) -> None:
     """Crea estructura de carpetas para un tema."""
     topic_path = base_path / topic_name
     topic_path.mkdir(parents=True, exist_ok=True)
-    
+
     # Crear subcarpetas
     (topic_path / "examples").mkdir(exist_ok=True)
     (topic_path / "exercise").mkdir(exist_ok=True)
     (topic_path / "tests").mkdir(exist_ok=True)
     (topic_path / "references").mkdir(exist_ok=True)
-    
+
     # Crear README básico
     readme_content = f"""# {topic_name.replace('_', ' ').title()}
 
@@ -285,9 +284,9 @@ def create_topic_structure(base_path: Path, topic_name: str) -> None:
 
 ### Casos de Uso
 
-1. **Caso 1**: 
-2. **Caso 2**: 
-3. **Caso 3**: 
+1. **Caso 1**:
+2. **Caso 2**:
+3. **Caso 3**:
 
 ### Código Ejemplo
 
@@ -328,11 +327,11 @@ def create_topic_structure(base_path: Path, topic_name: str) -> None:
 >
 > Escribe aquí tus observaciones, dudas y conclusiones después de completar este tema...
 """
-    
+
     readme_path = topic_path / "README.md"
     if not readme_path.exists():
         readme_path.write_text(readme_content)
-    
+
     # Crear archivo de referencias básico
     links_content = f"""# Referencias: {topic_name.replace('_', ' ').title()}
 
@@ -348,19 +347,19 @@ def create_topic_structure(base_path: Path, topic_name: str) -> None:
 ## Repositorios de Ejemplo
 - *[Por añadir]*
 """
-    
+
     links_path = topic_path / "references" / "links.md"
     if not links_path.exists():
         links_path.write_text(links_content)
 
 
-def create_module(base_path: Path, module_name: str, module_info: Dict) -> None:
+def create_module(base_path: Path, module_name: str, module_info: dict) -> None:
     """Crea estructura completa de un módulo."""
     module_path = base_path / module_name
     module_path.mkdir(parents=True, exist_ok=True)
-    
+
     print(f"📁 Creando módulo: {module_name}")
-    
+
     # Crear README del módulo
     readme_content = f"""# Módulo: {module_info['description']}
 
@@ -377,11 +376,11 @@ def create_module(base_path: Path, module_name: str, module_info: Dict) -> None:
 ## 📚 Contenido ({len(module_info['topics'])} Temas)
 
 """
-    
-    for i, topic in enumerate(module_info['topics'], 1):
-        topic_title = topic.replace('_', ' ').title()
+
+    for i, topic in enumerate(module_info["topics"], 1):
+        topic_title = topic.replace("_", " ").title()
         readme_content += f"{i}. [{topic_title}]({topic}/)\n"
-    
+
     readme_content += f"""
 ## ⏱️ Tiempo Estimado Total
 
@@ -391,13 +390,13 @@ def create_module(base_path: Path, module_name: str, module_info: Dict) -> None:
 
 Seguir el orden numérico para una progresión lógica.
 """
-    
+
     readme_path = module_path / "README.md"
     if not readme_path.exists():
         readme_path.write_text(readme_content)
-    
+
     # Crear cada tema
-    for topic in module_info['topics']:
+    for topic in module_info["topics"]:
         create_topic_structure(module_path, topic)
         print(f"  ✓ {topic}")
 
@@ -405,14 +404,14 @@ Seguir el orden numérico para una progresión lógica.
 def main():
     """Genera estructura completa del proyecto."""
     base_path = Path(__file__).parent.parent
-    
+
     print("🚀 Generando estructura de módulos...")
     print()
-    
+
     for module_name, module_info in MODULES.items():
         create_module(base_path, module_name, module_info)
         print()
-    
+
     print("✅ Estructura generada exitosamente!")
     print()
     print("📝 Próximos pasos:")

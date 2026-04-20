@@ -7,6 +7,7 @@
 ## Evolución y Estado Actual
 
 ### Historia Reciente
+
 - **2014**: Lanzamiento inicial por Jukka Lehtosalo
 - **2017**: Adopción por Dropbox
 - **2022**: Versión 1.0 estable
@@ -16,6 +17,7 @@
 ### Performance en 2026
 
 Aunque mypy es más lento que Pyright o pylyzer, ha mejorado significativamente:
+
 - **Daemon mode (dmypy)**: Cache persistente entre runs
 - **Incremental mode**: Solo re-chequea archivos modificados
 - **Parallel mode**: Multi-procesamiento para proyectos grandes
@@ -133,6 +135,7 @@ dmypy stop
 ```
 
 **Performance comparison:**
+
 - `mypy .`: 15-30 segundos (cold)
 - `dmypy check .`: 1-3 segundos (warm)
 - `dmypy check .` (incremental): 0.1-0.5 segundos
@@ -180,7 +183,7 @@ from django.db import models
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    
+
 # mypy conoce los tipos de Django
 article = Article.objects.get(title="Test")
 article.title = 123  # error: Incompatible types
@@ -221,22 +224,22 @@ disallow_untyped_defs = false
 
 ## Comparación con Alternativas (2026)
 
-| Característica | mypy | Pyright | pylyzer |
-|----------------|------|---------|---------|
-| **Velocidad** | 3/5 | 5/5 | 5/5 |
-| **Precisión** | 5/5 | 5/5 | 4/5 |
-| **Plugins** | ✅ Muchos | ❌ Limitados | ❌ Ninguno |
-| **Comunidad** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Documentación** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Strict Mode** | ✅ Excelente | ✅ Excelente | ⚠️ Básico |
+| Característica    | mypy         | Pyright      | pylyzer    |
+| ----------------- | ------------ | ------------ | ---------- |
+| **Velocidad**     | 3/5          | 5/5          | 5/5        |
+| **Precisión**     | 5/5          | 5/5          | 4/5        |
+| **Plugins**       | ✅ Muchos    | ❌ Limitados | ❌ Ninguno |
+| **Comunidad**     | ⭐⭐⭐⭐⭐   | ⭐⭐⭐⭐     | ⭐⭐⭐     |
+| **Documentación** | ⭐⭐⭐⭐⭐   | ⭐⭐⭐⭐     | ⭐⭐⭐     |
+| **Strict Mode**   | ✅ Excelente | ✅ Excelente | ⚠️ Básico  |
 
 ## Casos de Uso Ideales para mypy
 
 1. **Proyectos con Django/Flask**: Plugins maduros
-2. **Codebases legacy**: Adopción gradual fácil
-3. **Equipos grandes**: Documentación extensa
-4. **Bibliotecas públicas**: Compatibilidad amplia
-5. **CI/CD establecidos**: Integración probada
+1. **Codebases legacy**: Adopción gradual fácil
+1. **Equipos grandes**: Documentación extensa
+1. **Bibliotecas públicas**: Compatibilidad amplia
+1. **CI/CD establecidos**: Integración probada
 
 ## Limitaciones y Desafíos
 
@@ -270,17 +273,17 @@ def process(x: int | str) -> None:
         print(x + 1)  # mypy OK
     else:
         print(x.upper())  # mypy OK
-        
+
     # Pero casos complejos pueden confundir a mypy
 ```
 
 ## Best Practices 2026
 
 1. **Use daemon mode** en desarrollo: `dmypy`
-2. **Strict mode** para código nuevo
-3. **Plugins** para frameworks populares
-4. **Incremental** siempre habilitado
-5. **CI/CD** con caching para velocidad
+1. **Strict mode** para código nuevo
+1. **Plugins** para frameworks populares
+1. **Incremental** siempre habilitado
+1. **CI/CD** con caching para velocidad
 
 ## Migración a Alternativas
 

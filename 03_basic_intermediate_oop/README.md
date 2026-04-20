@@ -15,17 +15,17 @@ Domina la Programación Orientada a Objetos en Python. Desde clases básicas has
 ## 📚 Contenido (12 Temas)
 
 1. [Classes Objects](classes_objects/)
-2. [Attributes Methods](attributes_methods/)
-3. [Init Self](init_self/)
-4. [Basic Inheritance](basic_inheritance/)
-5. [Multiple Inheritance](multiple_inheritance/)
-6. [Polymorphism](polymorphism/)
-7. [Encapsulation](encapsulation/)
-8. [Special Methods](special_methods/)
-9. [Properties](properties/)
-10. [Basic Descriptors](basic_descriptors/)
-11. [Composition Vs Inheritance](composition_vs_inheritance/)
-12. [Dataclasses Optional](dataclasses_optional/)
+1. [Attributes Methods](attributes_methods/)
+1. [Init Self](init_self/)
+1. [Basic Inheritance](basic_inheritance/)
+1. [Multiple Inheritance](multiple_inheritance/)
+1. [Polymorphism](polymorphism/)
+1. [Encapsulation](encapsulation/)
+1. [Special Methods](special_methods/)
+1. [Properties](properties/)
+1. [Basic Descriptors](basic_descriptors/)
+1. [Composition Vs Inheritance](composition_vs_inheritance/)
+1. [Dataclasses Optional](dataclasses_optional/)
 
 ## ⏱️ Tiempo Estimado Total
 

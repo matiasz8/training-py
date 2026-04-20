@@ -7,16 +7,19 @@
 ## Características Principales
 
 ### Compatibilidad con Black
+
 - Estilo casi idéntico a Black
 - La mayoría del código formateado por Black será idéntico con Ruff
 - Pequeñas diferencias documentadas y configurables
 
 ### Velocidad Extrema
+
 - Formatear 100k líneas en ~300ms vs ~8s de Black
 - No bloquea el editor
 - Perfecto para pre-commit hooks sin latencia
 
 ### Zero Configuration
+
 - Funciona out-of-the-box sin configuración
 - Opinionated pero con opciones razonables
 - Configuración compatible con Black
@@ -173,7 +176,7 @@ uv tool install ruff
 - name: Black
   run: black --check .
 
-# Después  
+# Después
 - name: Ruff Format
   run: ruff format --check .
 ```
@@ -230,7 +233,7 @@ ruff format --check .  0.29s user 0.08s system 340% cpu 0.108 total
 ### En Editors
 
 - **Black**: Formateo visible (~200ms)
-- **Ruff**: Formateo instantáneo (<10ms)
+- **Ruff**: Formateo instantáneo (\<10ms)
 
 ## Casos de Uso Específicos
 
@@ -274,8 +277,8 @@ extend-exclude = [
 ### ¿Qué hacer si Ruff formatea diferente a Black?
 
 1. Verifica que usas las mismas opciones de configuración
-2. Si es un edge case aceptable, migra a Ruff
-3. Si es crítico, reporta en GitHub Issues
+1. Si es un edge case aceptable, migra a Ruff
+1. Si es crítico, reporta en GitHub Issues
 
 ### ¿Ruff format soporta Jupyter Notebooks?
 
@@ -288,9 +291,9 @@ ruff format notebook.ipynb
 ## Best Practices
 
 1. **Use en CI/CD**: `ruff format --check` falla si hay código sin formatear
-2. **Integre en el editor**: Formateo automático al guardar
-3. **Pre-commit hook**: Previene commits con código sin formatear
-4. **Consistencia**: Todo el equipo debe usar Ruff o Black, no mezclar
+1. **Integre en el editor**: Formateo automático al guardar
+1. **Pre-commit hook**: Previene commits con código sin formatear
+1. **Consistencia**: Todo el equipo debe usar Ruff o Black, no mezclar
 
 ## Referencias
 

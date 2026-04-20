@@ -7,59 +7,79 @@ Ruff implementa más de **800 reglas de linting** organizadas por categorías, c
 ## Categorías Principales
 
 ### Pyflakes (F)
+
 Errores lógicos y bugs obvios:
+
 - `F401`: Imported but unused
 - `F841`: Local variable assigned but never used
 - `F821`: Undefined name
 - `F541`: f-string without placeholders
 
 ### pycodestyle (E, W)
+
 Estilo PEP 8:
+
 - `E501`: Line too long
 - `E302`: Expected 2 blank lines
 - `W291`: Trailing whitespace
 - `E711`: Comparison to None should use `is`
 
 ### McCabe (C90)
+
 Complejidad ciclomática:
+
 - `C901`: Function is too complex
 
 ### isort (I)
+
 Organización de imports:
+
 - `I001`: Import block is un-sorted
 - `I002`: Missing required import
 
 ### pydocstyle (D)
+
 Convenciones de docstrings:
+
 - `D100`: Missing docstring in public module
 - `D401`: First line should be imperative
 - `D417`: Missing argument descriptions
 
 ### pyupgrade (UP)
+
 Modernización de código:
+
 - `UP006`: Use `list` instead of `List` for typing
 - `UP032`: Use f-strings instead of format
 - `UP009`: Remove unnecessary UTF-8 encoding comments
 
 ### flake8-bugbear (B)
+
 Bugs y anti-patterns:
+
 - `B006`: Mutable default argument
 - `B008`: Function call in default argument
 - `B904`: Use `raise from` to preserve traceback
 
 ### flake8-comprehensions (C4)
+
 Optimización de comprehensions:
+
 - `C400`: Unnecessary generator (use list comprehension)
 - `C416`: Unnecessary list comprehension (use set)
 
 ### pylint (PL)
+
 Reglas de pylint:
+
 - `PLC0414`: Import alias does not rename original package
 - `PLE0101`: Return in `__init__`
 - `PLR5501`: Use `elif` instead of `else` + `if`
 
 ### Ruff-specific (RUF)
+
 Reglas específicas de Ruff:
+
 - `RUF001`: Ambiguous unicode characters
 - `RUF100`: Unused `noqa` directive
 
@@ -212,9 +232,9 @@ ruff rule --preview | grep "D1"
 ## Performance Tips
 
 1. **Select solo lo necesario**: No activar todas las reglas
-2. **Use .ruffignore**: Para excluir directorios grandes
-3. **Incremental**: Ruff solo analiza archivos modificados
-4. **Parallel**: Auto-paralización en multi-core
+1. **Use .ruffignore**: Para excluir directorios grandes
+1. **Incremental**: Ruff solo analiza archivos modificados
+1. **Parallel**: Auto-paralización en multi-core
 
 ## Referencias
 

@@ -9,8 +9,8 @@ Exploración profunda de los cambios arquitectónicos en CPython para soportar f
 ### Casos de Uso
 
 1. **Entender cómo CPython gestiona concurrencia sin GIL**
-2. **Diseñar extensiones C compatibles con arquitectura no-GIL**
-3. **Debugging de race conditions a nivel de intérprete**
+1. **Diseñar extensiones C compatibles con arquitectura no-GIL**
+1. **Debugging de race conditions a nivel de intérprete**
 
 ### Código Ejemplo
 
@@ -35,6 +35,7 @@ Conocer la arquitectura interna es crucial para escribir código performante y t
 ## Referencias
 
 ### Documentación Oficial
+
 - [Python 3.13 Documentation](https://docs.python.org/3.13/)
 - [PEP 703 – Free-Threading](https://peps.python.org/pep-0703/)
 - [CPython Source: Include/internal/pycore_lock.h](https://github.com/python/cpython)
@@ -42,12 +43,15 @@ Conocer la arquitectura interna es crucial para escribir código performante y t
 ## Tarea de Práctica
 
 ### Nivel Básico
+
 Leer código source de Python/ceval.c y Python/lock.c. Documentar diferencias vs versión con GIL.
 
 ### Nivel Intermedio
+
 Implementar un 'mini-intérprete' que simule per-object locking y demuestre cómo múltiples threads acceden objetos de forma segura.
 
 ### Nivel Avanzado
+
 Contribuir patch a CPython que mejore performance de algún aspecto del per-object locking scheme.
 
 ## Summary
@@ -60,9 +64,9 @@ Contribuir patch a CPython que mejore performance de algún aspecto del per-obje
 
 ⏱️ **4-5 horas**
 
----
+______________________________________________________________________
 
-**Tema anterior**: [04 - Activación de free-threading](../04_free_threading_activation/)  
+**Tema anterior**: [04 - Activación de free-threading](../04_free_threading_activation/)
 **Próximo tema**: [06 - Biased reference counting](../06_biased_reference_counting/)
 
 ### Criterios de Éxito

@@ -6,11 +6,12 @@ class Borg:
 
 
 def main() -> None:
+    """Entry point to demonstrate the implementation."""
     a = Borg()
     b = Borg()
     a.value = 10
-    print(getattr(b, 'value'))
+    print(b.value)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

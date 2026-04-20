@@ -16,43 +16,49 @@ Este módulo profundiza en los aspectos más avanzados de CPython, enfocándose 
 ## Estructura del Módulo
 
 ### Sección 1: Global Interpreter Lock (GIL)
+
 1. [Historia del GIL](01_gil_history/)
-2. [Limitaciones del GIL tradicional](02_gil_limitations/)
+1. [Limitaciones del GIL tradicional](02_gil_limitations/)
 
 ### Sección 2: Free-Threading (PEP 703)
+
 3. [PEP 703: Free-Threading Python 3.13+](03_pep_703_free_threading/)
-4. [Activación de free-threading](04_free_threading_activation/)
-5. [Arquitectura interna sin GIL](05_gil_free_architecture/)
-6. [Biased reference counting](06_biased_reference_counting/)
-7. [Garbage collector thread-safe](07_gc_thread_safe/)
-8. [Performance benchmarks: GIL vs No-GIL](08_performance_benchmarks/)
-9. [Compatibilidad de extensiones C](09_c_extensions_compatibility/)
+1. [Activación de free-threading](04_free_threading_activation/)
+1. [Arquitectura interna sin GIL](05_gil_free_architecture/)
+1. [Biased reference counting](06_biased_reference_counting/)
+1. [Garbage collector thread-safe](07_gc_thread_safe/)
+1. [Performance benchmarks: GIL vs No-GIL](08_performance_benchmarks/)
+1. [Compatibilidad de extensiones C](09_c_extensions_compatibility/)
 
 ### Sección 3: Subinterpreters (PEP 684)
+
 10. [Subinterpreters - Introducción](10_subinterpreters_intro/)
-11. [API C de subinterpreters](11_api_c_subinterpreters/)
-12. [API Python de subinterpreters](12_api_python_subinterpreters/)
-13. [Per-interpreter GIL vs No-GIL](13_per_interpreter_gil/)
-14. [Aislamiento de memoria](14_memory_isolation/)
-15. [Canales de comunicación](15_communication_channels/)
+01. [API C de subinterpreters](11_api_c_subinterpreters/)
+01. [API Python de subinterpreters](12_api_python_subinterpreters/)
+01. [Per-interpreter GIL vs No-GIL](13_per_interpreter_gil/)
+01. [Aislamiento de memoria](14_memory_isolation/)
+01. [Canales de comunicación](15_communication_channels/)
 
 ### Sección 4: Thread-Safety
+
 16. [Operaciones atómicas](16_atomic_operations/)
-17. [Data races y race conditions](17_data_races/)
-18. [Locks y sincronización](18_locks_synchronization/)
-19. [Threading.local y TLS](19_threading_local/)
-20. [Estructuras thread-safe](20_thread_safe_structures/)
+01. [Data races y race conditions](17_data_races/)
+01. [Locks y sincronización](18_locks_synchronization/)
+01. [Threading.local y TLS](19_threading_local/)
+01. [Estructuras thread-safe](20_thread_safe_structures/)
 
 ### Sección 5: Internals de Objetos
+
 21. [PyObject: estructura interna](21_pyobject_structure/)
-22. [Reference counting avanzado](22_reference_counting/)
-23. [Immortal objects (PEP 683)](23_immortal_objects/)
-24. [Caching y interning](24_caching_interning/)
-25. [Memory layout y compaction](25_memory_layout/)
+01. [Reference counting avanzado](22_reference_counting/)
+01. [Immortal objects (PEP 683)](23_immortal_objects/)
+01. [Caching y interning](24_caching_interning/)
+01. [Memory layout y compaction](25_memory_layout/)
 
 ### Sección 6: Migración y Testing
+
 26. [Estrategias de migración](26_migration_strategies/)
-27. [Testing de thread-safety](27_testing_thread_safety/)
+01. [Testing de thread-safety](27_testing_thread_safety/)
 
 ## Requisitos Previos
 

@@ -12,6 +12,7 @@ def calculate_price(base: float, discount: float = 0.0, tax: float = 0.21) -> fl
 
 
 def main() -> None:
+    """Entry point to demonstrate the implementation."""
     print(greet("Lin"))
     print(calculate_price(100.0, discount=0.1))
 

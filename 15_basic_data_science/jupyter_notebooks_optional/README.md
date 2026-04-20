@@ -18,8 +18,8 @@ Jupyter Notebooks Optional presenta la estructura de un notebook y cómo documen
 ### Casos de Uso
 
 1. Documentar hallazgos exploratorios para un equipo mixto.
-2. Prototipar análisis antes de llevarlos a scripts o pipelines.
-3. Compartir una secuencia didáctica paso a paso.
+1. Prototipar análisis antes de llevarlos a scripts o pipelines.
+1. Compartir una secuencia didáctica paso a paso.
 
 ### Ejemplo de Código
 

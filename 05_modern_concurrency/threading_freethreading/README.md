@@ -1,6 +1,7 @@
 # Threading Freethreading
 
 Tiempo estimado: 2-3 horas
+
 ## 1. Definición
 
 **Threading Freethreading** es un tema importante de Python para construir soluciones mantenibles, testeables y listas para producción.
@@ -19,8 +20,8 @@ En la práctica, este tema te da un marco claro para modelar comportamiento, eva
 ### Casos de Uso
 
 1. **Desarrollo de aplicaciones**: aplicar patrones de threading freethreading en servicios backend y herramientas internas.
-2. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
-3. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
+1. **Diseño de librerías**: implementar componentes reutilizables con comportamiento predecible.
+1. **Flujos de automatización**: crear scripts y procesos más fáciles de evolucionar y validar.
 
 ### Ejemplo de Código
 

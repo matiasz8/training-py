@@ -18,8 +18,8 @@ Pandas Performance muestra cuándo conviene vectorizar transformaciones, medir t
 ### Casos de Uso
 
 1. Acelerar pipelines de cálculo de descuentos o revenue.
-2. Reducir tiempos de preprocesamiento antes de entrenar modelos.
-3. Tomar decisiones informadas sobre cuándo migrar a Polars.
+1. Reducir tiempos de preprocesamiento antes de entrenar modelos.
+1. Tomar decisiones informadas sobre cuándo migrar a Polars.
 
 ### Ejemplo de Código
 

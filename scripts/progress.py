@@ -104,9 +104,7 @@ def generate_progress_table(progress: dict[str, dict[str, int]]) -> str:
         # Formatear nombre del módulo (remover número y guiones bajos)
         display_name = re.sub(r"^\d+_", "", module_name).replace("_", " ").title()
 
-        lines.append(
-            f"| {display_name} | {completed} | {total} | {bar} | {percentage:.1f}% |"
-        )
+        lines.append(f"| {display_name} | {completed} | {total} | {bar} | {percentage:.1f}% |")
 
     # Agregar total
     total_percentage = (total_completed / total_topics * 100) if total_topics > 0 else 0

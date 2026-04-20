@@ -21,7 +21,7 @@ PATRONES = {
             "template_method",
             "iterator",
             "command",
-        ]
+        ],
     },
     "02_pythonic_patterns": {
         "description": "Patrones Pythónicos",
@@ -40,7 +40,7 @@ PATRONES = {
             "lazy_property",
             "sentinel",
             "plugin_system",
-        ]
+        ],
     },
     "03_advanced_gof": {
         "description": "Patrones GoF Avanzados",
@@ -57,7 +57,7 @@ PATRONES = {
             "memento",
             "state",
             "visitor",
-        ]
+        ],
     },
     "04_architectural": {
         "description": "Patrones Arquitectónicos",
@@ -75,7 +75,7 @@ PATRONES = {
             "mvp",
             "mvvm",
             "api_gateway",
-        ]
+        ],
     },
     "05_distributed_systems": {
         "description": "Patrones de Sistemas Distribuidos",
@@ -92,7 +92,7 @@ PATRONES = {
             "cache_aside",
             "sidecar",
             "event_driven",
-        ]
+        ],
     },
     "06_concurrency": {
         "description": "Patrones de Concurrencia",
@@ -111,7 +111,7 @@ PATRONES = {
             "leader_followers",
             "double_checked_locking",
             "scheduler",
-        ]
+        ],
     },
     "07_messaging": {
         "description": "Patrones de Mensajería",
@@ -120,7 +120,7 @@ PATRONES = {
             "publish_subscribe",
             "request_reply",
             "event_bus",
-        ]
+        ],
     },
     "08_object_management": {
         "description": "Patrones de Gestión de Objetos",
@@ -133,7 +133,7 @@ PATRONES = {
             "value_object",
             "entity",
             "aggregate",
-        ]
+        ],
     },
 }
 
@@ -142,15 +142,15 @@ def create_pattern_structure(base_path: Path, pattern_name: str) -> None:
     """Crea estructura de carpetas para un patrón."""
     pattern_path = base_path / pattern_name
     pattern_path.mkdir(parents=True, exist_ok=True)
-    
+
     # Crear subcarpetas
     (pattern_path / "examples").mkdir(exist_ok=True)
     (pattern_path / "exercise").mkdir(exist_ok=True)
     (pattern_path / "tests").mkdir(exist_ok=True)
     (pattern_path / "references").mkdir(exist_ok=True)
-    
+
     # Crear README
-    pattern_display = pattern_name.replace('_', ' ').title()
+    pattern_display = pattern_name.replace("_", " ").title()
     readme_content = f"""# Patrón: {pattern_display}
 
 ⏱️ **Tiempo estimado: 2-3 horas**
@@ -163,9 +163,9 @@ def create_pattern_structure(base_path: Path, pattern_name: str) -> None:
 
 ### Casos de Uso
 
-1. **Caso 1**: 
-2. **Caso 2**: 
-3. **Caso 3**: 
+1. **Caso 1**:
+2. **Caso 2**:
+3. **Caso 3**:
 
 ### Diagrama UML
 
@@ -185,13 +185,13 @@ def create_pattern_structure(base_path: Path, pattern_name: str) -> None:
 *[Por completar]*
 
 ### Ventajas
-- 
-- 
-- 
+-
+-
+-
 
 ### Desventajas
-- 
-- 
+-
+-
 
 ## 4. 🔗 Referencias
 
@@ -226,9 +226,9 @@ Implementa el patrón con type hints completos, tests, y documentación.
 > - ¿Qué alternativas considerarías?
 > - ¿Qué aprendiste al implementarlo?
 """
-    
+
     (pattern_path / "README.md").write_text(readme_content)
-    
+
     # Crear references/links.md
     links_content = f"""# Referencias: {pattern_display}
 
@@ -248,7 +248,7 @@ Implementa el patrón con type hints completos, tests, y documentación.
 ## Implementaciones de Ejemplo
 - *[Por añadir repos GitHub con implementaciones reales]*
 """
-    
+
     (pattern_path / "references" / "links.md").write_text(links_content)
 
 
@@ -256,9 +256,9 @@ def create_subcategory(base_path: Path, subcat_name: str, subcat_info: dict) -> 
     """Crea subcategoría de patrones."""
     subcat_path = base_path / subcat_name
     subcat_path.mkdir(parents=True, exist_ok=True)
-    
+
     print(f"📁 Creando subcategoría: {subcat_name}")
-    
+
     # Crear README de subcategoría
     readme_content = f"""# {subcat_info['description']}
 
@@ -269,21 +269,21 @@ Esta subcategoría contiene {len(subcat_info['patterns'])} patrones de diseño.
 ## 📚 Patrones
 
 """
-    
-    for i, pattern in enumerate(subcat_info['patterns'], 1):
-        pattern_display = pattern.replace('_', ' ').title()
+
+    for i, pattern in enumerate(subcat_info["patterns"], 1):
+        pattern_display = pattern.replace("_", " ").title()
         readme_content += f"{i}. [{pattern_display}]({pattern}/)\n"
-    
+
     readme_content += f"""
 ## ⏱️ Tiempo Estimado Total
 
 **{len(subcat_info['patterns']) * 2}-{len(subcat_info['patterns']) * 3} horas**
 """
-    
+
     (subcat_path / "README.md").write_text(readme_content)
-    
+
     # Crear cada patrón
-    for pattern in subcat_info['patterns']:
+    for pattern in subcat_info["patterns"]:
         create_pattern_structure(subcat_path, pattern)
         print(f"  ✓ {pattern}")
 
@@ -292,10 +292,10 @@ def main():
     """Genera estructura del módulo de patrones."""
     base_path = Path(__file__).parent.parent / "07_design_patterns"
     base_path.mkdir(parents=True, exist_ok=True)
-    
+
     print("🎨 Generando Módulo 07: Patrones de Diseño...")
     print()
-    
+
     # Crear README principal del módulo
     readme_content = """# Módulo 07: Patrones de Diseño Completos 🎨
 
@@ -369,16 +369,16 @@ Estudiar todas las subcategorías en orden numérico.
 
 *Este módulo representa una biblioteca completa de patrones de diseño para Python*
 """
-    
+
     (base_path / "README.md").write_text(readme_content)
-    
+
     # Crear cada subcategoría
     for subcat_name, subcat_info in PATRONES.items():
         create_subcategory(base_path, subcat_name, subcat_info)
         print()
-    
+
     print("✅ Módulo 07 generado exitosamente!")
-    print(f"📊 Total: 88 patrones en 8 subcategorías")
+    print("📊 Total: 88 patrones en 8 subcategorías")
 
 
 if __name__ == "__main__":

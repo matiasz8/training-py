@@ -44,6 +44,7 @@ uv descarga múltiples paquetes simultáneamente usando workers concurrentes en 
 ### Caché Inteligente
 
 La caché global de uv significa que:
+
 - Primera instalación: Descarga desde PyPI
 - Instalaciones subsecuentes: Instantáneas desde caché
 - Compartida entre todos los proyectos
@@ -155,19 +156,19 @@ uv pip sync requirements.txt
 
 ## Comparación de Rendimiento
 
-| Operación | pip | uv pip | Mejora |
-|-----------|-----|--------|--------|
-| Install 50 packages (cold) | 45s | 5s | 9x |
-| Install 50 packages (cached) | 30s | 0.5s | 60x |
-| Resolve complex dependencies | 20s | 2s | 10x |
-| pip freeze | 1s | 0.1s | 10x |
+| Operación                    | pip | uv pip | Mejora |
+| ---------------------------- | --- | ------ | ------ |
+| Install 50 packages (cold)   | 45s | 5s     | 9x     |
+| Install 50 packages (cached) | 30s | 0.5s   | 60x    |
+| Resolve complex dependencies | 20s | 2s     | 10x    |
+| pip freeze                   | 1s  | 0.1s   | 10x    |
 
 ## Best Practices
 
 1. **Use uv pip compile**: Para reproducibilidad
-2. **Especifique versiones**: En producción use versiones exactas
-3. **Aproveche la caché**: Reutilice la caché en CI/CD
-4. **Separate concerns**: `requirements.in` para dependencias directas, `requirements.txt` para todas
+1. **Especifique versiones**: En producción use versiones exactas
+1. **Aproveche la caché**: Reutilice la caché en CI/CD
+1. **Separate concerns**: `requirements.in` para dependencias directas, `requirements.txt` para todas
 
 ## Troubleshooting
 

@@ -31,89 +31,88 @@ Criterios de éxito:
 Tiempo estimado: 45-60 minutos
 """
 
-import threading
 import multiprocessing as mp
-import time
-from typing import List, Tuple
-import math
+
 
 def is_prime(n: int) -> bool:
     """
     TODO: Implementar función eficiente para verificar si n es primo.
-    
+
     Pistas:
     - Números menores a 2 no son primos
     - Solo necesitas verificar hasta sqrt(n)
     - Optimización: verificar solo divisores impares después de 2
-    
+
     Args:
         n: Número a verificar
-        
+
     Returns:
         True si n es primo, False en caso contrario
     """
     pass  # TU CÓDIGO AQUÍ
 
 
-def find_primes_in_range(start: int, end: int) -> List[int]:
+def find_primes_in_range(start: int, end: int) -> list[int]:
     """
     TODO: Encontrar todos los números primos en el rango [start, end).
-    
+
     Args:
         start: Inicio del rango (inclusivo)
         end: Fin del rango (exclusivo)
-        
+
     Returns:
         Lista de números primos en el rango
     """
     pass  # TU CÓDIGO AQUÍ
 
 
-def sequential_execution(ranges: List[Tuple[int, int]]) -> Tuple[List[int], float]:
+def sequential_execution(ranges: list[tuple[int, int]]) -> tuple[list[int], float]:
     """
     TODO: Ejecutar búsqueda de primos secuencialmente.
-    
+
     Args:
         ranges: Lista de tuplas (start, end) para buscar primos
-        
+
     Returns:
         Tupla (lista_de_primos, tiempo_de_ejecución)
     """
     pass  # TU CÓDIGO AQUÍ
 
 
-def threading_execution(ranges: List[Tuple[int, int]], num_threads: int) -> Tuple[List[int], float]:
+def threading_execution(ranges: list[tuple[int, int]], num_threads: int) -> tuple[list[int], float]:
     """
     TODO: Ejecutar búsqueda de primos usando threading.
-    
+
     Pistas:
     - Crear un Thread por cada rango
     - Usar una lista compartida para resultados (con lock si es necesario)
     - Hacer join() de todos los threads antes de retornar
-    
+
     Args:
         ranges: Lista de tuplas (start, end) para buscar primos
         num_threads: Número de threads a usar
-        
+
     Returns:
         Tupla (lista_de_primos, tiempo_de_ejecución)
     """
     pass  # TU CÓDIGO AQUÍ
 
 
-def multiprocessing_execution(ranges: List[Tuple[int, int]], num_processes: int) -> Tuple[List[int], float]:
+def multiprocessing_execution(
+    ranges: list[tuple[int, int]], num_processes: int
+) -> tuple[list[int], float]:
     """
     TODO: Ejecutar búsqueda de primos usando multiprocessing.
-    
+
     Pistas:
     - Usar multiprocessing.Pool
     - Usar pool.starmap() para pasar múltiples argumentos
     - No olvides cerrar y join el pool
-    
+
     Args:
         ranges: Lista de tuplas (start, end) para buscar primos
         num_processes: Número de procesos a usar
-        
+
     Returns:
         Tupla (lista_de_primos, tiempo_de_ejecución)
     """

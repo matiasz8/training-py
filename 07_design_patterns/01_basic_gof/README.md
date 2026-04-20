@@ -7,16 +7,16 @@ Esta subcategoría contiene 11 patrones de diseño.
 ## 📚 Patrones
 
 1. [Singleton](singleton/)
-2. [Factory Method](factory_method/)
-3. [Builder](builder/)
-4. [Adapter](adapter/)
-5. [Decorator Pattern](decorator_pattern/)
-6. [Facade](facade/)
-7. [Strategy](strategy/)
-8. [Observer](observer/)
-9. [Template Method](template_method/)
-10. [Iterator](iterator/)
-11. [Command](command/)
+1. [Factory Method](factory_method/)
+1. [Builder](builder/)
+1. [Adapter](adapter/)
+1. [Decorator Pattern](decorator_pattern/)
+1. [Facade](facade/)
+1. [Strategy](strategy/)
+1. [Observer](observer/)
+1. [Template Method](template_method/)
+1. [Iterator](iterator/)
+1. [Command](command/)
 
 ## ⏱️ Tiempo Estimado Total
 

@@ -7,13 +7,13 @@ Esta subcategoría contiene 8 patrones de diseño.
 ## 📚 Patrones
 
 1. [Object Pool](object_pool/)
-2. [Lazy Initialization](lazy_initialization/)
-3. [Eager Initialization](eager_initialization/)
-4. [Multiton](multiton/)
-5. [Null Object](null_object/)
-6. [Value Object](value_object/)
-7. [Entity](entity/)
-8. [Aggregate](aggregate/)
+1. [Lazy Initialization](lazy_initialization/)
+1. [Eager Initialization](eager_initialization/)
+1. [Multiton](multiton/)
+1. [Null Object](null_object/)
+1. [Value Object](value_object/)
+1. [Entity](entity/)
+1. [Aggregate](aggregate/)
 
 ## ⏱️ Tiempo Estimado Total
 

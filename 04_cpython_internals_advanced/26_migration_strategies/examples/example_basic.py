@@ -16,6 +16,7 @@ def build_plan() -> list[MigrationStep]:
 
 
 def main() -> None:
+    """Entry point to demonstrate the implementation."""
     for step in build_plan():
         print(f"[{ 'x' if step.done else ' ' }] {step.name}")
 

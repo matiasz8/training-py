@@ -18,8 +18,8 @@ Pandas Operations profundiza en merges, groupby, transformaciones por columna y 
 ### Casos de Uso
 
 1. Cruzar órdenes con clientes para segmentar revenue.
-2. Agregar métricas por categoría de producto.
-3. Construir tablas resumen antes de visualizar resultados.
+1. Agregar métricas por categoría de producto.
+1. Construir tablas resumen antes de visualizar resultados.
 
 ### Ejemplo de Código
 

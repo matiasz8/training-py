@@ -14,6 +14,7 @@ def verify_lock(entries: list[dict[str, str]]) -> str:
 
 
 def main() -> None:
+    """Entry point to demonstrate the implementation."""
     lock = simulate_lock([("requests", "2.31.0"), ("httpx", "0.27.0")])
     for entry in lock:
         print(entry)

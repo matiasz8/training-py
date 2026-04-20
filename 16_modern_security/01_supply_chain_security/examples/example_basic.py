@@ -2,8 +2,6 @@
 Example: Supply Chain Security - Validating Package Sources
 Demonstrates how to verify package manifest and source integrity.
 """
-import json
-import hashlib
 
 
 def main():
@@ -17,13 +15,13 @@ def main():
         "version": "1.0.0",
         "source": "https://github.com/example/package",
         "checksum": "sha256:abc123",
-        "published_date": "2024-01-01"
+        "published_date": "2024-01-01",
     }
-    
+
     # Validate manifest structure
     required_fields = ["name", "version", "source", "checksum"]
     missing = [f for f in required_fields if f not in manifest]
-    
+
     if missing:
         print(f"Missing fields: {missing}")
     else:

@@ -18,8 +18,8 @@ Polars Intro introduce un motor columnar moderno para análisis rápidos con exp
 ### Casos de Uso
 
 1. Agrupar grandes volúmenes de datos con expresiones legibles.
-2. Migrar partes lentas de un pipeline exploratorio.
-3. Comparar ergonomía y performance frente a Pandas.
+1. Migrar partes lentas de un pipeline exploratorio.
+1. Comparar ergonomía y performance frente a Pandas.
 
 ### Ejemplo de Código
 

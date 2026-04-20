@@ -7,17 +7,17 @@ Esta subcategoría contiene 12 patrones de diseño.
 ## 📚 Patrones
 
 1. [Abstract Factory](abstract_factory/)
-2. [Prototype](prototype/)
-3. [Bridge](bridge/)
-4. [Composite](composite/)
-5. [Flyweight](flyweight/)
-6. [Proxy](proxy/)
-7. [Chain Of Responsibility](chain_of_responsibility/)
-8. [Interpreter](interpreter/)
-9. [Mediator](mediator/)
-10. [Memento](memento/)
-11. [State](state/)
-12. [Visitor](visitor/)
+1. [Prototype](prototype/)
+1. [Bridge](bridge/)
+1. [Composite](composite/)
+1. [Flyweight](flyweight/)
+1. [Proxy](proxy/)
+1. [Chain Of Responsibility](chain_of_responsibility/)
+1. [Interpreter](interpreter/)
+1. [Mediator](mediator/)
+1. [Memento](memento/)
+1. [State](state/)
+1. [Visitor](visitor/)
 
 ## ⏱️ Tiempo Estimado Total
 

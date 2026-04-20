@@ -18,8 +18,8 @@ Data Cleaning se enfoca en estandarizar columnas, tratar valores faltantes y rem
 ### Casos de Uso
 
 1. Normalizar nombres y columnas al importar CSVs diversos.
-2. Completar revenue faltante con una estrategia simple y justificada.
-3. Eliminar duplicados antes de calcular totales.
+1. Completar revenue faltante con una estrategia simple y justificada.
+1. Eliminar duplicados antes de calcular totales.
 
 ### Ejemplo de Código
 

@@ -18,6 +18,7 @@ def format_progress(module: str, completed: int, total: int) -> str:
 
 
 def main() -> None:
+    """Entry point to demonstrate the implementation."""
     print(build_slug("  Python Fundamentals Module  "))
     print(highlight_keyword("python makes automation fun", "automation"))
     print(format_progress("Module 01", 4, 12))

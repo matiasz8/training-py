@@ -36,30 +36,33 @@ Criterios de éxito:
 - Reporte escrito en resultados.md
 """
 
+
 def measure_install_time(tool: str, requirements_file: str) -> float:
     """
     Mide el tiempo de instalación de paquetes.
-    
+
     Args:
         tool: "pip" o "uv"
         requirements_file: Path al archivo requirements.txt
-    
+
     Returns:
         Tiempo en segundos
     """
     # TODO: Implementar
     pass
 
+
 def generate_report(pip_time: float, uv_time: float) -> None:
     """
     Genera reporte markdown con resultados.
-    
+
     Args:
         pip_time: Tiempo de pip en segundos
         uv_time: Tiempo de uv en segundos
     """
     # TODO: Implementar
     pass
+
 
 if __name__ == "__main__":
     # TODO: Implementar lógica principal

@@ -45,18 +45,14 @@ Criterios de éxito:
 Tiempo estimado: 4-6 horas
 """
 
-import threading
-import time
-import queue
 from abc import ABC, abstractmethod
-from typing import List, Optional, Dict
 from dataclasses import dataclass
 from enum import Enum
-import random
 
 
 class SchedulerPolicy(Enum):
     """Políticas de scheduling disponibles."""
+
     FIFO = "fifo"
     PRIORITY = "priority"
     FAIR_SHARE = "fair_share"
@@ -66,6 +62,7 @@ class SchedulerPolicy(Enum):
 @dataclass
 class ThreadRequest:
     """Representa una solicitud de un hilo para adquirir el GIL."""
+
     thread_id: int
     thread_name: str
     priority: int = 5  # 1 (lowest) - 10 (highest)
@@ -76,17 +73,17 @@ class ThreadRequest:
 
 class Scheduler(ABC):
     """Interfaz abstracta para políticas de scheduling."""
-    
+
     @abstractmethod
     def enqueue(self, request: ThreadRequest):
         """Agregar solicitud a la cola."""
         pass
-    
+
     @abstractmethod
-    def dequeue(self) -> Optional[ThreadRequest]:
+    def dequeue(self) -> ThreadRequest | None:
         """Obtener siguiente solicitud según la política."""
         pass
-    
+
     @abstractmethod
     def is_empty(self) -> bool:
         """Verificar si hay solicitudes pendientes."""
@@ -96,26 +93,26 @@ class Scheduler(ABC):
 class FIFOScheduler(Scheduler):
     """
     TODO: Implementar scheduler FIFO (First In First Out).
-    
+
     Características:
     - Orden de llegada estricto
     - No considera prioridades
     - Determinístico y predecible
     - Puede llevar a starvation si hay muchas solicitudes
     """
-    
+
     def __init__(self):
         """TODO: Inicializar cola FIFO."""
         pass  # TU CÓDIGO AQUÍ
-    
+
     def enqueue(self, request: ThreadRequest):
         """TODO: Agregar al final de la cola."""
         pass  # TU CÓDIGO AQUÍ
-    
-    def dequeue(self) -> Optional[ThreadRequest]:
+
+    def dequeue(self) -> ThreadRequest | None:
         """TODO: Remover del inicio de la cola."""
         pass  # TU CÓDIGO AQUÍ
-    
+
     def is_empty(self) -> bool:
         """TODO: Verificar si cola está vacía."""
         pass  # TU CÓDIGO AQUÍ
@@ -124,35 +121,35 @@ class FIFOScheduler(Scheduler):
 class PriorityScheduler(Scheduler):
     """
     TODO: Implementar scheduler basado en prioridades con aging.
-    
+
     Características:
     - Hilos con mayor prioridad van primero
     - Aging: incrementar prioridad de hilos esperando mucho tiempo
     - Previene starvation
     - Tradeoff: puede ser injusto con hilos de baja prioridad
     """
-    
+
     def __init__(self, aging_factor: float = 0.1):
         """
         TODO: Inicializar priority queue.
-        
+
         Args:
             aging_factor: Cuánto incrementar prioridad por segundo de espera
         """
         pass  # TU CÓDIGO AQUÍ
-    
+
     def enqueue(self, request: ThreadRequest):
         """TODO: Agregar con prioridad."""
         pass  # TU CÓDIGO AQUÍ
-    
-    def dequeue(self) -> Optional[ThreadRequest]:
+
+    def dequeue(self) -> ThreadRequest | None:
         """
         TODO: Remover solicitud de mayor prioridad.
-        
+
         Aplicar aging antes de seleccionar.
         """
         pass  # TU CÓDIGO AQUÍ
-    
+
     def is_empty(self) -> bool:
         pass  # TU CÓDIGO AQUÍ
 
@@ -160,29 +157,29 @@ class PriorityScheduler(Scheduler):
 class FairShareScheduler(Scheduler):
     """
     TODO: Implementar scheduler que distribuye tiempo equitativamente.
-    
+
     Características:
     - Rastrea cuánto tiempo ha ejecutado cada hilo
     - Prioriza hilos que han ejecutado menos
     - Logra alta fairness
     - Overhead de tracking
     """
-    
+
     def __init__(self):
         """TODO: Inicializar estructuras de tracking."""
         pass  # TU CÓDIGO AQUÍ
-    
+
     def enqueue(self, request: ThreadRequest):
         """TODO: Agregar solicitud."""
         pass  # TU CÓDIGO AQUÍ
-    
-    def dequeue(self) -> Optional[ThreadRequest]:
+
+    def dequeue(self) -> ThreadRequest | None:
         """TODO: Seleccionar hilo que ha ejecutado menos tiempo."""
         pass  # TU CÓDIGO AQUÍ
-    
+
     def is_empty(self) -> bool:
         pass  # TU CÓDIGO AQUÍ
-    
+
     def record_execution(self, thread_id: int, duration: float):
         """TODO: Registrar tiempo de ejecución de un hilo."""
         pass  # TU CÓDIGO AQUÍ
@@ -191,33 +188,33 @@ class FairShareScheduler(Scheduler):
 class LotteryScheduler(Scheduler):
     """
     TODO: Implementar lottery scheduling.
-    
+
     Características:
     - Selección probabilística basada en tickets
     - Hilos con más tickets tienen mayor probabilidad
     - Converge a fair share en el largo plazo
     - No determinístico (aleatorio)
     """
-    
+
     def __init__(self):
         """TODO: Inicializar estructuras."""
         pass  # TU CÓDIGO AQUÍ
-    
+
     def enqueue(self, request: ThreadRequest):
         """TODO: Agregar solicitud con tickets."""
         pass  # TU CÓDIGO AQUÍ
-    
-    def dequeue(self) -> Optional[ThreadRequest]:
+
+    def dequeue(self) -> ThreadRequest | None:
         """
         TODO: Seleccionar ganador de lotería.
-        
+
         Algoritmo:
         1. Sumar todos los tickets
         2. Generar número aleatorio [0, total_tickets)
         3. Seleccionar hilo correspondiente
         """
         pass  # TU CÓDIGO AQUÍ
-    
+
     def is_empty(self) -> bool:
         pass  # TU CÓDIGO AQUÍ
 
@@ -225,7 +222,7 @@ class LotteryScheduler(Scheduler):
 class CustomGIL:
     """
     TODO: Implementar Custom GIL con políticas intercambiables.
-    
+
     El GIL debe:
     - Permitir solo un hilo ejecutar a la vez
     - Usar el scheduler para decidir qué hilo sigue
@@ -233,52 +230,52 @@ class CustomGIL:
     - Detectar deadlocks (timeout en acquire)
     - Thread-safe (usar locks reales de Python)
     """
-    
+
     def __init__(self, policy: SchedulerPolicy = SchedulerPolicy.FIFO):
         """
         TODO: Inicializar CustomGIL.
-        
+
         Args:
             policy: Política de scheduling a usar
         """
         pass  # TU CÓDIGO AQUÍ
-    
+
     def acquire(
         self,
         thread_id: int,
         thread_name: str,
         priority: int = 5,
         tickets: int = 100,
-        timeout: Optional[float] = None
+        timeout: float | None = None,
     ) -> bool:
         """
         TODO: Adquirir el GIL.
-        
+
         Args:
             thread_id: ID del hilo
             thread_name: Nombre del hilo
             priority: Prioridad (1-10)
             tickets: Tickets para lottery scheduling
             timeout: Máximo tiempo de espera (None = infinito)
-            
+
         Returns:
             True si se adquirió, False si timeout
         """
         pass  # TU CÓDIGO AQUÍ
-    
+
     def release(self, thread_id: int):
         """
         TODO: Liberar el GIL.
-        
+
         Args:
             thread_id: ID del hilo que libera
         """
         pass  # TU CÓDIGO AQUÍ
-    
-    def get_metrics(self) -> Dict:
+
+    def get_metrics(self) -> dict:
         """
         TODO: Retornar métricas recopiladas.
-        
+
         Métricas:
         - fairness_index
         - average_wait_time
@@ -291,6 +288,7 @@ class CustomGIL:
 
 # Funciones de prueba
 
+
 def worker_task(
     gil: CustomGIL,
     thread_id: int,
@@ -298,11 +296,11 @@ def worker_task(
     work_duration: float,
     iterations: int,
     priority: int = 5,
-    tickets: int = 100
+    tickets: int = 100,
 ):
     """
     TODO: Implementar tarea de worker que usa CustomGIL.
-    
+
     La tarea debe:
     1. Adquirir GIL
     2. Simular trabajo (time.sleep)
@@ -313,14 +311,11 @@ def worker_task(
 
 
 def run_simulation(
-    policy: SchedulerPolicy,
-    num_threads: int,
-    work_duration: float,
-    iterations: int
+    policy: SchedulerPolicy, num_threads: int, work_duration: float, iterations: int
 ):
     """
     TODO: Ejecutar simulación con política específica.
-    
+
     Args:
         policy: Política de scheduling
         num_threads: Número de hilos
@@ -333,7 +328,7 @@ def run_simulation(
 def compare_policies():
     """
     TODO: Comparar todas las políticas con la misma configuración.
-    
+
     Mostrar:
     - Fairness index de cada política
     - Average/max waiting time
@@ -346,7 +341,7 @@ def compare_policies():
 def main():
     """
     TODO: Función principal que ejecuta todas las simulaciones.
-    
+
     Debe:
     1. Ejecutar cada política con diferentes configuraciones
     2. Mostrar métricas y análisis
@@ -362,25 +357,31 @@ if __name__ == "__main__":
 
 # TESTS UNITARIOS (ver test_advanced.py para implementación completa)
 
+
 def test_fifo_scheduler():
     """TODO: Verificar comportamiento FIFO."""
     pass
+
 
 def test_priority_scheduler():
     """TODO: Verificar prioridades y aging."""
     pass
 
+
 def test_fair_share_scheduler():
     """TODO: Verificar fairness."""
     pass
+
 
 def test_lottery_scheduler():
     """TODO: Verificar distribución probabilística."""
     pass
 
+
 def test_custom_gil_no_deadlock():
     """TODO: Verificar que no hay deadlocks."""
     pass
+
 
 def test_custom_gil_mutual_exclusion():
     """TODO: Verificar mutual exclusion (solo 1 hilo a la vez)."""

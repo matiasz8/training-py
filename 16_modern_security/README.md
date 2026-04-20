@@ -5,6 +5,7 @@
 ## 📋 Descripción
 
 Este módulo cubre las prácticas de seguridad más modernas para Python en 2026:
+
 - Supply chain security
 - Software Bill of Materials (SBOM)
 - Keyless signing con Sigstore
@@ -23,21 +24,27 @@ Este módulo cubre las prácticas de seguridad más modernas para Python en 2026
 ## 📚 Contenido (40 Temas)
 
 ### Grupo 1: Supply Chain Security (4 temas)
+
 Ataques, detección, prevención.
 
 ### Grupo 2: SBOM (6 temas)
+
 Generación, análisis, integración en CI/CD.
 
 ### Grupo 3: Sigstore (6 temas)
+
 Firma keyless, verificación, transparency logs.
 
 ### Grupo 4: Vulnerability Scanning (5 temas)
+
 Herramientas modernas de análisis.
 
 ### Grupo 5: Secrets Management (13 temas)
+
 SOPS, Vault, Kubernetes secrets.
 
 ### Grupo 6: Secure Coding (6 temas)
+
 Prevención de vulnerabilidades comunes.
 
 ## ⏱️ Tiempo Total

@@ -2,9 +2,10 @@
 Tests for 26 sops backends age kms
 """
 
-import pytest
-from pathlib import Path
 import sys
+from pathlib import Path
+
+import pytest
 
 # Add parent directory to import path
 parent_dir = Path(__file__).parent.parent / "my_solution"
@@ -13,17 +14,17 @@ sys.path.insert(0, str(parent_dir))
 
 class Test26SopsBackendsAgeKms:
     """Test suite for 26 sops backends age kms."""
-    
+
     def test_basic_functionality(self):
         """Test basic functionality."""
         # Implement basic functionality test
         pass
-    
+
     def test_edge_cases(self):
         """Test edge cases."""
         # Implement edge case tests
         pass
-    
+
     def test_error_handling(self):
         """Test error handling."""
         # Implement error handling tests

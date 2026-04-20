@@ -18,8 +18,8 @@ Pandas Intro muestra cómo representar tablas con DataFrame y Series para organi
 ### Casos de Uso
 
 1. Crear tableros simples de ventas desde listas de diccionarios.
-2. Filtrar pedidos por región o producto.
-3. Generar resúmenes mensuales para stakeholders.
+1. Filtrar pedidos por región o producto.
+1. Generar resúmenes mensuales para stakeholders.
 
 ### Ejemplo de Código
 

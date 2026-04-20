@@ -18,8 +18,8 @@ Matplotlib Basics cubre la construcción de gráficos base con control explícit
 ### Casos de Uso
 
 1. Graficar evolución mensual de ventas o tráfico.
-2. Anotar outliers o hitos en una serie temporal.
-3. Exportar gráficos para reportes automatizados.
+1. Anotar outliers o hitos en una serie temporal.
+1. Exportar gráficos para reportes automatizados.
 
 ### Ejemplo de Código
 

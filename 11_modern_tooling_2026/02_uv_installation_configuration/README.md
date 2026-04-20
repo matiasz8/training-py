@@ -15,10 +15,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 Este script:
+
 1. Detecta tu sistema operativo y arquitectura
-2. Descarga el binario apropiado desde GitHub Releases
-3. Lo instala en `~/.local/bin/` (o `~/.cargo/bin/` si usas Rust)
-4. Actualiza tu PATH automáticamente
+1. Descarga el binario apropiado desde GitHub Releases
+1. Lo instala en `~/.local/bin/` (o `~/.cargo/bin/` si usas Rust)
+1. Actualiza tu PATH automáticamente
 
 ### Instalación Manual
 
@@ -114,13 +115,13 @@ uv --help | grep "Commands:"
 
 uv organiza su funcionalidad en subcomandos:
 
-| Comando | Propósito |
-|---------|-----------|
-| `uv pip` | Gestión de paquetes (compatible con pip) |
-| `uv venv` | Creación de entornos virtuales |
-| `uv tool` | Instalación de herramientas globales |
-| `uv cache` | Gestión de caché |
-| `uv self` | Auto-actualización de uv |
+| Comando    | Propósito                                |
+| ---------- | ---------------------------------------- |
+| `uv pip`   | Gestión de paquetes (compatible con pip) |
+| `uv venv`  | Creación de entornos virtuales           |
+| `uv tool`  | Instalación de herramientas globales     |
+| `uv cache` | Gestión de caché                         |
+| `uv self`  | Auto-actualización de uv                 |
 
 ## Actualización de uv
 
@@ -154,9 +155,9 @@ uv funciona transparentemente con editores que usan entornos virtuales estándar
 ## Best Practices
 
 1. **Caché Global**: Mantén la caché en una ubicación estable
-2. **Variables de Entorno**: Configura en tu `~/.bashrc` o `~/.zshrc`
-3. **Actualizaciones**: Mantén uv actualizado con `uv self update`
-4. **Mirroring**: Configura mirrors si tu red lo requiere
+1. **Variables de Entorno**: Configura en tu `~/.bashrc` o `~/.zshrc`
+1. **Actualizaciones**: Mantén uv actualizado con `uv self update`
+1. **Mirroring**: Configura mirrors si tu red lo requiere
 
 ## Troubleshooting
 

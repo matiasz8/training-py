@@ -13,6 +13,7 @@
 ### Pyright (Oficial - Microsoft)
 
 **Ventajas:**
+
 - ✅ Mantenimiento oficial de Microsoft
 - ✅ Integración perfecta con VS Code/Pylance
 - ✅ Conservador y estable
@@ -23,6 +24,7 @@
 ### BasedPyright (Fork Comunitario)
 
 **Ventajas adicionales:**
+
 - ✅ Features experimentales más rápido
 - ✅ Configuración más flexible
 - ✅ Respuesta rápida a issues de la comunidad
@@ -96,18 +98,18 @@ pyright --watch
 {
   "include": ["src"],
   "exclude": ["**/node_modules", "**/__pycache__", "tests"],
-  
+
   "typeCheckingMode": "strict",
-  
+
   "reportMissingImports": true,
   "reportMissingTypeStubs": true,
   "reportUnusedImport": "warning",
   "reportUnusedVariable": "warning",
   "reportDuplicateImport": "error",
-  
+
   "pythonVersion": "3.13",
   "pythonPlatform": "Linux",
-  
+
   "executionEnvironments": [
     {
       "root": "src",
@@ -135,12 +137,12 @@ pythonVersion = "3.13"
 ```json
 {
   "typeCheckingMode": "strict",
-  
+
   // Features exclusivas de BasedPyright
   "enableExperimentalFeatures": true,
   "reportImplicitStringConcatenation": "warning",
   "reportShadowedImports": "error",
-  
+
   // Configuraciones más granulares
   "reportIncompatibleVariableOverride": "error",
   "reportIncompatibleMethodOverride": "error"
@@ -150,6 +152,7 @@ pythonVersion = "3.13"
 ## Type Checking Modes
 
 ### Basic Mode
+
 ```python
 # Permite mucha flexibilidad
 def function(x):  # OK - sin tipos
@@ -157,6 +160,7 @@ def function(x):  # OK - sin tipos
 ```
 
 ### Standard Mode (Default)
+
 ```python
 # Balance entre strict y permisive
 def function(x: int):  # Parámetros deben tener tipos
@@ -164,6 +168,7 @@ def function(x: int):  # Parámetros deben tener tipos
 ```
 
 ### Strict Mode (Recomendado)
+
 ```python
 # Máxima rigurosidad
 def function(x: int) -> int:  # Todos los tipos explícitos
@@ -216,7 +221,7 @@ T = TypeVar('T')
 class Container(Generic[T]):
     def __init__(self, value: T) -> None:
         self.value = value
-    
+
     def get(self) -> T:
         return self.value
 
@@ -325,18 +330,18 @@ def check(x: int | str | list) -> None:
 
 ### Cuando Usar Pyright/BasedPyright
 
-✅ **Prioridad**: Velocidad  
-✅ **Editor**: VS Code  
-✅ **Proyecto**: Nuevo o mediano  
-✅ **Type narrowing**: Casos complejos  
-✅ **CI/CD**: Builds rápidos críticos  
+✅ **Prioridad**: Velocidad
+✅ **Editor**: VS Code
+✅ **Proyecto**: Nuevo o mediano
+✅ **Type narrowing**: Casos complejos
+✅ **CI/CD**: Builds rápidos críticos
 
 ### Cuando Usar mypy
 
-✅ **Plugins**: Django, SQLAlchemy, Pydantic  
-✅ **Legacy**: Codebase grande existente  
-✅ **Ecosystem**: Herramientas dependiendo de mypy  
-✅ **Gradual**: Adopción incremental  
+✅ **Plugins**: Django, SQLAlchemy, Pydantic
+✅ **Legacy**: Codebase grande existente
+✅ **Ecosystem**: Herramientas dependiendo de mypy
+✅ **Gradual**: Adopción incremental
 
 ## Migración de mypy a Pyright
 
@@ -385,10 +390,10 @@ typeCheckingMode = "standard"  # Luego standard
 ## Best Practices 2026
 
 1. **Strict mode** desde el inicio en proyectos nuevos
-2. **Watch mode** en desarrollo para feedback instantáneo
-3. **BasedPyright** para proyectos comunitarios innovadores
-4. **Pyright** para proyectos corporativos estables
-5. **CI/CD caching** de node_modules para velocidad
+1. **Watch mode** en desarrollo para feedback instantáneo
+1. **BasedPyright** para proyectos comunitarios innovadores
+1. **Pyright** para proyectos corporativos estables
+1. **CI/CD caching** de node_modules para velocidad
 
 ## Referencias
 

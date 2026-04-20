@@ -34,6 +34,7 @@ def describe_profile(profile: Profile) -> str:
 
 
 def main() -> None:
+    """Entry point to demonstrate the implementation."""
     profile = build_profile("Ada", 32, True)
     print(describe_profile(profile))
     print({key: type(value).__name__ for key, value in profile.items()})

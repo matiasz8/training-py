@@ -18,8 +18,8 @@ NumPy Basics introduce arrays multidimensionales, broadcasting y operaciones vec
 ### Casos de Uso
 
 1. Normalizar métricas antes de entrenar un modelo simple.
-2. Calcular KPIs diarios a partir de series de ventas o tráfico.
-3. Preparar features numéricas para análisis exploratorio.
+1. Calcular KPIs diarios a partir de series de ventas o tráfico.
+1. Preparar features numéricas para análisis exploratorio.
 
 ### Ejemplo de Código
 

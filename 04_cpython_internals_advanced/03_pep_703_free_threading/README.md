@@ -7,10 +7,10 @@ PEP 703 ("Making the Global Interpreter Lock Optional in CPython"), propuesto po
 La propuesta introduce técnicas innovadoras para mantener la seguridad de memoria sin el GIL:
 
 1. **Biased Reference Counting**: Optimiza reference counting para el caso común (single-threaded) mientras maneja casos multi-threaded sin locks excesivos.
-2. **Deferred Reference Counting**: Pospone decrementos de refcount para reducir contención.
-3. **Immortal Objects**: Marca objetos frecuentemente usados como "inmortales" (refcount infinito) eliminando overhead de RC.
-4. **Thread-Safe Garbage Collector**: Reimplementa el GC para operar seguramente en entorno multi-threaded.
-5. **Per-Object Locks**: Protección granular en lugar del lock global.
+1. **Deferred Reference Counting**: Pospone decrementos de refcount para reducir contención.
+1. **Immortal Objects**: Marca objetos frecuentemente usados como "inmortales" (refcount infinito) eliminando overhead de RC.
+1. **Thread-Safe Garbage Collector**: Reimplementa el GC para operar seguramente en entorno multi-threaded.
+1. **Per-Object Locks**: Protección granular en lugar del lock global.
 
 El objetivo principal de PEP 703 es lograr zero-overhead o near-zero-overhead para código single-threaded cuando free-threading está habilitado. Las evaluaciones iniciales muestran overhead de~5-15% en single-threaded (aceptable) y speedups de 2-4x en workloads altamente paralelos con 8+ cores.
 
@@ -21,9 +21,9 @@ La implementación es gradual, comenzando en Python 3.13 (2024) como experimenta
 ### Casos de Uso
 
 1. **Identificar si tu aplicación se beneficiará de free-threading**
-2. **Compilar Python 3.13+ con --disable-gil y ejecutar benchmarks**
-3. **Analizar impacto de overhead en código single-threaded**
-4. **Migrar código existente para aprovechar free-threading**
+1. **Compilar Python 3.13+ con --disable-gil y ejecutar benchmarks**
+1. **Analizar impacto de overhead en código single-threaded**
+1. **Migrar código existente para aprovechar free-threading**
 
 ### Código Ejemplo: Comparación GIL vs Free-Threading
 
@@ -45,7 +45,7 @@ import multiprocessing as mp
 def is_free_threaded() -> bool:
     """
     Verificar si Python está corriendo con free-threading.
-    
+
     En Python 3.13+:
         sys._is_gil_enabled() == False indica free-threading
     """
@@ -57,7 +57,7 @@ def is_free_threaded() -> bool:
 def cpu_bound_task(n: int) -> int:
     """
     Tarea CPU-bound: suma acumulativa con operaciones.
-    
+
     Esta tarea es puramente CPU-bound sin I/O ni liberación de GIL.
     """
     result = 0
@@ -77,21 +77,21 @@ def benchmark_single_threaded(workload_size: int) -> float:
 def benchmark_multi_threaded(workload_size: int, num_threads: int) -> float:
     """Ejecución multi-threaded (comportamiento depende de GIL/no-GIL)."""
     results = []
-    
+
     def worker():
         results.append(cpu_bound_task(workload_size))
-    
+
     threads = []
     start = time.perf_counter()
-    
+
     for _ in range(num_threads):
         t = threading.Thread(target=worker)
         threads.append(t)
         t.start()
-    
+
     for t in threads:
         t.join()
-    
+
     elapsed = time.perf_counter() - start
     return elapsed
 
@@ -103,112 +103,112 @@ def compare_gil_vs_free_threading():
     print("="*80)
     print("PEP 703: COMPARACIÓN GIL VS FREE-THREADING")
     print("="*80)
-    
+
     # Información del sistema
     print(f"\nPython version: {sys.version}")
     print(f"Free-threading enabled: {is_free_threaded()}")
     print(f"Cores disponibles: {mp.cpu_count()}")
-    
+
     if hasattr(sys, 'getswitchinterval'):
         print(f"Switch interval: {sys.getswitchinterval()}s")
-    
+
     print("\n" + "-"*80)
-    
+
     # Configuración del benchmark
     workload_size = 5_000_000  # 5M operations
     thread_counts = [1, 2, 4, 8]
-    
+
     print(f"\nWorkload: {workload_size:,} operations per thread")
     print("-"*80)
-    
+
     # Baseline: single-threaded
     print("\n📊 SINGLE-THREADED BASELINE")
     time_baseline = benchmark_single_threaded(workload_size)
     print(f"   Tiempo: {time_baseline:.4f}s")
-    
+
     # Multi-threaded tests
     print("\n📊 MULTI-THREADED PERFORMANCE")
     print(f"   {'Threads':<10} {'Tiempo':<12} {'Speedup':<10} {'Eficiencia':<12}")
     print("   " + "-"*50)
-    
+
     results = []
     for num_threads in thread_counts:
         time_multi = benchmark_multi_threaded(workload_size, num_threads)
         speedup = time_baseline / time_multi
         efficiency = speedup / num_threads * 100
-        
+
         results.append((num_threads, time_multi, speedup, efficiency))
-        
+
         print(f"   {num_threads:<10} {time_multi:<12.4f} {speedup:<10.2f}x {efficiency:<12.1f}%")
-    
+
     # Análisis
     print("\n" + "="*80)
     print("ANÁLISIS")
     print("="*80)
-    
+
     if is_free_threaded():
         print("""
 ✅ FREE-THREADING ENABLED
-   
+
    Expectativa:
    • Speedup cercano a N con N threads (ideal: 8 threads → 8x)
    • Eficiencia > 70% con buen código paralelo
    • Overhead single-threaded: 5-15%
-        
+
    Resultados:
         """)
-        
+
         best_speedup = max(r[2] for r in results)
         best_threads = [r[0] for r in results if r[2] == best_speedup][0]
         best_efficiency = [r[3] for r in results if r[2] == best_speedup][0]
-        
+
         print(f"   • Mejor speedup: {best_speedup:.2f}x con {best_threads} threads")
         print(f"   • Eficiencia: {best_efficiency:.1f}%")
-        
+
         if best_speedup > best_threads * 0.7:
             print("   • ✅ Excelente paralelismo logrado!")
         elif best_speedup > best_threads * 0.5:
             print("   • ⚠️  Paralelismo aceptable, pero hay espacio para mejoras")
         else:
             print("   • ❌ Paralelismo pobre - revisar código o workload")
-            
+
         # Calcular overhead vs GIL teórico
         # (en práctica necesitaríamos comparar con binary con GIL)
         print(f"\n   Overhead estimado single-threaded: ~{(time_baseline/time_baseline-1)*100:.1f}%")
-        
+
     else:
         print("""
 ❌ GIL ENABLED (Traditional CPython)
-   
+
    Expectativa:
    • Speedup ~1.0x sin importar threads (GIL serializa)
    • Puede empeorar con más threads (overhead de context switching)
    • No hay overhead single-threaded
-        
+
    Resultados:
         """)
-        
+
         max_speedup = max(r[2] for r in results)
-        
+
         print(f"   • Máximo speedup: {max_speedup:.2f}x")
-        
+
         if max_speedup < 1.2:
             print("   • ✅ Comportamiento esperado: GIL previene paralelismo")
         else:
             print("   • ⚠️  Speedup inesperado - puede ser variabilidad del sistema")
-        
+
         print("""
    💡 Para obtener paralelismo real con GIL:
       1. Usar multiprocessing (overhead de IPC)
       2. Usar librerías nativas que liberan GIL (NumPy, etc.)
       3. Migrar a Python 3.13+ con --disable-gil
         """)
-    
+
     # Recomendaciones
     print("\n" + "="*80)
     print("RECOMENDACIONES")
     print("="*80)
-    
+
     if is_free_threaded():
         print("""
 Para maximizar beneficios de free-threading:
@@ -259,7 +259,7 @@ Si estás usando CPython tradicional (con GIL):
 def main():
     """Ejecutar comparación completa."""
     compare_gil_vs_free_threading()
-    
+
     print("\n" + "="*80)
     print("REFERENCIAS")
     print("="*80)
@@ -289,6 +289,7 @@ PEP 703 aborda una limitación de 30+ años que ha impedido a Python competir en
 ### Impacto en el Ecosistema
 
 **Aplicaciones Beneficiadas**:
+
 - **Data Science/ML**: pandas, scikit-learn pueden paralelizar sin GIL
 - **Web Servers**: Manejar requests CPU-intensive sin multiprocessing overhead
 - **Game Development**: Physics simulations, AI paralelizables
@@ -296,6 +297,7 @@ PEP 703 aborda una limitación de 30+ años que ha impedido a Python competir en
 - **Real-time Systems**: Trading platforms, streaming analytics
 
 **Desafíos de Migración**:
+
 - **Extensiones C**: ~30,000 packages en PyPI necesitan auditoría/actualización
 - **Subtle Bugs**: Race conditions que antes eran imposibles
 - **Performance Tuning**: Nuevo tipo de optimización requerido
@@ -312,43 +314,52 @@ PEP 703 aborda una limitación de 30+ años que ha impedido a Python competir en
 ## Referencias
 
 ### Documentación Oficial
+
 - [PEP 703 – Making the Global Interpreter Lock Optional](https://peps.python.org/pep-0703/) - **Lectura esencial**
 - [Python 3.13 Free-Threading Documentation](https://docs.python.org/3.13/howto/free-threading-python.html)
 - [Python 3.13 What's New](https://docs.python.org/3.13/whatsnew/3.13.html)
 
 ### Sam Gross (Autor de PEP 703)
+
 - [nogil - A free-threaded CPython](https://github.com/colesbury/nogil)
 - [Python without GIL (PyCon US 2023)](https://www.youtube.com/watch?v=HcGlf85rr2w)
 - [PEP 703 Discussion Thread](https://discuss.python.org/t/pep-703-making-the-global-interpreter-lock-optional/21444)
 
 ### Análisis y Benchmarks
+
 - [Python 3.13 Free-Threading Benchmarks](https://github.com/python/pyperformance)
 - [Real Python: Python 3.13 Free-Threading](https://realpython.com/python313-free-threading/)
 
 ## Tarea de Práctica
 
 ### Nivel Básico
+
 Compila Python 3.13+ con `--disable-gil` y ejecuta el código ejemplo. Compara rendimiento con Python estándar (con GIL) en 3 workloads diferentes: (1) cálculo numérico, (2) procesamiento de strings, (3) I/O mixto. Documenta speedups y overhead.
 
 **Criterios de éxito:**
+
 - Python 3.13+ compilado correctamente
 - Benchmarks con 1,2,4,8 threads
 - Gráfico comparativo de resultados
 - Análisis de overhead single-threaded
 
 ### Nivel Intermedio
+
 Crea un "compatibility checker" que analice un codebase Python y reporte: (1) uso de global mutable state, (2) patterns no thread-safe, (3) dependencias de extensiones C que necesitan actualización. Genera reporte de "readiness" para free-threading con score de 0-100.
 
 **Criterios de éxito:**
+
 - AST analysis de código Python
 - Detección de patterns problemáticos
 - Análisis de dependencies
 - Score y recomendaciones concretas
 
 ### Nivel Avanzado
+
 Implementa una extensión C simple que funcione tanto con GIL como con free-threading usando las APIs condicionales de PEP 703. Incluye biased reference counting, proper locking, y thread-safe operations. Benchmark overhead en ambos modos.
 
 **Criterios de éxito:**
+
 - Extensión C funciona con GIL y sin GIL
 - Usa Py_GIL_DISABLED checks
 - Implementa reference counting correcto
@@ -360,7 +371,7 @@ Implementa una extensión C simple que funcione tanto con GIL como con free-thre
 
 - 🎯 PEP 703 hace el GIL opcional en Python 3.13+, permitiendo verdadero paralelismo multi-threaded por primera vez en 30+ años
 - 🔬 Usa técnicas innovadoras: biased reference counting, deferred RC, immortal objects, per-object locks
-- 📈 Overhead single-threaded objetivo: <10%; speedups multi-threaded: 2-4x con 8+ threads en workloads paralelizables
+- 📈 Overhead single-threaded objetivo: \<10%; speedups multi-threaded: 2-4x con 8+ threads en workloads paralelizables
 - 🔄 Migración gradual: experimental en 3.13 (2024), stable en 3.15-3.16 (2026-2027)
 - ⚠️ Requiere actualización de ecosystem: 30K+ packages, nuevos patterns de programación, tooling para thread-safety
 
@@ -371,14 +382,15 @@ Implementa una extensión C simple que funcione tanto con GIL como con free-thre
 ## Mi Análisis Personal
 
 > 💭 **Prompt**: Después de completar este tema, reflexiona sobre:
+>
 > 1. ¿Qué aplicaciones tuyas se beneficiarían más de free-threading?
-> 2. ¿El overhead de 5-15% en single-threaded es aceptable para tus casos de uso?
-> 3. ¿Cuándo migrarías: Python 3.13 (experimental), 3.14, 3.15, o esperarías más?
-> 4. ¿Qué desafíos técnicos anticipas en la migración de tu código actual?
+> 1. ¿El overhead de 5-15% en single-threaded es aceptable para tus casos de uso?
+> 1. ¿Cuándo migrarías: Python 3.13 (experimental), 3.14, 3.15, o esperarías más?
+> 1. ¿Qué desafíos técnicos anticipas en la migración de tu código actual?
 
 *(Escribe tus reflexiones aquí)*
 
----
+______________________________________________________________________
 
-**Tema anterior**: [02 - Limitaciones del GIL](../02_gil_limitations/)  
+**Tema anterior**: [02 - Limitaciones del GIL](../02_gil_limitations/)
 **Próximo tema**: [04 - Activación de free-threading](../04_free_threading_activation/)

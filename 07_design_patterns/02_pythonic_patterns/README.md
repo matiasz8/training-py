@@ -7,19 +7,19 @@ Esta subcategoría contiene 14 patrones de diseño.
 ## 📚 Patrones
 
 1. [Context Manager](context_manager/)
-2. [Decorator Funcion](decorator_funcion/)
-3. [Property](property/)
-4. [Generator](generator/)
-5. [Coroutine](coroutine/)
-6. [Dataclass](dataclass/)
-7. [Descriptor](descriptor/)
-8. [Mixin](mixin/)
-9. [Protocol](protocol/)
-10. [Borg Monostate](borg_monostate/)
-11. [Registry](registry/)
-12. [Lazy Property](lazy_property/)
-13. [Sentinel](sentinel/)
-14. [Plugin System](plugin_system/)
+1. [Decorator Funcion](decorator_funcion/)
+1. [Property](property/)
+1. [Generator](generator/)
+1. [Coroutine](coroutine/)
+1. [Dataclass](dataclass/)
+1. [Descriptor](descriptor/)
+1. [Mixin](mixin/)
+1. [Protocol](protocol/)
+1. [Borg Monostate](borg_monostate/)
+1. [Registry](registry/)
+1. [Lazy Property](lazy_property/)
+1. [Sentinel](sentinel/)
+1. [Plugin System](plugin_system/)
 
 ## ⏱️ Tiempo Estimado Total
 

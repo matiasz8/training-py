@@ -4,7 +4,8 @@ from typing import Protocol, runtime_checkable
 
 @runtime_checkable
 class Serializable(Protocol):
-    def to_dict(self) -> dict[str, object]: ...
+    def to_dict(self) -> dict[str, object]:
+        ...
 
 
 class User:
@@ -21,6 +22,7 @@ def serialize(obj: Serializable) -> dict[str, object]:
 
 
 def main() -> None:
+    """Entry point to demonstrate the implementation."""
     user = User("Alice", 30)
     print(isinstance(user, Serializable))
     print(serialize(user))

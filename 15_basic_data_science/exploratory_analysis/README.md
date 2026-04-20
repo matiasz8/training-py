@@ -18,8 +18,8 @@ Exploratory Analysis organiza un primer recorrido por el dataset para detectar p
 ### Casos de Uso
 
 1. Revisar comportamiento de ventas por región y canal.
-2. Detectar rangos atípicos antes de entrenar un modelo.
-3. Priorizar preguntas para una visualización posterior.
+1. Detectar rangos atípicos antes de entrenar un modelo.
+1. Priorizar preguntas para una visualización posterior.
 
 ### Ejemplo de Código
 

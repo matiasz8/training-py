@@ -17,22 +17,21 @@ def main():
         "font-src": ["'self'", "https://fonts.googleapis.com"],
         "frame-ancestors": ["'none'"],
         "base-uri": ["'self'"],
-        "form-action": ["'self'"]
+        "form-action": ["'self'"],
     }
-    
+
     # Build CSP header value
     csp_header = "; ".join(
-        f"{directive} {' '.join(sources)}"
-        for directive, sources in csp_policies.items()
+        f"{directive} {' '.join(sources)}" for directive, sources in csp_policies.items()
     )
-    
+
     print("Content Security Policy:")
     print(f"  {csp_header[:80]}...")
-    
+
     print("\nCSP Rules:")
     for directive, sources in csp_policies.items():
         print(f"  {directive}: {', '.join(sources)}")
-    
+
     print("\n  ✅ CSP configured to prevent XSS/CSRF")
 
 

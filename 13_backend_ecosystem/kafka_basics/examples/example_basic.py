@@ -4,10 +4,12 @@ from collections import defaultdict
 partitions = defaultdict(list)
 offsets = defaultdict(int)
 
+
 def produce(key, value, n=3):
     p = hash(key) % n
     partitions[p].append(value)
     return p, len(partitions[p]) - 1
+
 
 def poll(n=3):
     out = []
@@ -17,7 +19,8 @@ def poll(n=3):
         offsets[p] = len(partitions[p])
     return out
 
-print(produce('u1', 'event-login'))
-print(produce('u2', 'event-cart'))
+
+print(produce("u1", "event-login"))
+print(produce("u2", "event-cart"))
 print(poll())
 print(poll())

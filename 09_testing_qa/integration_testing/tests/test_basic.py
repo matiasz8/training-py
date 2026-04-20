@@ -13,7 +13,9 @@ MODULE_PATH = Path(__file__).resolve().parents[1] / "my_solution" / "sqlite_user
 
 def load_solution_module():
     if not MODULE_PATH.exists():
-        pytest.skip("Create my_solution/sqlite_user_repository.py before running the exercise tests.")
+        pytest.skip(
+            "Create my_solution/sqlite_user_repository.py before running the exercise tests."
+        )
     spec = importlib.util.spec_from_file_location("sqlite_user_repository", MODULE_PATH)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None

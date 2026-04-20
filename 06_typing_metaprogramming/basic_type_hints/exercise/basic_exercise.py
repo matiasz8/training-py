@@ -25,15 +25,15 @@ EJEMPLO DE USO:
 def calculate_discount(price: float, discount_percent: float) -> float:
     """
     Calcula el precio final después de aplicar un descuento.
-    
+
     Args:
         price: Precio original del producto (debe ser positivo)
         discount_percent: Porcentaje de descuento a aplicar (0-100)
-        
+
     Returns:
         El precio final después del descuento.
         Si el descuento es inválido (<0 o >100), retorna el precio original.
-    
+
     Examples:
         >>> calculate_discount(100.0, 20.0)
         80.0

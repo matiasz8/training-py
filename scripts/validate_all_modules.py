@@ -77,9 +77,7 @@ class TopicResult:
     m1: CheckResult = field(default_factory=lambda: CheckResult(True))
 
     def all_passed(self) -> bool:
-        return all(
-            r.passed for r in [self.sp1, self.s1, self.r1, self.x1, self.e1, self.m1]
-        )
+        return all(r.passed for r in [self.sp1, self.s1, self.r1, self.x1, self.e1, self.m1])
 
 
 @dataclass
@@ -101,9 +99,9 @@ class ModuleResult:
 
 def iter_modules(repo_root: Path, only_module: str | None) -> list[Path]:
     all_modules = sorted(
-        p for p in repo_root.iterdir()
-        if p.is_dir() and re.match(r"^\d{2}_", p.name)
-        and int(p.name[:2]) <= MAX_MODULE_NUM
+        p
+        for p in repo_root.iterdir()
+        if p.is_dir() and re.match(r"^\d{2}_", p.name) and int(p.name[:2]) <= MAX_MODULE_NUM
     )
     if only_module:
         return [m for m in all_modules if m.name == only_module]
@@ -121,8 +119,10 @@ def detect_topic_dirs(module_dir: Path) -> list[Path]:
             topics.append(path)
         else:
             for sub in sorted(path.iterdir()):
-                if sub.is_dir() and (sub / "README.md").exists() and (
-                    (sub / "examples").exists() or (sub / "exercise").exists()
+                if (
+                    sub.is_dir()
+                    and (sub / "README.md").exists()
+                    and ((sub / "examples").exists() or (sub / "exercise").exists())
                 ):
                     topics.append(sub)
     return topics
@@ -142,7 +142,9 @@ def check_sp1_spanish_readme(topic_dir: Path) -> CheckResult:
         return CheckResult(True)
     return CheckResult(
         False,
-        ["  README has no Spanish section headers (expected Definición, Aplicación Práctica, etc.)"],
+        [
+            "  README has no Spanish section headers (expected Definición, Aplicación Práctica, etc.)"
+        ],
     )
 
 
@@ -169,9 +171,7 @@ def check_r1_references(topic_dir: Path) -> CheckResult:
 
     urls = re.findall(r"https://\S+", content)
     if len(urls) < 3:
-        return CheckResult(
-            False, [f"  only {len(urls)} https:// URL(s) found (need ≥3)"]
-        )
+        return CheckResult(False, [f"  only {len(urls)} https:// URL(s) found (need ≥3)"])
 
     return CheckResult(True)
 
@@ -197,7 +197,7 @@ def check_x1_example(topic_dir: Path) -> CheckResult:
         return CheckResult(True)
     except subprocess.TimeoutExpired:
         return CheckResult(False, [f"  timeout after {EXAMPLE_TIMEOUT}s"])
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         return CheckResult(False, [f"  error: {exc}"])
 
 
@@ -293,8 +293,12 @@ def print_results(results: list[ModuleResult], verbose: bool) -> int:
                 if tr.all_passed() and not verbose:
                     continue
                 checks = {
-                    "SP1": tr.sp1, "S1": tr.s1, "R1": tr.r1,
-                    "X1": tr.x1, "E1": tr.e1, "M1": tr.m1,
+                    "SP1": tr.sp1,
+                    "S1": tr.s1,
+                    "R1": tr.r1,
+                    "X1": tr.x1,
+                    "E1": tr.e1,
+                    "M1": tr.m1,
                 }
                 row_icons = " ".join(f"{k}{icon(v.passed)}" for k, v in checks.items())
                 if not tr.all_passed():
@@ -305,8 +309,10 @@ def print_results(results: list[ModuleResult], verbose: bool) -> int:
                                 print(f"      {key}: {d}")
 
     print()
-    print(f"SUMMARY: {total_modules - failed_modules}/{total_modules} modules passed [SP1 S1 R1 X1 E1 M1]")
-    print(f"  Note: module 16 excluded from scope (not yet synced to NaN).")
+    print(
+        f"SUMMARY: {total_modules - failed_modules}/{total_modules} modules passed [SP1 S1 R1 X1 E1 M1]"
+    )
+    print("  Note: module 16 excluded from scope (not yet synced to NaN).")
 
     return 0 if failed_modules == 0 else 1
 
@@ -318,7 +324,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Validate training-py lab modules (01-15).")
     parser.add_argument("--module", help="Validate a single module by name.")
     parser.add_argument("--json", action="store_true", help="Output JSON.")
-    parser.add_argument("--verbose", action="store_true", help="Show all topics, not just failures.")
+    parser.add_argument(
+        "--verbose", action="store_true", help="Show all topics, not just failures."
+    )
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parents[1]

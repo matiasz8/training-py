@@ -18,8 +18,8 @@ Seaborn Visualization agrega una capa declarativa sobre Matplotlib para construi
 ### Casos de Uso
 
 1. Comparar revenue por segmento de cliente.
-2. Visualizar distribuciones de métricas de producto.
-3. Generar gráficos exploratorios con una estética uniforme.
+1. Visualizar distribuciones de métricas de producto.
+1. Generar gráficos exploratorios con una estética uniforme.
 
 ### Ejemplo de Código
 
