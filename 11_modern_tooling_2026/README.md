@@ -41,27 +41,27 @@ Este módulo cubre el ecosistema de herramientas modernas de Python en 2026, cen
 18. [mypy: Estado actual en 2026](18_mypy_current_state_2026/)
 01. [Pyright y BasedPyright](19_pyright_basedpyright/)
 01. [Pylyzer: Type checker en Rust](20_pylyzer_type_checker_rust/)
-01. [Comparación: mypy vs pyright vs pylyzer](21_comparacion_type_checkers/)
-01. [Configuración de tipado estricto](22_configuracion_tipado_estricto/)
-01. [Type narrowing y type guards avanzados](23_type_narrowing_guards_avanzados/)
+01. [Comparación: mypy vs pyright vs pylyzer](21_type_checkers_comparison/)
+01. [Configuración de tipado estricto](22_strict_typing_configuration/)
+01. [Type narrowing y type guards avanzados](23_type_narrowing_advanced_guards/)
 
 ### Grupo 4: Pre-commit y Hooks (3 temas)
 
-24. [Pre-commit: Configuración y hooks esenciales](24_precommit_configuracion_hooks/)
-01. [Hooks de seguridad (detect-secrets, bandit)](25_precommit_hooks_seguridad/)
+24. [Pre-commit: Configuración y hooks esenciales](24_precommit_configuration_hooks/)
+01. [Hooks de seguridad (detect-secrets, bandit)](25_precommit_security_hooks/)
 01. [Performance y caching de hooks](26_precommit_performance_caching/)
 
 ### Grupo 5: Testing Moderno (5 temas)
 
-27. [pytest avanzado: fixtures y parametrize](27_pytest_avanzado_fixtures/)
+27. [pytest avanzado: fixtures y parametrize](27_pytest_advanced_fixtures/)
 01. [pytest-cov y análisis de coverage](28_pytest_cov_coverage/)
-01. [pytest-xdist: paralelización de tests](29_pytest_xdist_paralelizacion/)
+01. [pytest-xdist: paralelización de tests](29_pytest_xdist_parallelization/)
 01. [Hypothesis: property-based testing](30_hypothesis_property_testing/)
 01. [Mutation testing con mutmut](31_mutation_testing_mutmut/)
 
 ### Grupo 6: Debugging y Profiling Modernos (4 temas)
 
-32. [py-spy: profiling sin overhead](32_pyspy_profiling_sin_overhead/)
+32. [py-spy: profiling sin overhead](32_pyspy_profiling_without_overhead/)
 01. [memray: memory profiling moderno](33_memray_memory_profiling/)
 01. [viztracer: tracing visual](34_viztracer_tracing_visual/)
 01. [debugpy y remote debugging](35_debugpy_remote_debugging/)
