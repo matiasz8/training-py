@@ -1,4 +1,5 @@
 """Ports and Adapters example: core use case independent from infrastructure."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -13,11 +14,9 @@ class Ticket:
 
 
 class TicketStorePort(Protocol):
-    def add(self, ticket: Ticket) -> None:
-        ...
+    def add(self, ticket: Ticket) -> None: ...
 
-    def list_open(self) -> list[Ticket]:
-        ...
+    def list_open(self) -> list[Ticket]: ...
 
 
 class InMemoryTicketStoreAdapter(TicketStorePort):

@@ -1,4 +1,5 @@
 """Message queue example: producer and consumer coordinated by Queue."""
+
 from __future__ import annotations
 
 import queue

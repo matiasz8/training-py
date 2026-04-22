@@ -1,4 +1,5 @@
 """Basic example: SQLAlchemy 2 style repository patterns with sqlite3."""
+
 import sqlite3
 from pathlib import Path
 

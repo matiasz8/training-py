@@ -1,4 +1,5 @@
 """Basic example: partitions and consumer offsets."""
+
 from collections import defaultdict
 
 partitions = defaultdict(list)

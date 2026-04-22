@@ -1,17 +1,16 @@
 """Interface segregation: clients only depend on methods they use."""
+
 from abc import ABC, abstractmethod
 
 
 class Worker(ABC):
     @abstractmethod
-    def work(self) -> str:
-        ...
+    def work(self) -> str: ...
 
 
 class Eater(ABC):
     @abstractmethod
-    def eat(self) -> str:
-        ...
+    def eat(self) -> str: ...
 
 
 class Robot(Worker):

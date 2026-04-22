@@ -2,6 +2,7 @@
 Example: SBOM Introduction - Software Bill of Materials
 Demonstrates creating a basic Software Bill of Materials structure.
 """
+
 import json
 from datetime import datetime
 

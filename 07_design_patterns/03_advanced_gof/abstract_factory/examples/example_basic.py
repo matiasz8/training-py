@@ -1,4 +1,5 @@
 """Abstract Factory example: build matching UI components for each theme."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -6,14 +7,12 @@ from abc import ABC, abstractmethod
 
 class Button(ABC):
     @abstractmethod
-    def render(self) -> str:
-        ...
+    def render(self) -> str: ...
 
 
 class Checkbox(ABC):
     @abstractmethod
-    def render(self) -> str:
-        ...
+    def render(self) -> str: ...
 
 
 class LightButton(Button):
@@ -38,12 +37,10 @@ class DarkCheckbox(Checkbox):
 
 class UIFactory(ABC):
     @abstractmethod
-    def create_button(self) -> Button:
-        ...
+    def create_button(self) -> Button: ...
 
     @abstractmethod
-    def create_checkbox(self) -> Checkbox:
-        ...
+    def create_checkbox(self) -> Checkbox: ...
 
 
 class LightThemeFactory(UIFactory):

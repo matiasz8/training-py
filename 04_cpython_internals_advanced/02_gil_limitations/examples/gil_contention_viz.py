@@ -105,8 +105,8 @@ class GILTracer:
 
             report.append(
                 f"{thread_name:15} Acquires: {acquisitions:3d}  "
-                f"Total wait: {total_wait*1000:6.2f}ms  "
-                f"Avg wait: {total_wait/acquisitions*1000:5.2f}ms"
+                f"Total wait: {total_wait * 1000:6.2f}ms  "
+                f"Avg wait: {total_wait / acquisitions * 1000:5.2f}ms"
             )
 
         return "\n".join(report)
@@ -181,7 +181,7 @@ def demo_priority_inversion():
     cpu_thread.join()
 
     print(tracer.generate_timeline_report())
-    print(f"\nResponse times de I/O worker: {[f'{t*1000:.2f}ms' for t in response_times]}")
+    print(f"\nResponse times de I/O worker: {[f'{t * 1000:.2f}ms' for t in response_times]}")
     print("💡 Observa: I/O worker sufre delays cuando CPU-Hog retiene el GIL")
 
 

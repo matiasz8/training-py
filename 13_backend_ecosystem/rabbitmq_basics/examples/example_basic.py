@@ -1,4 +1,5 @@
 """Basic example: queue with ack and retry."""
+
 from collections import deque
 
 q = deque(["job-a", "job-b", "job-c"])

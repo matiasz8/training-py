@@ -1,4 +1,5 @@
 """Basic example: typed request/response RPC contract."""
+
 from dataclasses import dataclass
 
 

@@ -1,11 +1,11 @@
 """Dependency Inversion: high-level policies depend on abstractions."""
+
 from abc import ABC, abstractmethod
 
 
 class Storage(ABC):
     @abstractmethod
-    def save(self, key: str, value: int) -> None:
-        ...
+    def save(self, key: str, value: int) -> None: ...
 
 
 class MemoryStorage(Storage):

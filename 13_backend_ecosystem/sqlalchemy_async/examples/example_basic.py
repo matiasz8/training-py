@@ -1,4 +1,5 @@
 """Basic example: async DB access pattern using asyncio.to_thread."""
+
 import asyncio
 import sqlite3
 from pathlib import Path

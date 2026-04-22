@@ -1,4 +1,5 @@
 """Scheduler example: run delayed tasks using a dedicated worker thread."""
+
 from __future__ import annotations
 
 import heapq

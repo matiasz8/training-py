@@ -1,4 +1,5 @@
 """Proxy pattern example: lazy-load a heavy image object."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -6,8 +7,7 @@ from abc import ABC, abstractmethod
 
 class Image(ABC):
     @abstractmethod
-    def display(self) -> str:
-        ...
+    def display(self) -> str: ...
 
 
 class RealImage(Image):

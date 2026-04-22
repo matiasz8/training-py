@@ -116,7 +116,7 @@ def run_cpu_bound_test(num_threads: int):
     Test de operaciones CPU-bound con múltiples hilos.
     Demuestra que el GIL previene paralelismo real.
     """
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"CPU-BOUND TEST: {num_threads} thread(s)")
     print("=" * 60)
 
@@ -128,7 +128,7 @@ def run_cpu_bound_test(num_threads: int):
     threads: list[threading.Thread] = []
     for i in range(num_threads):
         t = threading.Thread(
-            target=cpu_intensive_work, args=(iterations, monitor), name=f"CPU-Worker-{i+1}"
+            target=cpu_intensive_work, args=(iterations, monitor), name=f"CPU-Worker-{i + 1}"
         )
         threads.append(t)
         t.start()
@@ -140,8 +140,8 @@ def run_cpu_bound_test(num_threads: int):
     elapsed = end - start
 
     print(f"Tiempo total: {elapsed:.4f}s")
-    print(f"Tiempo esperado con paralelismo perfecto: {elapsed/num_threads:.4f}s")
-    print(f"Speedup real: {1.0/(elapsed/(iterations*num_threads/500000)):.2f}x")
+    print(f"Tiempo esperado con paralelismo perfecto: {elapsed / num_threads:.4f}s")
+    print(f"Speedup real: {1.0 / (elapsed / (iterations * num_threads / 500000)):.2f}x")
     print(monitor.get_report())
 
 
@@ -150,7 +150,7 @@ def run_io_bound_test(num_threads: int):
     Test de operaciones I/O-bound con múltiples hilos.
     Demuestra que el GIL se libera durante I/O.
     """
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"I/O-BOUND TEST: {num_threads} thread(s)")
     print("=" * 60)
 
@@ -162,7 +162,7 @@ def run_io_bound_test(num_threads: int):
     threads: list[threading.Thread] = []
     for i in range(num_threads):
         t = threading.Thread(
-            target=io_intensive_work, args=(io_duration, monitor), name=f"IO-Worker-{i+1}"
+            target=io_intensive_work, args=(io_duration, monitor), name=f"IO-Worker-{i + 1}"
         )
         threads.append(t)
         t.start()
@@ -184,7 +184,7 @@ def run_mixed_test(num_threads: int):
     Test de workload mixto (CPU + I/O).
     Muestra comportamiento real de aplicaciones.
     """
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"MIXED WORKLOAD TEST: {num_threads} thread(s)")
     print("=" * 60)
 
@@ -199,7 +199,7 @@ def run_mixed_test(num_threads: int):
         t = threading.Thread(
             target=mixed_workload,
             args=(cpu_iterations, io_duration, monitor),
-            name=f"Mixed-Worker-{i+1}",
+            name=f"Mixed-Worker-{i + 1}",
         )
         threads.append(t)
         t.start()

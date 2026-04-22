@@ -1,4 +1,5 @@
 """Basic example: pub/sub fan-out to subscribers."""
+
 from collections import defaultdict
 
 subs = defaultdict(list)

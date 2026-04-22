@@ -20,7 +20,7 @@ def format_differences(original: str, formatted: str) -> list[str]:
     diffs = []
     for i, (o, f) in enumerate(zip(orig_lines, fmt_lines, strict=False)):
         if o != f:
-            diffs.append(f"line {i+1}: {o!r} → {f!r}")
+            diffs.append(f"line {i + 1}: {o!r} → {f!r}")
     return diffs
 
 

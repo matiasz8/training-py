@@ -1,4 +1,5 @@
 """Basic example: resource pagination and links."""
+
 from urllib.parse import urlencode
 
 items = [{"id": i, "name": f"item-{i}"} for i in range(1, 16)]

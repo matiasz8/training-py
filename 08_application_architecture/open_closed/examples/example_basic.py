@@ -1,11 +1,11 @@
 """Open/Closed: extend behavior without modifying existing code."""
+
 from abc import ABC, abstractmethod
 
 
 class Formatter(ABC):
     @abstractmethod
-    def format(self, data: dict[str, object]) -> str:
-        ...
+    def format(self, data: dict[str, object]) -> str: ...
 
 
 class JsonFormatter(Formatter):

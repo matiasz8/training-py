@@ -21,7 +21,6 @@ Run:
     Visit http://localhost:8000/openapi.json
 """
 
-
 from fastapi import Body, FastAPI, HTTPException, Path
 from fastapi.openapi.utils import get_openapi
 from pydantic import BaseModel, Field
@@ -88,7 +87,7 @@ TAGS_METADATA = [
     {
         "name": "Products",
         "description": (
-            "Operations on the product catalog. " "Products can be listed, created, and archived."
+            "Operations on the product catalog. Products can be listed, created, and archived."
         ),
         "externalDocs": {
             "description": "Product schema documentation",
@@ -177,9 +176,7 @@ async def health():
     "/products",
     tags=["Products"],
     summary="List all products",
-    description=(
-        "Returns all products in the catalog. " "Filter by `category` or `in_stock` status."
-    ),
+    description=("Returns all products in the catalog. Filter by `category` or `in_stock` status."),
     response_model=list[ProductResponse],
     response_description="A list of products matching the filter criteria",
 )
@@ -277,7 +274,7 @@ async def delete_product(product_id: int):
     tags=["Legacy"],
     summary="[DEPRECATED] List products",
     description=(
-        "**This endpoint is deprecated.** " "Use `GET /products` instead. Will be removed in v3.0."
+        "**This endpoint is deprecated.** Use `GET /products` instead. Will be removed in v3.0."
     ),
     deprecated=True,
     response_model=list[ProductResponse],

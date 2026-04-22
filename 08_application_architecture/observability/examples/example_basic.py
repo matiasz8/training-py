@@ -1,4 +1,5 @@
 """Observability - metrics and traces."""
+
 import json
 from time import time
 

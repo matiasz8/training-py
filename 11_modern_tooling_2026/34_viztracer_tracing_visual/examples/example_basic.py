@@ -1,4 +1,5 @@
 """viztracer: function call tracing demo."""
+
 import time
 
 

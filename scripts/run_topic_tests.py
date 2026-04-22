@@ -55,7 +55,7 @@ def main() -> int:
     parser.add_argument(
         "targets",
         nargs="*",
-        help=("Optional topic/module paths or specific " "tests/test_basic.py files."),
+        help=("Optional topic/module paths or specific tests/test_basic.py files."),
     )
     parser.add_argument(
         "--fail-fast",

@@ -1,4 +1,5 @@
 """Bridge pattern example: separate notification abstraction from channels."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -6,8 +7,7 @@ from abc import ABC, abstractmethod
 
 class Channel(ABC):
     @abstractmethod
-    def send(self, recipient: str, message: str) -> str:
-        ...
+    def send(self, recipient: str, message: str) -> str: ...
 
 
 class EmailChannel(Channel):

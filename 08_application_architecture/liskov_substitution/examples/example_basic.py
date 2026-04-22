@@ -1,11 +1,11 @@
 """Liskov substitution: every subtype can replace the base contract."""
+
 from abc import ABC, abstractmethod
 
 
 class Bird(ABC):
     @abstractmethod
-    def move(self) -> str:
-        ...
+    def move(self) -> str: ...
 
 
 class Sparrow(Bird):

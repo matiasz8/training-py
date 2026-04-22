@@ -1,4 +1,5 @@
 """Basic example: tiny inverted index search."""
+
 import re
 from collections import defaultdict
 

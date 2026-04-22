@@ -1,4 +1,5 @@
 """Hexagonal Architecture example: domain logic isolated behind ports."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -15,11 +16,9 @@ class Order:
 
 
 class OrderRepositoryPort(Protocol):
-    def save(self, order: Order) -> None:
-        ...
+    def save(self, order: Order) -> None: ...
 
-    def list_all(self) -> list[Order]:
-        ...
+    def list_all(self) -> list[Order]: ...
 
 
 class InMemoryOrderRepository(OrderRepositoryPort):

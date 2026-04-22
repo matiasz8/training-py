@@ -89,8 +89,7 @@ class Drawable(Protocol):
     es considerada Drawable sin necesidad de heredar explícitamente.
     """
 
-    def draw(self) -> str:
-        ...
+    def draw(self) -> str: ...
 
 
 class Circle:

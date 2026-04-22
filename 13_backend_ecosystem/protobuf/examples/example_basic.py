@@ -1,4 +1,5 @@
 """Basic example: compact schema message encode/decode."""
+
 import json
 from dataclasses import asdict, dataclass
 

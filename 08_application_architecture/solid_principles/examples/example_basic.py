@@ -1,4 +1,5 @@
 """SOLID mini-demo: SRP + DIP with swappable payment providers."""
+
 from abc import ABC, abstractmethod
 
 
@@ -9,8 +10,7 @@ class Logger:
 
 class PaymentProcessor(ABC):
     @abstractmethod
-    def process(self, amount: float) -> bool:
-        ...
+    def process(self, amount: float) -> bool: ...
 
 
 class CreditCard(PaymentProcessor):

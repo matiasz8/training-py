@@ -1,4 +1,5 @@
 """Repository pattern: isolate persistence behind a collection-like interface."""
+
 from abc import ABC, abstractmethod
 
 
@@ -10,12 +11,10 @@ class Post:
 
 class PostRepo(ABC):
     @abstractmethod
-    def add(self, post: Post) -> None:
-        ...
+    def add(self, post: Post) -> None: ...
 
     @abstractmethod
-    def find(self, post_id: int) -> Post | None:
-        ...
+    def find(self, post_id: int) -> Post | None: ...
 
 
 class MemoryPostRepo(PostRepo):

@@ -1,4 +1,5 @@
 """Basic example: counters and histogram buckets exposition."""
+
 import random
 
 req_total = 0

@@ -1,4 +1,5 @@
 """Strategy pattern example: swap shipping algorithms at runtime."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -6,8 +7,7 @@ from abc import ABC, abstractmethod
 
 class ShippingStrategy(ABC):
     @abstractmethod
-    def cost(self, weight_kg: float, distance_km: float) -> float:
-        ...
+    def cost(self, weight_kg: float, distance_km: float) -> float: ...
 
 
 class StandardShipping(ShippingStrategy):

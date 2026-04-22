@@ -1,4 +1,5 @@
 """Structured Logging - JSON format."""
+
 import json
 from datetime import datetime
 

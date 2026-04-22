@@ -1,11 +1,11 @@
 """mypy 2026: strict mode and incremental checking demo."""
+
 from typing import Protocol, runtime_checkable
 
 
 @runtime_checkable
 class Serializable(Protocol):
-    def to_dict(self) -> dict[str, object]:
-        ...
+    def to_dict(self) -> dict[str, object]: ...
 
 
 class User:

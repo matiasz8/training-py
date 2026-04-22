@@ -2,6 +2,7 @@
 Ejemplo 2: Explorando la caché global de uv
 Demuestra cómo uv reutiliza paquetes entre proyectos
 """
+
 import subprocess
 from pathlib import Path
 

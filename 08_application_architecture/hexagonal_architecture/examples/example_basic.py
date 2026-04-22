@@ -1,11 +1,11 @@
 """Hexagonal architecture: domain logic does not depend on adapters."""
+
 from abc import ABC, abstractmethod
 
 
 class UserRepo(ABC):
     @abstractmethod
-    def save(self, user_id: int, name: str) -> None:
-        ...
+    def save(self, user_id: int, name: str) -> None: ...
 
 
 class MemoryRepo(UserRepo):

@@ -1,4 +1,5 @@
 """Request-reply example: synchronous style over asynchronous queues."""
+
 from __future__ import annotations
 
 import queue

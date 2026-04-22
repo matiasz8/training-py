@@ -1,4 +1,5 @@
 """Thread pool example: process CPU-lite tasks concurrently."""
+
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed

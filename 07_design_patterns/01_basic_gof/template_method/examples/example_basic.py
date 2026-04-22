@@ -1,4 +1,5 @@
 """Template Method example: fixed parsing pipeline with custom steps."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -12,12 +13,10 @@ class DataParser(ABC):
         return [dict(zip(header, row, strict=True)) for row in rows]
 
     @abstractmethod
-    def _extract_header(self, line: str) -> list[str]:
-        ...
+    def _extract_header(self, line: str) -> list[str]: ...
 
     @abstractmethod
-    def _extract_values(self, line: str) -> list[str]:
-        ...
+    def _extract_values(self, line: str) -> list[str]: ...
 
 
 class CsvParser(DataParser):

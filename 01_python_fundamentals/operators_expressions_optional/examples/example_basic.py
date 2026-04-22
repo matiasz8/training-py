@@ -19,7 +19,7 @@ def main() -> None:
     print(f"Final total: {total}")
     print(f"Label: {shipping_label(total, is_member=False)}")
     print(f"7 in [3, 5, 7]: {7 in [3, 5, 7]}")
-    print(f"2 ** 5 = {2 ** 5}")
+    print(f"2 ** 5 = {2**5}")
 
 
 if __name__ == "__main__":

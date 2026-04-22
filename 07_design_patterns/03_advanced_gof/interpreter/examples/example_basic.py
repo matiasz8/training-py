@@ -1,4 +1,5 @@
 """Interpreter pattern example: evaluate simple boolean expressions."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -6,8 +7,7 @@ from abc import ABC, abstractmethod
 
 class Expression(ABC):
     @abstractmethod
-    def interpret(self, context: dict[str, bool]) -> bool:
-        ...
+    def interpret(self, context: dict[str, bool]) -> bool: ...
 
 
 class Literal(Expression):

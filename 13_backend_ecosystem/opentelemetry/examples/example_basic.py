@@ -1,4 +1,5 @@
 """Basic example: spans inside one trace."""
+
 import time
 import uuid
 from contextlib import contextmanager
@@ -12,7 +13,7 @@ def span(trace_id, name):
     try:
         yield
     finally:
-        print("end", trace_id, sid, name, f"ms={(time.perf_counter()-start)*1000:.2f}")
+        print("end", trace_id, sid, name, f"ms={(time.perf_counter() - start) * 1000:.2f}")
 
 
 trace = uuid.uuid4().hex

@@ -195,7 +195,7 @@ def create_pattern_structure(base_path: Path, pattern_name: str) -> None:
 
 ## 4. 🔗 Referencias
 
-- [Design Patterns (Gang of Four)](https://refactoring.guru/design-patterns/{pattern_name.replace('_', '-')})
+- [Design Patterns (Gang of Four)](https://refactoring.guru/design-patterns/{pattern_name.replace("_", "-")})
 - [Python Design Patterns](https://python-patterns.guide/)
 - *[Añadir más referencias]*
 
@@ -238,9 +238,9 @@ Implementa el patrón con type hints completos, tests, y documentación.
 - Python Design Patterns and Best Practices
 
 ## Sitios Web
-- [Refactoring Guru](https://refactoring.guru/design-patterns/{pattern_name.replace('_', '-')})
+- [Refactoring Guru](https://refactoring.guru/design-patterns/{pattern_name.replace("_", "-")})
 - [Python Patterns Guide](https://python-patterns.guide/)
-- [Source Making](https://sourcemaking.com/design_patterns/{pattern_name.replace('_', '-')})
+- [Source Making](https://sourcemaking.com/design_patterns/{pattern_name.replace("_", "-")})
 
 ## Videos
 - *[Por añadir videos específicos del patrón]*
@@ -260,11 +260,11 @@ def create_subcategory(base_path: Path, subcat_name: str, subcat_info: dict) -> 
     print(f"📁 Creando subcategoría: {subcat_name}")
 
     # Crear README de subcategoría
-    readme_content = f"""# {subcat_info['description']}
+    readme_content = f"""# {subcat_info["description"]}
 
 ## 📋 Descripción
 
-Esta subcategoría contiene {len(subcat_info['patterns'])} patrones de diseño.
+Esta subcategoría contiene {len(subcat_info["patterns"])} patrones de diseño.
 
 ## 📚 Patrones
 
@@ -277,7 +277,7 @@ Esta subcategoría contiene {len(subcat_info['patterns'])} patrones de diseño.
     readme_content += f"""
 ## ⏱️ Tiempo Estimado Total
 
-**{len(subcat_info['patterns']) * 2}-{len(subcat_info['patterns']) * 3} horas**
+**{len(subcat_info["patterns"]) * 2}-{len(subcat_info["patterns"]) * 3} horas**
 """
 
     (subcat_path / "README.md").write_text(readme_content)

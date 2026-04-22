@@ -1,4 +1,5 @@
 """Null Object example: replace optional logger checks with a safe default."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -6,8 +7,7 @@ from abc import ABC, abstractmethod
 
 class Logger(ABC):
     @abstractmethod
-    def info(self, message: str) -> None:
-        ...
+    def info(self, message: str) -> None: ...
 
 
 class ConsoleLogger(Logger):

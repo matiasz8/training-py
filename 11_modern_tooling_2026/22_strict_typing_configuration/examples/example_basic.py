@@ -7,8 +7,7 @@ SortOrder = Literal["asc", "desc"]
 
 
 class Sortable(Protocol):
-    def __lt__(self, other: object) -> bool:
-        ...
+    def __lt__(self, other: object) -> bool: ...
 
 
 def sorted_typed(items: list[T], order: SortOrder = "asc") -> list[T]:

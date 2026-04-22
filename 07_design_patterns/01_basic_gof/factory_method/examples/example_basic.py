@@ -1,4 +1,5 @@
 """Factory Method example: create transport objects through creators."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -6,8 +7,7 @@ from abc import ABC, abstractmethod
 
 class Transport(ABC):
     @abstractmethod
-    def deliver(self, cargo: str) -> str:
-        ...
+    def deliver(self, cargo: str) -> str: ...
 
 
 class Truck(Transport):
@@ -22,8 +22,7 @@ class Ship(Transport):
 
 class Logistics(ABC):
     @abstractmethod
-    def create_transport(self) -> Transport:
-        ...
+    def create_transport(self) -> Transport: ...
 
     def plan_delivery(self, cargo: str) -> str:
         return self.create_transport().deliver(cargo)

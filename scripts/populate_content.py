@@ -202,8 +202,8 @@ def generate_references_content(topic_name: str, category: str) -> str:
         "tooling": f"""# Referencias: {topic_name}
 
 ## Documentación Oficial
-- [Astral: uv]({TOPIC_RESOURCES.get('uv', {}).get('url', 'https://github.com/astral-sh/uv')})
-- [Ruff Documentation]({TOPIC_RESOURCES.get('ruff', {}).get('url', 'https://docs.astral.sh/ruff/')})
+- [Astral: uv]({TOPIC_RESOURCES.get("uv", {}).get("url", "https://github.com/astral-sh/uv")})
+- [Ruff Documentation]({TOPIC_RESOURCES.get("ruff", {}).get("url", "https://docs.astral.sh/ruff/")})
 
 ## Guías de Uso
 - Official User Guides

@@ -2,8 +2,7 @@ from typing import Protocol
 
 
 class SupportsLen(Protocol):
-    def __len__(self) -> int:
-        ...
+    def __len__(self) -> int: ...
 
 
 def size_of(value: SupportsLen) -> int:

@@ -1,4 +1,5 @@
 """Command pattern example: decouple button actions from receivers."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -19,11 +20,9 @@ class Light:
 
 
 class Command:
-    def execute(self) -> str:
-        ...
+    def execute(self) -> str: ...
 
-    def undo(self) -> str:
-        ...
+    def undo(self) -> str: ...
 
 
 @dataclass

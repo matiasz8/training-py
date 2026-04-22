@@ -1,4 +1,5 @@
 """Composite pattern example: treat files and folders uniformly."""
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -7,12 +8,10 @@ from dataclasses import dataclass, field
 
 class Node(ABC):
     @abstractmethod
-    def size(self) -> int:
-        ...
+    def size(self) -> int: ...
 
     @abstractmethod
-    def display(self, depth: int = 0) -> list[str]:
-        ...
+    def display(self, depth: int = 0) -> list[str]: ...
 
 
 @dataclass

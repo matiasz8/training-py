@@ -6,7 +6,7 @@ def lock_entry(name: str, version: str, hash_: str) -> dict[str, str]:
 
 
 def simulate_lock(packages: list[tuple[str, str]]) -> list[dict[str, str]]:
-    return [lock_entry(n, v, f"sha256:{hash(n+v) & 0xFFFFFF:06x}") for n, v in packages]
+    return [lock_entry(n, v, f"sha256:{hash(n + v) & 0xFFFFFF:06x}") for n, v in packages]
 
 
 def verify_lock(entries: list[dict[str, str]]) -> str:

@@ -1,4 +1,5 @@
 """Basic example: cache-aside and write-through update."""
+
 import time
 
 db = {1: {"id": 1, "name": "Keyboard", "price": 99.0}}

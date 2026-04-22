@@ -11,9 +11,10 @@ def non_critical_job() -> str:
 
 def main() -> None:
     """Entry point to demonstrate the implementation."""
-    with ThreadPoolExecutor(max_workers=1) as critical_pool, ThreadPoolExecutor(
-        max_workers=1
-    ) as aux_pool:
+    with (
+        ThreadPoolExecutor(max_workers=1) as critical_pool,
+        ThreadPoolExecutor(max_workers=1) as aux_pool,
+    ):
         a = critical_pool.submit(critical_job)
         b = aux_pool.submit(non_critical_job)
     print(a.result(), b.result())

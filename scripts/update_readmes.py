@@ -178,7 +178,7 @@ Introducido como parte de la evolución continua de Python hacia un lenguaje má
 Ver archivo [references/links.md](references/links.md) para documentación completa, tutoriales y recursos.
 
 **Documentación Oficial**:
-- [Python Docs: {clean_name}]({docs.get('url', 'https://docs.python.org/3/')})
+- [Python Docs: {clean_name}]({docs.get("url", "https://docs.python.org/3/")})
 {f"- [PEP {pep}](https://peps.python.org/pep-{pep}/)" if pep else ""}
 
 ## 5. ✏️ Tarea de Práctica

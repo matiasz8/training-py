@@ -2,8 +2,7 @@ from typing import Protocol
 
 
 class SupportsClose(Protocol):
-    def close(self) -> str:
-        ...
+    def close(self) -> str: ...
 
 
 class Connection:

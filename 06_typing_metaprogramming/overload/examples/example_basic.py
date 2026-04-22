@@ -2,13 +2,11 @@ from typing import overload
 
 
 @overload
-def stringify(value: int) -> str:
-    ...
+def stringify(value: int) -> str: ...
 
 
 @overload
-def stringify(value: list[int]) -> str:
-    ...
+def stringify(value: list[int]) -> str: ...
 
 
 def stringify(value):

@@ -272,7 +272,7 @@ def create_topic_structure(base_path: Path, topic_name: str) -> None:
     (topic_path / "references").mkdir(exist_ok=True)
 
     # Crear README básico
-    readme_content = f"""# {topic_name.replace('_', ' ').title()}
+    readme_content = f"""# {topic_name.replace("_", " ").title()}
 
 ⏱️ **Tiempo estimado: 2-3 horas**
 
@@ -333,7 +333,7 @@ def create_topic_structure(base_path: Path, topic_name: str) -> None:
         readme_path.write_text(readme_content)
 
     # Crear archivo de referencias básico
-    links_content = f"""# Referencias: {topic_name.replace('_', ' ').title()}
+    links_content = f"""# Referencias: {topic_name.replace("_", " ").title()}
 
 ## Documentación Oficial
 - [Python Docs](https://docs.python.org/)
@@ -361,7 +361,7 @@ def create_module(base_path: Path, module_name: str, module_info: dict) -> None:
     print(f"📁 Creando módulo: {module_name}")
 
     # Crear README del módulo
-    readme_content = f"""# Módulo: {module_info['description']}
+    readme_content = f"""# Módulo: {module_info["description"]}
 
 ## 📋 Descripción
 
@@ -373,7 +373,7 @@ def create_module(base_path: Path, module_name: str, module_info: dict) -> None:
 - Objetivo 2
 - Objetivo 3
 
-## 📚 Contenido ({len(module_info['topics'])} Temas)
+## 📚 Contenido ({len(module_info["topics"])} Temas)
 
 """
 
@@ -384,7 +384,7 @@ def create_module(base_path: Path, module_name: str, module_info: dict) -> None:
     readme_content += f"""
 ## ⏱️ Tiempo Estimado Total
 
-**{len(module_info['topics']) * 2}-{len(module_info['topics']) * 3} horas**
+**{len(module_info["topics"]) * 2}-{len(module_info["topics"]) * 3} horas**
 
 ## 🚀 Orden Recomendado
 

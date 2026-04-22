@@ -2,6 +2,7 @@
 Ejemplo 1: Comparación de velocidad entre pip y uv
 Demuestra la diferencia de rendimiento en operaciones comunes
 """
+
 import subprocess
 import time
 from pathlib import Path
@@ -9,7 +10,7 @@ from pathlib import Path
 
 def measure_command(cmd: list[str], description: str) -> float:
     """Mide el tiempo de ejecución de un comando."""
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"Ejecutando: {description}")
     print(f"Comando: {' '.join(cmd)}")
     print("=" * 60)
@@ -61,7 +62,7 @@ def compare_installation():
     print("=" * 60)
     print(f"pip: {pip_time:.2f} segundos")
     print(f"uv:  {uv_time:.2f} segundos")
-    print(f"uv es {pip_time/uv_time:.1f}x más rápido")
+    print(f"uv es {pip_time / uv_time:.1f}x más rápido")
     print("=" * 60)
 
     # Cleanup

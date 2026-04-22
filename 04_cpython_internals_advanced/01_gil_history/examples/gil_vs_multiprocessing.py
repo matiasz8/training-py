@@ -129,8 +129,8 @@ def main():
     Threading:         {time_threading:.4f}s ({speedup_threading:.2f}x)
     Multiprocessing:   {time_mp:.4f}s ({speedup_mp:.2f}x)
 
-    Eficiencia de Threading:        {speedup_threading/num_workers*100:.1f}%
-    Eficiencia de Multiprocessing:  {speedup_mp/num_workers*100:.1f}%
+    Eficiencia de Threading:        {speedup_threading / num_workers * 100:.1f}%
+    Eficiencia de Multiprocessing:  {speedup_mp / num_workers * 100:.1f}%
 
     🎯 RECOMENDACIÓN:
     """

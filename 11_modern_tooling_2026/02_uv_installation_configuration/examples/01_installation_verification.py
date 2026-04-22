@@ -1,6 +1,7 @@
 """
 Ejemplo: Instalación y verificación de uv en diferentes entornos
 """
+
 import platform
 import subprocess
 import sys
@@ -36,11 +37,11 @@ def check_uv_installation():
 def show_system_info():
     """Muestra información del sistema."""
     print("\n📊 Información del Sistema")
-    print(f"{'='*50}")
+    print(f"{'=' * 50}")
     print(f"OS: {platform.system()} {platform.release()}")
     print(f"Arquitectura: {platform.machine()}")
     print(f"Python: {sys.version.split()[0]}")
-    print(f"{'='*50}\n")
+    print(f"{'=' * 50}\n")
 
 
 def show_configuration():

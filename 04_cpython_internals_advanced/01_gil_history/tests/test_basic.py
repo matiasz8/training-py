@@ -202,17 +202,17 @@ class TestPerformanceComparison:
         speedup_mp = time_seq / time_mp
 
         # Threading debe tener speedup < 1.5x debido al GIL
-        assert (
-            speedup_thread < 1.5
-        ), f"Threading speedup too high: {speedup_thread:.2f}x (GIL not limiting?)"
+        assert speedup_thread < 1.5, (
+            f"Threading speedup too high: {speedup_thread:.2f}x (GIL not limiting?)"
+        )
 
         # Multiprocessing debe tener speedup > 2.0x
         assert speedup_mp > 2.0, f"Multiprocessing speedup too low: {speedup_mp:.2f}x"
 
         # Multiprocessing debe ser significativamente mejor que threading
-        assert (
-            speedup_mp > speedup_thread * 1.3
-        ), "Multiprocessing should be significantly better than threading"
+        assert speedup_mp > speedup_thread * 1.3, (
+            "Multiprocessing should be significantly better than threading"
+        )
 
 
 # Fixtures

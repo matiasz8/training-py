@@ -303,7 +303,7 @@ def create_example_file(topic_path: Path, topic_name: str) -> None:
             content = TOPIC_EXAMPLES[topic_name]
         else:
             content = f'''"""
-Ejemplo básico de {topic_name.replace('_', ' ').title()}.
+Ejemplo básico de {topic_name.replace("_", " ").title()}.
 """
 
 
