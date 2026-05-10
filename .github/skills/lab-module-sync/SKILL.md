@@ -1,53 +1,44 @@
 ______________________________________________________________________
 
-## name: lab-module-sync description: "Use when creating or updating a lab module across training-py and nan-python-engineering-labs: copy module structure, translate docs to English, keep examples identical in both repos, validate all examples run, and prepare commits. Triggers: module migration, translate module, sync examples, lab workflow, copy+translate+validate."
+## name: lab-module-sync description: "Use when creating or updating a lab topic in training-py: enforce canonical structure, validate Spanish READMEs, run checks, and prepare commits. Triggers: module migration, translate module, sync examples, lab workflow, copy+translate+validate."
 
 # Lab Module Sync
 
 ## Purpose
 
-Standardize the workflow for Python lab modules across both repositories:
-
-- `training-py` (original/source)
-- `nan-python-engineering-labs` (target NaNLABS)
+Standardize the workflow for Python lab modules in `training-py`.
 
 The workflow ensures:
 
 - English directory names and references
-- Language split by repository:
-  - `training-py`: Spanish documentation
-  - `nan-python-engineering-labs`: English documentation
-- Identical `examples/example_basic.py` content in both repos
+- Spanish documentation in `README.md` files
 - Executable examples with validation evidence
 - A homogeneous topic structure even when source modules are inconsistent
 - Pattern/topic-appropriate examples (no name-only template cloning)
 
-## Repository Policy Matrix
+## Content Policy
 
-The table below is the **authoritative source** for language and content rules per file type and repo. When in doubt, refer here first.
+| File / Asset                | `training-py`                                    |
+| --------------------------- | ------------------------------------------------ |
+| `README.md`                 | **Spanish** content + 17-heading schema          |
+| `exercise/exercise_01.py`   | **English** instructions, goal, comments         |
+| `references/links.md`       | Spanish section headers OK; real `https://` URLs |
+| `examples/example_basic.py` | **English** comments, docstrings, output         |
+| `tests/test_basic.py`       | **English** docstrings and comments              |
+| Directory / file names      | **English** slugs                                |
 
-| File / Asset                | `training-py`                                    | `nan-python-engineering-labs`                     |
-| --------------------------- | ------------------------------------------------ | ------------------------------------------------- |
-| `README.md`                 | **Spanish** content + 17-heading schema          | **English** content + 17-heading schema           |
-| `exercise/exercise_01.py`   | **English** instructions, goal, comments         | **English** instructions, goal, comments          |
-| `references/links.md`       | Spanish section headers OK; real `https://` URLs | **English** section headers; real `https://` URLs |
-| `examples/example_basic.py` | **English** comments, docstrings, output         | **English** comments, docstrings, output          |
-| `tests/test_basic.py`       | **English** docstrings and comments              | **English** docstrings and comments               |
-| Directory / file names      | **English** slugs                                | **English** slugs                                 |
-
-> **Key rule**: Only `README.md` files in `training-py` are written in Spanish. Every other asset (exercises, examples, tests, references) uses English in **both** repos. This is because technical instructions and code are universally English; only the pedagogical narrative stays in Spanish for `training-py` learners.
+> **Key rule**: Only `README.md` files are written in Spanish. Every other asset (exercises, examples, tests, references) uses English.
 
 ## Inputs
 
 - Module number and source path (for example: `03_basic_intermediate_oop`)
-- Target module path in NaNLABS repo
 - Whether to commit and push
 
 ## Workflow
 
 1. Discover context
 
-- Read root `README.md`, `GETTING_STARTED.md`, `STATUS.md` in both repos.
+- Read root `README.md`, `GETTING_STARTED.md`, `STATUS.md`.
 - Confirm naming conventions currently in use.
 - Confirm module/topic slug mapping.
 
@@ -61,11 +52,11 @@ The table below is the **authoritative source** for language and content rules p
   - `references/`
   - `my_solution/`
 - Ensure `my_solution/.gitkeep` exists.
-- If the source layout is inconsistent, fix it first so both repos end with the same standard structure.
+- If the source layout is inconsistent, fix it first so the module ends with the standard structure.
 
-3. Copy structure
+3. Ensure standard structure
 
-- Create target module in NaNLABS repo with standard lab layout per topic:
+- Verify the module has the standard lab layout for every topic:
   - `README.md`
   - `examples/example_basic.py`
   - `exercise/exercise_01.py`
@@ -73,24 +64,16 @@ The table below is the **authoritative source** for language and content rules p
   - `references/links.md`
   - `my_solution/.gitkeep`
 
-4. Translate and normalize (Repository language policy)
+4. Translate and normalize (language policy)
 
-- Apply language policy by repository:
-  - `training-py`: keep or translate documentation to Spanish.
-  - `nan-python-engineering-labs`: keep or translate documentation to English.
-- For NaN repo, translate ALL files to English (not just README, but also exercises, references, tests):
-  - `README.md` (module and all topic READMEs)
-  - `exercise/exercise_01.py` (instructions and comments)
-  - `references/links.md` (documentation and descriptions)
-  - `tests/test_basic.py` (docstrings and comments)
-  - Any other markdown or documentation files
+- Apply language policy:
+  - `training-py`: keep documentation in Spanish (README files).
+  - All non-README files (exercises, references, tests, examples) must be English.
 - Validation:
-  - In `training-py`, enforce Spanish documentation style in README content.
-  - In `nan-python-engineering-labs`, scan all files for Spanish keywords (Módulo, Descripción, Objetivo, Ejercicio, Referencias, Instrucciones, etc.) and translate before proceeding.
+  - Enforce Spanish documentation style in README content.
 - Keep technical terms consistent across files.
 - Ensure folder names are English slugs.
 - Update all markdown/internal references after renames.
-- Result: 100% English-only content in NaNLABS repo (no Spanish text remains).
 
 4.1 README structure normalization (NEW - mandatory)
 
@@ -111,7 +94,6 @@ The table below is the **authoritative source** for language and content rules p
   - Summary
   - Reflection prompt
 - For `training-py`, preserve pedagogical depth and enforce Spanish language in topic READMEs.
-- For `nan-python-engineering-labs`, preserve pedagogical depth and enforce English-only content.
 - If any section is missing, create it before continuing.
 
 4.2 README heading schema lock (NEW - strict)
@@ -142,12 +124,11 @@ The table below is the **authoritative source** for language and content rules p
 
 - Replace placeholder examples with runnable Python code.
 - Keep examples practical and beginner-friendly for that module level.
-- Ensure examples in both repos are identical (same code, same language).
 - Each topic/pattern must have logic specific to its own concept (not the same skeleton with renamed labels).
 
 5.1 Example language + completeness lock (NEW - strict)
 
-- Every `examples/example_basic.py` in `nan-python-engineering-labs` must be English-only in comments, docstrings, and printed messages.
+- Every `examples/example_basic.py` must be English-only in comments, docstrings, and printed messages.
 - Disallow placeholders in examples:
   - No `TODO`
   - No template comments like "add specific example"
@@ -157,8 +138,8 @@ The table below is the **authoritative source** for language and content rules p
 
 5.2 Exercise language + completeness lock (NEW - strict)
 
-- Every `exercise/exercise_01.py` in **both repos** must be English-only in comments, docstrings, instructions, and task descriptions.
-- This applies equally to `training-py` and `nan-python-engineering-labs`. Only `README.md` files stay in Spanish for `training-py`; exercises are English in both.
+- Every `exercise/exercise_01.py` must be English-only in comments, docstrings, instructions, and task descriptions.
+- Only `README.md` files stay in Spanish; exercises are English.
 - Disallow placeholders in exercises:
   - No `TODO`
   - No template comments in Spanish (for example: "Implementa", "Añade", "Resuelve")
@@ -170,7 +151,7 @@ The table below is the **authoritative source** for language and content rules p
 
 5.3 References completeness lock (NEW - strict)
 
-- Every `references/links.md` in both repos must be non-empty and contain at least 3 real `https://` URLs.
+- Every `references/links.md` must be non-empty and contain at least 3 real `https://` URLs.
 - Disallow placeholder-only references:
   - No `Add relevant documentation links here.`
   - No empty files
@@ -182,14 +163,9 @@ The table below is the **authoritative source** for language and content rules p
   - At least 1 article/guide link
 - Links must be topic-specific (not the same generic set for every topic in the module).
 
-6. Sync to original repo
+6. Validate (Execution + Structure + Language)
 
-- Copy generated/approved examples from NaNLABS module to matching module in `training-py`.
-- Preserve topic slug mapping exactly.
-
-7. Validate (Execution + Structure + Language)
-
-- Run every `*/examples/example_basic.py` in both repos for the module.
+- Run every `*/examples/example_basic.py` in the module.
 - Report pass/fail counts and list failing files with traceback if any.
 - Fix failures before finishing.
 - Run a structural duplication audit for the module examples. If the module uses near-identical structures for most topics, fail the gate and regenerate examples with concept-specific logic.
@@ -204,9 +180,7 @@ The table below is the **authoritative source** for language and content rules p
   - Normalize all non-compliant READMEs before commit.
 - **Language compliance check (NEW)**:
   - `training-py`: verify topic README structure is in Spanish (section headers/content language in Spanish).
-  - `nan-python-engineering-labs`: scan ALL files for Spanish keywords:
-  - If any Spanish content found in exercises, references, tests, or docs → FAIL gate and re-translate before committing
-  - This ensures 100% English-only compliance for NaN repo
+  - If any Spanish content found in exercises, references, tests, or code files → FAIL gate and fix before committing.
 - **Example completeness + language check (NEW)**:
   - Scan every `examples/example_basic.py` in the processed module.
   - Fail if any example contains placeholder markers (`TODO`, template text, incomplete scaffolding).
@@ -224,11 +198,10 @@ The table below is the **authoritative source** for language and content rules p
   - Fail if all references files are identical (indicates a copy-paste fallback instead of topic-specific content).
   - For NaN repo: fail if any references file contains Spanish-language section headers.
 
-8. Commit hygiene
+7. Commit hygiene
 
-- Show `git status --short` for both repos.
+- Show `git status --short`.
 - Use English commit messages.
-- Commit separately per repo.
 - Push only when requested (or when already agreed in session).
 
 ## Validation Commands
@@ -238,20 +211,12 @@ Use these exact commands to run validation checks. Always use the project venv:
 ```bash
 PYTHON=/media/nquiroga/SSDedo/Documents/projects/NanLabs/labs/.venv/bin/python
 
-# ── NaN repo (from nan-python-engineering-labs/) ──────────────────────────────
 # Full cross-module audit (C1 Spanish content, C2 filenames, C3 dirs, C4 dups, C5 canonical)
 $PYTHON scripts/audit_nan_modules.py
 
 # Language scan for a specific module
 $PYTHON scripts/validate_nan_language.py --module 11_modern_tooling_2026
 
-# Unified validation: all checks (L1, S1, R1, X1, E1, M1) across all modules
-$PYTHON scripts/validate_all_modules.py
-
-# Single module
-$PYTHON scripts/validate_all_modules.py --module 14_advanced_python_2026
-
-# ── training-py (from training-py/) ──────────────────────────────────────────
 # Unified validation: all checks (SP1, S1, R1, X1, E1, M1) across modules 01-14
 $PYTHON scripts/validate_all_modules.py
 
@@ -274,31 +239,24 @@ SUMMARY: 14/14 modules — all checks passed
 ## Quality Gates (must pass)
 
 - All topic directories are in English.
-- All topics in both repos share the standard lab subfolder structure.
+- All topics share the standard lab subfolder structure.
 - **README completeness**: Every topic README contains the full pedagogical structure with "Use Cases" and practice levels.
 - **README schema consistency**: Every topic README follows the exact same heading/subheading count and order.
-- **training-py Spanish compliance**: Topic READMEs are in Spanish with the required schema.
-- **100% English-only compliance for NaN repo**: No Spanish content in NaN files (README, exercises, references, tests, code comments):
-  - No "Módulo:", "Descripción", "Objetivo", "Ejercicio", "Referencias", "Instrucciones", etc.
-  - All documentation files translated to English
-  - All exercise and reference files in English
-  - All comments and docstrings in code are English
+- **Spanish compliance**: Topic READMEs are in Spanish with the required schema.
 - **Example quality gate (NEW)**:
   - Every `examples/example_basic.py` is English-only and free of placeholders.
   - No `TODO` markers in examples.
   - Examples execute successfully in module validation.
 - **Exercise quality gate (NEW)**:
-  - Every `exercise/exercise_01.py` is English-only and free of placeholders — **in both repos**.
+  - Every `exercise/exercise_01.py` is English-only and free of placeholders.
   - No `TODO` markers in exercises.
   - Exercise statements are complete and usable without translation follow-up.
-  - *Known technical debt*: exercises in `training-py` modules 01–13 may still contain Spanish docstrings from before this policy was enforced. Treat as tech debt; fix incrementally per module.
+  - *Known technical debt*: exercises in modules 01–13 may still contain Spanish docstrings from before this policy was enforced. Treat as tech debt; fix incrementally per module.
 - **References quality gate (NEW)**:
   - Every `references/links.md` contains at least 3 real `https://` URLs.
   - No placeholder-only references files (e.g., `Add relevant documentation links here.` stubs).
   - Links must be topic-specific (not the same generic fallback for all topics).
-  - NaN repo references must be in English; training-py references may use Spanish headers.
 - No broken internal links in module readmes/references.
-- `examples/example_basic.py` files are identical in both repos.
 - Validation result is 100% passing for the target module.
 - Examples are concept-specific: no bulk copy/paste template where only names/labels change.
 - Structural clone audit passes (high diversity expected for conceptual modules like design patterns).
@@ -310,7 +268,7 @@ When done, return:
 
 - Module processed
 - Files created/updated summary
-- Validation results for both repos (`X/Y OK`)
+- Validation results (`X/Y OK`)
 - Commit SHAs (and push status if applicable)
 - Any residual risks or manual follow-up
 
@@ -320,39 +278,3 @@ When done, return:
 - Do not revert unrelated user changes.
 - Avoid destructive git commands.
 - Keep changes minimal and scoped to the requested module.
-
-## Language Compliance Validation (NEW - Critical for NaN repo)
-
-Implement a language check before final commit to NaN repo:
-
-**Spanish content detection** - fail if ANY of these appear in NaN repo files:
-
-- "Módulo:", "Descripción", "Objetivo", "Ejercicio", "Practica", "Instrucciones"
-- "Referencias", "Enlaces", "Recursos", "Aprende", "Diseña", "Conceptos"
-- "Debes", "Requisitos", "Hints", "Ejemplo", "Solución"
-
-**Files to scan**:
-
-- All `README.md` files (module + topics)
-- All `exercises/exercise_*.py` files
-- All `references/links.md` files
-- All `tests/test_*.py` files (comments/docstrings)
-- All `examples/example_basic.py` files (comments/docstrings/print messages)
-- All `exercise/exercise_01.py` files for placeholder markers (`TODO`, Spanish scaffolding text)
-- Any `.md` or `.py` files in topics
-
-**Action if Spanish found**:
-
-1. Halt the commit workflow
-1. Translate all Spanish content to English
-1. Re-validate (scan again)
-1. Only proceed with commit when 100% English-only confirmed
-
-**Output**: Before final commit, show:
-
-- ✓ training-py language check: Spanish README structure verified
-- ✓ NaN language scan: 0 Spanish keywords found
-- ✓ README structure scan: all required sections present
-- ✓ README heading-schema scan: all topic READMEs match exactly
-- ✓ All files: language policy compliance verified
-- Ready for commit

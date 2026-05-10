@@ -6,7 +6,6 @@
 ## Scope
 
 - [ ] `training-py`
-- [ ] `nan-python-engineering-labs`
 - [ ] Both repos
 
 ## Validation

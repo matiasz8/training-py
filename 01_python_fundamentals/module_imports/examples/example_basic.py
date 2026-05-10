@@ -21,7 +21,7 @@ def estimate_iterations(values: list[int], chunk_size: int) -> int:
 
 def main() -> None:
     """Entry point to demonstrate the implementation."""
-    print(build_report_path("nan-python-engineering-labs", "01_python_fundamentals"))
+    print(build_report_path("training-py", "01_python_fundamentals"))
     print(f"Estimated iterations: {estimate_iterations([10, 14, 12], 4)}")
 
 

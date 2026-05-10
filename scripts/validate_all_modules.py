@@ -358,7 +358,7 @@ def main() -> int:
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parents[1]
-    is_nan = repo_root.name == "nan-python-engineering-labs"
+    is_nan = False  # always training mode in this repo
 
     modules = iter_modules(repo_root, args.module)
     if not modules:

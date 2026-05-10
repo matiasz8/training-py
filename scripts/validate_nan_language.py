@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fail if Spanish content is detected in module files.
 
-This script mirrors the nan-python-engineering-labs language validator.
+Language validation script for training-py.
 In training-py it is primarily used to verify that code files (exercise/,
 examples/, tests/) do NOT contain Spanish code comments — only README.md
 is allowed to have Spanish headings/body text.
