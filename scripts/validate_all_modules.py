@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
-"""Unified validation script for all lab modules (training-py).
+"""Unified validation script for all lab modules.
 
-Checks per module:
-  SP1 Spanish-in-README — topic READMEs DO contain Spanish section headers (sanity check)
-  S1  Structure          — 5 canonical files exist in every topic
-  R1  References         — references/links.md has ≥3 real https:// URLs, no placeholder
-  X1  Examples           — examples/example_basic.py executes without error
-  E1  Exercises          — exercise/exercise_01.py has no TODO / no Spanish in code comments
-  M1  README             — topic README has ≥17 headings
-
-All modules 01-16 are in scope.
+Checks per module (NaN repo):
+  L1  Language  — 0 Spanish keywords in any .md/.py file
+  S1  Structure — 6 canonical files exist in every topic
+  R1  References — references/links.md has ≥3 real https:// URLs, no placeholder
+  X1  Examples  — examples/example_basic.py executes without error
+  E1  Exercises — exercise/exercise_01.py has no TODO / no Spanish keywords
+  M1  README    — topic README has ≥17 headings
 
 Exit code 0 if all checks pass, 1 if any fail.
 
 Usage:
   python scripts/validate_all_modules.py
-    python scripts/validate_all_modules.py --module 15_basic_data_science
+  python scripts/validate_all_modules.py --module 14_advanced_python_2026
   python scripts/validate_all_modules.py --json
 """
 
@@ -31,9 +29,7 @@ from pathlib import Path
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-PYTHON = sys.executable
-
-MAX_MODULE_NUM = 16
+PYTHON = sys.executable  # Use the same python running this script
 
 CANONICAL_FILES = [
     "README.md",
@@ -43,10 +39,16 @@ CANONICAL_FILES = [
     "references/links.md",
 ]
 
-# Spanish section headers that should appear in training-py READMEs (SP1 positive check)
-SPANISH_README_RE = re.compile(
-    r"(definici[oó]n|aplicaci[oó]n pr[aá]ctica|"
-    r"por qu[eé] es importante|referencias|tarea pr[aá]ctica)",
+SPANISH_KEYWORDS_RE = re.compile(
+    r"\b("
+    r"m[oó]dulo|descripci[oó]n|objetivo|ejercicio|instrucciones|"
+    r"referencias|documentaci[oó]n|configuraci[oó]n|instalaci[oó]n|"
+    r"verificaci[oó]n|avanzad[oa]s?|parallelization|"
+    r"entornos|herramientas|soluci[oó]n|a[ñn]adir|"
+    r"implementar y practicar|lee atentamente|tu solution|"
+    r"debe ir|directorio padre|implementa|añade|resuelve|"
+    r"aprende|dise[ñn]a|debes|requisitos"
+    r")\b",
     re.IGNORECASE,
 )
 
@@ -55,7 +57,7 @@ REFERENCES_PLACEHOLDER_RE = re.compile(
     re.IGNORECASE,
 )
 
-EXAMPLE_TIMEOUT = 10
+EXAMPLE_TIMEOUT = 10  # seconds per example
 
 # ── Data structures ───────────────────────────────────────────────────────────
 
@@ -69,7 +71,6 @@ class CheckResult:
 @dataclass
 class TopicResult:
     topic: str
-    sp1: CheckResult = field(default_factory=lambda: CheckResult(True))
     s1: CheckResult = field(default_factory=lambda: CheckResult(True))
     r1: CheckResult = field(default_factory=lambda: CheckResult(True))
     x1: CheckResult = field(default_factory=lambda: CheckResult(True))
@@ -77,16 +78,17 @@ class TopicResult:
     m1: CheckResult = field(default_factory=lambda: CheckResult(True))
 
     def all_passed(self) -> bool:
-        return all(r.passed for r in [self.sp1, self.s1, self.r1, self.x1, self.e1, self.m1])
+        return all(r.passed for r in [self.s1, self.r1, self.x1, self.e1, self.m1])
 
 
 @dataclass
 class ModuleResult:
     module: str
+    l1: CheckResult = field(default_factory=lambda: CheckResult(True))
     topics: list[TopicResult] = field(default_factory=list)
 
     def all_passed(self) -> bool:
-        return all(t.all_passed() for t in self.topics)
+        return self.l1.passed and all(t.all_passed() for t in self.topics)
 
     def topic_counts(self) -> tuple[int, int]:
         total = len(self.topics)
@@ -99,9 +101,7 @@ class ModuleResult:
 
 def iter_modules(repo_root: Path, only_module: str | None) -> list[Path]:
     all_modules = sorted(
-        p
-        for p in repo_root.iterdir()
-        if p.is_dir() and re.match(r"^\d{2}_", p.name) and int(p.name[:2]) <= MAX_MODULE_NUM
+        p for p in repo_root.iterdir() if p.is_dir() and re.match(r"^\d{2}_", p.name)
     )
     if only_module:
         return [m for m in all_modules if m.name == only_module]
@@ -109,6 +109,7 @@ def iter_modules(repo_root: Path, only_module: str | None) -> list[Path]:
 
 
 def detect_topic_dirs(module_dir: Path) -> list[Path]:
+    """Return all topic dirs: direct children with README.md + examples/ OR exercise/."""
     topics: list[Path] = []
     for path in sorted(module_dir.iterdir()):
         if not path.is_dir():
@@ -118,6 +119,7 @@ def detect_topic_dirs(module_dir: Path) -> list[Path]:
         ):
             topics.append(path)
         else:
+            # Nested structure: look one level deeper (e.g. 07_design_patterns/01_basic_gof/singleton)
             for sub in sorted(path.iterdir()):
                 if (
                     sub.is_dir()
@@ -128,24 +130,37 @@ def detect_topic_dirs(module_dir: Path) -> list[Path]:
     return topics
 
 
-# ── SP1: Spanish README sanity check ─────────────────────────────────────────
+def iter_text_files(root: Path) -> list[Path]:
+    """Return .md/.py files that are learning assets (excludes module-root helper scripts)."""
+    files = []
+    for p in root.rglob("*"):
+        if not p.is_file() or p.suffix not in {".md", ".py"}:
+            continue
+        # Only include files inside topic subdirectories (depth ≥ 2 from module root)
+        # This excludes module-root helper scripts like create_templates.py, generate_*.py
+        rel = p.relative_to(root)
+        if len(rel.parts) < 2:
+            continue  # skip module-root scripts
+        files.append(p)
+    return sorted(files)
 
 
-def check_sp1_spanish_readme(topic_dir: Path) -> CheckResult:
-    """Verify that training-py topic READMEs DO contain Spanish section headers."""
-    readme = topic_dir / "README.md"
-    if not readme.exists():
-        return CheckResult(True)  # S1 will catch this
+# ── L1: Language check (NaN repo) ─────────────────────────────────────────────
 
-    content = readme.read_text(encoding="utf-8", errors="ignore")
-    if SPANISH_README_RE.search(content):
-        return CheckResult(True)
-    return CheckResult(
-        False,
-        [
-            "  README has no Spanish section headers (expected Definición, Aplicación Práctica, etc.)"
-        ],
-    )
+
+def check_l1_language(module_dir: Path, repo_root: Path) -> CheckResult:
+    hits: list[str] = []
+    for f in iter_text_files(module_dir):
+        for lineno, line in enumerate(
+            f.read_text(encoding="utf-8", errors="ignore").splitlines(), 1
+        ):
+            if SPANISH_KEYWORDS_RE.search(line):
+                rel = f.relative_to(repo_root)
+                hits.append(f"  {rel}:{lineno}: {line.strip()[:80]}")
+                if len(hits) >= 20:
+                    hits.append("  ... (truncated)")
+                    return CheckResult(False, hits)
+    return CheckResult(len(hits) == 0, hits)
 
 
 # ── S1: Canonical structure ───────────────────────────────────────────────────
@@ -166,9 +181,11 @@ def check_r1_references(topic_dir: Path) -> CheckResult:
 
     content = links_file.read_text(encoding="utf-8", errors="ignore")
 
+    # Check for placeholder
     if REFERENCES_PLACEHOLDER_RE.search(content):
         return CheckResult(False, ["  contains placeholder text"])
 
+    # Count real https:// URLs
     urls = re.findall(r"https://\S+", content)
     if len(urls) < 3:
         return CheckResult(False, [f"  only {len(urls)} https:// URL(s) found (need ≥3)"])
@@ -206,12 +223,6 @@ def check_x1_example(topic_dir: Path) -> CheckResult:
 
 TODO_RE = re.compile(r"\bTODO\b", re.IGNORECASE)
 
-# Only flag Spanish in code-level comments (not in goal/instructions prose)
-EXERCISE_SPANISH_CODE_RE = re.compile(
-    r"#.*\b(implementa|a[ñn]ade|resuelve|debes|soluci[oó]n|ejercicio)\b",
-    re.IGNORECASE,
-)
-
 
 def check_e1_exercise(topic_dir: Path) -> CheckResult:
     exercise = topic_dir / "exercise" / "exercise_01.py"
@@ -224,9 +235,15 @@ def check_e1_exercise(topic_dir: Path) -> CheckResult:
     if TODO_RE.search(content):
         issues.append("  contains TODO placeholder")
 
+    # Spanish in exercises (stricter keywords for code files)
+    exercise_spanish_re = re.compile(
+        r"\b(objetivo|instrucciones|ejercicio|implementa|a[ñn]ade|resuelve|"
+        r"descripci[oó]n|soluci[oó]n|practica|debes)\b",
+        re.IGNORECASE,
+    )
     for lineno, line in enumerate(content.splitlines(), 1):
-        if EXERCISE_SPANISH_CODE_RE.search(line):
-            issues.append(f"  line {lineno}: Spanish in comment: {line.strip()[:70]}")
+        if exercise_spanish_re.search(line):
+            issues.append(f"  line {lineno}: Spanish keyword: {line.strip()[:70]}")
             if len(issues) >= 5:
                 break
 
@@ -252,12 +269,16 @@ def check_m1_readme(topic_dir: Path) -> CheckResult:
 # ── Module validation ─────────────────────────────────────────────────────────
 
 
-def validate_module(module_dir: Path) -> ModuleResult:
+def validate_module(module_dir: Path, repo_root: Path, is_nan: bool) -> ModuleResult:
     result = ModuleResult(module=module_dir.name)
 
-    for topic_dir in detect_topic_dirs(module_dir):
+    # L1: whole-module language scan (NaN only)
+    if is_nan:
+        result.l1 = check_l1_language(module_dir, repo_root)
+
+    topics = detect_topic_dirs(module_dir)
+    for topic_dir in topics:
         tr = TopicResult(topic=topic_dir.name)
-        tr.sp1 = check_sp1_spanish_readme(topic_dir)
         tr.s1 = check_s1_structure(topic_dir)
         tr.r1 = check_r1_references(topic_dir)
         tr.x1 = check_x1_example(topic_dir)
@@ -275,25 +296,32 @@ def icon(passed: bool) -> str:
     return "✅" if passed else "❌"
 
 
-def print_results(results: list[ModuleResult], verbose: bool) -> int:
+def print_results(results: list[ModuleResult], is_nan: bool, verbose: bool) -> int:
     total_modules = len(results)
     failed_modules = 0
 
     for mod in results:
         ok, total = mod.topic_counts()
+        l1_col = f" L1{icon(mod.l1.passed)}" if is_nan else ""
         all_ok = mod.all_passed()
         if not all_ok:
             failed_modules += 1
 
         status = icon(all_ok)
-        print(f"{status} {mod.module:<45} topics:{ok:>3}/{total}")
+        print(f"{status} {mod.module:<45} topics:{ok:>3}/{total}{l1_col}")
 
         if not all_ok or verbose:
+            # L1 language issues
+            if is_nan and not mod.l1.passed:
+                print("    L1 FAIL — Spanish keywords found:")
+                for d in mod.l1.details[:10]:
+                    print(d)
+
+            # Per-topic failures
             for tr in mod.topics:
                 if tr.all_passed() and not verbose:
                     continue
                 checks = {
-                    "SP1": tr.sp1,
                     "S1": tr.s1,
                     "R1": tr.r1,
                     "X1": tr.x1,
@@ -309,10 +337,10 @@ def print_results(results: list[ModuleResult], verbose: bool) -> int:
                                 print(f"      {key}: {d}")
 
     print()
+    checks_label = "L1 S1 R1 X1 E1 M1" if is_nan else "SP1 S1 R1 X1 E1 M1"
     print(
-        f"SUMMARY: {total_modules - failed_modules}/{total_modules} modules passed [SP1 S1 R1 X1 E1 M1]"
+        f"SUMMARY: {total_modules - failed_modules}/{total_modules} modules passed [{checks_label}]"
     )
-    print("  Note: module 16 excluded from scope (not yet synced to NaN).")
 
     return 0 if failed_modules == 0 else 1
 
@@ -321,7 +349,7 @@ def print_results(results: list[ModuleResult], verbose: bool) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate training-py lab modules (01-15).")
+    parser = argparse.ArgumentParser(description="Validate all lab modules.")
     parser.add_argument("--module", help="Validate a single module by name.")
     parser.add_argument("--json", action="store_true", help="Output JSON.")
     parser.add_argument(
@@ -330,23 +358,24 @@ def main() -> int:
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parents[1]
+    is_nan = repo_root.name == "nan-python-engineering-labs"
 
     modules = iter_modules(repo_root, args.module)
     if not modules:
-        print(f"ERROR: no modules found matching module={args.module!r}")
+        print(f"ERROR: no modules found (module={args.module!r})")
         return 2
 
     results: list[ModuleResult] = []
     for module_dir in modules:
         print(f"  Scanning {module_dir.name}...", end="\r", flush=True)
-        results.append(validate_module(module_dir))
-    print(" " * 60, end="\r")
+        results.append(validate_module(module_dir, repo_root, is_nan))
+    print(" " * 60, end="\r")  # clear progress line
 
     if args.json:
         print(json.dumps([asdict(r) for r in results], indent=2))
         return 0
 
-    return print_results(results, args.verbose)
+    return print_results(results, is_nan, args.verbose)
 
 
 if __name__ == "__main__":
